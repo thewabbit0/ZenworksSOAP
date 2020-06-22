@@ -34,13 +34,13 @@ Just grab the Zenworks.DLL from the _Releases_ section
 # Exposed interfaces
 
 | Property | Zenworks SOAP service WSDL |
-||---------|----------------------------|
+|---------|----------------------------|
 | Zenworks.BundleAdmin | /zenworks-bundleadmin?wsdl |
-Zenworks.SettingsAdmin | /zenworks-settingsadmin?wsdl |
-Zenworks.AssignmentAdmin | /zenworks-assignmentadmin?wsdl |
-Zenworks.DeviceAdmin | /zenworks-deviceadmin?wsdl |
-Zenworks.UserAdmin | /zenworks-useradmin?wsdl |
-Zenworks.AdministratorAdmin  | /zenworks-administratoradmin?wsdl |
+| Zenworks.SettingsAdmin | /zenworks-settingsadmin?wsdl |
+| Zenworks.AssignmentAdmin | /zenworks-assignmentadmin?wsdl |
+| Zenworks.DeviceAdmin | /zenworks-deviceadmin?wsdl |
+| Zenworks.UserAdmin | /zenworks-useradmin?wsdl |
+| Zenworks.AdministratorAdmin  | /zenworks-administratoradmin?wsdl |
 
 -----------
 
