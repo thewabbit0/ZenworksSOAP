@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema xmlns:users="http://novell.com/zenworks/datamodel/objects/users" xmlns:objects="http://novell.com/zenworks/datamodel/objects" xmlns="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://novell.com/zenworks/datamodel/objects/users" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:import schemaLocation="core-objects.xsd" namespace="http://novell.com/zenworks/datamodel/objects" />
+  <xsd:element name="ExtraUserInformation" type="users:ExtraUserInformation" />
+  <xsd:complexType name="ExtraUserInformation">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="UserUID" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="unbounded" name="PrimaryDeviceInformationArray" type="users:UserPrimaryDeviceInformation" />
+      <xsd:any minOccurs="0" maxOccurs="unbounded" namespace="##targetNamespace" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="User" type="users:User" />
+  <xsd:complexType name="User">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="objects:ZENObject">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="LastName" type="xsd:string" />
+          <xsd:element minOccurs="0" name="LoginName" type="xsd:string" />
+          <xsd:element minOccurs="0" name="FullName" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="PhoneNumbers" type="xsd:string" />
+          <xsd:element name="IsTest" type="xsd:boolean" />
+          <xsd:any minOccurs="0" maxOccurs="unbounded" namespace="##targetNamespace" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="UserGroup" type="users:UserGroup" />
+  <xsd:complexType name="UserGroup">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="objects:ZENObject">
+        <xsd:sequence>
+          <xsd:any minOccurs="0" maxOccurs="unbounded" namespace="##targetNamespace" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="UserPrimaryDeviceInformation" type="users:UserPrimaryDeviceInformation" />
+  <xsd:complexType name="UserPrimaryDeviceInformation">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="Id" type="xsd:string" />
+      <xsd:element minOccurs="0" name="DeviceUID" type="xsd:string" />
+      <xsd:element name="LoginCount" type="xsd:long" />
+      <xsd:element name="LoginMinutes" type="xsd:long" />
+      <xsd:any minOccurs="0" maxOccurs="unbounded" namespace="##targetNamespace" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="ZENUserGroup" type="users:ZENUserGroup" />
+  <xsd:complexType name="ZENUserGroup">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="objects:ZENObject">
+        <xsd:sequence>
+          <xsd:any minOccurs="0" maxOccurs="unbounded" namespace="##targetNamespace" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="AdditionalCertificate" type="users:AdditionalCertificate" />
+  <xsd:complexType name="AdditionalCertificate">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="Alias" type="xsd:string" />
+      <xsd:element minOccurs="0" name="EncodedCert" type="xsd:string" />
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>

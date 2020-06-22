@@ -1,0 +1,1136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://novell.com/zenworks/datamodel/services/assignments/soap" xmlns:assignments="http://novell.com/zenworks/datamodel/objects/assignments" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:exceptions="http://novell.com/zenworks/datamodel/exceptions" name="AssignmentServiceService" targetNamespace="http://novell.com/zenworks/datamodel/services/assignments/soap" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema xmlns="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://novell.com/zenworks/datamodel/services/assignments/soap">
+      <xsd:import schemaLocation="core-assignments.xsd" namespace="http://novell.com/zenworks/datamodel/objects/assignments" />
+      <xsd:import schemaLocation="exceptions.xsd" namespace="http://novell.com/zenworks/datamodel/exceptions" />
+      <xsd:element name="addAssignmentRequest" type="tns:addAssignmentRequest" />
+      <xsd:complexType name="addAssignmentRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="data" type="assignments:Assignment" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="addAssignmentResponse" type="tns:addAssignmentResponse" />
+      <xsd:complexType name="addAssignmentResponse">
+        <xsd:sequence>
+          <xsd:element name="return" type="xsd:boolean" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="afterAssignmentsCompletedRequest" type="tns:afterAssignmentsCompletedRequest" />
+      <xsd:complexType name="afterAssignmentsCompletedRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="objGUID" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="assignments" type="assignments:Assignment" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="afterAssignmentsCompletedResponse" type="tns:afterAssignmentsCompletedResponse" />
+      <xsd:complexType name="afterAssignmentsCompletedResponse">
+        <xsd:sequence>
+          <xsd:element name="return" type="xsd:boolean" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="beforeAssignmentsAddedRequest" type="tns:beforeAssignmentsAddedRequest" />
+      <xsd:complexType name="beforeAssignmentsAddedRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="contentUID" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="assignments" type="assignments:Assignment" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="beforeAssignmentsAddedResponse" type="tns:beforeAssignmentsAddedResponse" />
+      <xsd:complexType name="beforeAssignmentsAddedResponse">
+        <xsd:sequence>
+          <xsd:element name="return" type="xsd:boolean" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="blockAssignmentRequest" type="tns:blockAssignmentRequest" />
+      <xsd:complexType name="blockAssignmentRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="blockedAssignment" type="assignments:BlockedAssignment" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="blockAssignmentResponse" type="tns:blockAssignmentResponse" />
+      <xsd:complexType name="blockAssignmentResponse">
+        <xsd:sequence>
+          <xsd:element name="return" type="xsd:boolean" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="cloneAssignmentsRequest" type="tns:cloneAssignmentsRequest" />
+      <xsd:complexType name="cloneAssignmentsRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="srcConsumerUID" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="contentUIDs" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="consumerUIDs" type="xsd:string" />
+          <xsd:element minOccurs="0" name="assignmentType" type="xsd:string" />
+          <xsd:element name="deleteExistingAssignments" type="xsd:boolean" />
+          <xsd:element name="replaceExistingAssignments" type="xsd:boolean" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="cloneAssignmentsResponse" type="tns:cloneAssignmentsResponse" />
+      <xsd:complexType name="cloneAssignmentsResponse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="return" type="assignments:AssignmentResult" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="cloneConsumerAssignmentRequest" type="tns:cloneConsumerAssignmentRequest" />
+      <xsd:complexType name="cloneConsumerAssignmentRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="srcConsumerUID" type="xsd:string" />
+          <xsd:element minOccurs="0" name="contentUID" type="xsd:string" />
+          <xsd:element minOccurs="0" name="targetConsumerUID" type="xsd:string" />
+          <xsd:element minOccurs="0" name="assignmentType" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="cloneConsumerAssignmentResponse" type="tns:cloneConsumerAssignmentResponse" />
+      <xsd:complexType name="cloneConsumerAssignmentResponse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="return" type="assignments:Assignment" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getAllAssignmentsRequest" type="tns:getAllAssignmentsRequest" />
+      <xsd:complexType name="getAllAssignmentsRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="objectUID" type="xsd:string" />
+          <xsd:element minOccurs="0" name="assignmentType" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getAllAssignmentsResponse" type="tns:getAllAssignmentsResponse" />
+      <xsd:complexType name="getAllAssignmentsResponse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="return" type="assignments:Assignment" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getAllAssignments2Request" type="tns:getAllAssignments2Request" />
+      <xsd:complexType name="getAllAssignments2Request">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="objectUID" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="assignmentTypes" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getAllAssignments2Response" type="tns:getAllAssignments2Response" />
+      <xsd:complexType name="getAllAssignments2Response">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="return" type="assignments:Assignment" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getAllAssignmentsByTypeRequest" type="tns:getAllAssignmentsByTypeRequest" />
+      <xsd:complexType name="getAllAssignmentsByTypeRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="assignmentTypes" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getAllAssignmentsByTypeResponse" type="tns:getAllAssignmentsByTypeResponse" />
+      <xsd:complexType name="getAllAssignmentsByTypeResponse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="return" type="assignments:Assignment" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getAllAssignmentsWithTokenRequest" type="tns:getAllAssignmentsWithTokenRequest" />
+      <xsd:complexType name="getAllAssignmentsWithTokenRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="token" type="assignments:AssignmentToken" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getAllAssignmentsWithTokenResponse" type="tns:getAllAssignmentsWithTokenResponse" />
+      <xsd:complexType name="getAllAssignmentsWithTokenResponse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="return" type="assignments:Assignment" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getAssignedPendingAndTargetedDevicesCountRequest" type="tns:getAssignedPendingAndTargetedDevicesCountRequest" />
+      <xsd:complexType name="getAssignedPendingAndTargetedDevicesCountRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="objectUID" type="xsd:string" />
+          <xsd:element minOccurs="0" name="assignmentType" type="xsd:string" />
+          <xsd:element minOccurs="0" name="aiFilter" type="assignments:AssignmentInfoFilter" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getAssignedPendingAndTargetedDevicesCountResponse" type="tns:getAssignedPendingAndTargetedDevicesCountResponse" />
+      <xsd:complexType name="getAssignedPendingAndTargetedDevicesCountResponse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="return" type="xsd:int" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getAssignmentRequest" type="tns:getAssignmentRequest" />
+      <xsd:complexType name="getAssignmentRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="consumerUID" type="xsd:string" />
+          <xsd:element minOccurs="0" name="contentUID" type="xsd:string" />
+          <xsd:element minOccurs="0" name="assignmentType" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getAssignmentResponse" type="tns:getAssignmentResponse" />
+      <xsd:complexType name="getAssignmentResponse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="return" type="assignments:Assignment" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getAssignmentByIDRequest" type="tns:getAssignmentByIDRequest" />
+      <xsd:complexType name="getAssignmentByIDRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="assignmentID" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getAssignmentByIDResponse" type="tns:getAssignmentByIDResponse" />
+      <xsd:complexType name="getAssignmentByIDResponse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="return" type="assignments:Assignment" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getAssignmentTokenRequest" type="tns:getAssignmentTokenRequest" />
+      <xsd:complexType name="getAssignmentTokenRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="objectUID" type="xsd:string" />
+          <xsd:element minOccurs="0" name="assignmentType" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getAssignmentTokenResponse" type="tns:getAssignmentTokenResponse" />
+      <xsd:complexType name="getAssignmentTokenResponse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="return" type="assignments:AssignmentToken" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getAssignmentTypeInformationRequest" type="tns:getAssignmentTypeInformationRequest" />
+      <xsd:complexType name="getAssignmentTypeInformationRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="assignmentType" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getAssignmentTypeInformationResponse" type="tns:getAssignmentTypeInformationResponse" />
+      <xsd:complexType name="getAssignmentTypeInformationResponse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="return" type="assignments:AssignmentTypeInformation" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getAssignmentWithScheduleUIDRequest" type="tns:getAssignmentWithScheduleUIDRequest" />
+      <xsd:complexType name="getAssignmentWithScheduleUIDRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="scheduleUID" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getAssignmentWithScheduleUIDResponse" type="tns:getAssignmentWithScheduleUIDResponse" />
+      <xsd:complexType name="getAssignmentWithScheduleUIDResponse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="return" type="assignments:Assignment" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getAssignmentsRequest" type="tns:getAssignmentsRequest" />
+      <xsd:complexType name="getAssignmentsRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="token" type="assignments:AssignmentToken" />
+          <xsd:element name="index" type="xsd:int" />
+          <xsd:element name="count" type="xsd:int" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getAssignmentsResponse" type="tns:getAssignmentsResponse" />
+      <xsd:complexType name="getAssignmentsResponse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="return" type="assignments:Assignment" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getBlockedAssignmentsRequest" type="tns:getBlockedAssignmentsRequest" />
+      <xsd:complexType name="getBlockedAssignmentsRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="objectUID" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getBlockedAssignmentsResponse" type="tns:getBlockedAssignmentsResponse" />
+      <xsd:complexType name="getBlockedAssignmentsResponse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="return" type="assignments:BlockedAssignment" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getBlockedDevicesORUsersRequest" type="tns:getBlockedDevicesORUsersRequest" />
+      <xsd:complexType name="getBlockedDevicesORUsersRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="contentUID" type="xsd:string" />
+          <xsd:element minOccurs="0" name="name" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="targetTypes" type="xsd:string" />
+          <xsd:element minOccurs="0" name="primaryType" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getBlockedDevicesORUsersResponse" type="tns:getBlockedDevicesORUsersResponse" />
+      <xsd:complexType name="getBlockedDevicesORUsersResponse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="return" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getBlockedDevicesORUsersCountRequest" type="tns:getBlockedDevicesORUsersCountRequest" />
+      <xsd:complexType name="getBlockedDevicesORUsersCountRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="contentUID" type="xsd:string" />
+          <xsd:element minOccurs="0" name="name" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="targetTypes" type="xsd:string" />
+          <xsd:element minOccurs="0" name="primaryType" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getBlockedDevicesORUsersCountResponse" type="tns:getBlockedDevicesORUsersCountResponse" />
+      <xsd:complexType name="getBlockedDevicesORUsersCountResponse">
+        <xsd:sequence>
+          <xsd:element name="return" type="xsd:int" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getConsumerTypesRequest" type="tns:getConsumerTypesRequest" />
+      <xsd:complexType name="getConsumerTypesRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="assignmentType" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getConsumerTypesResponse" type="tns:getConsumerTypesResponse" />
+      <xsd:complexType name="getConsumerTypesResponse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="return" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getContentTypesRequest" type="tns:getContentTypesRequest" />
+      <xsd:complexType name="getContentTypesRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="assignmentType" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getContentTypesResponse" type="tns:getContentTypesResponse" />
+      <xsd:complexType name="getContentTypesResponse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="return" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getSchedulesRequest" type="tns:getSchedulesRequest" />
+      <xsd:complexType name="getSchedulesRequest">
+        <xsd:sequence />
+      </xsd:complexType>
+      <xsd:element name="getSchedulesResponse" type="tns:getSchedulesResponse" />
+      <xsd:complexType name="getSchedulesResponse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="return" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="isValidConsumerRequest" type="tns:isValidConsumerRequest" />
+      <xsd:complexType name="isValidConsumerRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="consumerUID" type="xsd:string" />
+          <xsd:element minOccurs="0" name="assignmentType" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="isValidConsumerResponse" type="tns:isValidConsumerResponse" />
+      <xsd:complexType name="isValidConsumerResponse">
+        <xsd:sequence>
+          <xsd:element name="return" type="xsd:boolean" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="moveAssignmentRequest" type="tns:moveAssignmentRequest" />
+      <xsd:complexType name="moveAssignmentRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="token" type="assignments:AssignmentToken" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="currentPositions" type="xsd:int" />
+          <xsd:element name="offset" type="xsd:int" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="moveAssignmentResponse" type="tns:moveAssignmentResponse" />
+      <xsd:complexType name="moveAssignmentResponse">
+        <xsd:sequence>
+          <xsd:element name="return" type="xsd:boolean" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="releaseAssignmentTokenRequest" type="tns:releaseAssignmentTokenRequest" />
+      <xsd:complexType name="releaseAssignmentTokenRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="token" type="assignments:AssignmentToken" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="releaseAssignmentTokenResponse" type="tns:releaseAssignmentTokenResponse" />
+      <xsd:complexType name="releaseAssignmentTokenResponse">
+        <xsd:sequence>
+          <xsd:element name="return" type="xsd:boolean" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="removeAllAssignmentsRequest" type="tns:removeAllAssignmentsRequest" />
+      <xsd:complexType name="removeAllAssignmentsRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="objectUID" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="assignmentTypes" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="removeAllAssignmentsResponse" type="tns:removeAllAssignmentsResponse" />
+      <xsd:complexType name="removeAllAssignmentsResponse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="return" type="assignments:Assignment" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="removeAssignmentRequest" type="tns:removeAssignmentRequest" />
+      <xsd:complexType name="removeAssignmentRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="consumerUID" type="xsd:string" />
+          <xsd:element minOccurs="0" name="contentUID" type="xsd:string" />
+          <xsd:element minOccurs="0" name="assignmentType" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="removeAssignmentResponse" type="tns:removeAssignmentResponse" />
+      <xsd:complexType name="removeAssignmentResponse">
+        <xsd:sequence>
+          <xsd:element name="return" type="xsd:boolean" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="removeAssignment2Request" type="tns:removeAssignment2Request" />
+      <xsd:complexType name="removeAssignment2Request">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="assignment" type="assignments:Assignment" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="removeAssignment2Response" type="tns:removeAssignment2Response" />
+      <xsd:complexType name="removeAssignment2Response">
+        <xsd:sequence>
+          <xsd:element name="return" type="xsd:boolean" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="unblockAssignmentRequest" type="tns:unblockAssignmentRequest" />
+      <xsd:complexType name="unblockAssignmentRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="blockedAssignment" type="assignments:BlockedAssignment" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="unblockAssignmentResponse" type="tns:unblockAssignmentResponse" />
+      <xsd:complexType name="unblockAssignmentResponse">
+        <xsd:sequence>
+          <xsd:element name="return" type="xsd:boolean" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="updateAssignmentRequest" type="tns:updateAssignmentRequest" />
+      <xsd:complexType name="updateAssignmentRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="data" type="assignments:Assignment" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="updateAssignmentResponse" type="tns:updateAssignmentResponse" />
+      <xsd:complexType name="updateAssignmentResponse">
+        <xsd:sequence>
+          <xsd:element name="return" type="xsd:boolean" />
+        </xsd:sequence>
+      </xsd:complexType>
+    </xsd:schema>
+  </types>
+  <message name="RemoteDataModelException">
+    <part name="fault" element="exceptions:RemoteDataModelException" />
+  </message>
+  <message name="addAssignmentInput">
+    <part name="parameters" element="tns:addAssignmentRequest" />
+  </message>
+  <message name="addAssignmentOutput">
+    <part name="parameters" element="tns:addAssignmentResponse" />
+  </message>
+  <message name="afterAssignmentsCompletedInput">
+    <part name="parameters" element="tns:afterAssignmentsCompletedRequest" />
+  </message>
+  <message name="afterAssignmentsCompletedOutput">
+    <part name="parameters" element="tns:afterAssignmentsCompletedResponse" />
+  </message>
+  <message name="beforeAssignmentsAddedInput">
+    <part name="parameters" element="tns:beforeAssignmentsAddedRequest" />
+  </message>
+  <message name="beforeAssignmentsAddedOutput">
+    <part name="parameters" element="tns:beforeAssignmentsAddedResponse" />
+  </message>
+  <message name="blockAssignmentInput">
+    <part name="parameters" element="tns:blockAssignmentRequest" />
+  </message>
+  <message name="blockAssignmentOutput">
+    <part name="parameters" element="tns:blockAssignmentResponse" />
+  </message>
+  <message name="cloneAssignmentsInput">
+    <part name="parameters" element="tns:cloneAssignmentsRequest" />
+  </message>
+  <message name="cloneAssignmentsOutput">
+    <part name="parameters" element="tns:cloneAssignmentsResponse" />
+  </message>
+  <message name="cloneConsumerAssignmentInput">
+    <part name="parameters" element="tns:cloneConsumerAssignmentRequest" />
+  </message>
+  <message name="cloneConsumerAssignmentOutput">
+    <part name="parameters" element="tns:cloneConsumerAssignmentResponse" />
+  </message>
+  <message name="getAllAssignmentsInput">
+    <part name="parameters" element="tns:getAllAssignmentsRequest" />
+  </message>
+  <message name="getAllAssignmentsOutput">
+    <part name="parameters" element="tns:getAllAssignmentsResponse" />
+  </message>
+  <message name="getAllAssignments2Input">
+    <part name="parameters" element="tns:getAllAssignments2Request" />
+  </message>
+  <message name="getAllAssignments2Output">
+    <part name="parameters" element="tns:getAllAssignments2Response" />
+  </message>
+  <message name="getAllAssignmentsByTypeInput">
+    <part name="parameters" element="tns:getAllAssignmentsByTypeRequest" />
+  </message>
+  <message name="getAllAssignmentsByTypeOutput">
+    <part name="parameters" element="tns:getAllAssignmentsByTypeResponse" />
+  </message>
+  <message name="getAllAssignmentsWithTokenInput">
+    <part name="parameters" element="tns:getAllAssignmentsWithTokenRequest" />
+  </message>
+  <message name="getAllAssignmentsWithTokenOutput">
+    <part name="parameters" element="tns:getAllAssignmentsWithTokenResponse" />
+  </message>
+  <message name="getAssignedPendingAndTargetedDevicesCountInput">
+    <part name="parameters" element="tns:getAssignedPendingAndTargetedDevicesCountRequest" />
+  </message>
+  <message name="getAssignedPendingAndTargetedDevicesCountOutput">
+    <part name="parameters" element="tns:getAssignedPendingAndTargetedDevicesCountResponse" />
+  </message>
+  <message name="getAssignmentInput">
+    <part name="parameters" element="tns:getAssignmentRequest" />
+  </message>
+  <message name="getAssignmentOutput">
+    <part name="parameters" element="tns:getAssignmentResponse" />
+  </message>
+  <message name="getAssignmentByIDInput">
+    <part name="parameters" element="tns:getAssignmentByIDRequest" />
+  </message>
+  <message name="getAssignmentByIDOutput">
+    <part name="parameters" element="tns:getAssignmentByIDResponse" />
+  </message>
+  <message name="getAssignmentTokenInput">
+    <part name="parameters" element="tns:getAssignmentTokenRequest" />
+  </message>
+  <message name="getAssignmentTokenOutput">
+    <part name="parameters" element="tns:getAssignmentTokenResponse" />
+  </message>
+  <message name="getAssignmentTypeInformationInput">
+    <part name="parameters" element="tns:getAssignmentTypeInformationRequest" />
+  </message>
+  <message name="getAssignmentTypeInformationOutput">
+    <part name="parameters" element="tns:getAssignmentTypeInformationResponse" />
+  </message>
+  <message name="getAssignmentWithScheduleUIDInput">
+    <part name="parameters" element="tns:getAssignmentWithScheduleUIDRequest" />
+  </message>
+  <message name="getAssignmentWithScheduleUIDOutput">
+    <part name="parameters" element="tns:getAssignmentWithScheduleUIDResponse" />
+  </message>
+  <message name="getAssignmentsInput">
+    <part name="parameters" element="tns:getAssignmentsRequest" />
+  </message>
+  <message name="getAssignmentsOutput">
+    <part name="parameters" element="tns:getAssignmentsResponse" />
+  </message>
+  <message name="getBlockedAssignmentsInput">
+    <part name="parameters" element="tns:getBlockedAssignmentsRequest" />
+  </message>
+  <message name="getBlockedAssignmentsOutput">
+    <part name="parameters" element="tns:getBlockedAssignmentsResponse" />
+  </message>
+  <message name="getBlockedDevicesORUsersInput">
+    <part name="parameters" element="tns:getBlockedDevicesORUsersRequest" />
+  </message>
+  <message name="getBlockedDevicesORUsersOutput">
+    <part name="parameters" element="tns:getBlockedDevicesORUsersResponse" />
+  </message>
+  <message name="getBlockedDevicesORUsersCountInput">
+    <part name="parameters" element="tns:getBlockedDevicesORUsersCountRequest" />
+  </message>
+  <message name="getBlockedDevicesORUsersCountOutput">
+    <part name="parameters" element="tns:getBlockedDevicesORUsersCountResponse" />
+  </message>
+  <message name="getConsumerTypesInput">
+    <part name="parameters" element="tns:getConsumerTypesRequest" />
+  </message>
+  <message name="getConsumerTypesOutput">
+    <part name="parameters" element="tns:getConsumerTypesResponse" />
+  </message>
+  <message name="getContentTypesInput">
+    <part name="parameters" element="tns:getContentTypesRequest" />
+  </message>
+  <message name="getContentTypesOutput">
+    <part name="parameters" element="tns:getContentTypesResponse" />
+  </message>
+  <message name="getSchedulesInput">
+    <part name="parameters" element="tns:getSchedulesRequest" />
+  </message>
+  <message name="getSchedulesOutput">
+    <part name="parameters" element="tns:getSchedulesResponse" />
+  </message>
+  <message name="isValidConsumerInput">
+    <part name="parameters" element="tns:isValidConsumerRequest" />
+  </message>
+  <message name="isValidConsumerOutput">
+    <part name="parameters" element="tns:isValidConsumerResponse" />
+  </message>
+  <message name="moveAssignmentInput">
+    <part name="parameters" element="tns:moveAssignmentRequest" />
+  </message>
+  <message name="moveAssignmentOutput">
+    <part name="parameters" element="tns:moveAssignmentResponse" />
+  </message>
+  <message name="releaseAssignmentTokenInput">
+    <part name="parameters" element="tns:releaseAssignmentTokenRequest" />
+  </message>
+  <message name="releaseAssignmentTokenOutput">
+    <part name="parameters" element="tns:releaseAssignmentTokenResponse" />
+  </message>
+  <message name="removeAllAssignmentsInput">
+    <part name="parameters" element="tns:removeAllAssignmentsRequest" />
+  </message>
+  <message name="removeAllAssignmentsOutput">
+    <part name="parameters" element="tns:removeAllAssignmentsResponse" />
+  </message>
+  <message name="removeAssignmentInput">
+    <part name="parameters" element="tns:removeAssignmentRequest" />
+  </message>
+  <message name="removeAssignmentOutput">
+    <part name="parameters" element="tns:removeAssignmentResponse" />
+  </message>
+  <message name="removeAssignment2Input">
+    <part name="parameters" element="tns:removeAssignment2Request" />
+  </message>
+  <message name="removeAssignment2Output">
+    <part name="parameters" element="tns:removeAssignment2Response" />
+  </message>
+  <message name="unblockAssignmentInput">
+    <part name="parameters" element="tns:unblockAssignmentRequest" />
+  </message>
+  <message name="unblockAssignmentOutput">
+    <part name="parameters" element="tns:unblockAssignmentResponse" />
+  </message>
+  <message name="updateAssignmentInput">
+    <part name="parameters" element="tns:updateAssignmentRequest" />
+  </message>
+  <message name="updateAssignmentOutput">
+    <part name="parameters" element="tns:updateAssignmentResponse" />
+  </message>
+  <portType name="AssignmentService">
+    <operation name="addAssignment">
+      <input message="tns:addAssignmentInput" />
+      <output message="tns:addAssignmentOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="afterAssignmentsCompleted">
+      <input message="tns:afterAssignmentsCompletedInput" />
+      <output message="tns:afterAssignmentsCompletedOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="beforeAssignmentsAdded">
+      <input message="tns:beforeAssignmentsAddedInput" />
+      <output message="tns:beforeAssignmentsAddedOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="blockAssignment">
+      <input message="tns:blockAssignmentInput" />
+      <output message="tns:blockAssignmentOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="cloneAssignments">
+      <input message="tns:cloneAssignmentsInput" />
+      <output message="tns:cloneAssignmentsOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="cloneConsumerAssignment">
+      <input message="tns:cloneConsumerAssignmentInput" />
+      <output message="tns:cloneConsumerAssignmentOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="getAllAssignments">
+      <input message="tns:getAllAssignmentsInput" />
+      <output message="tns:getAllAssignmentsOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="getAllAssignments2">
+      <input message="tns:getAllAssignments2Input" />
+      <output message="tns:getAllAssignments2Output" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="getAllAssignmentsByType">
+      <input message="tns:getAllAssignmentsByTypeInput" />
+      <output message="tns:getAllAssignmentsByTypeOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="getAllAssignmentsWithToken">
+      <input message="tns:getAllAssignmentsWithTokenInput" />
+      <output message="tns:getAllAssignmentsWithTokenOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="getAssignedPendingAndTargetedDevicesCount">
+      <input message="tns:getAssignedPendingAndTargetedDevicesCountInput" />
+      <output message="tns:getAssignedPendingAndTargetedDevicesCountOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="getAssignment">
+      <input message="tns:getAssignmentInput" />
+      <output message="tns:getAssignmentOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="getAssignmentByID">
+      <input message="tns:getAssignmentByIDInput" />
+      <output message="tns:getAssignmentByIDOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="getAssignmentToken">
+      <input message="tns:getAssignmentTokenInput" />
+      <output message="tns:getAssignmentTokenOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="getAssignmentTypeInformation">
+      <input message="tns:getAssignmentTypeInformationInput" />
+      <output message="tns:getAssignmentTypeInformationOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="getAssignmentWithScheduleUID">
+      <input message="tns:getAssignmentWithScheduleUIDInput" />
+      <output message="tns:getAssignmentWithScheduleUIDOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="getAssignments">
+      <input message="tns:getAssignmentsInput" />
+      <output message="tns:getAssignmentsOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="getBlockedAssignments">
+      <input message="tns:getBlockedAssignmentsInput" />
+      <output message="tns:getBlockedAssignmentsOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="getBlockedDevicesORUsers">
+      <input message="tns:getBlockedDevicesORUsersInput" />
+      <output message="tns:getBlockedDevicesORUsersOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="getBlockedDevicesORUsersCount">
+      <input message="tns:getBlockedDevicesORUsersCountInput" />
+      <output message="tns:getBlockedDevicesORUsersCountOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="getConsumerTypes">
+      <input message="tns:getConsumerTypesInput" />
+      <output message="tns:getConsumerTypesOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="getContentTypes">
+      <input message="tns:getContentTypesInput" />
+      <output message="tns:getContentTypesOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="getSchedules">
+      <input message="tns:getSchedulesInput" />
+      <output message="tns:getSchedulesOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="isValidConsumer">
+      <input message="tns:isValidConsumerInput" />
+      <output message="tns:isValidConsumerOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="moveAssignment">
+      <input message="tns:moveAssignmentInput" />
+      <output message="tns:moveAssignmentOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="releaseAssignmentToken">
+      <input message="tns:releaseAssignmentTokenInput" />
+      <output message="tns:releaseAssignmentTokenOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="removeAllAssignments">
+      <input message="tns:removeAllAssignmentsInput" />
+      <output message="tns:removeAllAssignmentsOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="removeAssignment">
+      <input message="tns:removeAssignmentInput" />
+      <output message="tns:removeAssignmentOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="removeAssignment2">
+      <input message="tns:removeAssignment2Input" />
+      <output message="tns:removeAssignment2Output" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="unblockAssignment">
+      <input message="tns:unblockAssignmentInput" />
+      <output message="tns:unblockAssignmentOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="updateAssignment">
+      <input message="tns:updateAssignmentInput" />
+      <output message="tns:updateAssignmentOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+  </portType>
+  <binding name="AssignmentServiceBinding" type="tns:AssignmentService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="addAssignment">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/assignments/soap/addAssignment" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="RemoteDataModelException">
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="afterAssignmentsCompleted">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/assignments/soap/afterAssignmentsCompleted" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="RemoteDataModelException">
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="beforeAssignmentsAdded">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/assignments/soap/beforeAssignmentsAdded" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="RemoteDataModelException">
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="blockAssignment">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/assignments/soap/blockAssignment" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="RemoteDataModelException">
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="cloneAssignments">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/assignments/soap/cloneAssignments" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="RemoteDataModelException">
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="cloneConsumerAssignment">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/assignments/soap/cloneConsumerAssignment" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="RemoteDataModelException">
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="getAllAssignments">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/assignments/soap/getAllAssignments" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="RemoteDataModelException">
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="getAllAssignments2">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/assignments/soap/getAllAssignments2" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="RemoteDataModelException">
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="getAllAssignmentsByType">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/assignments/soap/getAllAssignmentsByType" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="RemoteDataModelException">
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="getAllAssignmentsWithToken">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/assignments/soap/getAllAssignmentsWithToken" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="RemoteDataModelException">
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="getAssignedPendingAndTargetedDevicesCount">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/assignments/soap/getAssignedPendingAndTargetedDevicesCount" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="RemoteDataModelException">
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="getAssignment">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/assignments/soap/getAssignment" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="RemoteDataModelException">
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="getAssignmentByID">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/assignments/soap/getAssignmentByID" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="RemoteDataModelException">
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="getAssignmentToken">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/assignments/soap/getAssignmentToken" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="RemoteDataModelException">
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="getAssignmentTypeInformation">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/assignments/soap/getAssignmentTypeInformation" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="RemoteDataModelException">
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="getAssignmentWithScheduleUID">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/assignments/soap/getAssignmentWithScheduleUID" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="RemoteDataModelException">
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="getAssignments">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/assignments/soap/getAssignments" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="RemoteDataModelException">
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="getBlockedAssignments">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/assignments/soap/getBlockedAssignments" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="RemoteDataModelException">
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="getBlockedDevicesORUsers">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/assignments/soap/getBlockedDevicesORUsers" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="RemoteDataModelException">
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="getBlockedDevicesORUsersCount">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/assignments/soap/getBlockedDevicesORUsersCount" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="RemoteDataModelException">
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="getConsumerTypes">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/assignments/soap/getConsumerTypes" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="RemoteDataModelException">
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="getContentTypes">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/assignments/soap/getContentTypes" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="RemoteDataModelException">
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="getSchedules">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/assignments/soap/getSchedules" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="RemoteDataModelException">
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="isValidConsumer">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/assignments/soap/isValidConsumer" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="RemoteDataModelException">
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="moveAssignment">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/assignments/soap/moveAssignment" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="RemoteDataModelException">
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="releaseAssignmentToken">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/assignments/soap/releaseAssignmentToken" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="RemoteDataModelException">
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="removeAllAssignments">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/assignments/soap/removeAllAssignments" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="RemoteDataModelException">
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="removeAssignment">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/assignments/soap/removeAssignment" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="RemoteDataModelException">
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="removeAssignment2">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/assignments/soap/removeAssignment2" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="RemoteDataModelException">
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="unblockAssignment">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/assignments/soap/unblockAssignment" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="RemoteDataModelException">
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="updateAssignment">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/assignments/soap/updateAssignment" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="RemoteDataModelException">
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+  </binding>
+  <service name="AssignmentServiceService">
+    <port name="AssignmentServicePort" binding="tns:AssignmentServiceBinding">
+      <soap:address location="https://cit-zcm-01.cit-is.fh-koeln.de/zenworks-assignmentadmin" />
+    </port>
+  </service>
+</definitions>

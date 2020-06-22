@@ -1,0 +1,1135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:settings="http://novell.com/zenworks/datamodel/objects/settings" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://novell.com/zenworks/datamodel/services/settings/soap" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:exceptions="http://novell.com/zenworks/datamodel/exceptions" name="SystemSettingsServiceService" targetNamespace="http://novell.com/zenworks/datamodel/services/settings/soap" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema xmlns="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://novell.com/zenworks/datamodel/services/settings/soap">
+      <xsd:import schemaLocation="exceptions.xsd" namespace="http://novell.com/zenworks/datamodel/exceptions" />
+      <xsd:import schemaLocation="core-addons-settings.xsd" namespace="http://novell.com/zenworks/datamodel/objects/settings" />
+      <xsd:element name="copySettingRequest" type="tns:copySettingRequest" />
+      <xsd:complexType name="copySettingRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="sourceUID" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="destinationUIDs" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="settingNames" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="copySettingResponse" type="tns:copySettingResponse" />
+      <xsd:complexType name="copySettingResponse">
+        <xsd:sequence>
+          <xsd:element name="return" type="xsd:boolean" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="copyVariablesRequest" type="tns:copyVariablesRequest" />
+      <xsd:complexType name="copyVariablesRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="sourceUID" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="destinationUIDs" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="copyVariablesResponse" type="tns:copyVariablesResponse" />
+      <xsd:complexType name="copyVariablesResponse">
+        <xsd:sequence>
+          <xsd:element name="return" type="xsd:boolean" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getEffectiveSettingRequest" type="tns:getEffectiveSettingRequest" />
+      <xsd:complexType name="getEffectiveSettingRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="objectUID" type="xsd:string" />
+          <xsd:element minOccurs="0" name="settingName" type="xsd:string" />
+          <xsd:element name="includeData" type="xsd:boolean" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getEffectiveSettingResponse" type="tns:getEffectiveSettingResponse" />
+      <xsd:complexType name="getEffectiveSettingResponse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="return" type="settings:SystemSetting" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getEffectiveSettingDataRequest" type="tns:getEffectiveSettingDataRequest" />
+      <xsd:complexType name="getEffectiveSettingDataRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="objectUID" type="xsd:string" />
+          <xsd:element minOccurs="0" name="settingName" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getEffectiveSettingDataResponse" type="tns:getEffectiveSettingDataResponse" />
+      <xsd:complexType name="getEffectiveSettingDataResponse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="return" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getEffectiveSettingsRequest" type="tns:getEffectiveSettingsRequest" />
+      <xsd:complexType name="getEffectiveSettingsRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="objectUID" type="xsd:string" />
+          <xsd:element name="includeData" type="xsd:boolean" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getEffectiveSettingsResponse" type="tns:getEffectiveSettingsResponse" />
+      <xsd:complexType name="getEffectiveSettingsResponse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="return" type="settings:SystemSetting" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getEffectiveSettingsWithVariableFlagRequest" type="tns:getEffectiveSettingsWithVariableFlagRequest" />
+      <xsd:complexType name="getEffectiveSettingsWithVariableFlagRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="objectUID" type="xsd:string" />
+          <xsd:element name="includeData" type="xsd:boolean" />
+          <xsd:element name="excludeVariableSetting" type="xsd:boolean" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getEffectiveSettingsWithVariableFlagResponse" type="tns:getEffectiveSettingsWithVariableFlagResponse" />
+      <xsd:complexType name="getEffectiveSettingsWithVariableFlagResponse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="return" type="settings:SystemSetting" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getEffectiveVariablesRequest" type="tns:getEffectiveVariablesRequest" />
+      <xsd:complexType name="getEffectiveVariablesRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="objectUID" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getEffectiveVariablesResponse" type="tns:getEffectiveVariablesResponse" />
+      <xsd:complexType name="getEffectiveVariablesResponse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="return" type="settings:Variable" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getOpaqueEffectiveSettingsRequest" type="tns:getOpaqueEffectiveSettingsRequest" />
+      <xsd:complexType name="getOpaqueEffectiveSettingsRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="objectUID" type="xsd:string" />
+          <xsd:element name="includeData" type="xsd:boolean" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getOpaqueEffectiveSettingsResponse" type="tns:getOpaqueEffectiveSettingsResponse" />
+      <xsd:complexType name="getOpaqueEffectiveSettingsResponse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="return" type="settings:OpaqueData" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getOpaqueSettingsRequest" type="tns:getOpaqueSettingsRequest" />
+      <xsd:complexType name="getOpaqueSettingsRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="objectUID" type="xsd:string" />
+          <xsd:element name="includeData" type="xsd:boolean" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getOpaqueSettingsResponse" type="tns:getOpaqueSettingsResponse" />
+      <xsd:complexType name="getOpaqueSettingsResponse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="return" type="settings:OpaqueData" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getSettingDataRequest" type="tns:getSettingDataRequest" />
+      <xsd:complexType name="getSettingDataRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="objectUID" type="xsd:string" />
+          <xsd:element minOccurs="0" name="settingName" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getSettingDataResponse" type="tns:getSettingDataResponse" />
+      <xsd:complexType name="getSettingDataResponse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="return" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getSettingsRequest" type="tns:getSettingsRequest" />
+      <xsd:complexType name="getSettingsRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="objectUID" type="xsd:string" />
+          <xsd:element name="includeData" type="xsd:boolean" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getSettingsResponse" type="tns:getSettingsResponse" />
+      <xsd:complexType name="getSettingsResponse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="return" type="settings:SystemSetting" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getSpecificSettingsRequest" type="tns:getSpecificSettingsRequest" />
+      <xsd:complexType name="getSpecificSettingsRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="objectUID" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="settingNames" type="xsd:string" />
+          <xsd:element name="includeData" type="xsd:boolean" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getSpecificSettingsResponse" type="tns:getSpecificSettingsResponse" />
+      <xsd:complexType name="getSpecificSettingsResponse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="return" type="settings:SystemSetting" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getSpecificZoneSettingsRequest" type="tns:getSpecificZoneSettingsRequest" />
+      <xsd:complexType name="getSpecificZoneSettingsRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="settingNames" type="xsd:string" />
+          <xsd:element name="includeData" type="xsd:boolean" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getSpecificZoneSettingsResponse" type="tns:getSpecificZoneSettingsResponse" />
+      <xsd:complexType name="getSpecificZoneSettingsResponse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="return" type="settings:SystemSetting" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getVariablesRequest" type="tns:getVariablesRequest" />
+      <xsd:complexType name="getVariablesRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="objectUID" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getVariablesResponse" type="tns:getVariablesResponse" />
+      <xsd:complexType name="getVariablesResponse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="return" type="settings:Variable" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getZoneOpaqueSettingsRequest" type="tns:getZoneOpaqueSettingsRequest" />
+      <xsd:complexType name="getZoneOpaqueSettingsRequest">
+        <xsd:sequence>
+          <xsd:element name="includeData" type="xsd:boolean" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getZoneOpaqueSettingsResponse" type="tns:getZoneOpaqueSettingsResponse" />
+      <xsd:complexType name="getZoneOpaqueSettingsResponse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="return" type="settings:OpaqueData" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getZoneSettingDataRequest" type="tns:getZoneSettingDataRequest" />
+      <xsd:complexType name="getZoneSettingDataRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="settingName" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getZoneSettingDataResponse" type="tns:getZoneSettingDataResponse" />
+      <xsd:complexType name="getZoneSettingDataResponse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="return" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getZoneSettingsRequest" type="tns:getZoneSettingsRequest" />
+      <xsd:complexType name="getZoneSettingsRequest">
+        <xsd:sequence>
+          <xsd:element name="includeData" type="xsd:boolean" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getZoneSettingsResponse" type="tns:getZoneSettingsResponse" />
+      <xsd:complexType name="getZoneSettingsResponse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="return" type="settings:SystemSetting" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getZoneVariablesRequest" type="tns:getZoneVariablesRequest" />
+      <xsd:complexType name="getZoneVariablesRequest">
+        <xsd:sequence />
+      </xsd:complexType>
+      <xsd:element name="getZoneVariablesResponse" type="tns:getZoneVariablesResponse" />
+      <xsd:complexType name="getZoneVariablesResponse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="return" type="settings:Variable" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="removeSettingRequest" type="tns:removeSettingRequest" />
+      <xsd:complexType name="removeSettingRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="objectUID" type="xsd:string" />
+          <xsd:element minOccurs="0" name="settingName" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="removeSettingResponse" type="tns:removeSettingResponse" />
+      <xsd:complexType name="removeSettingResponse">
+        <xsd:sequence>
+          <xsd:element name="return" type="xsd:boolean" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="removeSettingsRequest" type="tns:removeSettingsRequest" />
+      <xsd:complexType name="removeSettingsRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="objectUID" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="settingNameA" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="removeSettingsResponse" type="tns:removeSettingsResponse" />
+      <xsd:complexType name="removeSettingsResponse">
+        <xsd:sequence>
+          <xsd:element name="return" type="xsd:boolean" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="removeZoneSettingRequest" type="tns:removeZoneSettingRequest" />
+      <xsd:complexType name="removeZoneSettingRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="settingName" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="removeZoneSettingResponse" type="tns:removeZoneSettingResponse" />
+      <xsd:complexType name="removeZoneSettingResponse">
+        <xsd:sequence>
+          <xsd:element name="return" type="xsd:boolean" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="removeZoneSettingsRequest" type="tns:removeZoneSettingsRequest" />
+      <xsd:complexType name="removeZoneSettingsRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="settingNameA" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="removeZoneSettingsResponse" type="tns:removeZoneSettingsResponse" />
+      <xsd:complexType name="removeZoneSettingsResponse">
+        <xsd:sequence>
+          <xsd:element name="return" type="xsd:boolean" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="setOpaqueSettingDataRequest" type="tns:setOpaqueSettingDataRequest" />
+      <xsd:complexType name="setOpaqueSettingDataRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="objectUID" type="xsd:string" />
+          <xsd:element minOccurs="0" name="settingName" type="xsd:string" />
+          <xsd:element minOccurs="0" name="settingData" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="setOpaqueSettingDataResponse" type="tns:setOpaqueSettingDataResponse" />
+      <xsd:complexType name="setOpaqueSettingDataResponse">
+        <xsd:sequence>
+          <xsd:element name="return" type="xsd:boolean" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="setSettingDataRequest" type="tns:setSettingDataRequest" />
+      <xsd:complexType name="setSettingDataRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="objectUID" type="xsd:string" />
+          <xsd:element minOccurs="0" name="settingName" type="xsd:string" />
+          <xsd:element minOccurs="0" name="settingData" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="setSettingDataResponse" type="tns:setSettingDataResponse" />
+      <xsd:complexType name="setSettingDataResponse">
+        <xsd:sequence>
+          <xsd:element name="return" type="xsd:boolean" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="setSystemSettingDataRequest" type="tns:setSystemSettingDataRequest" />
+      <xsd:complexType name="setSystemSettingDataRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="objectUID" type="xsd:string" />
+          <xsd:element minOccurs="0" name="settingName" type="xsd:string" />
+          <xsd:element minOccurs="0" name="settingData" type="xsd:string" />
+          <xsd:element minOccurs="0" name="settingTarget" type="xsd:short" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="setSystemSettingDataResponse" type="tns:setSystemSettingDataResponse" />
+      <xsd:complexType name="setSystemSettingDataResponse">
+        <xsd:sequence>
+          <xsd:element name="return" type="xsd:boolean" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="setSettingDatasRequest" type="tns:setSettingDatasRequest" />
+      <xsd:complexType name="setSettingDatasRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="objectUID" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="settingName" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="settingData" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="setSettingDatasResponse" type="tns:setSettingDatasResponse" />
+      <xsd:complexType name="setSettingDatasResponse">
+        <xsd:sequence>
+          <xsd:element name="return" type="xsd:boolean" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="setVariablesRequest" type="tns:setVariablesRequest" />
+      <xsd:complexType name="setVariablesRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="objectUID" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="variables" type="settings:Variable" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="setVariablesResponse" type="tns:setVariablesResponse" />
+      <xsd:complexType name="setVariablesResponse">
+        <xsd:sequence>
+          <xsd:element name="return" type="xsd:boolean" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="setZoneSettingDataRequest" type="tns:setZoneSettingDataRequest" />
+      <xsd:complexType name="setZoneSettingDataRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="settingName" type="xsd:string" />
+          <xsd:element minOccurs="0" name="settingData" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="setZoneSettingDataResponse" type="tns:setZoneSettingDataResponse" />
+      <xsd:complexType name="setZoneSettingDataResponse">
+        <xsd:sequence>
+          <xsd:element name="return" type="xsd:boolean" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="setZoneSettingDatasRequest" type="tns:setZoneSettingDatasRequest" />
+      <xsd:complexType name="setZoneSettingDatasRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="settingName" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="settingData" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="setZoneSettingDatasResponse" type="tns:setZoneSettingDatasResponse" />
+      <xsd:complexType name="setZoneSettingDatasResponse">
+        <xsd:sequence>
+          <xsd:element name="return" type="xsd:boolean" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="setZoneVariablesRequest" type="tns:setZoneVariablesRequest" />
+      <xsd:complexType name="setZoneVariablesRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="variables" type="settings:Variable" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="setZoneVariablesResponse" type="tns:setZoneVariablesResponse" />
+      <xsd:complexType name="setZoneVariablesResponse">
+        <xsd:sequence>
+          <xsd:element name="return" type="xsd:boolean" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getOpaqueSettingDataByNameRequest" type="tns:getOpaqueSettingDataByNameRequest" />
+      <xsd:complexType name="getOpaqueSettingDataByNameRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="nameOfOpaqueDataEntry" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getOpaqueSettingDataByNameResponse" type="tns:getOpaqueSettingDataByNameResponse" />
+      <xsd:complexType name="getOpaqueSettingDataByNameResponse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="return" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+    </xsd:schema>
+  </types>
+  <message name="RemoteDataModelException">
+    <part name="fault" element="exceptions:RemoteDataModelException" />
+  </message>
+  <message name="copySettingInput">
+    <part name="parameters" element="tns:copySettingRequest" />
+  </message>
+  <message name="copySettingOutput">
+    <part name="parameters" element="tns:copySettingResponse" />
+  </message>
+  <message name="copyVariablesInput">
+    <part name="parameters" element="tns:copyVariablesRequest" />
+  </message>
+  <message name="copyVariablesOutput">
+    <part name="parameters" element="tns:copyVariablesResponse" />
+  </message>
+  <message name="getEffectiveSettingInput">
+    <part name="parameters" element="tns:getEffectiveSettingRequest" />
+  </message>
+  <message name="getEffectiveSettingOutput">
+    <part name="parameters" element="tns:getEffectiveSettingResponse" />
+  </message>
+  <message name="getEffectiveSettingDataInput">
+    <part name="parameters" element="tns:getEffectiveSettingDataRequest" />
+  </message>
+  <message name="getEffectiveSettingDataOutput">
+    <part name="parameters" element="tns:getEffectiveSettingDataResponse" />
+  </message>
+  <message name="getEffectiveSettingsInput">
+    <part name="parameters" element="tns:getEffectiveSettingsRequest" />
+  </message>
+  <message name="getEffectiveSettingsOutput">
+    <part name="parameters" element="tns:getEffectiveSettingsResponse" />
+  </message>
+  <message name="getEffectiveSettingsWithVariableFlagInput">
+    <part name="parameters" element="tns:getEffectiveSettingsWithVariableFlagRequest" />
+  </message>
+  <message name="getEffectiveSettingsWithVariableFlagOutput">
+    <part name="parameters" element="tns:getEffectiveSettingsWithVariableFlagResponse" />
+  </message>
+  <message name="getEffectiveVariablesInput">
+    <part name="parameters" element="tns:getEffectiveVariablesRequest" />
+  </message>
+  <message name="getEffectiveVariablesOutput">
+    <part name="parameters" element="tns:getEffectiveVariablesResponse" />
+  </message>
+  <message name="getOpaqueEffectiveSettingsInput">
+    <part name="parameters" element="tns:getOpaqueEffectiveSettingsRequest" />
+  </message>
+  <message name="getOpaqueEffectiveSettingsOutput">
+    <part name="parameters" element="tns:getOpaqueEffectiveSettingsResponse" />
+  </message>
+  <message name="getOpaqueSettingsInput">
+    <part name="parameters" element="tns:getOpaqueSettingsRequest" />
+  </message>
+  <message name="getOpaqueSettingsOutput">
+    <part name="parameters" element="tns:getOpaqueSettingsResponse" />
+  </message>
+  <message name="getSettingDataInput">
+    <part name="parameters" element="tns:getSettingDataRequest" />
+  </message>
+  <message name="getSettingDataOutput">
+    <part name="parameters" element="tns:getSettingDataResponse" />
+  </message>
+  <message name="getSettingsInput">
+    <part name="parameters" element="tns:getSettingsRequest" />
+  </message>
+  <message name="getSettingsOutput">
+    <part name="parameters" element="tns:getSettingsResponse" />
+  </message>
+  <message name="getSpecificSettingsInput">
+    <part name="parameters" element="tns:getSpecificSettingsRequest" />
+  </message>
+  <message name="getSpecificSettingsOutput">
+    <part name="parameters" element="tns:getSpecificSettingsResponse" />
+  </message>
+  <message name="getSpecificZoneSettingsInput">
+    <part name="parameters" element="tns:getSpecificZoneSettingsRequest" />
+  </message>
+  <message name="getSpecificZoneSettingsOutput">
+    <part name="parameters" element="tns:getSpecificZoneSettingsResponse" />
+  </message>
+  <message name="getVariablesInput">
+    <part name="parameters" element="tns:getVariablesRequest" />
+  </message>
+  <message name="getVariablesOutput">
+    <part name="parameters" element="tns:getVariablesResponse" />
+  </message>
+  <message name="getZoneOpaqueSettingsInput">
+    <part name="parameters" element="tns:getZoneOpaqueSettingsRequest" />
+  </message>
+  <message name="getZoneOpaqueSettingsOutput">
+    <part name="parameters" element="tns:getZoneOpaqueSettingsResponse" />
+  </message>
+  <message name="getZoneSettingDataInput">
+    <part name="parameters" element="tns:getZoneSettingDataRequest" />
+  </message>
+  <message name="getZoneSettingDataOutput">
+    <part name="parameters" element="tns:getZoneSettingDataResponse" />
+  </message>
+  <message name="getZoneSettingsInput">
+    <part name="parameters" element="tns:getZoneSettingsRequest" />
+  </message>
+  <message name="getZoneSettingsOutput">
+    <part name="parameters" element="tns:getZoneSettingsResponse" />
+  </message>
+  <message name="getZoneVariablesInput">
+    <part name="parameters" element="tns:getZoneVariablesRequest" />
+  </message>
+  <message name="getZoneVariablesOutput">
+    <part name="parameters" element="tns:getZoneVariablesResponse" />
+  </message>
+  <message name="removeSettingInput">
+    <part name="parameters" element="tns:removeSettingRequest" />
+  </message>
+  <message name="removeSettingOutput">
+    <part name="parameters" element="tns:removeSettingResponse" />
+  </message>
+  <message name="removeSettingsInput">
+    <part name="parameters" element="tns:removeSettingsRequest" />
+  </message>
+  <message name="removeSettingsOutput">
+    <part name="parameters" element="tns:removeSettingsResponse" />
+  </message>
+  <message name="removeZoneSettingInput">
+    <part name="parameters" element="tns:removeZoneSettingRequest" />
+  </message>
+  <message name="removeZoneSettingOutput">
+    <part name="parameters" element="tns:removeZoneSettingResponse" />
+  </message>
+  <message name="removeZoneSettingsInput">
+    <part name="parameters" element="tns:removeZoneSettingsRequest" />
+  </message>
+  <message name="removeZoneSettingsOutput">
+    <part name="parameters" element="tns:removeZoneSettingsResponse" />
+  </message>
+  <message name="setOpaqueSettingDataInput">
+    <part name="parameters" element="tns:setOpaqueSettingDataRequest" />
+  </message>
+  <message name="setOpaqueSettingDataOutput">
+    <part name="parameters" element="tns:setOpaqueSettingDataResponse" />
+  </message>
+  <message name="setSettingDataInput">
+    <part name="parameters" element="tns:setSettingDataRequest" />
+  </message>
+  <message name="setSettingDataOutput">
+    <part name="parameters" element="tns:setSettingDataResponse" />
+  </message>
+  <message name="setSystemSettingDataInput">
+    <part name="parameters" element="tns:setSystemSettingDataRequest" />
+  </message>
+  <message name="setSystemSettingDataOutput">
+    <part name="parameters" element="tns:setSystemSettingDataResponse" />
+  </message>
+  <message name="setSettingDatasInput">
+    <part name="parameters" element="tns:setSettingDatasRequest" />
+  </message>
+  <message name="setSettingDatasOutput">
+    <part name="parameters" element="tns:setSettingDatasResponse" />
+  </message>
+  <message name="setVariablesInput">
+    <part name="parameters" element="tns:setVariablesRequest" />
+  </message>
+  <message name="setVariablesOutput">
+    <part name="parameters" element="tns:setVariablesResponse" />
+  </message>
+  <message name="setZoneSettingDataInput">
+    <part name="parameters" element="tns:setZoneSettingDataRequest" />
+  </message>
+  <message name="setZoneSettingDataOutput">
+    <part name="parameters" element="tns:setZoneSettingDataResponse" />
+  </message>
+  <message name="setZoneSettingDatasInput">
+    <part name="parameters" element="tns:setZoneSettingDatasRequest" />
+  </message>
+  <message name="setZoneSettingDatasOutput">
+    <part name="parameters" element="tns:setZoneSettingDatasResponse" />
+  </message>
+  <message name="setZoneVariablesInput">
+    <part name="parameters" element="tns:setZoneVariablesRequest" />
+  </message>
+  <message name="setZoneVariablesOutput">
+    <part name="parameters" element="tns:setZoneVariablesResponse" />
+  </message>
+  <message name="getOpaqueSettingDataByNameInput">
+    <part name="parameters" element="tns:getOpaqueSettingDataByNameRequest" />
+  </message>
+  <message name="getOpaqueSettingDataByNameOutput">
+    <part name="parameters" element="tns:getOpaqueSettingDataByNameResponse" />
+  </message>
+  <portType name="SystemSettingsService">
+    <operation name="copySetting">
+      <input message="tns:copySettingInput" />
+      <output message="tns:copySettingOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="copyVariables">
+      <input message="tns:copyVariablesInput" />
+      <output message="tns:copyVariablesOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="getEffectiveSetting">
+      <input message="tns:getEffectiveSettingInput" />
+      <output message="tns:getEffectiveSettingOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="getEffectiveSettingData">
+      <input message="tns:getEffectiveSettingDataInput" />
+      <output message="tns:getEffectiveSettingDataOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="getEffectiveSettings">
+      <input message="tns:getEffectiveSettingsInput" />
+      <output message="tns:getEffectiveSettingsOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="getEffectiveSettingsWithVariableFlag">
+      <input message="tns:getEffectiveSettingsWithVariableFlagInput" />
+      <output message="tns:getEffectiveSettingsWithVariableFlagOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="getEffectiveVariables">
+      <input message="tns:getEffectiveVariablesInput" />
+      <output message="tns:getEffectiveVariablesOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="getOpaqueEffectiveSettings">
+      <input message="tns:getOpaqueEffectiveSettingsInput" />
+      <output message="tns:getOpaqueEffectiveSettingsOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="getOpaqueSettings">
+      <input message="tns:getOpaqueSettingsInput" />
+      <output message="tns:getOpaqueSettingsOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="getSettingData">
+      <input message="tns:getSettingDataInput" />
+      <output message="tns:getSettingDataOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="getSettings">
+      <input message="tns:getSettingsInput" />
+      <output message="tns:getSettingsOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="getSpecificSettings">
+      <input message="tns:getSpecificSettingsInput" />
+      <output message="tns:getSpecificSettingsOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="getSpecificZoneSettings">
+      <input message="tns:getSpecificZoneSettingsInput" />
+      <output message="tns:getSpecificZoneSettingsOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="getVariables">
+      <input message="tns:getVariablesInput" />
+      <output message="tns:getVariablesOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="getZoneOpaqueSettings">
+      <input message="tns:getZoneOpaqueSettingsInput" />
+      <output message="tns:getZoneOpaqueSettingsOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="getZoneSettingData">
+      <input message="tns:getZoneSettingDataInput" />
+      <output message="tns:getZoneSettingDataOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="getZoneSettings">
+      <input message="tns:getZoneSettingsInput" />
+      <output message="tns:getZoneSettingsOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="getZoneVariables">
+      <input message="tns:getZoneVariablesInput" />
+      <output message="tns:getZoneVariablesOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="removeSetting">
+      <input message="tns:removeSettingInput" />
+      <output message="tns:removeSettingOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="removeSettings">
+      <input message="tns:removeSettingsInput" />
+      <output message="tns:removeSettingsOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="removeZoneSetting">
+      <input message="tns:removeZoneSettingInput" />
+      <output message="tns:removeZoneSettingOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="removeZoneSettings">
+      <input message="tns:removeZoneSettingsInput" />
+      <output message="tns:removeZoneSettingsOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="setOpaqueSettingData">
+      <input message="tns:setOpaqueSettingDataInput" />
+      <output message="tns:setOpaqueSettingDataOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="setSettingData">
+      <input message="tns:setSettingDataInput" />
+      <output message="tns:setSettingDataOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="setSettingDatas">
+      <input message="tns:setSettingDatasInput" />
+      <output message="tns:setSettingDatasOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="setSystemSettingData">
+      <input message="tns:setSystemSettingDataInput" />
+      <output message="tns:setSystemSettingDataOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="setVariables">
+      <input message="tns:setVariablesInput" />
+      <output message="tns:setVariablesOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="setZoneSettingData">
+      <input message="tns:setZoneSettingDataInput" />
+      <output message="tns:setZoneSettingDataOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="setZoneSettingDatas">
+      <input message="tns:setZoneSettingDatasInput" />
+      <output message="tns:setZoneSettingDatasOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="setZoneVariables">
+      <input message="tns:setZoneVariablesInput" />
+      <output message="tns:setZoneVariablesOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="getOpaqueSettingDataByName">
+      <input message="tns:getOpaqueSettingDataByNameInput" />
+      <output message="tns:getOpaqueSettingDataByNameOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+  </portType>
+  <binding name="SystemSettingsServiceBinding" type="tns:SystemSettingsService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="copySetting">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/settings/soap/copySetting" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="RemoteDataModelException">
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="copyVariables">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/settings/soap/copyVariables" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="RemoteDataModelException">
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="getEffectiveSetting">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/settings/soap/getEffectiveSetting" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="RemoteDataModelException">
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="getEffectiveSettingData">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/settings/soap/getEffectiveSettingData" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="RemoteDataModelException">
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="getEffectiveSettings">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/settings/soap/getEffectiveSettings" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="RemoteDataModelException">
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="getEffectiveSettingsWithVariableFlag">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/settings/soap/getEffectiveSettingsWithVariableFlag" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="RemoteDataModelException">
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="getEffectiveVariables">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/settings/soap/getEffectiveVariables" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="RemoteDataModelException">
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="getOpaqueEffectiveSettings">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/settings/soap/getOpaqueEffectiveSettings" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="RemoteDataModelException">
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="getOpaqueSettings">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/settings/soap/getOpaqueSettings" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="RemoteDataModelException">
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="getSettingData">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/settings/soap/getSettingData" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="RemoteDataModelException">
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="getSettings">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/settings/soap/getSettings" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="RemoteDataModelException">
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="getSpecificSettings">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/settings/soap/getSpecificSettings" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="RemoteDataModelException">
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="getSpecificZoneSettings">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/settings/soap/getSpecificZoneSettings" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="RemoteDataModelException">
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="getVariables">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/settings/soap/getVariables" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="RemoteDataModelException">
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="getZoneOpaqueSettings">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/settings/soap/getZoneOpaqueSettings" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="RemoteDataModelException">
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="getZoneSettingData">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/settings/soap/getZoneSettingData" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="RemoteDataModelException">
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="getZoneSettings">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/settings/soap/getZoneSettings" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="RemoteDataModelException">
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="getZoneVariables">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/settings/soap/getZoneVariables" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="RemoteDataModelException">
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="removeSetting">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/settings/soap/removeSetting" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="RemoteDataModelException">
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="removeSettings">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/settings/soap/removeSettings" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="RemoteDataModelException">
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="removeZoneSetting">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/settings/soap/removeZoneSetting" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="RemoteDataModelException">
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="removeZoneSettings">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/settings/soap/removeZoneSettings" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="RemoteDataModelException">
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="setOpaqueSettingData">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/settings/soap/setOpaqueSettingData" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="RemoteDataModelException">
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="setSettingData">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/settings/soap/setSettingData" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="RemoteDataModelException">
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="setSettingDatas">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/settings/soap/setSettingDatas" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="RemoteDataModelException">
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="setSystemSettingData">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/settings/soap/setSystemSettingData" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="RemoteDataModelException">
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="setVariables">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/settings/soap/setVariables" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="RemoteDataModelException">
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="setZoneSettingData">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/settings/soap/setZoneSettingData" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="RemoteDataModelException">
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="setZoneSettingDatas">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/settings/soap/setZoneSettingDatas" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="RemoteDataModelException">
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="setZoneVariables">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/settings/soap/setZoneVariables" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="RemoteDataModelException">
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="getOpaqueSettingDataByName">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/settings/soap/getOpaqueSettingDataByName" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="RemoteDataModelException">
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+  </binding>
+  <service name="SystemSettingsServiceService">
+    <port name="SystemSettingsServicePort" binding="tns:SystemSettingsServiceBinding">
+      <soap:address location="http://localhost:8080/zenworks-datamodel/" />
+    </port>
+  </service>
+</definitions>

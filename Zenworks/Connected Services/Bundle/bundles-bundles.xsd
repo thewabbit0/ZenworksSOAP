@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema xmlns:settings="http://novell.com/zenworks/datamodel/objects/settings" xmlns:bundles="http://novell.com/zenworks/datamodel/objects/bundles" xmlns:objects="http://novell.com/zenworks/datamodel/objects" xmlns:actions="http://novell.com/zenworks/datamodel/objects/actions" xmlns="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://novell.com/zenworks/datamodel/objects/bundles" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:import schemaLocation="core-addons-settings.xsd" namespace="http://novell.com/zenworks/datamodel/objects/settings" />
+  <xsd:import schemaLocation="managed-devices-actions.xsd" namespace="http://novell.com/zenworks/datamodel/objects/actions" />
+  <xsd:import schemaLocation="core-objects.xsd" namespace="http://novell.com/zenworks/datamodel/objects" />
+  <xsd:element name="ApplicationBundleData" type="bundles:ApplicationBundleData" />
+  <xsd:complexType name="ApplicationBundleData">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="Notes" type="xsd:string" />
+      <xsd:element minOccurs="0" name="PathOnServer" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="unbounded" name="Folders" type="xsd:string" />
+      <xsd:element minOccurs="0" name="IconDisplayName" type="xsd:string" />
+      <xsd:element minOccurs="0" name="IconExt" type="xsd:string" />
+      <xsd:element minOccurs="0" name="AddonImageFile" type="xsd:string" />
+      <xsd:element name="AlwaysShowIcon" type="xsd:boolean" />
+      <xsd:element minOccurs="0" maxOccurs="unbounded" name="Contacts" type="bundles:HelpContact" />
+      <xsd:element minOccurs="0" maxOccurs="unbounded" name="Variables" type="settings:Variable" />
+      <xsd:element name="ShowProgress" type="xsd:boolean" />
+      <xsd:element minOccurs="0" name="ForceRunOrder" type="xsd:int" />
+      <xsd:element minOccurs="0" name="WaitOnForceRun" type="xsd:boolean" />
+      <xsd:any minOccurs="0" maxOccurs="unbounded" namespace="##targetNamespace" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="Bundle" type="bundles:Bundle" />
+  <xsd:complexType name="Bundle">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="actions:ActionSetObject">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="DisplayName" type="xsd:string" />
+          <xsd:element minOccurs="0" name="CreationDate" type="xsd:dateTime" />
+          <xsd:element minOccurs="0" name="Category" type="xsd:string" />
+          <xsd:element minOccurs="0" name="IgnoreDefaultActions" type="xsd:boolean" />
+          <xsd:element minOccurs="0" name="Data" type="xsd:string" />
+          <xsd:element minOccurs="0" name="Severity" type="xsd:string" />
+          <xsd:element minOccurs="0" name="ServerSideData" type="xsd:string" />
+          <xsd:element minOccurs="0" name="LicenseTrackingEnabled" type="xsd:boolean" />
+          <xsd:any minOccurs="0" maxOccurs="unbounded" namespace="##targetNamespace" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="BundleDefinition" type="bundles:BundleDefinition" />
+  <xsd:complexType name="BundleDefinition">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="actions:ActionSetObjectDefinition">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="RightsComponent" type="xsd:string" />
+          <xsd:element minOccurs="0" name="LicensingComponent" type="xsd:string" />
+          <xsd:any minOccurs="0" maxOccurs="unbounded" namespace="##targetNamespace" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="BundleGroup" type="bundles:BundleGroup" />
+  <xsd:complexType name="BundleGroup">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="objects:ZENObject">
+        <xsd:sequence>
+          <xsd:any minOccurs="0" maxOccurs="unbounded" namespace="##targetNamespace" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="Catalog" type="bundles:Catalog" />
+  <xsd:complexType name="Catalog">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="objects:ZENObject">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="DisplayName" type="xsd:string" />
+          <xsd:element minOccurs="0" name="Icon" type="xsd:string" />
+          <xsd:element name="Priority" type="xsd:int" />
+          <xsd:element name="Hidden" type="xsd:boolean" />
+          <xsd:any minOccurs="0" maxOccurs="unbounded" namespace="##targetNamespace" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="HelpContact" type="bundles:HelpContact" />
+  <xsd:complexType name="HelpContact">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="Name" type="xsd:string" />
+      <xsd:element minOccurs="0" name="Phone" type="xsd:string" />
+      <xsd:element minOccurs="0" name="Email" type="xsd:string" />
+      <xsd:any minOccurs="0" maxOccurs="unbounded" namespace="##targetNamespace" />
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>

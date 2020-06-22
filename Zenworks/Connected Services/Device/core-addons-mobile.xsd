@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema xmlns:devices="http://novell.com/zenworks/datamodel/objects/devices" xmlns:mobile="http://novell.com/zenworks/datamodel/objects/mobile" xmlns="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://novell.com/zenworks/datamodel/objects/mobile" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:import schemaLocation="core-addons-devices.xsd" namespace="http://novell.com/zenworks/datamodel/objects/devices" />
+  <xsd:element name="MobileDevice" type="mobile:MobileDevice" />
+  <xsd:complexType name="MobileDevice">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="devices:Device">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="IMEI" type="xsd:string" />
+          <xsd:element minOccurs="0" name="MEID" type="xsd:string" />
+          <xsd:element minOccurs="0" name="IMSI" type="xsd:string" />
+          <xsd:element minOccurs="0" name="MobileUID" type="xsd:string" />
+          <xsd:element minOccurs="0" name="RegistrationId" type="xsd:string" />
+          <xsd:element minOccurs="0" name="DomainTag" type="xsd:string" />
+          <xsd:element minOccurs="0" name="DeviceName" type="xsd:string" />
+          <xsd:element minOccurs="0" name="DeviceMaker" type="xsd:string" />
+          <xsd:element minOccurs="0" name="DeviceModel" type="xsd:string" />
+          <xsd:element minOccurs="0" name="DeviceModelName" type="xsd:string" />
+          <xsd:element minOccurs="0" name="EnrollmentMode" type="xsd:string" />
+          <xsd:element name="IsDeviceInfoCollected" type="xsd:boolean" />
+          <xsd:element minOccurs="0" name="OSVersion" type="xsd:string" />
+          <xsd:element minOccurs="0" name="BuildVersion" type="xsd:string" />
+          <xsd:element name="DeviceMemory" type="xsd:float" />
+          <xsd:element name="DeviceMemoryAvailable" type="xsd:float" />
+          <xsd:element name="DeviceScreenSize" type="xsd:short" />
+          <xsd:element name="ExternalCardAvailable" type="xsd:short" />
+          <xsd:element minOccurs="0" name="LastZenAgentSync" type="xsd:dateTime" />
+          <xsd:element minOccurs="0" name="ProductName" type="xsd:string" />
+          <xsd:element minOccurs="0" name="ICCID" type="xsd:string" />
+          <xsd:element minOccurs="0" name="PhoneNumber" type="xsd:string" />
+          <xsd:element minOccurs="0" name="ModemFirmwareVersion" type="xsd:string" />
+          <xsd:element minOccurs="0" name="CellularTechnology" type="xsd:string" />
+          <xsd:element minOccurs="0" name="BluetoothMACAddress" type="xsd:string" />
+          <xsd:element minOccurs="0" name="WifiMACAddress" type="xsd:string" />
+          <xsd:element minOccurs="0" name="CurrentCarrierNetwork" type="xsd:string" />
+          <xsd:element minOccurs="0" name="HomeCarrierNetwork" type="xsd:string" />
+          <xsd:element minOccurs="0" name="CarrierSettingsVersion" type="xsd:string" />
+          <xsd:element name="VoiceRoamingEnabled" type="xsd:boolean" />
+          <xsd:element name="DataRoamingEnabled" type="xsd:boolean" />
+          <xsd:element name="IsRoaming" type="xsd:boolean" />
+          <xsd:element name="HotspotEnabled" type="xsd:boolean" />
+          <xsd:element name="SubscriberMCC" type="xsd:string" />
+          <xsd:element name="CurrentMCC" type="xsd:string" />
+          <xsd:element name="SubscriberMNC" type="xsd:string" />
+          <xsd:element name="CurrentMNC" type="xsd:string" />
+          <xsd:element minOccurs="0" name="CountryCode" type="xsd:string" />
+          <xsd:element name="HardwareEncryptionCapabilities" type="xsd:int" />
+          <xsd:element name="PasscodePresent" type="xsd:boolean" />
+          <xsd:element name="PasscodeCompliant" type="xsd:boolean" />
+          <xsd:element name="PasscodeCompliantWithProfiles" type="xsd:boolean" />
+          <xsd:element name="IsEmailAutoConfigured" type="xsd:boolean" />
+          <xsd:element minOccurs="0" name="ActiveSyncDeviceId" type="xsd:string" />
+          <xsd:element minOccurs="0" name="LastASSync" type="xsd:dateTime" />
+          <xsd:element minOccurs="0" name="ActiveSyncVersion" type="xsd:string" />
+          <xsd:element minOccurs="0" name="ActiveSyncServerName" type="xsd:string" />
+          <xsd:element minOccurs="0" name="UserAgent" type="xsd:string" />
+          <xsd:element name="NeedProvision" type="xsd:boolean" />
+          <xsd:element name="NeedFolderSync" type="xsd:boolean" />
+          <xsd:element minOccurs="0" name="InboxServerId" type="xsd:string" />
+          <xsd:element name="NetworkSignalStrength" type="xsd:int" />
+          <xsd:element minOccurs="0" name="TimeZoneDisplayName" type="xsd:string" />
+          <xsd:element minOccurs="0" name="LastBoot" type="xsd:dateTime" />
+          <xsd:element name="BatteryLevel" type="xsd:float" />
+          <xsd:element name="PlugedIn" type="xsd:boolean" />
+          <xsd:element name="InternalStorageCapacity" type="xsd:float" />
+          <xsd:element name="InternalStorageFree" type="xsd:float" />
+          <xsd:element name="InternalStorageAvailable" type="xsd:float" />
+          <xsd:element name="ExternalStorageCapacity" type="xsd:float" />
+          <xsd:element name="ExternalStorageFree" type="xsd:float" />
+          <xsd:element name="ExternalStorageAvailable" type="xsd:float" />
+          <xsd:element name="DeviceEncrypted" type="xsd:boolean" />
+          <xsd:element name="DeviceAdministratorEnabled" type="xsd:boolean" />
+          <xsd:element name="DeviceRooted" type="xsd:short" />
+          <xsd:element minOccurs="0" name="BuildNumber" type="xsd:string" />
+          <xsd:element minOccurs="0" name="KernelVersion" type="xsd:string" />
+          <xsd:element minOccurs="0" name="LastAPNSync" type="xsd:dateTime" />
+          <xsd:element minOccurs="0" name="IsSupervised" type="xsd:boolean" />
+          <xsd:element minOccurs="0" name="IsDeviceLocatorServiceEnabled" type="xsd:boolean" />
+          <xsd:element minOccurs="0" name="IsActivationLockEnabled" type="xsd:boolean" />
+          <xsd:element minOccurs="0" name="IsDoNotDisturbInEffect" type="xsd:boolean" />
+          <xsd:element minOccurs="0" name="IsCloudBackupEnabled" type="xsd:boolean" />
+          <xsd:element minOccurs="0" name="IsiTunesAccActive" type="xsd:boolean" />
+          <xsd:element minOccurs="0" name="ITunesAccHash" type="xsd:string" />
+          <xsd:element minOccurs="0" name="PushMagic" type="xsd:string" />
+          <xsd:element minOccurs="0" name="UnlockToken" type="xsd:string" />
+          <xsd:element minOccurs="0" name="IdToken" type="xsd:string" />
+          <xsd:element name="BypassCache" type="xsd:boolean" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+</xsd:schema>

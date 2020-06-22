@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema xmlns:objects="http://novell.com/zenworks/datamodel/objects" xmlns:folders="http://novell.com/zenworks/datamodel/objects/folders" xmlns="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://novell.com/zenworks/datamodel/objects/folders" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:import schemaLocation="core-objects.xsd" namespace="http://novell.com/zenworks/datamodel/objects" />
+  <xsd:element name="Folder" type="folders:Folder" />
+  <xsd:complexType name="Folder">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="objects:ZENObject">
+        <xsd:sequence>
+          <xsd:any minOccurs="0" maxOccurs="unbounded" namespace="##targetNamespace" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+</xsd:schema>

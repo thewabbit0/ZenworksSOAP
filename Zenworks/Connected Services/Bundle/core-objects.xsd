@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema xmlns:objects="http://novell.com/zenworks/datamodel/objects" xmlns="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://novell.com/zenworks/datamodel/objects" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:element name="ZENObject" type="objects:ZENObject" />
+  <xsd:complexType name="ZENObject">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="UID" type="xsd:string" />
+      <xsd:element minOccurs="0" name="Name" type="xsd:string" />
+      <xsd:element minOccurs="0" name="InternalName" type="xsd:string" />
+      <xsd:element minOccurs="0" name="ParentUID" type="xsd:string" />
+      <xsd:element minOccurs="0" name="Path" type="xsd:string" />
+      <xsd:element minOccurs="0" name="InternalPath" type="xsd:string" />
+      <xsd:element minOccurs="0" name="AdminID" type="xsd:string" />
+      <xsd:element minOccurs="0" name="Description" type="xsd:string" />
+      <xsd:element minOccurs="0" name="PrimaryType" type="xsd:string" />
+      <xsd:element minOccurs="0" name="SubType" type="xsd:string" />
+      <xsd:element name="GeneralType" type="xsd:short" />
+      <xsd:element name="Deletable" type="xsd:boolean" />
+      <xsd:element minOccurs="0" name="Undeletable" type="xsd:boolean" />
+      <xsd:element name="ErrorWarningStatus" type="xsd:int" />
+      <xsd:element name="ComplianceStatus" type="xsd:int" />
+      <xsd:any minOccurs="0" maxOccurs="unbounded" namespace="##targetNamespace" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="Token" type="objects:Token" />
+  <xsd:complexType name="Token">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="UID" type="xsd:string" />
+      <xsd:element name="Count" type="xsd:int" />
+      <xsd:element name="CountComplete" type="xsd:boolean" />
+      <xsd:element name="Ordered" type="xsd:boolean" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="Any" type="objects:Any" />
+  <xsd:complexType name="Any">
+    <xsd:sequence>
+      <xsd:any minOccurs="1" maxOccurs="1" namespace="##any" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="BasicObject" type="objects:BasicObject" />
+  <xsd:complexType name="BasicObject">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="UID" type="xsd:string" />
+      <xsd:element minOccurs="0" name="Name" type="xsd:string" />
+      <xsd:element minOccurs="0" name="InternalName" type="xsd:string" />
+      <xsd:element minOccurs="0" name="ParentUID" type="xsd:string" />
+      <xsd:element minOccurs="0" name="Path" type="xsd:string" />
+      <xsd:element minOccurs="0" name="InternalPath" type="xsd:string" />
+      <xsd:element minOccurs="0" name="PrimaryType" type="xsd:string" />
+      <xsd:element minOccurs="0" name="SubType" type="xsd:string" />
+      <xsd:any minOccurs="0" maxOccurs="unbounded" namespace="##targetNamespace" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="DatabaseAddressInformation" type="objects:DatabaseAddressInformation" />
+  <xsd:complexType name="DatabaseAddressInformation">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="PrimaryAddress" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="unbounded" name="AlternateAddresses" type="xsd:string" />
+      <xsd:element name="Port" type="xsd:int" />
+      <xsd:any minOccurs="0" maxOccurs="unbounded" namespace="##targetNamespace" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="Filter" type="objects:Filter" />
+  <xsd:complexType name="Filter">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="Id" type="xsd:string" />
+      <xsd:element name="Not" type="xsd:boolean" />
+      <xsd:element minOccurs="0" name="Member" type="xsd:string" />
+      <xsd:element minOccurs="0" name="TypeString" type="xsd:string" />
+      <xsd:element minOccurs="0" name="OperatorString" type="xsd:string" />
+      <xsd:element minOccurs="0" name="MagnitudeString" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="unbounded" name="Values" type="xsd:anyType" />
+      <xsd:any minOccurs="0" maxOccurs="unbounded" namespace="##targetNamespace" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="FilterSet" type="objects:FilterSet" />
+  <xsd:complexType name="FilterSet">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="Id" type="xsd:string" />
+      <xsd:element minOccurs="0" name="Name" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="unbounded" name="Filters" type="objects:Filter" />
+      <xsd:any minOccurs="0" maxOccurs="unbounded" namespace="##targetNamespace" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="FilterSetList" type="objects:FilterSetList" />
+  <xsd:complexType name="FilterSetList">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="Id" type="xsd:string" />
+      <xsd:element minOccurs="0" name="ConjunctionString" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="unbounded" name="FilterSets" type="objects:FilterSet" />
+      <xsd:any minOccurs="0" maxOccurs="unbounded" namespace="##targetNamespace" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="Rights" type="objects:Rights" />
+  <xsd:complexType name="Rights">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="key" type="xsd:string" />
+      <xsd:element minOccurs="0" name="localizedName" type="xsd:string" />
+      <xsd:element minOccurs="0" name="localizedShortName" type="xsd:string" />
+      <xsd:element minOccurs="0" name="objectUID" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="unbounded" name="rightsItems" type="objects:RightsItem" />
+      <xsd:any minOccurs="0" maxOccurs="unbounded" namespace="##targetNamespace" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="RightsCategory" type="objects:RightsCategory" />
+  <xsd:complexType name="RightsCategory">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="key" type="xsd:string" />
+      <xsd:element minOccurs="0" name="localizedName" type="xsd:string" />
+      <xsd:element minOccurs="0" name="localizedShortName" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="unbounded" name="paths" type="objects:RightsCategoryPath" />
+      <xsd:element minOccurs="0" maxOccurs="unbounded" name="categoryItems" type="objects:RightsCategoryItem" />
+      <xsd:any minOccurs="0" maxOccurs="unbounded" namespace="##targetNamespace" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="RightsCategoryItem" type="objects:RightsCategoryItem" />
+  <xsd:complexType name="RightsCategoryItem">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="key" type="xsd:string" />
+      <xsd:element minOccurs="0" name="localizedName" type="xsd:string" />
+      <xsd:element minOccurs="0" name="localizedShortName" type="xsd:string" />
+      <xsd:element minOccurs="0" name="defaultValue" type="xsd:boolean" />
+      <xsd:element minOccurs="0" maxOccurs="unbounded" name="dependencies" type="xsd:string" />
+      <xsd:any minOccurs="0" maxOccurs="unbounded" namespace="##targetNamespace" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="RightsCategoryPath" type="objects:RightsCategoryPath" />
+  <xsd:complexType name="RightsCategoryPath">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="path" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="unbounded" name="validObjectTypes" type="xsd:string" />
+      <xsd:any minOccurs="0" maxOccurs="unbounded" namespace="##targetNamespace" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="RightsItem" type="objects:RightsItem" />
+  <xsd:complexType name="RightsItem">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="key" type="xsd:string" />
+      <xsd:element minOccurs="0" name="localizedName" type="xsd:string" />
+      <xsd:element minOccurs="0" name="localizedShortName" type="xsd:string" />
+      <xsd:element minOccurs="0" name="value" type="xsd:boolean" />
+      <xsd:element minOccurs="0" maxOccurs="unbounded" name="dependencies" type="xsd:string" />
+      <xsd:any minOccurs="0" maxOccurs="unbounded" namespace="##targetNamespace" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="SearchField" type="objects:SearchField" />
+  <xsd:complexType name="SearchField">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="Name" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="unbounded" name="Values" type="xsd:anyType" />
+      <xsd:any minOccurs="0" maxOccurs="unbounded" namespace="##targetNamespace" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="SearchOptions" type="objects:SearchOptions" />
+  <xsd:complexType name="SearchOptions">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="NameFilter" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="unbounded" name="TypeFilter" type="xsd:string" />
+      <xsd:element name="Recursive" type="xsd:boolean" />
+      <xsd:element minOccurs="0" maxOccurs="unbounded" name="ReturnFields" type="xsd:string" />
+      <xsd:element minOccurs="0" name="Filter" type="objects:FilterSetList" />
+      <xsd:element minOccurs="0" name="SortOptions" type="objects:SortOptions" />
+      <xsd:any minOccurs="0" maxOccurs="unbounded" namespace="##targetNamespace" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="SearchResult" type="objects:SearchResult" />
+  <xsd:complexType name="SearchResult">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="UID" type="xsd:string" />
+      <xsd:element minOccurs="0" name="Name" type="xsd:string" />
+      <xsd:element minOccurs="0" name="InternalName" type="xsd:string" />
+      <xsd:element minOccurs="0" name="Path" type="xsd:string" />
+      <xsd:element minOccurs="0" name="InternalPath" type="xsd:string" />
+      <xsd:element minOccurs="0" name="PrimaryType" type="xsd:string" />
+      <xsd:element minOccurs="0" name="SubType" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="unbounded" name="Fields" type="objects:SearchField" />
+      <xsd:any minOccurs="0" maxOccurs="unbounded" namespace="##targetNamespace" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="SearchToken" type="objects:SearchToken" />
+  <xsd:complexType name="SearchToken">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="objects:Token">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="AdminID" type="xsd:string" />
+          <xsd:any minOccurs="0" maxOccurs="unbounded" namespace="##targetNamespace" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="SortOptions" type="objects:SortOptions" />
+  <xsd:complexType name="SortOptions">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" maxOccurs="unbounded" name="FieldNames" type="xsd:string" />
+      <xsd:element name="Options" type="xsd:int" />
+      <xsd:any minOccurs="0" maxOccurs="unbounded" namespace="##targetNamespace" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="StringPair" type="objects:StringPair" />
+  <xsd:complexType name="StringPair">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="Key" type="xsd:string" />
+      <xsd:element minOccurs="0" name="Value" type="xsd:string" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="Subquery" type="objects:Subquery" />
+  <xsd:complexType name="Subquery">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="PrimaryObject" type="xsd:string" />
+      <xsd:element minOccurs="0" name="ReturnAttribute" type="xsd:string" />
+      <xsd:element minOccurs="0" name="Filter" type="objects:FilterSetList" />
+      <xsd:any minOccurs="0" maxOccurs="unbounded" namespace="##targetNamespace" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="DataModelCacheData" type="objects:DataModelCacheData" />
+  <xsd:complexType name="DataModelCacheData">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="CacheName" type="xsd:string" />
+      <xsd:element minOccurs="0" name="CacheKey" type="xsd:string" />
+      <xsd:any minOccurs="0" maxOccurs="unbounded" namespace="##targetNamespace" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="DataModelCacheClean" type="objects:DataModelCacheClean" />
+  <xsd:complexType name="DataModelCacheClean">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" maxOccurs="unbounded" name="CacheData" type="objects:DataModelCacheData" />
+      <xsd:any minOccurs="0" maxOccurs="unbounded" namespace="##targetNamespace" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="ExcludedDMVersion" type="objects:ExcludedDMVersion" />
+  <xsd:complexType name="ExcludedDMVersion">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="UID" type="xsd:string" />
+      <xsd:element minOccurs="0" name="version" type="xsd:string" />
+      <xsd:any minOccurs="0" maxOccurs="unbounded" namespace="##targetNamespace" />
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>

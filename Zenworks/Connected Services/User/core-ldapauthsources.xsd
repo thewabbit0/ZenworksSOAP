@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema xmlns:ldapauthsources="http://novell.com/zenworks/datamodel/objects/authsources/ldap" xmlns:authsources="http://novell.com/zenworks/datamodel/objects/authsources" xmlns="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://novell.com/zenworks/datamodel/objects/authsources/ldap" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:import schemaLocation="core-authsources.xsd" namespace="http://novell.com/zenworks/datamodel/objects/authsources" />
+  <xsd:element name="LDAPAuthoritativeSource" type="ldapauthsources:LDAPAuthoritativeSource" />
+  <xsd:complexType name="LDAPAuthoritativeSource">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="authsources:AuthoritativeSource">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="RootContext" type="xsd:string" />
+          <xsd:element minOccurs="0" name="User" type="xsd:string" />
+          <xsd:element minOccurs="0" name="Password" type="xsd:string" />
+          <xsd:element name="IgnoreDynamicGroups" type="xsd:boolean" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="ServerConnectionArray" type="ldapauthsources:ServerConnection" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="UserContextArray" type="ldapauthsources:UserContext" />
+          <xsd:any minOccurs="0" maxOccurs="unbounded" namespace="##targetNamespace" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="UserContext" type="ldapauthsources:UserContext" />
+  <xsd:complexType name="UserContext">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="Id" type="xsd:string" />
+      <xsd:element minOccurs="0" name="Name" type="xsd:string" />
+      <xsd:element minOccurs="0" name="GUID" type="xsd:string" />
+      <xsd:any minOccurs="0" maxOccurs="unbounded" namespace="##targetNamespace" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="ServerConnection" type="ldapauthsources:ServerConnection" />
+  <xsd:complexType name="ServerConnection">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="Id" type="xsd:string" />
+      <xsd:element minOccurs="0" name="Name" type="xsd:string" />
+      <xsd:element minOccurs="0" name="IpAddress" type="xsd:string" />
+      <xsd:element name="UseSSL" type="xsd:boolean" />
+      <xsd:element name="SSLPort" type="xsd:int" />
+      <xsd:element name="ClearTextPort" type="xsd:int" />
+      <xsd:element name="AutoAccept" type="xsd:boolean" />
+      <xsd:element minOccurs="0" name="CertificateBytes" type="xsd:base64Binary" />
+      <xsd:element minOccurs="0" name="LdapSource" type="xsd:string" />
+      <xsd:element name="Position" type="xsd:int" />
+      <xsd:any minOccurs="0" maxOccurs="unbounded" namespace="##targetNamespace" />
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>

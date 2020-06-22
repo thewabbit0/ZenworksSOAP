@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema xmlns:assignablecontent="http://novell.com/zenworks/datamodel/objects/assignablecontent" xmlns:objects="http://novell.com/zenworks/datamodel/objects" xmlns="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://novell.com/zenworks/datamodel/objects/assignablecontent" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:import schemaLocation="core-objects.xsd" namespace="http://novell.com/zenworks/datamodel/objects" />
+  <xsd:element name="AssignableContentObject" type="assignablecontent:AssignableContentObject" />
+  <xsd:complexType name="AssignableContentObject">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="objects:ZENObject">
+        <xsd:sequence>
+          <xsd:element name="IsEnabled" type="xsd:boolean" />
+          <xsd:element name="Version" type="xsd:int" />
+          <xsd:element name="Revision" type="xsd:int" />
+          <xsd:element name="ContentInfoVer" type="xsd:int" />
+          <xsd:element name="ContentPriority" type="xsd:int" />
+          <xsd:element name="NextRevision" type="xsd:int" />
+          <xsd:element minOccurs="0" name="SysReqs" type="objects:Any" />
+          <xsd:element name="Replication" type="xsd:int" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="ContentServers" type="xsd:string" />
+          <xsd:element minOccurs="0" name="Platform" type="xsd:string" />
+          <xsd:element name="Sandbox" type="xsd:boolean" />
+          <xsd:element minOccurs="0" name="SandboxUID" type="xsd:string" />
+          <xsd:element minOccurs="0" name="ReleaseUID" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="LinkedObjects" type="assignablecontent:LinkedObject" />
+          <xsd:element minOccurs="0" name="SatelliteRep" type="xsd:int" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="SatelliteServers" type="xsd:string" />
+          <xsd:element minOccurs="0" name="Inheritance" type="xsd:int" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="ContentTypeTags" type="xsd:string" />
+          <xsd:any minOccurs="0" maxOccurs="unbounded" namespace="##targetNamespace" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="LinkedObject" type="assignablecontent:LinkedObject" />
+  <xsd:complexType name="LinkedObject">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="id" type="xsd:string" />
+      <xsd:element name="Transient" type="xsd:boolean" />
+      <xsd:element minOccurs="0" maxOccurs="unbounded" name="ActionTypes" type="xsd:string" />
+      <xsd:element name="ActionLink" type="xsd:boolean" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="LinkedContent" type="assignablecontent:LinkedContent" />
+  <xsd:complexType name="LinkedContent">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="assignablecontent:LinkedObject">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="ContentUID" type="xsd:string" />
+          <xsd:any minOccurs="0" maxOccurs="unbounded" namespace="##targetNamespace" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="LinkedCredential" type="assignablecontent:LinkedCredential" />
+  <xsd:complexType name="LinkedCredential">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="assignablecontent:LinkedObject">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="CredentialUID" type="xsd:string" />
+          <xsd:any minOccurs="0" maxOccurs="unbounded" namespace="##targetNamespace" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="LinkedDependency" type="assignablecontent:LinkedDependency" />
+  <xsd:complexType name="LinkedDependency">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="assignablecontent:LinkedObject">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="ObjectUID" type="xsd:string" />
+          <xsd:any minOccurs="0" maxOccurs="unbounded" namespace="##targetNamespace" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="SandBoxObjectInfo" type="assignablecontent:SandBoxObjectInfo" />
+  <xsd:complexType name="SandBoxObjectInfo">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="uid" type="xsd:string" />
+      <xsd:element minOccurs="0" name="ReleaseObjUID" type="xsd:string" />
+      <xsd:element minOccurs="0" name="SandBoxVersion" type="xsd:int" />
+      <xsd:any minOccurs="0" maxOccurs="unbounded" namespace="##targetNamespace" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="ACOActionSetVersionInfo" type="assignablecontent:ACOActionSetVersionInfo" />
+  <xsd:complexType name="ACOActionSetVersionInfo">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="uid" type="xsd:string" />
+      <xsd:element minOccurs="0" name="ReleaseObjUID" type="xsd:string" />
+      <xsd:element minOccurs="0" name="ActionSetName" type="xsd:string" />
+      <xsd:element minOccurs="0" name="Version" type="xsd:int" />
+      <xsd:any minOccurs="0" maxOccurs="unbounded" namespace="##targetNamespace" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="AssignableContentObjectInfo" type="assignablecontent:AssignableContentObjectInfo" />
+  <xsd:complexType name="AssignableContentObjectInfo">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="UID" type="xsd:string" />
+      <xsd:element minOccurs="0" name="ReleaseUID" type="xsd:string" />
+      <xsd:element minOccurs="0" name="Name" type="xsd:string" />
+      <xsd:element minOccurs="0" name="InternalName" type="xsd:string" />
+      <xsd:element minOccurs="0" name="Path" type="xsd:string" />
+      <xsd:element name="Version" type="xsd:int" />
+      <xsd:any minOccurs="0" maxOccurs="unbounded" namespace="##targetNamespace" />
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>

@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema xmlns:assignments="http://novell.com/zenworks/datamodel/objects/assignments" xmlns:objects="http://novell.com/zenworks/datamodel/objects" xmlns="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://novell.com/zenworks/datamodel/objects/assignments" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:import schemaLocation="core-objects.xsd" namespace="http://novell.com/zenworks/datamodel/objects" />
+  <xsd:element name="Assignment" type="assignments:Assignment" />
+  <xsd:complexType name="Assignment">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="UID" type="xsd:string" />
+      <xsd:element minOccurs="0" name="Type" type="xsd:string" />
+      <xsd:element name="Position" type="xsd:int" />
+      <xsd:element name="PositionModified" type="xsd:boolean" />
+      <xsd:element minOccurs="0" name="ConsumerUID" type="xsd:string" />
+      <xsd:element minOccurs="0" name="ContentUID" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="unbounded" name="ExtraData" type="assignments:ExtraAssignmentData" />
+      <xsd:any minOccurs="0" maxOccurs="unbounded" namespace="##targetNamespace" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="AssignmentToken" type="assignments:AssignmentToken" />
+  <xsd:complexType name="AssignmentToken">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="objects:Token">
+        <xsd:sequence>
+          <xsd:any minOccurs="0" maxOccurs="unbounded" namespace="##targetNamespace" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="AssignmentTypeInformation" type="assignments:AssignmentTypeInformation" />
+  <xsd:complexType name="AssignmentTypeInformation">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="ConsumerAdminID" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="unbounded" name="ConsumerTypes" type="xsd:string" />
+      <xsd:element minOccurs="0" name="ContentAdminID" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="unbounded" name="ContentTypes" type="xsd:string" />
+      <xsd:any minOccurs="0" maxOccurs="unbounded" namespace="##targetNamespace" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="BlockedAssignment" type="assignments:BlockedAssignment" />
+  <xsd:complexType name="BlockedAssignment">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="Id" type="xsd:string" />
+      <xsd:element minOccurs="0" name="ConsumerUID" type="xsd:string" />
+      <xsd:element minOccurs="0" name="ContentUID" type="xsd:string" />
+      <xsd:element minOccurs="0" name="AssignmentUID" type="xsd:string" />
+      <xsd:any minOccurs="0" maxOccurs="unbounded" namespace="##targetNamespace" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="ExtraAssignmentData" type="assignments:ExtraAssignmentData" />
+  <xsd:complexType name="ExtraAssignmentData">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="Id" type="xsd:string" />
+      <xsd:element minOccurs="0" name="Name" type="xsd:string" />
+      <xsd:element minOccurs="0" name="Type" type="xsd:string" />
+      <xsd:element minOccurs="0" name="Value" type="xsd:string" />
+      <xsd:any minOccurs="0" maxOccurs="unbounded" namespace="##targetNamespace" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="AssignmentFailure" type="assignments:AssignmentFailure" />
+  <xsd:complexType name="AssignmentFailure">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="AssignmentObject" type="assignments:Assignment" />
+      <xsd:element minOccurs="0" name="ErrorMessage" type="xsd:string" />
+      <xsd:any minOccurs="0" maxOccurs="unbounded" namespace="##targetNamespace" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="AssignmentResult" type="assignments:AssignmentResult" />
+  <xsd:complexType name="AssignmentResult">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" maxOccurs="unbounded" name="AssignmentsAdded" type="assignments:Assignment" />
+      <xsd:element minOccurs="0" maxOccurs="unbounded" name="AssignmentsRemoved" type="assignments:Assignment" />
+      <xsd:element minOccurs="0" maxOccurs="unbounded" name="AssignmentsFailed" type="assignments:AssignmentFailure" />
+      <xsd:any minOccurs="0" maxOccurs="unbounded" namespace="##targetNamespace" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="AssignmentInfoFilter" type="assignments:AssignmentInfoFilter" />
+  <xsd:complexType name="AssignmentInfoFilter">
+    <xsd:sequence>
+      <xsd:element name="StartingIndex" type="xsd:int" />
+      <xsd:element minOccurs="0" maxOccurs="unbounded" name="TargetTypes" type="xsd:string" />
+      <xsd:element minOccurs="0" name="TargetName" type="xsd:string" />
+      <xsd:element minOccurs="0" name="ObjectUID" type="xsd:string" />
+      <xsd:element name="ConsumerCategory" type="xsd:int" />
+      <xsd:element name="PageSize" type="xsd:int" />
+      <xsd:element minOccurs="0" name="SortOrder" type="xsd:string" />
+      <xsd:element name="TotalSize" type="xsd:int" />
+      <xsd:element name="Version" type="xsd:int" />
+      <xsd:element name="ConsolidatedStatus" type="xsd:boolean" />
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>

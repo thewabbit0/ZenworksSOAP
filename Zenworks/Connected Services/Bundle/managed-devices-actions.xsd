@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema xmlns:assignablecontent="http://novell.com/zenworks/datamodel/objects/assignablecontent" xmlns:actions="http://novell.com/zenworks/datamodel/objects/actions" xmlns:objects="http://novell.com/zenworks/datamodel/objects" xmlns="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://novell.com/zenworks/datamodel/objects/actions" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:import schemaLocation="core-objects.xsd" namespace="http://novell.com/zenworks/datamodel/objects" />
+  <xsd:import schemaLocation="core-addons-assignablecontent.xsd" namespace="http://novell.com/zenworks/datamodel/objects/assignablecontent" />
+  <xsd:element name="Action" type="actions:Action" />
+  <xsd:complexType name="Action">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="Id" type="xsd:string" />
+      <xsd:element minOccurs="0" name="Name" type="xsd:string" />
+      <xsd:element minOccurs="0" name="Type" type="xsd:string" />
+      <xsd:element minOccurs="0" name="Data" type="objects:Any" />
+      <xsd:element minOccurs="0" maxOccurs="unbounded" name="LinkedObjectIDs" type="xsd:string" />
+      <xsd:element name="ContinueOnFailure" type="xsd:boolean" />
+      <xsd:element name="Enabled" type="xsd:boolean" />
+      <xsd:element minOccurs="0" name="Properties" type="xsd:string" />
+      <xsd:element minOccurs="0" name="SysReqs" type="objects:Any" />
+      <xsd:element minOccurs="0" name="reqsFailAction" type="xsd:integer" />
+      <xsd:element minOccurs="0" name="actionUniqueId" type="xsd:string" />
+      <xsd:any minOccurs="0" maxOccurs="unbounded" namespace="##targetNamespace" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="ActionDefinition" type="actions:ActionDefinition" />
+  <xsd:complexType name="ActionDefinition">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="ActionType" type="xsd:string" />
+      <xsd:element minOccurs="0" name="ActionHandler" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="unbounded" name="Platforms" type="xsd:string" />
+      <xsd:element name="AllActionSets" type="xsd:boolean" />
+      <xsd:element name="CanUndo" type="xsd:boolean" />
+      <xsd:element minOccurs="0" name="Properties" type="xsd:string" />
+      <xsd:any minOccurs="0" maxOccurs="unbounded" namespace="##targetNamespace" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="ActionSet" type="actions:ActionSet" />
+  <xsd:complexType name="ActionSet">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="Id" type="xsd:string" />
+      <xsd:element minOccurs="0" name="Type" type="xsd:string" />
+      <xsd:element minOccurs="0" name="Version" type="xsd:long" />
+      <xsd:element minOccurs="0" name="Modified" type="xsd:boolean" />
+      <xsd:element minOccurs="0" name="Data" type="objects:Any" />
+      <xsd:element minOccurs="0" maxOccurs="unbounded" name="Actions" type="actions:Action" />
+      <xsd:any minOccurs="0" maxOccurs="unbounded" namespace="##targetNamespace" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="ActionSetActionTie" type="actions:ActionSetActionTie" />
+  <xsd:complexType name="ActionSetActionTie">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="Id" type="xsd:string" />
+      <xsd:element name="CreateByDefault" type="xsd:boolean" />
+      <xsd:element minOccurs="0" name="ActionSetObject" type="xsd:string" />
+      <xsd:element minOccurs="0" name="ActionSet" type="xsd:string" />
+      <xsd:element minOccurs="0" name="Action" type="xsd:string" />
+      <xsd:any minOccurs="0" maxOccurs="unbounded" namespace="##targetNamespace" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="ActionSetDefinition" type="actions:ActionSetDefinition" />
+  <xsd:complexType name="ActionSetDefinition">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="Type" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="unbounded" name="AllowedActionArray" type="actions:ActionSetActionTie" />
+      <xsd:any minOccurs="0" maxOccurs="unbounded" namespace="##targetNamespace" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="ActionSetObject" type="actions:ActionSetObject" />
+  <xsd:complexType name="ActionSetObject">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="assignablecontent:AssignableContentObject">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="ActionSets" type="actions:ActionSet" />
+          <xsd:any minOccurs="0" maxOccurs="unbounded" namespace="##targetNamespace" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="ActionSetObjectDefinition" type="actions:ActionSetObjectDefinition" />
+  <xsd:complexType name="ActionSetObjectDefinition">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="Type" type="xsd:string" />
+      <xsd:element name="AppliesToManagedAgent" type="xsd:boolean" />
+      <xsd:element minOccurs="0" maxOccurs="unbounded" name="AssociableTypes" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="unbounded" name="ExcludedAssociableTypes" type="xsd:string" />
+      <xsd:element name="AllowSystemRequirements" type="xsd:boolean" />
+      <xsd:element minOccurs="0" maxOccurs="unbounded" name="Platforms" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="unbounded" name="Operations" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="unbounded" name="RequiredOperations" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="unbounded" name="HiddenOperations" type="xsd:string" />
+      <xsd:element minOccurs="0" name="DefaultContentType" type="xsd:string" />
+      <xsd:element minOccurs="0" name="Properties" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="unbounded" name="AllowedActionArray" type="actions:ActionSetActionTie" />
+      <xsd:any minOccurs="0" maxOccurs="unbounded" namespace="##targetNamespace" />
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>

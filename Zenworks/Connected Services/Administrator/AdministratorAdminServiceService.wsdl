@@ -1,0 +1,2233 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:administrators="http://novell.com/zenworks/datamodel/objects/administrators" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://novell.com/zenworks/datamodel/services/administrators/soap" xmlns:objects="http://novell.com/zenworks/datamodel/objects" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:exceptions="http://novell.com/zenworks/datamodel/exceptions" xmlns:folders="http://novell.com/zenworks/datamodel/objects/folders" name="AdministratorAdminServiceService" targetNamespace="http://novell.com/zenworks/datamodel/services/administrators/soap" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema xmlns="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://novell.com/zenworks/datamodel/services/administrators/soap">
+      <xsd:import schemaLocation="exceptions.xsd" namespace="http://novell.com/zenworks/datamodel/exceptions" />
+      <xsd:import schemaLocation="core-folders.xsd" namespace="http://novell.com/zenworks/datamodel/objects/folders" />
+      <xsd:import schemaLocation="core-objects.xsd" namespace="http://novell.com/zenworks/datamodel/objects" />
+      <xsd:import schemaLocation="core-administrators.xsd" namespace="http://novell.com/zenworks/datamodel/objects/administrators" />
+      <xsd:element name="adminWasNaggedRequest" type="tns:adminWasNaggedRequest" />
+      <xsd:complexType name="adminWasNaggedRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="uid" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="adminWasNaggedResponse" type="tns:adminWasNaggedResponse" />
+      <xsd:complexType name="adminWasNaggedResponse">
+        <xsd:sequence>
+          <xsd:element name="return" type="xsd:boolean" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="assignAdminRightsRequest" type="tns:assignAdminRightsRequest" />
+      <xsd:complexType name="assignAdminRightsRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="adminUID" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="rights" type="objects:Rights" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="assignAdminRightsResponse" type="tns:assignAdminRightsResponse" />
+      <xsd:complexType name="assignAdminRightsResponse">
+        <xsd:sequence>
+          <xsd:element name="return" type="xsd:boolean" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="assignRoleRequest" type="tns:assignRoleRequest" />
+      <xsd:complexType name="assignRoleRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="adminUID" type="xsd:string" />
+          <xsd:element minOccurs="0" name="roleUID" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="assignRoleResponse" type="tns:assignRoleResponse" />
+      <xsd:complexType name="assignRoleResponse">
+        <xsd:sequence>
+          <xsd:element name="return" type="xsd:boolean" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="assignRoleRightsRequest" type="tns:assignRoleRightsRequest" />
+      <xsd:complexType name="assignRoleRightsRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="roleUID" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="rights" type="objects:Rights" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="assignRoleRightsResponse" type="tns:assignRoleRightsResponse" />
+      <xsd:complexType name="assignRoleRightsResponse">
+        <xsd:sequence>
+          <xsd:element name="return" type="xsd:boolean" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="clearAdminRightsRequest" type="tns:clearAdminRightsRequest" />
+      <xsd:complexType name="clearAdminRightsRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="adminUID" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="rights" type="objects:Rights" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="clearAdminRightsResponse" type="tns:clearAdminRightsResponse" />
+      <xsd:complexType name="clearAdminRightsResponse">
+        <xsd:sequence>
+          <xsd:element name="return" type="xsd:boolean" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="clearRoleRightsRequest" type="tns:clearRoleRightsRequest" />
+      <xsd:complexType name="clearRoleRightsRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="roleUID" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="rights" type="objects:Rights" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="clearRoleRightsResponse" type="tns:clearRoleRightsResponse" />
+      <xsd:complexType name="clearRoleRightsResponse">
+        <xsd:sequence>
+          <xsd:element name="return" type="xsd:boolean" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="cloneRequest" type="tns:cloneRequest" />
+      <xsd:complexType name="cloneRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="obj" type="objects:ZENObject" />
+          <xsd:element minOccurs="0" name="newName" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="cloneResponse" type="tns:cloneResponse" />
+      <xsd:complexType name="cloneResponse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="return" type="objects:ZENObject" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="createRequest" type="tns:createRequest" />
+      <xsd:complexType name="createRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="object" type="objects:ZENObject" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="createResponse" type="tns:createResponse" />
+      <xsd:complexType name="createResponse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="return" type="objects:ZENObject" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="createAdministratorRequest" type="tns:createAdministratorRequest" />
+      <xsd:complexType name="createAdministratorRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="name" type="xsd:string" />
+          <xsd:element minOccurs="0" name="fullName" type="xsd:string" />
+          <xsd:element minOccurs="0" name="password" type="xsd:string" />
+          <xsd:element name="sameRightsAsMe" type="xsd:boolean" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="createAdministratorResponse" type="tns:createAdministratorResponse" />
+      <xsd:complexType name="createAdministratorResponse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="return" type="administrators:Administrator" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="deleteRequest" type="tns:deleteRequest" />
+      <xsd:complexType name="deleteRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="uid" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="deleteResponse" type="tns:deleteResponse" />
+      <xsd:complexType name="deleteResponse">
+        <xsd:sequence>
+          <xsd:element name="return" type="xsd:boolean" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="deleteRecursiveRequest" type="tns:deleteRecursiveRequest" />
+      <xsd:complexType name="deleteRecursiveRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="uid" type="xsd:string" />
+          <xsd:element name="recursive" type="xsd:boolean" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="deleteRecursiveResponse" type="tns:deleteRecursiveResponse" />
+      <xsd:complexType name="deleteRecursiveResponse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="return" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="existsByParentAndNameRequest" type="tns:existsByParentAndNameRequest" />
+      <xsd:complexType name="existsByParentAndNameRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="parentUID" type="xsd:string" />
+          <xsd:element minOccurs="0" name="name" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="existsByParentAndNameResponse" type="tns:existsByParentAndNameResponse" />
+      <xsd:complexType name="existsByParentAndNameResponse">
+        <xsd:sequence>
+          <xsd:element name="return" type="xsd:boolean" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="existsByUIDRequest" type="tns:existsByUIDRequest" />
+      <xsd:complexType name="existsByUIDRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="uid" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="existsByUIDResponse" type="tns:existsByUIDResponse" />
+      <xsd:complexType name="existsByUIDResponse">
+        <xsd:sequence>
+          <xsd:element name="return" type="xsd:boolean" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getAdminRightsRequest" type="tns:getAdminRightsRequest" />
+      <xsd:complexType name="getAdminRightsRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="adminUID" type="xsd:string" />
+          <xsd:element minOccurs="0" name="category" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getAdminRightsResponse" type="tns:getAdminRightsResponse" />
+      <xsd:complexType name="getAdminRightsResponse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="return" type="objects:Rights" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getAdminRightsAtOrBelowRequest" type="tns:getAdminRightsAtOrBelowRequest" />
+      <xsd:complexType name="getAdminRightsAtOrBelowRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="adminUID" type="xsd:string" />
+          <xsd:element minOccurs="0" name="contextUID" type="xsd:string" />
+          <xsd:element minOccurs="0" name="category" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getAdminRightsAtOrBelowResponse" type="tns:getAdminRightsAtOrBelowResponse" />
+      <xsd:complexType name="getAdminRightsAtOrBelowResponse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="return" type="objects:Rights" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getAdministratorLoginNameRequest" type="tns:getAdministratorLoginNameRequest" />
+      <xsd:complexType name="getAdministratorLoginNameRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="uid" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getAdministratorLoginNameResponse" type="tns:getAdministratorLoginNameResponse" />
+      <xsd:complexType name="getAdministratorLoginNameResponse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="return" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getAdministratorSettingsRequest" type="tns:getAdministratorSettingsRequest" />
+      <xsd:complexType name="getAdministratorSettingsRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="userUID" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getAdministratorSettingsResponse" type="tns:getAdministratorSettingsResponse" />
+      <xsd:complexType name="getAdministratorSettingsResponse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="return" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getAllSearchResultsRequest" type="tns:getAllSearchResultsRequest" />
+      <xsd:complexType name="getAllSearchResultsRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="folderUID" type="xsd:string" />
+          <xsd:element minOccurs="0" name="options" type="objects:SearchOptions" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getAllSearchResultsResponse" type="tns:getAllSearchResultsResponse" />
+      <xsd:complexType name="getAllSearchResultsResponse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="return" type="objects:SearchResult" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getAllSearchResultsWIthTokenRequest" type="tns:getAllSearchResultsWIthTokenRequest" />
+      <xsd:complexType name="getAllSearchResultsWIthTokenRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="searchToken" type="objects:SearchToken" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getAllSearchResultsWIthTokenResponse" type="tns:getAllSearchResultsWIthTokenResponse" />
+      <xsd:complexType name="getAllSearchResultsWIthTokenResponse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="return" type="objects:SearchResult" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getAssignedAdministratorsRequest" type="tns:getAssignedAdministratorsRequest" />
+      <xsd:complexType name="getAssignedAdministratorsRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="roleUID" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getAssignedAdministratorsResponse" type="tns:getAssignedAdministratorsResponse" />
+      <xsd:complexType name="getAssignedAdministratorsResponse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="return" type="administrators:Administrator" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getAssignedRolesRequest" type="tns:getAssignedRolesRequest" />
+      <xsd:complexType name="getAssignedRolesRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="adminUID" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getAssignedRolesResponse" type="tns:getAssignedRolesResponse" />
+      <xsd:complexType name="getAssignedRolesResponse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="return" type="objects:BasicObject" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getAttributesRequest" type="tns:getAttributesRequest" />
+      <xsd:complexType name="getAttributesRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="uid" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="attributes" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getAttributesResponse" type="tns:getAttributesResponse" />
+      <xsd:complexType name="getAttributesResponse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="return" type="xsd:anyType" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getBasicObjectRequest" type="tns:getBasicObjectRequest" />
+      <xsd:complexType name="getBasicObjectRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="uid" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getBasicObjectResponse" type="tns:getBasicObjectResponse" />
+      <xsd:complexType name="getBasicObjectResponse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="return" type="objects:BasicObject" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getByParentAndNameRequest" type="tns:getByParentAndNameRequest" />
+      <xsd:complexType name="getByParentAndNameRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="parent" type="objects:ZENObject" />
+          <xsd:element minOccurs="0" name="name" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getByParentAndNameResponse" type="tns:getByParentAndNameResponse" />
+      <xsd:complexType name="getByParentAndNameResponse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="return" type="objects:ZENObject" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getByParentUIDAndNameRequest" type="tns:getByParentUIDAndNameRequest" />
+      <xsd:complexType name="getByParentUIDAndNameRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="parentUID" type="xsd:string" />
+          <xsd:element minOccurs="0" name="name" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getByParentUIDAndNameResponse" type="tns:getByParentUIDAndNameResponse" />
+      <xsd:complexType name="getByParentUIDAndNameResponse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="return" type="objects:ZENObject" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getByUIDRequest" type="tns:getByUIDRequest" />
+      <xsd:complexType name="getByUIDRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="uid" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getByUIDResponse" type="tns:getByUIDResponse" />
+      <xsd:complexType name="getByUIDResponse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="return" type="objects:ZENObject" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getEffectiveAdminRightsRequest" type="tns:getEffectiveAdminRightsRequest" />
+      <xsd:complexType name="getEffectiveAdminRightsRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="adminUID" type="xsd:string" />
+          <xsd:element minOccurs="0" name="category" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getEffectiveAdminRightsResponse" type="tns:getEffectiveAdminRightsResponse" />
+      <xsd:complexType name="getEffectiveAdminRightsResponse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="return" type="objects:Rights" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getEffectiveAdminRightsAtOrBelowRequest" type="tns:getEffectiveAdminRightsAtOrBelowRequest" />
+      <xsd:complexType name="getEffectiveAdminRightsAtOrBelowRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="adminUID" type="xsd:string" />
+          <xsd:element minOccurs="0" name="contextUID" type="xsd:string" />
+          <xsd:element minOccurs="0" name="category" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getEffectiveAdminRightsAtOrBelowResponse" type="tns:getEffectiveAdminRightsAtOrBelowResponse" />
+      <xsd:complexType name="getEffectiveAdminRightsAtOrBelowResponse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="return" type="objects:Rights" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getObjectHierachyRequest" type="tns:getObjectHierachyRequest" />
+      <xsd:complexType name="getObjectHierachyRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="uid" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getObjectHierachyResponse" type="tns:getObjectHierachyResponse" />
+      <xsd:complexType name="getObjectHierachyResponse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="return" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getRightsByCategoryRequest" type="tns:getRightsByCategoryRequest" />
+      <xsd:complexType name="getRightsByCategoryRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="adminUID" type="xsd:string" />
+          <xsd:element minOccurs="0" name="category" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getRightsByCategoryResponse" type="tns:getRightsByCategoryResponse" />
+      <xsd:complexType name="getRightsByCategoryResponse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="return" type="objects:Rights" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getRightsCategoriesRequest" type="tns:getRightsCategoriesRequest" />
+      <xsd:complexType name="getRightsCategoriesRequest">
+        <xsd:sequence />
+      </xsd:complexType>
+      <xsd:element name="getRightsCategoriesResponse" type="tns:getRightsCategoriesResponse" />
+      <xsd:complexType name="getRightsCategoriesResponse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="return" type="objects:RightsCategory" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getRightsCategoryRequest" type="tns:getRightsCategoryRequest" />
+      <xsd:complexType name="getRightsCategoryRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="key" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getRightsCategoryResponse" type="tns:getRightsCategoryResponse" />
+      <xsd:complexType name="getRightsCategoryResponse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="return" type="objects:RightsCategory" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getRoleAdminAssignmentsRequest" type="tns:getRoleAdminAssignmentsRequest" />
+      <xsd:complexType name="getRoleAdminAssignmentsRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="roleUID" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getRoleAdminAssignmentsResponse" type="tns:getRoleAdminAssignmentsResponse" />
+      <xsd:complexType name="getRoleAdminAssignmentsResponse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="return" type="administrators:AdministratorRoleAssignment" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getRoleAssignmentRequest" type="tns:getRoleAssignmentRequest" />
+      <xsd:complexType name="getRoleAssignmentRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="adminUID" type="xsd:string" />
+          <xsd:element minOccurs="0" name="roleUID" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getRoleAssignmentResponse" type="tns:getRoleAssignmentResponse" />
+      <xsd:complexType name="getRoleAssignmentResponse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="return" type="administrators:AdministratorRoleAssignment" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getRoleAssignmentsRequest" type="tns:getRoleAssignmentsRequest" />
+      <xsd:complexType name="getRoleAssignmentsRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="adminUID" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getRoleAssignmentsResponse" type="tns:getRoleAssignmentsResponse" />
+      <xsd:complexType name="getRoleAssignmentsResponse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="return" type="administrators:AdministratorRoleAssignment" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getRoleFolderPathRequest" type="tns:getRoleFolderPathRequest" />
+      <xsd:complexType name="getRoleFolderPathRequest">
+        <xsd:sequence />
+      </xsd:complexType>
+      <xsd:element name="getRoleFolderPathResponse" type="tns:getRoleFolderPathResponse" />
+      <xsd:complexType name="getRoleFolderPathResponse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="return" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getRoleRightsRequest" type="tns:getRoleRightsRequest" />
+      <xsd:complexType name="getRoleRightsRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="roleUID" type="xsd:string" />
+          <xsd:element minOccurs="0" name="category" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getRoleRightsResponse" type="tns:getRoleRightsResponse" />
+      <xsd:complexType name="getRoleRightsResponse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="return" type="objects:Rights" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getRolesRequest" type="tns:getRolesRequest" />
+      <xsd:complexType name="getRolesRequest">
+        <xsd:sequence />
+      </xsd:complexType>
+      <xsd:element name="getRolesResponse" type="tns:getRolesResponse" />
+      <xsd:complexType name="getRolesResponse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="return" type="administrators:RoleRights" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getRootRequest" type="tns:getRootRequest" />
+      <xsd:complexType name="getRootRequest">
+        <xsd:sequence />
+      </xsd:complexType>
+      <xsd:element name="getRootResponse" type="tns:getRootResponse" />
+      <xsd:complexType name="getRootResponse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="return" type="folders:Folder" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getRootPathRequest" type="tns:getRootPathRequest" />
+      <xsd:complexType name="getRootPathRequest">
+        <xsd:sequence />
+      </xsd:complexType>
+      <xsd:element name="getRootPathResponse" type="tns:getRootPathResponse" />
+      <xsd:complexType name="getRootPathResponse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="return" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getRootUIDRequest" type="tns:getRootUIDRequest" />
+      <xsd:complexType name="getRootUIDRequest">
+        <xsd:sequence />
+      </xsd:complexType>
+      <xsd:element name="getRootUIDResponse" type="tns:getRootUIDResponse" />
+      <xsd:complexType name="getRootUIDResponse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="return" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getSearchResultsRequest" type="tns:getSearchResultsRequest" />
+      <xsd:complexType name="getSearchResultsRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="searchToken" type="objects:SearchToken" />
+          <xsd:element name="index" type="xsd:int" />
+          <xsd:element name="count" type="xsd:int" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getSearchResultsResponse" type="tns:getSearchResultsResponse" />
+      <xsd:complexType name="getSearchResultsResponse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="return" type="objects:SearchResult" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getSettingRequest" type="tns:getSettingRequest" />
+      <xsd:complexType name="getSettingRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="userUID" type="xsd:string" />
+          <xsd:element minOccurs="0" name="name" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getSettingResponse" type="tns:getSettingResponse" />
+      <xsd:complexType name="getSettingResponse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="return" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="hasFullVLRightsRequest" type="tns:hasFullVLRightsRequest" />
+      <xsd:complexType name="hasFullVLRightsRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="adminUID" type="xsd:string" />
+          <xsd:element minOccurs="0" name="objectUID" type="xsd:string" />
+          <xsd:element minOccurs="0" name="rightsString" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="hasFullVLRightsResponse" type="tns:hasFullVLRightsResponse" />
+      <xsd:complexType name="hasFullVLRightsResponse">
+        <xsd:sequence>
+          <xsd:element name="return" type="xsd:boolean" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="hasRightsRequest" type="tns:hasRightsRequest" />
+      <xsd:complexType name="hasRightsRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="adminUID" type="xsd:string" />
+          <xsd:element minOccurs="0" name="objectUID" type="xsd:string" />
+          <xsd:element minOccurs="0" name="rightsString" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="hasRightsResponse" type="tns:hasRightsResponse" />
+      <xsd:complexType name="hasRightsResponse">
+        <xsd:sequence>
+          <xsd:element name="return" type="xsd:boolean" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="hasRightsByCategoryRequest" type="tns:hasRightsByCategoryRequest" />
+      <xsd:complexType name="hasRightsByCategoryRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="adminUID" type="xsd:string" />
+          <xsd:element minOccurs="0" name="objectUID" type="xsd:string" />
+          <xsd:element minOccurs="0" name="category" type="xsd:string" />
+          <xsd:element minOccurs="0" name="item" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="hasRightsByCategoryResponse" type="tns:hasRightsByCategoryResponse" />
+      <xsd:complexType name="hasRightsByCategoryResponse">
+        <xsd:sequence>
+          <xsd:element name="return" type="xsd:boolean" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="hasRightsByComponentRequest" type="tns:hasRightsByComponentRequest" />
+      <xsd:complexType name="hasRightsByComponentRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="adminUID" type="xsd:string" />
+          <xsd:element minOccurs="0" name="objectUID" type="xsd:string" />
+          <xsd:element minOccurs="0" name="component" type="xsd:string" />
+          <xsd:element name="rights" type="xsd:long" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="hasRightsByComponentResponse" type="tns:hasRightsByComponentResponse" />
+      <xsd:complexType name="hasRightsByComponentResponse">
+        <xsd:sequence>
+          <xsd:element name="return" type="xsd:boolean" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="moveRequest" type="tns:moveRequest" />
+      <xsd:complexType name="moveRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="obj" type="objects:ZENObject" />
+          <xsd:element minOccurs="0" name="newParent" type="objects:ZENObject" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="moveResponse" type="tns:moveResponse" />
+      <xsd:complexType name="moveResponse">
+        <xsd:sequence>
+          <xsd:element name="return" type="xsd:boolean" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="refreshSearchTokenRequest" type="tns:refreshSearchTokenRequest" />
+      <xsd:complexType name="refreshSearchTokenRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="searchToken" type="objects:SearchToken" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="refreshSearchTokenResponse" type="tns:refreshSearchTokenResponse" />
+      <xsd:complexType name="refreshSearchTokenResponse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="return" type="objects:SearchToken" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="releaseSearchTokenRequest" type="tns:releaseSearchTokenRequest" />
+      <xsd:complexType name="releaseSearchTokenRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="searchToken" type="objects:SearchToken" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="releaseSearchTokenResponse" type="tns:releaseSearchTokenResponse" />
+      <xsd:complexType name="releaseSearchTokenResponse">
+        <xsd:sequence>
+          <xsd:element name="return" type="xsd:boolean" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="removeRoleAssignmentRequest" type="tns:removeRoleAssignmentRequest" />
+      <xsd:complexType name="removeRoleAssignmentRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="adminUID" type="xsd:string" />
+          <xsd:element minOccurs="0" name="roleUID" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="removeRoleAssignmentResponse" type="tns:removeRoleAssignmentResponse" />
+      <xsd:complexType name="removeRoleAssignmentResponse">
+        <xsd:sequence>
+          <xsd:element name="return" type="xsd:boolean" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="renameRequest" type="tns:renameRequest" />
+      <xsd:complexType name="renameRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="obj" type="objects:ZENObject" />
+          <xsd:element minOccurs="0" name="newName" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="renameResponse" type="tns:renameResponse" />
+      <xsd:complexType name="renameResponse">
+        <xsd:sequence>
+          <xsd:element name="return" type="xsd:boolean" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="searchRequest" type="tns:searchRequest" />
+      <xsd:complexType name="searchRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="folderUID" type="xsd:string" />
+          <xsd:element minOccurs="0" name="options" type="objects:SearchOptions" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="searchResponse" type="tns:searchResponse" />
+      <xsd:complexType name="searchResponse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="return" type="objects:SearchToken" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="setAdministratorSettingRequest" type="tns:setAdministratorSettingRequest" />
+      <xsd:complexType name="setAdministratorSettingRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="userUID" type="xsd:string" />
+          <xsd:element minOccurs="0" name="settings" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="setAdministratorSettingResponse" type="tns:setAdministratorSettingResponse" />
+      <xsd:complexType name="setAdministratorSettingResponse">
+        <xsd:sequence>
+          <xsd:element name="return" type="xsd:boolean" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="setAllRoleContextsRequest" type="tns:setAllRoleContextsRequest" />
+      <xsd:complexType name="setAllRoleContextsRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="adminUID" type="xsd:string" />
+          <xsd:element minOccurs="0" name="roleUID" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="categoryContexts" type="administrators:RightsCategoryContextUIDs" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="setAllRoleContextsResponse" type="tns:setAllRoleContextsResponse" />
+      <xsd:complexType name="setAllRoleContextsResponse">
+        <xsd:sequence>
+          <xsd:element name="return" type="xsd:boolean" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="setPasswordRequest" type="tns:setPasswordRequest" />
+      <xsd:complexType name="setPasswordRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="adminName" type="xsd:string" />
+          <xsd:element minOccurs="0" name="oldPassword" type="xsd:string" />
+          <xsd:element minOccurs="0" name="newPassword" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="setPasswordResponse" type="tns:setPasswordResponse" />
+      <xsd:complexType name="setPasswordResponse">
+        <xsd:sequence>
+          <xsd:element name="return" type="xsd:boolean" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="setRoleContextsRequest" type="tns:setRoleContextsRequest" />
+      <xsd:complexType name="setRoleContextsRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="adminUID" type="xsd:string" />
+          <xsd:element minOccurs="0" name="roleUID" type="xsd:string" />
+          <xsd:element minOccurs="0" name="categoryContexts" type="administrators:RightsCategoryContextUIDs" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="setRoleContextsResponse" type="tns:setRoleContextsResponse" />
+      <xsd:complexType name="setRoleContextsResponse">
+        <xsd:sequence>
+          <xsd:element name="return" type="xsd:boolean" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="setSettingRequest" type="tns:setSettingRequest" />
+      <xsd:complexType name="setSettingRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="userUID" type="xsd:string" />
+          <xsd:element minOccurs="0" name="name" type="xsd:string" />
+          <xsd:element minOccurs="0" name="settings" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="setSettingResponse" type="tns:setSettingResponse" />
+      <xsd:complexType name="setSettingResponse">
+        <xsd:sequence>
+          <xsd:element name="return" type="xsd:boolean" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="updateRequest" type="tns:updateRequest" />
+      <xsd:complexType name="updateRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="object" type="objects:ZENObject" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="updateResponse" type="tns:updateResponse" />
+      <xsd:complexType name="updateResponse">
+        <xsd:sequence>
+          <xsd:element name="return" type="xsd:boolean" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="validateCredentialsRequest" type="tns:validateCredentialsRequest" />
+      <xsd:complexType name="validateCredentialsRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="adminName" type="xsd:string" />
+          <xsd:element minOccurs="0" name="oldpassword" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="validateCredentialsResponse" type="tns:validateCredentialsResponse" />
+      <xsd:complexType name="validateCredentialsResponse">
+        <xsd:sequence>
+          <xsd:element name="return" type="xsd:boolean" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="computeAdminRightsRequest" type="tns:computeAdminRightsRequest" />
+      <xsd:complexType name="computeAdminRightsRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="adminUID" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="computeAdminRightsResponse" type="tns:computeAdminRightsResponse" />
+      <xsd:complexType name="computeAdminRightsResponse">
+        <xsd:sequence>
+          <xsd:element name="return" type="xsd:boolean" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="computeSuperAdminRightsRequest" type="tns:computeSuperAdminRightsRequest" />
+      <xsd:complexType name="computeSuperAdminRightsRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="adminUID" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="computeSuperAdminRightsResponse" type="tns:computeSuperAdminRightsResponse" />
+      <xsd:complexType name="computeSuperAdminRightsResponse">
+        <xsd:sequence>
+          <xsd:element name="return" type="xsd:boolean" />
+        </xsd:sequence>
+      </xsd:complexType>
+    </xsd:schema>
+  </types>
+  <message name="RemoteDataModelException">
+    <part name="fault" element="exceptions:RemoteDataModelException" />
+  </message>
+  <message name="adminWasNaggedInput">
+    <part name="parameters" element="tns:adminWasNaggedRequest" />
+  </message>
+  <message name="adminWasNaggedOutput">
+    <part name="parameters" element="tns:adminWasNaggedResponse" />
+  </message>
+  <message name="assignAdminRightsInput">
+    <part name="parameters" element="tns:assignAdminRightsRequest" />
+  </message>
+  <message name="assignAdminRightsOutput">
+    <part name="parameters" element="tns:assignAdminRightsResponse" />
+  </message>
+  <message name="assignRoleInput">
+    <part name="parameters" element="tns:assignRoleRequest" />
+  </message>
+  <message name="assignRoleOutput">
+    <part name="parameters" element="tns:assignRoleResponse" />
+  </message>
+  <message name="assignRoleRightsInput">
+    <part name="parameters" element="tns:assignRoleRightsRequest" />
+  </message>
+  <message name="assignRoleRightsOutput">
+    <part name="parameters" element="tns:assignRoleRightsResponse" />
+  </message>
+  <message name="clearAdminRightsInput">
+    <part name="parameters" element="tns:clearAdminRightsRequest" />
+  </message>
+  <message name="clearAdminRightsOutput">
+    <part name="parameters" element="tns:clearAdminRightsResponse" />
+  </message>
+  <message name="clearRoleRightsInput">
+    <part name="parameters" element="tns:clearRoleRightsRequest" />
+  </message>
+  <message name="clearRoleRightsOutput">
+    <part name="parameters" element="tns:clearRoleRightsResponse" />
+  </message>
+  <message name="cloneInput">
+    <part name="parameters" element="tns:cloneRequest" />
+  </message>
+  <message name="cloneOutput">
+    <part name="parameters" element="tns:cloneResponse" />
+  </message>
+  <message name="createInput">
+    <part name="parameters" element="tns:createRequest" />
+  </message>
+  <message name="createOutput">
+    <part name="parameters" element="tns:createResponse" />
+  </message>
+  <message name="createAdministratorInput">
+    <part name="parameters" element="tns:createAdministratorRequest" />
+  </message>
+  <message name="createAdministratorOutput">
+    <part name="parameters" element="tns:createAdministratorResponse" />
+  </message>
+  <message name="deleteInput">
+    <part name="parameters" element="tns:deleteRequest" />
+  </message>
+  <message name="deleteOutput">
+    <part name="parameters" element="tns:deleteResponse" />
+  </message>
+  <message name="deleteRecursiveInput">
+    <part name="parameters" element="tns:deleteRecursiveRequest" />
+  </message>
+  <message name="deleteRecursiveOutput">
+    <part name="parameters" element="tns:deleteRecursiveResponse" />
+  </message>
+  <message name="existsByParentAndNameInput">
+    <part name="parameters" element="tns:existsByParentAndNameRequest" />
+  </message>
+  <message name="existsByParentAndNameOutput">
+    <part name="parameters" element="tns:existsByParentAndNameResponse" />
+  </message>
+  <message name="existsByUIDInput">
+    <part name="parameters" element="tns:existsByUIDRequest" />
+  </message>
+  <message name="existsByUIDOutput">
+    <part name="parameters" element="tns:existsByUIDResponse" />
+  </message>
+  <message name="getAdminRightsInput">
+    <part name="parameters" element="tns:getAdminRightsRequest" />
+  </message>
+  <message name="getAdminRightsOutput">
+    <part name="parameters" element="tns:getAdminRightsResponse" />
+  </message>
+  <message name="getAdminRightsAtOrBelowInput">
+    <part name="parameters" element="tns:getAdminRightsAtOrBelowRequest" />
+  </message>
+  <message name="getAdminRightsAtOrBelowOutput">
+    <part name="parameters" element="tns:getAdminRightsAtOrBelowResponse" />
+  </message>
+  <message name="getAdministratorLoginNameInput">
+    <part name="parameters" element="tns:getAdministratorLoginNameRequest" />
+  </message>
+  <message name="getAdministratorLoginNameOutput">
+    <part name="parameters" element="tns:getAdministratorLoginNameResponse" />
+  </message>
+  <message name="getAdministratorSettingsInput">
+    <part name="parameters" element="tns:getAdministratorSettingsRequest" />
+  </message>
+  <message name="getAdministratorSettingsOutput">
+    <part name="parameters" element="tns:getAdministratorSettingsResponse" />
+  </message>
+  <message name="getAllSearchResultsInput">
+    <part name="parameters" element="tns:getAllSearchResultsRequest" />
+  </message>
+  <message name="getAllSearchResultsOutput">
+    <part name="parameters" element="tns:getAllSearchResultsResponse" />
+  </message>
+  <message name="getAllSearchResultsWIthTokenInput">
+    <part name="parameters" element="tns:getAllSearchResultsWIthTokenRequest" />
+  </message>
+  <message name="getAllSearchResultsWIthTokenOutput">
+    <part name="parameters" element="tns:getAllSearchResultsWIthTokenResponse" />
+  </message>
+  <message name="getAssignedAdministratorsInput">
+    <part name="parameters" element="tns:getAssignedAdministratorsRequest" />
+  </message>
+  <message name="getAssignedAdministratorsOutput">
+    <part name="parameters" element="tns:getAssignedAdministratorsResponse" />
+  </message>
+  <message name="getAssignedRolesInput">
+    <part name="parameters" element="tns:getAssignedRolesRequest" />
+  </message>
+  <message name="getAssignedRolesOutput">
+    <part name="parameters" element="tns:getAssignedRolesResponse" />
+  </message>
+  <message name="getAttributesInput">
+    <part name="parameters" element="tns:getAttributesRequest" />
+  </message>
+  <message name="getAttributesOutput">
+    <part name="parameters" element="tns:getAttributesResponse" />
+  </message>
+  <message name="getBasicObjectInput">
+    <part name="parameters" element="tns:getBasicObjectRequest" />
+  </message>
+  <message name="getBasicObjectOutput">
+    <part name="parameters" element="tns:getBasicObjectResponse" />
+  </message>
+  <message name="getByParentAndNameInput">
+    <part name="parameters" element="tns:getByParentAndNameRequest" />
+  </message>
+  <message name="getByParentAndNameOutput">
+    <part name="parameters" element="tns:getByParentAndNameResponse" />
+  </message>
+  <message name="getByParentUIDAndNameInput">
+    <part name="parameters" element="tns:getByParentUIDAndNameRequest" />
+  </message>
+  <message name="getByParentUIDAndNameOutput">
+    <part name="parameters" element="tns:getByParentUIDAndNameResponse" />
+  </message>
+  <message name="getByUIDInput">
+    <part name="parameters" element="tns:getByUIDRequest" />
+  </message>
+  <message name="getByUIDOutput">
+    <part name="parameters" element="tns:getByUIDResponse" />
+  </message>
+  <message name="getEffectiveAdminRightsInput">
+    <part name="parameters" element="tns:getEffectiveAdminRightsRequest" />
+  </message>
+  <message name="getEffectiveAdminRightsOutput">
+    <part name="parameters" element="tns:getEffectiveAdminRightsResponse" />
+  </message>
+  <message name="getEffectiveAdminRightsAtOrBelowInput">
+    <part name="parameters" element="tns:getEffectiveAdminRightsAtOrBelowRequest" />
+  </message>
+  <message name="getEffectiveAdminRightsAtOrBelowOutput">
+    <part name="parameters" element="tns:getEffectiveAdminRightsAtOrBelowResponse" />
+  </message>
+  <message name="getObjectHierachyInput">
+    <part name="parameters" element="tns:getObjectHierachyRequest" />
+  </message>
+  <message name="getObjectHierachyOutput">
+    <part name="parameters" element="tns:getObjectHierachyResponse" />
+  </message>
+  <message name="getRightsByCategoryInput">
+    <part name="parameters" element="tns:getRightsByCategoryRequest" />
+  </message>
+  <message name="getRightsByCategoryOutput">
+    <part name="parameters" element="tns:getRightsByCategoryResponse" />
+  </message>
+  <message name="getRightsCategoriesInput">
+    <part name="parameters" element="tns:getRightsCategoriesRequest" />
+  </message>
+  <message name="getRightsCategoriesOutput">
+    <part name="parameters" element="tns:getRightsCategoriesResponse" />
+  </message>
+  <message name="getRightsCategoryInput">
+    <part name="parameters" element="tns:getRightsCategoryRequest" />
+  </message>
+  <message name="getRightsCategoryOutput">
+    <part name="parameters" element="tns:getRightsCategoryResponse" />
+  </message>
+  <message name="getRoleAdminAssignmentsInput">
+    <part name="parameters" element="tns:getRoleAdminAssignmentsRequest" />
+  </message>
+  <message name="getRoleAdminAssignmentsOutput">
+    <part name="parameters" element="tns:getRoleAdminAssignmentsResponse" />
+  </message>
+  <message name="getRoleAssignmentInput">
+    <part name="parameters" element="tns:getRoleAssignmentRequest" />
+  </message>
+  <message name="getRoleAssignmentOutput">
+    <part name="parameters" element="tns:getRoleAssignmentResponse" />
+  </message>
+  <message name="getRoleAssignmentsInput">
+    <part name="parameters" element="tns:getRoleAssignmentsRequest" />
+  </message>
+  <message name="getRoleAssignmentsOutput">
+    <part name="parameters" element="tns:getRoleAssignmentsResponse" />
+  </message>
+  <message name="getRoleFolderPathInput">
+    <part name="parameters" element="tns:getRoleFolderPathRequest" />
+  </message>
+  <message name="getRoleFolderPathOutput">
+    <part name="parameters" element="tns:getRoleFolderPathResponse" />
+  </message>
+  <message name="getRoleRightsInput">
+    <part name="parameters" element="tns:getRoleRightsRequest" />
+  </message>
+  <message name="getRoleRightsOutput">
+    <part name="parameters" element="tns:getRoleRightsResponse" />
+  </message>
+  <message name="getRolesInput">
+    <part name="parameters" element="tns:getRolesRequest" />
+  </message>
+  <message name="getRolesOutput">
+    <part name="parameters" element="tns:getRolesResponse" />
+  </message>
+  <message name="getRootInput">
+    <part name="parameters" element="tns:getRootRequest" />
+  </message>
+  <message name="getRootOutput">
+    <part name="parameters" element="tns:getRootResponse" />
+  </message>
+  <message name="getRootPathInput">
+    <part name="parameters" element="tns:getRootPathRequest" />
+  </message>
+  <message name="getRootPathOutput">
+    <part name="parameters" element="tns:getRootPathResponse" />
+  </message>
+  <message name="getRootUIDInput">
+    <part name="parameters" element="tns:getRootUIDRequest" />
+  </message>
+  <message name="getRootUIDOutput">
+    <part name="parameters" element="tns:getRootUIDResponse" />
+  </message>
+  <message name="getSearchResultsInput">
+    <part name="parameters" element="tns:getSearchResultsRequest" />
+  </message>
+  <message name="getSearchResultsOutput">
+    <part name="parameters" element="tns:getSearchResultsResponse" />
+  </message>
+  <message name="getSettingInput">
+    <part name="parameters" element="tns:getSettingRequest" />
+  </message>
+  <message name="getSettingOutput">
+    <part name="parameters" element="tns:getSettingResponse" />
+  </message>
+  <message name="hasFullVLRightsInput">
+    <part name="parameters" element="tns:hasFullVLRightsRequest" />
+  </message>
+  <message name="hasFullVLRightsOutput">
+    <part name="parameters" element="tns:hasFullVLRightsResponse" />
+  </message>
+  <message name="hasRightsInput">
+    <part name="parameters" element="tns:hasRightsRequest" />
+  </message>
+  <message name="hasRightsOutput">
+    <part name="parameters" element="tns:hasRightsResponse" />
+  </message>
+  <message name="hasRightsByCategoryInput">
+    <part name="parameters" element="tns:hasRightsByCategoryRequest" />
+  </message>
+  <message name="hasRightsByCategoryOutput">
+    <part name="parameters" element="tns:hasRightsByCategoryResponse" />
+  </message>
+  <message name="hasRightsByComponentInput">
+    <part name="parameters" element="tns:hasRightsByComponentRequest" />
+  </message>
+  <message name="hasRightsByComponentOutput">
+    <part name="parameters" element="tns:hasRightsByComponentResponse" />
+  </message>
+  <message name="moveInput">
+    <part name="parameters" element="tns:moveRequest" />
+  </message>
+  <message name="moveOutput">
+    <part name="parameters" element="tns:moveResponse" />
+  </message>
+  <message name="refreshSearchTokenInput">
+    <part name="parameters" element="tns:refreshSearchTokenRequest" />
+  </message>
+  <message name="refreshSearchTokenOutput">
+    <part name="parameters" element="tns:refreshSearchTokenResponse" />
+  </message>
+  <message name="releaseSearchTokenInput">
+    <part name="parameters" element="tns:releaseSearchTokenRequest" />
+  </message>
+  <message name="releaseSearchTokenOutput">
+    <part name="parameters" element="tns:releaseSearchTokenResponse" />
+  </message>
+  <message name="removeRoleAssignmentInput">
+    <part name="parameters" element="tns:removeRoleAssignmentRequest" />
+  </message>
+  <message name="removeRoleAssignmentOutput">
+    <part name="parameters" element="tns:removeRoleAssignmentResponse" />
+  </message>
+  <message name="renameInput">
+    <part name="parameters" element="tns:renameRequest" />
+  </message>
+  <message name="renameOutput">
+    <part name="parameters" element="tns:renameResponse" />
+  </message>
+  <message name="searchInput">
+    <part name="parameters" element="tns:searchRequest" />
+  </message>
+  <message name="searchOutput">
+    <part name="parameters" element="tns:searchResponse" />
+  </message>
+  <message name="setAdministratorSettingInput">
+    <part name="parameters" element="tns:setAdministratorSettingRequest" />
+  </message>
+  <message name="setAdministratorSettingOutput">
+    <part name="parameters" element="tns:setAdministratorSettingResponse" />
+  </message>
+  <message name="setAllRoleContextsInput">
+    <part name="parameters" element="tns:setAllRoleContextsRequest" />
+  </message>
+  <message name="setAllRoleContextsOutput">
+    <part name="parameters" element="tns:setAllRoleContextsResponse" />
+  </message>
+  <message name="setPasswordInput">
+    <part name="parameters" element="tns:setPasswordRequest" />
+  </message>
+  <message name="setPasswordOutput">
+    <part name="parameters" element="tns:setPasswordResponse" />
+  </message>
+  <message name="setRoleContextsInput">
+    <part name="parameters" element="tns:setRoleContextsRequest" />
+  </message>
+  <message name="setRoleContextsOutput">
+    <part name="parameters" element="tns:setRoleContextsResponse" />
+  </message>
+  <message name="setSettingInput">
+    <part name="parameters" element="tns:setSettingRequest" />
+  </message>
+  <message name="setSettingOutput">
+    <part name="parameters" element="tns:setSettingResponse" />
+  </message>
+  <message name="updateInput">
+    <part name="parameters" element="tns:updateRequest" />
+  </message>
+  <message name="updateOutput">
+    <part name="parameters" element="tns:updateResponse" />
+  </message>
+  <message name="validateCredentialsInput">
+    <part name="parameters" element="tns:validateCredentialsRequest" />
+  </message>
+  <message name="validateCredentialsOutput">
+    <part name="parameters" element="tns:validateCredentialsResponse" />
+  </message>
+  <message name="computeAdminRightsInput">
+    <part name="parameters" element="tns:computeAdminRightsRequest" />
+  </message>
+  <message name="computeAdminRightsOutput">
+    <part name="parameters" element="tns:computeAdminRightsResponse" />
+  </message>
+  <message name="computeSuperAdminRightsInput">
+    <part name="parameters" element="tns:computeSuperAdminRightsRequest" />
+  </message>
+  <message name="computeSuperAdminRightsOutput">
+    <part name="parameters" element="tns:computeSuperAdminRightsResponse" />
+  </message>
+  <portType name="AdministratorAdminService">
+    <operation name="adminWasNagged">
+      <input message="tns:adminWasNaggedInput" />
+      <output message="tns:adminWasNaggedOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="assignAdminRights">
+      <input message="tns:assignAdminRightsInput" />
+      <output message="tns:assignAdminRightsOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="assignRole">
+      <input message="tns:assignRoleInput" />
+      <output message="tns:assignRoleOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="assignRoleRights">
+      <input message="tns:assignRoleRightsInput" />
+      <output message="tns:assignRoleRightsOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="clearAdminRights">
+      <input message="tns:clearAdminRightsInput" />
+      <output message="tns:clearAdminRightsOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="clearRoleRights">
+      <input message="tns:clearRoleRightsInput" />
+      <output message="tns:clearRoleRightsOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="clone">
+      <input message="tns:cloneInput" />
+      <output message="tns:cloneOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="create">
+      <input message="tns:createInput" />
+      <output message="tns:createOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="createAdministrator">
+      <input message="tns:createAdministratorInput" />
+      <output message="tns:createAdministratorOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="delete">
+      <input message="tns:deleteInput" />
+      <output message="tns:deleteOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="deleteRecursive">
+      <input message="tns:deleteRecursiveInput" />
+      <output message="tns:deleteRecursiveOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="existsByParentAndName">
+      <input message="tns:existsByParentAndNameInput" />
+      <output message="tns:existsByParentAndNameOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="existsByUID">
+      <input message="tns:existsByUIDInput" />
+      <output message="tns:existsByUIDOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="getAdminRights">
+      <input message="tns:getAdminRightsInput" />
+      <output message="tns:getAdminRightsOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="getAdminRightsAtOrBelow">
+      <input message="tns:getAdminRightsAtOrBelowInput" />
+      <output message="tns:getAdminRightsAtOrBelowOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="getAdministratorLoginName">
+      <input message="tns:getAdministratorLoginNameInput" />
+      <output message="tns:getAdministratorLoginNameOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="getAdministratorSettings">
+      <input message="tns:getAdministratorSettingsInput" />
+      <output message="tns:getAdministratorSettingsOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="getAllSearchResults">
+      <input message="tns:getAllSearchResultsInput" />
+      <output message="tns:getAllSearchResultsOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="getAllSearchResultsWIthToken">
+      <input message="tns:getAllSearchResultsWIthTokenInput" />
+      <output message="tns:getAllSearchResultsWIthTokenOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="getAssignedAdministrators">
+      <input message="tns:getAssignedAdministratorsInput" />
+      <output message="tns:getAssignedAdministratorsOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="getAssignedRoles">
+      <input message="tns:getAssignedRolesInput" />
+      <output message="tns:getAssignedRolesOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="getAttributes">
+      <input message="tns:getAttributesInput" />
+      <output message="tns:getAttributesOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="getBasicObject">
+      <input message="tns:getBasicObjectInput" />
+      <output message="tns:getBasicObjectOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="getByParentAndName">
+      <input message="tns:getByParentAndNameInput" />
+      <output message="tns:getByParentAndNameOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="getByParentUIDAndName">
+      <input message="tns:getByParentUIDAndNameInput" />
+      <output message="tns:getByParentUIDAndNameOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="getByUID">
+      <input message="tns:getByUIDInput" />
+      <output message="tns:getByUIDOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="getEffectiveAdminRights">
+      <input message="tns:getEffectiveAdminRightsInput" />
+      <output message="tns:getEffectiveAdminRightsOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="getEffectiveAdminRightsAtOrBelow">
+      <input message="tns:getEffectiveAdminRightsAtOrBelowInput" />
+      <output message="tns:getEffectiveAdminRightsAtOrBelowOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="getObjectHierachy">
+      <input message="tns:getObjectHierachyInput" />
+      <output message="tns:getObjectHierachyOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="getRightsByCategory">
+      <input message="tns:getRightsByCategoryInput" />
+      <output message="tns:getRightsByCategoryOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="getRightsCategories">
+      <input message="tns:getRightsCategoriesInput" />
+      <output message="tns:getRightsCategoriesOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="getRightsCategory">
+      <input message="tns:getRightsCategoryInput" />
+      <output message="tns:getRightsCategoryOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="getRoleAdminAssignments">
+      <input message="tns:getRoleAdminAssignmentsInput" />
+      <output message="tns:getRoleAdminAssignmentsOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="getRoleAssignment">
+      <input message="tns:getRoleAssignmentInput" />
+      <output message="tns:getRoleAssignmentOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="getRoleAssignments">
+      <input message="tns:getRoleAssignmentsInput" />
+      <output message="tns:getRoleAssignmentsOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="getRoleFolderPath">
+      <input message="tns:getRoleFolderPathInput" />
+      <output message="tns:getRoleFolderPathOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="getRoleRights">
+      <input message="tns:getRoleRightsInput" />
+      <output message="tns:getRoleRightsOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="getRoles">
+      <input message="tns:getRolesInput" />
+      <output message="tns:getRolesOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="getRoot">
+      <input message="tns:getRootInput" />
+      <output message="tns:getRootOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="getRootPath">
+      <input message="tns:getRootPathInput" />
+      <output message="tns:getRootPathOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="getRootUID">
+      <input message="tns:getRootUIDInput" />
+      <output message="tns:getRootUIDOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="getSearchResults">
+      <input message="tns:getSearchResultsInput" />
+      <output message="tns:getSearchResultsOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="getSetting">
+      <input message="tns:getSettingInput" />
+      <output message="tns:getSettingOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="hasFullVLRights">
+      <input message="tns:hasFullVLRightsInput" />
+      <output message="tns:hasFullVLRightsOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="hasRights">
+      <input message="tns:hasRightsInput" />
+      <output message="tns:hasRightsOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="hasRightsByCategory">
+      <input message="tns:hasRightsByCategoryInput" />
+      <output message="tns:hasRightsByCategoryOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="hasRightsByComponent">
+      <input message="tns:hasRightsByComponentInput" />
+      <output message="tns:hasRightsByComponentOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="move">
+      <input message="tns:moveInput" />
+      <output message="tns:moveOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="refreshSearchToken">
+      <input message="tns:refreshSearchTokenInput" />
+      <output message="tns:refreshSearchTokenOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="releaseSearchToken">
+      <input message="tns:releaseSearchTokenInput" />
+      <output message="tns:releaseSearchTokenOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="removeRoleAssignment">
+      <input message="tns:removeRoleAssignmentInput" />
+      <output message="tns:removeRoleAssignmentOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="rename">
+      <input message="tns:renameInput" />
+      <output message="tns:renameOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="search">
+      <input message="tns:searchInput" />
+      <output message="tns:searchOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="setAdministratorSetting">
+      <input message="tns:setAdministratorSettingInput" />
+      <output message="tns:setAdministratorSettingOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="setAllRoleContexts">
+      <input message="tns:setAllRoleContextsInput" />
+      <output message="tns:setAllRoleContextsOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="setPassword">
+      <input message="tns:setPasswordInput" />
+      <output message="tns:setPasswordOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="setRoleContexts">
+      <input message="tns:setRoleContextsInput" />
+      <output message="tns:setRoleContextsOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="setSetting">
+      <input message="tns:setSettingInput" />
+      <output message="tns:setSettingOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="update">
+      <input message="tns:updateInput" />
+      <output message="tns:updateOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="validateCredentials">
+      <input message="tns:validateCredentialsInput" />
+      <output message="tns:validateCredentialsOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="computeAdminRights">
+      <input message="tns:computeAdminRightsInput" />
+      <output message="tns:computeAdminRightsOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="computeSuperAdminRights">
+      <input message="tns:computeSuperAdminRightsInput" />
+      <output message="tns:computeSuperAdminRightsOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+  </portType>
+  <binding name="AdministratorAdminServiceBinding" type="tns:AdministratorAdminService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="adminWasNagged">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/administrators/soap/adminWasNagged" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault>
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="assignAdminRights">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/administrators/soap/assignAdminRights" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault>
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="assignRole">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/administrators/soap/assignRole" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault>
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="assignRoleRights">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/administrators/soap/assignRoleRights" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault>
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="clearAdminRights">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/administrators/soap/clearAdminRights" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault>
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="clearRoleRights">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/administrators/soap/clearRoleRights" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault>
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="clone">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/administrators/soap/clone" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault>
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="create">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/administrators/soap/create" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault>
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="createAdministrator">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/administrators/soap/createAdministrator" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault>
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="delete">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/administrators/soap/delete" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault>
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="deleteRecursive">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/administrators/soap/deleteRecursive" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault>
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="existsByParentAndName">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/administrators/soap/existsByParentAndName" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault>
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="existsByUID">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/administrators/soap/existsByUID" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault>
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="getAdminRights">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/administrators/soap/getAdminRights" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault>
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="getAdminRightsAtOrBelow">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/administrators/soap/getAdminRightsAtOrBelow" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault>
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="getAdministratorLoginName">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/administrators/soap/getAdministratorLoginName" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault>
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="getAdministratorSettings">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/administrators/soap/getAdministratorSettings" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault>
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="getAllSearchResults">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/administrators/soap/getAllSearchResults" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault>
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="getAllSearchResultsWIthToken">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/administrators/soap/getAllSearchResultsWIthToken" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault>
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="getAssignedAdministrators">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/administrators/soap/getAssignedAdministrators" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault>
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="getAssignedRoles">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/administrators/soap/getAssignedRoles" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault>
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="getAttributes">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/administrators/soap/getAttributes" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault>
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="getBasicObject">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/administrators/soap/getBasicObject" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault>
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="getByParentAndName">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/administrators/soap/getByParentAndName" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault>
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="getByParentUIDAndName">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/administrators/soap/getByParentUIDAndName" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault>
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="getByUID">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/administrators/soap/getByUID" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault>
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="getEffectiveAdminRights">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/administrators/soap/getEffectiveAdminRights" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault>
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="getEffectiveAdminRightsAtOrBelow">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/administrators/soap/getEffectiveAdminRightsAtOrBelow" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault>
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="getObjectHierachy">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/administrators/soap/getObjectHierachy" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault>
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="getRightsByCategory">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/administrators/soap/getRightsByCategory" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault>
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="getRightsCategories">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/administrators/soap/getRightsCategories" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault>
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="getRightsCategory">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/administrators/soap/getRightsCategory" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault>
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="getRoleAdminAssignments">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/administrators/soap/getRoleAdminAssignments" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault>
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="getRoleAssignment">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/administrators/soap/getRoleAssignment" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault>
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="getRoleAssignments">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/administrators/soap/getRoleAssignments" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault>
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="getRoleFolderPath">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/administrators/soap/getRoleFolderPath" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault>
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="getRoleRights">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/administrators/soap/getRoleRights" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault>
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="getRoles">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/administrators/soap/getRoles" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault>
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="getRoot">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/administrators/soap/getRoot" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault>
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="getRootPath">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/administrators/soap/getRootPath" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault>
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="getRootUID">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/administrators/soap/getRootUID" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault>
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="getSearchResults">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/administrators/soap/getSearchResults" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault>
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="getSetting">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/administrators/soap/getSetting" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="RemoteDataModelException">
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="hasFullVLRights">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/administrators/soap/hasFullVLRights" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="RemoteDataModelException">
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="hasRights">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/administrators/soap/hasRights" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault>
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="hasRightsByCategory">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/administrators/soap/hasRightsByCategory" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault>
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="hasRightsByComponent">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/administrators/soap/hasRightsByComponent" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault>
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="move">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/administrators/soap/move" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault>
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="refreshSearchToken">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/administrators/soap/refreshSearchToken" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault>
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="releaseSearchToken">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/administrators/soap/releaseSearchToken" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault>
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="removeRoleAssignment">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/administrators/soap/removeRoleAssignment" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault>
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="rename">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/administrators/soap/rename" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault>
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="search">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/administrators/soap/search" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault>
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="setAdministratorSetting">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/administrators/soap/setAdministratorSetting" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault>
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="setAllRoleContexts">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/administrators/soap/setAllRoleContexts" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault>
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="setPassword">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/administrators/soap/setPassword" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault>
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="setRoleContexts">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/administrators/soap/setRoleContexts" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault>
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="setSetting">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/administrators/soap/setSetting" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault>
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="update">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/administrators/soap/update" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault>
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="validateCredentials">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/administrators/soap/validateCredentials" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault>
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="computeAdminRights">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/administrators/soap/computeAdminRights" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault>
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="computeSuperAdminRights">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/administrators/soap/computeSuperAdminRights" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault>
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+  </binding>
+  <service name="AdministratorAdminServiceService">
+    <port name="AdministratorAdminServicePort" binding="tns:AdministratorAdminServiceBinding">
+      <soap:address location="http://localhost:8080/zenworks-datamodel/" />
+    </port>
+  </service>
+</definitions>

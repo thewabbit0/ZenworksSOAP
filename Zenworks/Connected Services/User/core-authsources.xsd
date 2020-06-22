@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema xmlns:objects="http://novell.com/zenworks/datamodel/objects" xmlns:folders="http://novell.com/zenworks/datamodel/objects/folders" xmlns:authsources="http://novell.com/zenworks/datamodel/objects/authsources" xmlns="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://novell.com/zenworks/datamodel/objects/authsources" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:import schemaLocation="core-objects.xsd" namespace="http://novell.com/zenworks/datamodel/objects" />
+  <xsd:import schemaLocation="core-folders.xsd" namespace="http://novell.com/zenworks/datamodel/objects/folders" />
+  <xsd:element name="AuthoritativeSource" type="authsources:AuthoritativeSource" />
+  <xsd:complexType name="AuthoritativeSource">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="objects:ZENObject">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="SourceType" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="Mechanisms" type="xsd:string" />
+          <xsd:any minOccurs="0" maxOccurs="unbounded" namespace="##targetNamespace" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="AuthoritativeSourceFolder" type="authsources:AuthoritativeSourceFolder" />
+  <xsd:complexType name="AuthoritativeSourceFolder">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="folders:Folder">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="SourceUID" type="xsd:string" />
+          <xsd:element minOccurs="0" name="AuthoritativeSource" type="authsources:AuthoritativeSource" />
+          <xsd:any minOccurs="0" maxOccurs="unbounded" namespace="##targetNamespace" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="ExternalReference" type="authsources:ExternalReference" />
+  <xsd:complexType name="ExternalReference">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="objects:ZENObject">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="SourceUID" type="xsd:string" />
+          <xsd:element minOccurs="0" name="SourceObjectUID" type="xsd:string" />
+          <xsd:element name="IsTest" type="xsd:boolean" />
+          <xsd:any minOccurs="0" maxOccurs="unbounded" namespace="##targetNamespace" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="UserPasswordCredentials" type="authsources:UserPasswordCredentials" />
+  <xsd:complexType name="UserPasswordCredentials">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="User" type="xsd:string" />
+      <xsd:element minOccurs="0" name="Password" type="xsd:string" />
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>

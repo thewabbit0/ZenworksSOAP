@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema xmlns:administrators="http://novell.com/zenworks/datamodel/objects/administrators" xmlns:objects="http://novell.com/zenworks/datamodel/objects" xmlns="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://novell.com/zenworks/datamodel/objects/administrators" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:import schemaLocation="core-objects.xsd" namespace="http://novell.com/zenworks/datamodel/objects" />
+  <xsd:element name="Administrator" type="administrators:Administrator" />
+  <xsd:complexType name="Administrator">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="objects:ZENObject">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="FullName" type="xsd:string" />
+          <xsd:element minOccurs="0" name="ReferenceUID" type="xsd:string" />
+          <xsd:element minOccurs="0" name="lastNagTime" type="xsd:dateTime" />
+          <xsd:element minOccurs="0" name="LoginName" type="xsd:string" />
+          <xsd:element minOccurs="0" name="AuthoritativeSourceName" type="xsd:string" />
+          <xsd:element name="SuperAdministrator" type="xsd:boolean" />
+          <xsd:any minOccurs="0" maxOccurs="unbounded" namespace="##targetNamespace" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="AdministratorGroup" type="administrators:AdministratorGroup" />
+  <xsd:complexType name="AdministratorGroup">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="objects:ZENObject">
+        <xsd:sequence>
+          <xsd:any minOccurs="0" maxOccurs="unbounded" namespace="##targetNamespace" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="AdministratorUserGroup" type="administrators:AdministratorUserGroup" />
+  <xsd:complexType name="AdministratorUserGroup">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="objects:ZENObject">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="ReferenceUID" type="xsd:string" />
+          <xsd:element minOccurs="0" name="AuthoritativeSourceName" type="xsd:string" />
+          <xsd:any minOccurs="0" maxOccurs="unbounded" namespace="##targetNamespace" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="AdministratorRoleAssignment" type="administrators:AdministratorRoleAssignment" />
+  <xsd:complexType name="AdministratorRoleAssignment">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="AdminBasicObject" type="objects:BasicObject" />
+      <xsd:element minOccurs="0" name="RoleRights" type="administrators:RoleRights" />
+      <xsd:element minOccurs="0" maxOccurs="unbounded" name="CategoryContexts" type="administrators:RightsCategoryContextObjects" />
+      <xsd:any minOccurs="0" maxOccurs="unbounded" namespace="##targetNamespace" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="RightsCategoryContextObjects" type="administrators:RightsCategoryContextObjects" />
+  <xsd:complexType name="RightsCategoryContextObjects">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="Category" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="unbounded" name="AssignedContextObjects" type="objects:BasicObject" />
+      <xsd:any minOccurs="0" maxOccurs="unbounded" namespace="##targetNamespace" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="RightsCategoryContextUIDs" type="administrators:RightsCategoryContextUIDs" />
+  <xsd:complexType name="RightsCategoryContextUIDs">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="Category" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="unbounded" name="AssignedContextUIDs" type="xsd:string" />
+      <xsd:any minOccurs="0" maxOccurs="unbounded" namespace="##targetNamespace" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="Role" type="administrators:Role" />
+  <xsd:complexType name="Role">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="objects:ZENObject">
+        <xsd:sequence>
+          <xsd:any minOccurs="0" maxOccurs="unbounded" namespace="##targetNamespace" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="RoleRights" type="administrators:RoleRights" />
+  <xsd:complexType name="RoleRights">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="RoleBasicObject" type="objects:BasicObject" />
+      <xsd:element minOccurs="0" maxOccurs="unbounded" name="Rights" type="objects:Rights" />
+      <xsd:any minOccurs="0" maxOccurs="unbounded" namespace="##targetNamespace" />
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>

@@ -1,0 +1,1779 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:users="http://novell.com/zenworks/datamodel/objects/users" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://novell.com/zenworks/datamodel/services/users/soap" xmlns:ldapauthsources="http://novell.com/zenworks/datamodel/objects/authsources/ldap" xmlns:objects="http://novell.com/zenworks/datamodel/objects" xmlns:authsources="http://novell.com/zenworks/datamodel/objects/authsources" xmlns:folders="http://novell.com/zenworks/datamodel/objects/folders" xmlns:exceptions="http://novell.com/zenworks/datamodel/exceptions" xmlns:administrators="http://novell.com/zenworks/datamodel/objects/administrators" name="UserAdminServiceService" targetNamespace="http://novell.com/zenworks/datamodel/services/users/soap" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema xmlns="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://novell.com/zenworks/datamodel/services/users/soap">
+      <xsd:import schemaLocation="core-folders.xsd" namespace="http://novell.com/zenworks/datamodel/objects/folders" />
+      <xsd:import schemaLocation="exceptions.xsd" namespace="http://novell.com/zenworks/datamodel/exceptions" />
+      <xsd:import schemaLocation="core-ldapauthsources.xsd" namespace="http://novell.com/zenworks/datamodel/objects/authsources/ldap" />
+      <xsd:import schemaLocation="core-addons-users.xsd" namespace="http://novell.com/zenworks/datamodel/objects/users" />
+      <xsd:import schemaLocation="core-objects.xsd" namespace="http://novell.com/zenworks/datamodel/objects" />
+      <xsd:import schemaLocation="core-administrators.xsd" namespace="http://novell.com/zenworks/datamodel/objects/administrators" />
+      <xsd:import schemaLocation="core-authsources.xsd" namespace="http://novell.com/zenworks/datamodel/objects/authsources" />
+      <xsd:element name="addAdditionalCertificateRequest" type="tns:addAdditionalCertificateRequest" />
+      <xsd:complexType name="addAdditionalCertificateRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="alias" type="xsd:string" />
+          <xsd:element minOccurs="0" name="certBytes" type="xsd:base64Binary" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="addAdditionalCertificateResponse" type="tns:addAdditionalCertificateResponse" />
+      <xsd:complexType name="addAdditionalCertificateResponse">
+        <xsd:sequence>
+          <xsd:element name="return" type="xsd:boolean" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="cloneRequest" type="tns:cloneRequest" />
+      <xsd:complexType name="cloneRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="obj" type="objects:ZENObject" />
+          <xsd:element minOccurs="0" name="newName" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="cloneResponse" type="tns:cloneResponse" />
+      <xsd:complexType name="cloneResponse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="return" type="objects:ZENObject" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="createRequest" type="tns:createRequest" />
+      <xsd:complexType name="createRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="object" type="objects:ZENObject" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="createResponse" type="tns:createResponse" />
+      <xsd:complexType name="createResponse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="return" type="objects:ZENObject" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="createAdministratorRequest" type="tns:createAdministratorRequest" />
+      <xsd:complexType name="createAdministratorRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="userUID" type="xsd:string" />
+          <xsd:element name="sameRightsAsMe" type="xsd:boolean" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="createAdministratorResponse" type="tns:createAdministratorResponse" />
+      <xsd:complexType name="createAdministratorResponse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="return" type="administrators:Administrator" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="deleteRequest" type="tns:deleteRequest" />
+      <xsd:complexType name="deleteRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="uid" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="deleteResponse" type="tns:deleteResponse" />
+      <xsd:complexType name="deleteResponse">
+        <xsd:sequence>
+          <xsd:element name="return" type="xsd:boolean" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="deleteRecursiveRequest" type="tns:deleteRecursiveRequest" />
+      <xsd:complexType name="deleteRecursiveRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="uid" type="xsd:string" />
+          <xsd:element name="recursive" type="xsd:boolean" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="deleteRecursiveResponse" type="tns:deleteRecursiveResponse" />
+      <xsd:complexType name="deleteRecursiveResponse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="return" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="existsByParentAndNameRequest" type="tns:existsByParentAndNameRequest" />
+      <xsd:complexType name="existsByParentAndNameRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="parentUID" type="xsd:string" />
+          <xsd:element minOccurs="0" name="name" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="existsByParentAndNameResponse" type="tns:existsByParentAndNameResponse" />
+      <xsd:complexType name="existsByParentAndNameResponse">
+        <xsd:sequence>
+          <xsd:element name="return" type="xsd:boolean" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="existsByUIDRequest" type="tns:existsByUIDRequest" />
+      <xsd:complexType name="existsByUIDRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="uid" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="existsByUIDResponse" type="tns:existsByUIDResponse" />
+      <xsd:complexType name="existsByUIDResponse">
+        <xsd:sequence>
+          <xsd:element name="return" type="xsd:boolean" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getAdditionalCertificateRequest" type="tns:getAdditionalCertificateRequest" />
+      <xsd:complexType name="getAdditionalCertificateRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="alias" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getAdditionalCertificateResponse" type="tns:getAdditionalCertificateResponse" />
+      <xsd:complexType name="getAdditionalCertificateResponse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="return" type="xsd:base64Binary" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getAdministratorUIDRequest" type="tns:getAdministratorUIDRequest" />
+      <xsd:complexType name="getAdministratorUIDRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="userUID" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getAdministratorUIDResponse" type="tns:getAdministratorUIDResponse" />
+      <xsd:complexType name="getAdministratorUIDResponse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="return" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getAllAdditionalCertificatesRequest" type="tns:getAllAdditionalCertificatesRequest" />
+      <xsd:complexType name="getAllAdditionalCertificatesRequest">
+        <xsd:sequence />
+      </xsd:complexType>
+      <xsd:element name="getAllAdditionalCertificatesResponse" type="tns:getAllAdditionalCertificatesResponse" />
+      <xsd:complexType name="getAllAdditionalCertificatesResponse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="return" type="users:AdditionalCertificate" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getAllSearchResultsRequest" type="tns:getAllSearchResultsRequest" />
+      <xsd:complexType name="getAllSearchResultsRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="folderUID" type="xsd:string" />
+          <xsd:element minOccurs="0" name="options" type="objects:SearchOptions" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getAllSearchResultsResponse" type="tns:getAllSearchResultsResponse" />
+      <xsd:complexType name="getAllSearchResultsResponse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="return" type="objects:SearchResult" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getAllSearchResultsWIthTokenRequest" type="tns:getAllSearchResultsWIthTokenRequest" />
+      <xsd:complexType name="getAllSearchResultsWIthTokenRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="searchToken" type="objects:SearchToken" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getAllSearchResultsWIthTokenResponse" type="tns:getAllSearchResultsWIthTokenResponse" />
+      <xsd:complexType name="getAllSearchResultsWIthTokenResponse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="return" type="objects:SearchResult" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getAttributesRequest" type="tns:getAttributesRequest" />
+      <xsd:complexType name="getAttributesRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="uid" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="attributes" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getAttributesResponse" type="tns:getAttributesResponse" />
+      <xsd:complexType name="getAttributesResponse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="return" type="xsd:anyType" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getAuthoritativeSourceNameUsingKerberosRequest" type="tns:getAuthoritativeSourceNameUsingKerberosRequest" />
+      <xsd:complexType name="getAuthoritativeSourceNameUsingKerberosRequest">
+        <xsd:sequence />
+      </xsd:complexType>
+      <xsd:element name="getAuthoritativeSourceNameUsingKerberosResponse" type="tns:getAuthoritativeSourceNameUsingKerberosResponse" />
+      <xsd:complexType name="getAuthoritativeSourceNameUsingKerberosResponse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="return" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getAuthoritativeSourceNamesRequest" type="tns:getAuthoritativeSourceNamesRequest" />
+      <xsd:complexType name="getAuthoritativeSourceNamesRequest">
+        <xsd:sequence />
+      </xsd:complexType>
+      <xsd:element name="getAuthoritativeSourceNamesResponse" type="tns:getAuthoritativeSourceNamesResponse" />
+      <xsd:complexType name="getAuthoritativeSourceNamesResponse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="return" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getAuthoritativeSourcesRequest" type="tns:getAuthoritativeSourcesRequest" />
+      <xsd:complexType name="getAuthoritativeSourcesRequest">
+        <xsd:sequence />
+      </xsd:complexType>
+      <xsd:element name="getAuthoritativeSourcesResponse" type="tns:getAuthoritativeSourcesResponse" />
+      <xsd:complexType name="getAuthoritativeSourcesResponse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="return" type="authsources:AuthoritativeSource" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getBasicObjectRequest" type="tns:getBasicObjectRequest" />
+      <xsd:complexType name="getBasicObjectRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="uid" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getBasicObjectResponse" type="tns:getBasicObjectResponse" />
+      <xsd:complexType name="getBasicObjectResponse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="return" type="objects:BasicObject" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getByParentAndNameRequest" type="tns:getByParentAndNameRequest" />
+      <xsd:complexType name="getByParentAndNameRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="parent" type="objects:ZENObject" />
+          <xsd:element minOccurs="0" name="name" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getByParentAndNameResponse" type="tns:getByParentAndNameResponse" />
+      <xsd:complexType name="getByParentAndNameResponse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="return" type="objects:ZENObject" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getByParentUIDAndNameRequest" type="tns:getByParentUIDAndNameRequest" />
+      <xsd:complexType name="getByParentUIDAndNameRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="parentUID" type="xsd:string" />
+          <xsd:element minOccurs="0" name="name" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getByParentUIDAndNameResponse" type="tns:getByParentUIDAndNameResponse" />
+      <xsd:complexType name="getByParentUIDAndNameResponse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="return" type="objects:ZENObject" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getByUIDRequest" type="tns:getByUIDRequest" />
+      <xsd:complexType name="getByUIDRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="uid" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getByUIDResponse" type="tns:getByUIDResponse" />
+      <xsd:complexType name="getByUIDResponse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="return" type="objects:ZENObject" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getCertificatesRequest" type="tns:getCertificatesRequest" />
+      <xsd:complexType name="getCertificatesRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="authSourceUID" type="xsd:string" />
+          <xsd:element minOccurs="0" name="serverConnectionID" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getCertificatesResponse" type="tns:getCertificatesResponse" />
+      <xsd:complexType name="getCertificatesResponse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="return" type="xsd:base64Binary" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getExtraUserInformationRequest" type="tns:getExtraUserInformationRequest" />
+      <xsd:complexType name="getExtraUserInformationRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="userUID" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getExtraUserInformationResponse" type="tns:getExtraUserInformationResponse" />
+      <xsd:complexType name="getExtraUserInformationResponse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="return" type="users:ExtraUserInformation" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getObjectHierachyRequest" type="tns:getObjectHierachyRequest" />
+      <xsd:complexType name="getObjectHierachyRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="uid" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getObjectHierachyResponse" type="tns:getObjectHierachyResponse" />
+      <xsd:complexType name="getObjectHierachyResponse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="return" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getPrimaryWorkstationRequest" type="tns:getPrimaryWorkstationRequest" />
+      <xsd:complexType name="getPrimaryWorkstationRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="userUID" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getPrimaryWorkstationResponse" type="tns:getPrimaryWorkstationResponse" />
+      <xsd:complexType name="getPrimaryWorkstationResponse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="return" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getRootRequest" type="tns:getRootRequest" />
+      <xsd:complexType name="getRootRequest">
+        <xsd:sequence />
+      </xsd:complexType>
+      <xsd:element name="getRootResponse" type="tns:getRootResponse" />
+      <xsd:complexType name="getRootResponse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="return" type="folders:Folder" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getRootPathRequest" type="tns:getRootPathRequest" />
+      <xsd:complexType name="getRootPathRequest">
+        <xsd:sequence />
+      </xsd:complexType>
+      <xsd:element name="getRootPathResponse" type="tns:getRootPathResponse" />
+      <xsd:complexType name="getRootPathResponse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="return" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getRootUIDRequest" type="tns:getRootUIDRequest" />
+      <xsd:complexType name="getRootUIDRequest">
+        <xsd:sequence />
+      </xsd:complexType>
+      <xsd:element name="getRootUIDResponse" type="tns:getRootUIDResponse" />
+      <xsd:complexType name="getRootUIDResponse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="return" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getSearchResultsRequest" type="tns:getSearchResultsRequest" />
+      <xsd:complexType name="getSearchResultsRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="searchToken" type="objects:SearchToken" />
+          <xsd:element name="index" type="xsd:int" />
+          <xsd:element name="count" type="xsd:int" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getSearchResultsResponse" type="tns:getSearchResultsResponse" />
+      <xsd:complexType name="getSearchResultsResponse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="return" type="objects:SearchResult" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getUserSourceConnectionsRequest" type="tns:getUserSourceConnectionsRequest" />
+      <xsd:complexType name="getUserSourceConnectionsRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="authSourceName" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getUserSourceConnectionsResponse" type="tns:getUserSourceConnectionsResponse" />
+      <xsd:complexType name="getUserSourceConnectionsResponse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="return" type="ldapauthsources:ServerConnection" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getUserUIDRequest" type="tns:getUserUIDRequest" />
+      <xsd:complexType name="getUserUIDRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="authSourceName" type="xsd:string" />
+          <xsd:element minOccurs="0" name="userGUID" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getUserUIDResponse" type="tns:getUserUIDResponse" />
+      <xsd:complexType name="getUserUIDResponse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="return" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getZENUserGroupFolderRequest" type="tns:getZENUserGroupFolderRequest" />
+      <xsd:complexType name="getZENUserGroupFolderRequest">
+        <xsd:sequence />
+      </xsd:complexType>
+      <xsd:element name="getZENUserGroupFolderResponse" type="tns:getZENUserGroupFolderResponse" />
+      <xsd:complexType name="getZENUserGroupFolderResponse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="return" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="importAuthSourceCertficateRequest" type="tns:importAuthSourceCertficateRequest" />
+      <xsd:complexType name="importAuthSourceCertficateRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="certificate" type="xsd:base64Binary" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="importAuthSourceCertficateResponse" type="tns:importAuthSourceCertficateResponse" />
+      <xsd:complexType name="importAuthSourceCertficateResponse">
+        <xsd:sequence>
+          <xsd:element name="return" type="xsd:boolean" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="isAuthoritativeSourceConfiguredRequest" type="tns:isAuthoritativeSourceConfiguredRequest" />
+      <xsd:complexType name="isAuthoritativeSourceConfiguredRequest">
+        <xsd:sequence />
+      </xsd:complexType>
+      <xsd:element name="isAuthoritativeSourceConfiguredResponse" type="tns:isAuthoritativeSourceConfiguredResponse" />
+      <xsd:complexType name="isAuthoritativeSourceConfiguredResponse">
+        <xsd:sequence>
+          <xsd:element name="return" type="xsd:boolean" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="isZENUserGroupFolderRequest" type="tns:isZENUserGroupFolderRequest" />
+      <xsd:complexType name="isZENUserGroupFolderRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="uid" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="isZENUserGroupFolderResponse" type="tns:isZENUserGroupFolderResponse" />
+      <xsd:complexType name="isZENUserGroupFolderResponse">
+        <xsd:sequence>
+          <xsd:element name="return" type="xsd:boolean" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="moveRequest" type="tns:moveRequest" />
+      <xsd:complexType name="moveRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="obj" type="objects:ZENObject" />
+          <xsd:element minOccurs="0" name="newParent" type="objects:ZENObject" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="moveResponse" type="tns:moveResponse" />
+      <xsd:complexType name="moveResponse">
+        <xsd:sequence>
+          <xsd:element name="return" type="xsd:boolean" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="reconfigureCASAAuthServiceRequest" type="tns:reconfigureCASAAuthServiceRequest" />
+      <xsd:complexType name="reconfigureCASAAuthServiceRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="serverUID" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="reconfigureCASAAuthServiceResponse" type="tns:reconfigureCASAAuthServiceResponse" />
+      <xsd:complexType name="reconfigureCASAAuthServiceResponse">
+        <xsd:sequence>
+          <xsd:element name="return" type="xsd:boolean" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="refreshSearchTokenRequest" type="tns:refreshSearchTokenRequest" />
+      <xsd:complexType name="refreshSearchTokenRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="searchToken" type="objects:SearchToken" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="refreshSearchTokenResponse" type="tns:refreshSearchTokenResponse" />
+      <xsd:complexType name="refreshSearchTokenResponse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="return" type="objects:SearchToken" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="releaseSearchTokenRequest" type="tns:releaseSearchTokenRequest" />
+      <xsd:complexType name="releaseSearchTokenRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="searchToken" type="objects:SearchToken" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="releaseSearchTokenResponse" type="tns:releaseSearchTokenResponse" />
+      <xsd:complexType name="releaseSearchTokenResponse">
+        <xsd:sequence>
+          <xsd:element name="return" type="xsd:boolean" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="removeAdditionalCertificateRequest" type="tns:removeAdditionalCertificateRequest" />
+      <xsd:complexType name="removeAdditionalCertificateRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="alias" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="removeAdditionalCertificateResponse" type="tns:removeAdditionalCertificateResponse" />
+      <xsd:complexType name="removeAdditionalCertificateResponse">
+        <xsd:sequence>
+          <xsd:element name="return" type="xsd:boolean" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="renameRequest" type="tns:renameRequest" />
+      <xsd:complexType name="renameRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="obj" type="objects:ZENObject" />
+          <xsd:element minOccurs="0" name="newName" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="renameResponse" type="tns:renameResponse" />
+      <xsd:complexType name="renameResponse">
+        <xsd:sequence>
+          <xsd:element name="return" type="xsd:boolean" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="saveExtraUserInformationRequest" type="tns:saveExtraUserInformationRequest" />
+      <xsd:complexType name="saveExtraUserInformationRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="information" type="users:ExtraUserInformation" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="saveExtraUserInformationResponse" type="tns:saveExtraUserInformationResponse" />
+      <xsd:complexType name="saveExtraUserInformationResponse">
+        <xsd:sequence>
+          <xsd:element name="return" type="xsd:boolean" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="searchRequest" type="tns:searchRequest" />
+      <xsd:complexType name="searchRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="folderUID" type="xsd:string" />
+          <xsd:element minOccurs="0" name="options" type="objects:SearchOptions" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="searchResponse" type="tns:searchResponse" />
+      <xsd:complexType name="searchResponse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="return" type="objects:SearchToken" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="setCertificatesRequest" type="tns:setCertificatesRequest" />
+      <xsd:complexType name="setCertificatesRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="authSourceUID" type="xsd:string" />
+          <xsd:element minOccurs="0" name="serverConnectionID" type="xsd:string" />
+          <xsd:element minOccurs="0" name="certBytes" type="xsd:base64Binary" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="setCertificatesResponse" type="tns:setCertificatesResponse" />
+      <xsd:complexType name="setCertificatesResponse">
+        <xsd:sequence>
+          <xsd:element name="return" type="xsd:boolean" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="setUserSourceConnectionsRequest" type="tns:setUserSourceConnectionsRequest" />
+      <xsd:complexType name="setUserSourceConnectionsRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="authSourceName" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="connections" type="ldapauthsources:ServerConnection" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="setUserSourceConnectionsResponse" type="tns:setUserSourceConnectionsResponse" />
+      <xsd:complexType name="setUserSourceConnectionsResponse">
+        <xsd:sequence>
+          <xsd:element name="return" type="xsd:boolean" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="setUsersAsNonTestUsersRequest" type="tns:setUsersAsNonTestUsersRequest" />
+      <xsd:complexType name="setUsersAsNonTestUsersRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="testUserUIDs" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="setUsersAsNonTestUsersResponse" type="tns:setUsersAsNonTestUsersResponse" />
+      <xsd:complexType name="setUsersAsNonTestUsersResponse">
+        <xsd:sequence>
+          <xsd:element name="return" type="xsd:boolean" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="setUsersAsTestUsersRequest" type="tns:setUsersAsTestUsersRequest" />
+      <xsd:complexType name="setUsersAsTestUsersRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="userUIDs" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="setUsersAsTestUsersResponse" type="tns:setUsersAsTestUsersResponse" />
+      <xsd:complexType name="setUsersAsTestUsersResponse">
+        <xsd:sequence>
+          <xsd:element name="return" type="xsd:boolean" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="updateRequest" type="tns:updateRequest" />
+      <xsd:complexType name="updateRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="object" type="objects:ZENObject" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="updateResponse" type="tns:updateResponse" />
+      <xsd:complexType name="updateResponse">
+        <xsd:sequence>
+          <xsd:element name="return" type="xsd:boolean" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="validateLDAPAuthoritativeSourceRequest" type="tns:validateLDAPAuthoritativeSourceRequest" />
+      <xsd:complexType name="validateLDAPAuthoritativeSourceRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="authSourceName" type="xsd:string" />
+          <xsd:element minOccurs="0" name="source" type="ldapauthsources:LDAPAuthoritativeSource" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="validateLDAPAuthoritativeSourceResponse" type="tns:validateLDAPAuthoritativeSourceResponse" />
+      <xsd:complexType name="validateLDAPAuthoritativeSourceResponse">
+        <xsd:sequence>
+          <xsd:element name="return" type="xsd:boolean" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="verifyForModifyRightsRequest" type="tns:verifyForModifyRightsRequest" />
+      <xsd:complexType name="verifyForModifyRightsRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="object" type="objects:ZENObject" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="verifyForModifyRightsResponse" type="tns:verifyForModifyRightsResponse" />
+      <xsd:complexType name="verifyForModifyRightsResponse">
+        <xsd:sequence>
+          <xsd:element name="return" type="xsd:boolean" />
+        </xsd:sequence>
+      </xsd:complexType>
+    </xsd:schema>
+  </types>
+  <message name="RemoteDataModelException">
+    <part name="fault" element="exceptions:RemoteDataModelException" />
+  </message>
+  <message name="addAdditionalCertificateInput">
+    <part name="parameters" element="tns:addAdditionalCertificateRequest" />
+  </message>
+  <message name="addAdditionalCertificateOutput">
+    <part name="parameters" element="tns:addAdditionalCertificateResponse" />
+  </message>
+  <message name="cloneInput">
+    <part name="parameters" element="tns:cloneRequest" />
+  </message>
+  <message name="cloneOutput">
+    <part name="parameters" element="tns:cloneResponse" />
+  </message>
+  <message name="createInput">
+    <part name="parameters" element="tns:createRequest" />
+  </message>
+  <message name="createOutput">
+    <part name="parameters" element="tns:createResponse" />
+  </message>
+  <message name="createAdministratorInput">
+    <part name="parameters" element="tns:createAdministratorRequest" />
+  </message>
+  <message name="createAdministratorOutput">
+    <part name="parameters" element="tns:createAdministratorResponse" />
+  </message>
+  <message name="deleteInput">
+    <part name="parameters" element="tns:deleteRequest" />
+  </message>
+  <message name="deleteOutput">
+    <part name="parameters" element="tns:deleteResponse" />
+  </message>
+  <message name="deleteRecursiveInput">
+    <part name="parameters" element="tns:deleteRecursiveRequest" />
+  </message>
+  <message name="deleteRecursiveOutput">
+    <part name="parameters" element="tns:deleteRecursiveResponse" />
+  </message>
+  <message name="existsByParentAndNameInput">
+    <part name="parameters" element="tns:existsByParentAndNameRequest" />
+  </message>
+  <message name="existsByParentAndNameOutput">
+    <part name="parameters" element="tns:existsByParentAndNameResponse" />
+  </message>
+  <message name="existsByUIDInput">
+    <part name="parameters" element="tns:existsByUIDRequest" />
+  </message>
+  <message name="existsByUIDOutput">
+    <part name="parameters" element="tns:existsByUIDResponse" />
+  </message>
+  <message name="getAdditionalCertificateInput">
+    <part name="parameters" element="tns:getAdditionalCertificateRequest" />
+  </message>
+  <message name="getAdditionalCertificateOutput">
+    <part name="parameters" element="tns:getAdditionalCertificateResponse" />
+  </message>
+  <message name="getAdministratorUIDInput">
+    <part name="parameters" element="tns:getAdministratorUIDRequest" />
+  </message>
+  <message name="getAdministratorUIDOutput">
+    <part name="parameters" element="tns:getAdministratorUIDResponse" />
+  </message>
+  <message name="getAllAdditionalCertificatesInput">
+    <part name="parameters" element="tns:getAllAdditionalCertificatesRequest" />
+  </message>
+  <message name="getAllAdditionalCertificatesOutput">
+    <part name="parameters" element="tns:getAllAdditionalCertificatesResponse" />
+  </message>
+  <message name="getAllSearchResultsInput">
+    <part name="parameters" element="tns:getAllSearchResultsRequest" />
+  </message>
+  <message name="getAllSearchResultsOutput">
+    <part name="parameters" element="tns:getAllSearchResultsResponse" />
+  </message>
+  <message name="getAllSearchResultsWIthTokenInput">
+    <part name="parameters" element="tns:getAllSearchResultsWIthTokenRequest" />
+  </message>
+  <message name="getAllSearchResultsWIthTokenOutput">
+    <part name="parameters" element="tns:getAllSearchResultsWIthTokenResponse" />
+  </message>
+  <message name="getAttributesInput">
+    <part name="parameters" element="tns:getAttributesRequest" />
+  </message>
+  <message name="getAttributesOutput">
+    <part name="parameters" element="tns:getAttributesResponse" />
+  </message>
+  <message name="getAuthoritativeSourceNameUsingKerberosInput">
+    <part name="parameters" element="tns:getAuthoritativeSourceNameUsingKerberosRequest" />
+  </message>
+  <message name="getAuthoritativeSourceNameUsingKerberosOutput">
+    <part name="parameters" element="tns:getAuthoritativeSourceNameUsingKerberosResponse" />
+  </message>
+  <message name="getAuthoritativeSourceNamesInput">
+    <part name="parameters" element="tns:getAuthoritativeSourceNamesRequest" />
+  </message>
+  <message name="getAuthoritativeSourceNamesOutput">
+    <part name="parameters" element="tns:getAuthoritativeSourceNamesResponse" />
+  </message>
+  <message name="getAuthoritativeSourcesInput">
+    <part name="parameters" element="tns:getAuthoritativeSourcesRequest" />
+  </message>
+  <message name="getAuthoritativeSourcesOutput">
+    <part name="parameters" element="tns:getAuthoritativeSourcesResponse" />
+  </message>
+  <message name="getBasicObjectInput">
+    <part name="parameters" element="tns:getBasicObjectRequest" />
+  </message>
+  <message name="getBasicObjectOutput">
+    <part name="parameters" element="tns:getBasicObjectResponse" />
+  </message>
+  <message name="getByParentAndNameInput">
+    <part name="parameters" element="tns:getByParentAndNameRequest" />
+  </message>
+  <message name="getByParentAndNameOutput">
+    <part name="parameters" element="tns:getByParentAndNameResponse" />
+  </message>
+  <message name="getByParentUIDAndNameInput">
+    <part name="parameters" element="tns:getByParentUIDAndNameRequest" />
+  </message>
+  <message name="getByParentUIDAndNameOutput">
+    <part name="parameters" element="tns:getByParentUIDAndNameResponse" />
+  </message>
+  <message name="getByUIDInput">
+    <part name="parameters" element="tns:getByUIDRequest" />
+  </message>
+  <message name="getByUIDOutput">
+    <part name="parameters" element="tns:getByUIDResponse" />
+  </message>
+  <message name="getCertificatesInput">
+    <part name="parameters" element="tns:getCertificatesRequest" />
+  </message>
+  <message name="getCertificatesOutput">
+    <part name="parameters" element="tns:getCertificatesResponse" />
+  </message>
+  <message name="getExtraUserInformationInput">
+    <part name="parameters" element="tns:getExtraUserInformationRequest" />
+  </message>
+  <message name="getExtraUserInformationOutput">
+    <part name="parameters" element="tns:getExtraUserInformationResponse" />
+  </message>
+  <message name="getObjectHierachyInput">
+    <part name="parameters" element="tns:getObjectHierachyRequest" />
+  </message>
+  <message name="getObjectHierachyOutput">
+    <part name="parameters" element="tns:getObjectHierachyResponse" />
+  </message>
+  <message name="getPrimaryWorkstationInput">
+    <part name="parameters" element="tns:getPrimaryWorkstationRequest" />
+  </message>
+  <message name="getPrimaryWorkstationOutput">
+    <part name="parameters" element="tns:getPrimaryWorkstationResponse" />
+  </message>
+  <message name="getRootInput">
+    <part name="parameters" element="tns:getRootRequest" />
+  </message>
+  <message name="getRootOutput">
+    <part name="parameters" element="tns:getRootResponse" />
+  </message>
+  <message name="getRootPathInput">
+    <part name="parameters" element="tns:getRootPathRequest" />
+  </message>
+  <message name="getRootPathOutput">
+    <part name="parameters" element="tns:getRootPathResponse" />
+  </message>
+  <message name="getRootUIDInput">
+    <part name="parameters" element="tns:getRootUIDRequest" />
+  </message>
+  <message name="getRootUIDOutput">
+    <part name="parameters" element="tns:getRootUIDResponse" />
+  </message>
+  <message name="getSearchResultsInput">
+    <part name="parameters" element="tns:getSearchResultsRequest" />
+  </message>
+  <message name="getSearchResultsOutput">
+    <part name="parameters" element="tns:getSearchResultsResponse" />
+  </message>
+  <message name="getUserSourceConnectionsInput">
+    <part name="parameters" element="tns:getUserSourceConnectionsRequest" />
+  </message>
+  <message name="getUserSourceConnectionsOutput">
+    <part name="parameters" element="tns:getUserSourceConnectionsResponse" />
+  </message>
+  <message name="getUserUIDInput">
+    <part name="parameters" element="tns:getUserUIDRequest" />
+  </message>
+  <message name="getUserUIDOutput">
+    <part name="parameters" element="tns:getUserUIDResponse" />
+  </message>
+  <message name="getZENUserGroupFolderInput">
+    <part name="parameters" element="tns:getZENUserGroupFolderRequest" />
+  </message>
+  <message name="getZENUserGroupFolderOutput">
+    <part name="parameters" element="tns:getZENUserGroupFolderResponse" />
+  </message>
+  <message name="importAuthSourceCertficateInput">
+    <part name="parameters" element="tns:importAuthSourceCertficateRequest" />
+  </message>
+  <message name="importAuthSourceCertficateOutput">
+    <part name="parameters" element="tns:importAuthSourceCertficateResponse" />
+  </message>
+  <message name="isAuthoritativeSourceConfiguredInput">
+    <part name="parameters" element="tns:isAuthoritativeSourceConfiguredRequest" />
+  </message>
+  <message name="isAuthoritativeSourceConfiguredOutput">
+    <part name="parameters" element="tns:isAuthoritativeSourceConfiguredResponse" />
+  </message>
+  <message name="isZENUserGroupFolderInput">
+    <part name="parameters" element="tns:isZENUserGroupFolderRequest" />
+  </message>
+  <message name="isZENUserGroupFolderOutput">
+    <part name="parameters" element="tns:isZENUserGroupFolderResponse" />
+  </message>
+  <message name="moveInput">
+    <part name="parameters" element="tns:moveRequest" />
+  </message>
+  <message name="moveOutput">
+    <part name="parameters" element="tns:moveResponse" />
+  </message>
+  <message name="reconfigureCASAAuthServiceInput">
+    <part name="parameters" element="tns:reconfigureCASAAuthServiceRequest" />
+  </message>
+  <message name="reconfigureCASAAuthServiceOutput">
+    <part name="parameters" element="tns:reconfigureCASAAuthServiceResponse" />
+  </message>
+  <message name="refreshSearchTokenInput">
+    <part name="parameters" element="tns:refreshSearchTokenRequest" />
+  </message>
+  <message name="refreshSearchTokenOutput">
+    <part name="parameters" element="tns:refreshSearchTokenResponse" />
+  </message>
+  <message name="releaseSearchTokenInput">
+    <part name="parameters" element="tns:releaseSearchTokenRequest" />
+  </message>
+  <message name="releaseSearchTokenOutput">
+    <part name="parameters" element="tns:releaseSearchTokenResponse" />
+  </message>
+  <message name="removeAdditionalCertificateInput">
+    <part name="parameters" element="tns:removeAdditionalCertificateRequest" />
+  </message>
+  <message name="removeAdditionalCertificateOutput">
+    <part name="parameters" element="tns:removeAdditionalCertificateResponse" />
+  </message>
+  <message name="renameInput">
+    <part name="parameters" element="tns:renameRequest" />
+  </message>
+  <message name="renameOutput">
+    <part name="parameters" element="tns:renameResponse" />
+  </message>
+  <message name="saveExtraUserInformationInput">
+    <part name="parameters" element="tns:saveExtraUserInformationRequest" />
+  </message>
+  <message name="saveExtraUserInformationOutput">
+    <part name="parameters" element="tns:saveExtraUserInformationResponse" />
+  </message>
+  <message name="searchInput">
+    <part name="parameters" element="tns:searchRequest" />
+  </message>
+  <message name="searchOutput">
+    <part name="parameters" element="tns:searchResponse" />
+  </message>
+  <message name="setCertificatesInput">
+    <part name="parameters" element="tns:setCertificatesRequest" />
+  </message>
+  <message name="setCertificatesOutput">
+    <part name="parameters" element="tns:setCertificatesResponse" />
+  </message>
+  <message name="setUserSourceConnectionsInput">
+    <part name="parameters" element="tns:setUserSourceConnectionsRequest" />
+  </message>
+  <message name="setUserSourceConnectionsOutput">
+    <part name="parameters" element="tns:setUserSourceConnectionsResponse" />
+  </message>
+  <message name="setUsersAsNonTestUsersInput">
+    <part name="parameters" element="tns:setUsersAsNonTestUsersRequest" />
+  </message>
+  <message name="setUsersAsNonTestUsersOutput">
+    <part name="parameters" element="tns:setUsersAsNonTestUsersResponse" />
+  </message>
+  <message name="setUsersAsTestUsersInput">
+    <part name="parameters" element="tns:setUsersAsTestUsersRequest" />
+  </message>
+  <message name="setUsersAsTestUsersOutput">
+    <part name="parameters" element="tns:setUsersAsTestUsersResponse" />
+  </message>
+  <message name="updateInput">
+    <part name="parameters" element="tns:updateRequest" />
+  </message>
+  <message name="updateOutput">
+    <part name="parameters" element="tns:updateResponse" />
+  </message>
+  <message name="validateLDAPAuthoritativeSourceInput">
+    <part name="parameters" element="tns:validateLDAPAuthoritativeSourceRequest" />
+  </message>
+  <message name="validateLDAPAuthoritativeSourceOutput">
+    <part name="parameters" element="tns:validateLDAPAuthoritativeSourceResponse" />
+  </message>
+  <message name="verifyForModifyRightsInput">
+    <part name="parameters" element="tns:verifyForModifyRightsRequest" />
+  </message>
+  <message name="verifyForModifyRightsOutput">
+    <part name="parameters" element="tns:verifyForModifyRightsResponse" />
+  </message>
+  <portType name="UserAdminService">
+    <operation name="addAdditionalCertificate">
+      <input message="tns:addAdditionalCertificateInput" />
+      <output message="tns:addAdditionalCertificateOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="clone">
+      <input message="tns:cloneInput" />
+      <output message="tns:cloneOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="create">
+      <input message="tns:createInput" />
+      <output message="tns:createOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="createAdministrator">
+      <input message="tns:createAdministratorInput" />
+      <output message="tns:createAdministratorOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="delete">
+      <input message="tns:deleteInput" />
+      <output message="tns:deleteOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="deleteRecursive">
+      <input message="tns:deleteRecursiveInput" />
+      <output message="tns:deleteRecursiveOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="existsByParentAndName">
+      <input message="tns:existsByParentAndNameInput" />
+      <output message="tns:existsByParentAndNameOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="existsByUID">
+      <input message="tns:existsByUIDInput" />
+      <output message="tns:existsByUIDOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="getAdditionalCertificate">
+      <input message="tns:getAdditionalCertificateInput" />
+      <output message="tns:getAdditionalCertificateOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="getAdministratorUID">
+      <input message="tns:getAdministratorUIDInput" />
+      <output message="tns:getAdministratorUIDOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="getAllAdditionalCertificates">
+      <input message="tns:getAllAdditionalCertificatesInput" />
+      <output message="tns:getAllAdditionalCertificatesOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="getAllSearchResults">
+      <input message="tns:getAllSearchResultsInput" />
+      <output message="tns:getAllSearchResultsOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="getAllSearchResultsWIthToken">
+      <input message="tns:getAllSearchResultsWIthTokenInput" />
+      <output message="tns:getAllSearchResultsWIthTokenOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="getAttributes">
+      <input message="tns:getAttributesInput" />
+      <output message="tns:getAttributesOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="getAuthoritativeSourceNameUsingKerberos">
+      <input message="tns:getAuthoritativeSourceNameUsingKerberosInput" />
+      <output message="tns:getAuthoritativeSourceNameUsingKerberosOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="getAuthoritativeSourceNames">
+      <input message="tns:getAuthoritativeSourceNamesInput" />
+      <output message="tns:getAuthoritativeSourceNamesOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="getAuthoritativeSources">
+      <input message="tns:getAuthoritativeSourcesInput" />
+      <output message="tns:getAuthoritativeSourcesOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="getBasicObject">
+      <input message="tns:getBasicObjectInput" />
+      <output message="tns:getBasicObjectOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="getByParentAndName">
+      <input message="tns:getByParentAndNameInput" />
+      <output message="tns:getByParentAndNameOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="getByParentUIDAndName">
+      <input message="tns:getByParentUIDAndNameInput" />
+      <output message="tns:getByParentUIDAndNameOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="getByUID">
+      <input message="tns:getByUIDInput" />
+      <output message="tns:getByUIDOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="getCertificates">
+      <input message="tns:getCertificatesInput" />
+      <output message="tns:getCertificatesOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="getExtraUserInformation">
+      <input message="tns:getExtraUserInformationInput" />
+      <output message="tns:getExtraUserInformationOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="getObjectHierachy">
+      <input message="tns:getObjectHierachyInput" />
+      <output message="tns:getObjectHierachyOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="getPrimaryWorkstation">
+      <input message="tns:getPrimaryWorkstationInput" />
+      <output message="tns:getPrimaryWorkstationOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="getRoot">
+      <input message="tns:getRootInput" />
+      <output message="tns:getRootOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="getRootPath">
+      <input message="tns:getRootPathInput" />
+      <output message="tns:getRootPathOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="getRootUID">
+      <input message="tns:getRootUIDInput" />
+      <output message="tns:getRootUIDOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="getSearchResults">
+      <input message="tns:getSearchResultsInput" />
+      <output message="tns:getSearchResultsOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="getUserSourceConnections">
+      <input message="tns:getUserSourceConnectionsInput" />
+      <output message="tns:getUserSourceConnectionsOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="getUserUID">
+      <input message="tns:getUserUIDInput" />
+      <output message="tns:getUserUIDOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="getZENUserGroupFolder">
+      <input message="tns:getZENUserGroupFolderInput" />
+      <output message="tns:getZENUserGroupFolderOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="importAuthSourceCertficate">
+      <input message="tns:importAuthSourceCertficateInput" />
+      <output message="tns:importAuthSourceCertficateOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="isAuthoritativeSourceConfigured">
+      <input message="tns:isAuthoritativeSourceConfiguredInput" />
+      <output message="tns:isAuthoritativeSourceConfiguredOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="isZENUserGroupFolder">
+      <input message="tns:isZENUserGroupFolderInput" />
+      <output message="tns:isZENUserGroupFolderOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="move">
+      <input message="tns:moveInput" />
+      <output message="tns:moveOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="reconfigureCASAAuthService">
+      <input message="tns:reconfigureCASAAuthServiceInput" />
+      <output message="tns:reconfigureCASAAuthServiceOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="refreshSearchToken">
+      <input message="tns:refreshSearchTokenInput" />
+      <output message="tns:refreshSearchTokenOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="releaseSearchToken">
+      <input message="tns:releaseSearchTokenInput" />
+      <output message="tns:releaseSearchTokenOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="removeAdditionalCertificate">
+      <input message="tns:removeAdditionalCertificateInput" />
+      <output message="tns:removeAdditionalCertificateOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="rename">
+      <input message="tns:renameInput" />
+      <output message="tns:renameOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="saveExtraUserInformation">
+      <input message="tns:saveExtraUserInformationInput" />
+      <output message="tns:saveExtraUserInformationOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="search">
+      <input message="tns:searchInput" />
+      <output message="tns:searchOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="setCertificates">
+      <input message="tns:setCertificatesInput" />
+      <output message="tns:setCertificatesOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="setUserSourceConnections">
+      <input message="tns:setUserSourceConnectionsInput" />
+      <output message="tns:setUserSourceConnectionsOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="setUsersAsNonTestUsers">
+      <input message="tns:setUsersAsNonTestUsersInput" />
+      <output message="tns:setUsersAsNonTestUsersOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="setUsersAsTestUsers">
+      <input message="tns:setUsersAsTestUsersInput" />
+      <output message="tns:setUsersAsTestUsersOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="update">
+      <input message="tns:updateInput" />
+      <output message="tns:updateOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="validateLDAPAuthoritativeSource">
+      <input message="tns:validateLDAPAuthoritativeSourceInput" />
+      <output message="tns:validateLDAPAuthoritativeSourceOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="verifyForModifyRights">
+      <input message="tns:verifyForModifyRightsInput" />
+      <output message="tns:verifyForModifyRightsOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+  </portType>
+  <binding name="UserAdminServiceBinding" type="tns:UserAdminService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="addAdditionalCertificate">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/users/soap/addAdditionalCertificate" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="RemoteDataModelException">
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="clone">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/users/soap/clone" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="RemoteDataModelException">
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="create">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/users/soap/create" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="RemoteDataModelException">
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="createAdministrator">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/users/soap/createAdministrator" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="RemoteDataModelException">
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="delete">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/users/soap/delete" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="RemoteDataModelException">
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="deleteRecursive">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/users/soap/deleteRecursive" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="RemoteDataModelException">
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="existsByParentAndName">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/users/soap/existsByParentAndName" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="RemoteDataModelException">
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="existsByUID">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/users/soap/existsByUID" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="RemoteDataModelException">
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="getAdditionalCertificate">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/users/soap/getAdditionalCertificate" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="RemoteDataModelException">
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="getAdministratorUID">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/users/soap/getAdministratorUID" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="RemoteDataModelException">
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="getAllAdditionalCertificates">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/users/soap/getAllAdditionalCertificates" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="RemoteDataModelException">
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="getAllSearchResults">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/users/soap/getAllSearchResults" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="RemoteDataModelException">
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="getAllSearchResultsWIthToken">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/users/soap/getAllSearchResultsWIthToken" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="RemoteDataModelException">
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="getAttributes">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/users/soap/getAttributes" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="RemoteDataModelException">
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="getAuthoritativeSourceNameUsingKerberos">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/users/soap/getAuthoritativeSourceNameUsingKerberos" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="RemoteDataModelException">
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="getAuthoritativeSourceNames">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/users/soap/getAuthoritativeSourceNames" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="RemoteDataModelException">
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="getAuthoritativeSources">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/users/soap/getAuthoritativeSources" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="RemoteDataModelException">
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="getBasicObject">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/users/soap/getBasicObject" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="RemoteDataModelException">
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="getByParentAndName">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/users/soap/getByParentAndName" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="RemoteDataModelException">
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="getByParentUIDAndName">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/users/soap/getByParentUIDAndName" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="RemoteDataModelException">
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="getByUID">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/users/soap/getByUID" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="RemoteDataModelException">
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="getCertificates">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/users/soap/getCertificates" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="RemoteDataModelException">
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="getExtraUserInformation">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/users/soap/getExtraUserInformation" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="RemoteDataModelException">
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="getObjectHierachy">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/users/soap/getObjectHierachy" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="RemoteDataModelException">
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="getPrimaryWorkstation">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/users/soap/getPrimaryWorkstation" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="RemoteDataModelException">
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="getRoot">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/users/soap/getRoot" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="RemoteDataModelException">
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="getRootPath">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/users/soap/getRootPath" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="RemoteDataModelException">
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="getRootUID">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/users/soap/getRootUID" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="RemoteDataModelException">
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="getSearchResults">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/users/soap/getSearchResults" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="RemoteDataModelException">
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="getUserSourceConnections">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/users/soap/getUserSourceConnections" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="RemoteDataModelException">
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="getUserUID">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/users/soap/getUserUID" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="RemoteDataModelException">
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="getZENUserGroupFolder">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/users/soap/getZENUserGroupFolder" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="RemoteDataModelException">
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="importAuthSourceCertficate">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/users/soap/importAuthSourceCertficate" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="RemoteDataModelException">
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="isAuthoritativeSourceConfigured">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/users/soap/isAuthoritativeSourceConfigured" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="RemoteDataModelException">
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="isZENUserGroupFolder">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/users/soap/isZENUserGroupFolder" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="RemoteDataModelException">
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="move">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/users/soap/move" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="RemoteDataModelException">
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="reconfigureCASAAuthService">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/users/soap/reconfigureCASAAuthService" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="RemoteDataModelException">
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="refreshSearchToken">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/users/soap/refreshSearchToken" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="RemoteDataModelException">
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="releaseSearchToken">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/users/soap/releaseSearchToken" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="RemoteDataModelException">
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="removeAdditionalCertificate">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/users/soap/removeAdditionalCertificate" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="RemoteDataModelException">
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="rename">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/users/soap/rename" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="RemoteDataModelException">
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="saveExtraUserInformation">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/users/soap/saveExtraUserInformation" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="RemoteDataModelException">
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="search">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/users/soap/search" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="RemoteDataModelException">
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="setCertificates">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/users/soap/setCertificates" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="RemoteDataModelException">
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="setUserSourceConnections">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/users/soap/setUserSourceConnections" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="RemoteDataModelException">
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="setUsersAsNonTestUsers">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/users/soap/setUsersAsNonTestUsers" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="RemoteDataModelException">
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="setUsersAsTestUsers">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/users/soap/setUsersAsTestUsers" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="RemoteDataModelException">
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="update">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/users/soap/update" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="RemoteDataModelException">
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="validateLDAPAuthoritativeSource">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/users/soap/validateLDAPAuthoritativeSource" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="RemoteDataModelException">
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="verifyForModifyRights">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/users/soap/verifyForModifyRights" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="RemoteDataModelException">
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+  </binding>
+  <service name="UserAdminServiceService">
+    <port name="UserAdminServicePort" binding="tns:UserAdminServiceBinding">
+      <soap:address location="http://localhost:8080/zenworks-datamodel/" />
+    </port>
+  </service>
+</definitions>

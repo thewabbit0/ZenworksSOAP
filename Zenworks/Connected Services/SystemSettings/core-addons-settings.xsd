@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema xmlns:settings="http://novell.com/zenworks/datamodel/objects/settings" xmlns="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://novell.com/zenworks/datamodel/objects/settings" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:element name="SystemSetting" type="settings:SystemSetting" />
+  <xsd:complexType name="SystemSetting">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="id" type="xsd:string" />
+      <xsd:element minOccurs="0" name="ObjectUID" type="xsd:string" />
+      <xsd:element minOccurs="0" name="Name" type="xsd:string" />
+      <xsd:element minOccurs="0" name="Targets" type="xsd:short" />
+      <xsd:element minOccurs="0" name="Data" type="xsd:string" />
+      <xsd:element minOccurs="0" name="ModifiedTime" type="xsd:dateTime" />
+      <xsd:any minOccurs="0" maxOccurs="unbounded" namespace="##targetNamespace" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="Variable" type="settings:Variable" />
+  <xsd:complexType name="Variable">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="Name" type="xsd:string" />
+      <xsd:element minOccurs="0" name="Value" type="xsd:string" />
+      <xsd:any minOccurs="0" maxOccurs="unbounded" namespace="##targetNamespace" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="OpaqueData" type="settings:OpaqueData" />
+  <xsd:complexType name="OpaqueData">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="Name" type="xsd:string" />
+      <xsd:element minOccurs="0" name="Data" type="xsd:string" />
+      <xsd:element minOccurs="0" name="ObjectUID" type="xsd:string" />
+      <xsd:element minOccurs="0" name="Id" type="xsd:string" />
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>

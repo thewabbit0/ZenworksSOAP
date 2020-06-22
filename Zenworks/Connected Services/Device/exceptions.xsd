@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema xmlns:exceptions="http://novell.com/zenworks/datamodel/exceptions" xmlns="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://novell.com/zenworks/datamodel/exceptions" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:element name="RemoteDataModelException" type="exceptions:RemoteDataModelException" />
+  <xsd:complexType name="RemoteDataModelException">
+    <xsd:sequence>
+      <xsd:element name="Code" type="xsd:int" />
+      <xsd:element name="Message" type="xsd:string" />
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>

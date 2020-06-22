@@ -1,0 +1,2483 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:quicktasks="http://novell.com/zenworks/datamodel/objects/quicktasks" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:bundles="http://novell.com/zenworks/datamodel/objects/bundles" xmlns:tns="http://novell.com/zenworks/datamodel/services/bundles/soap" xmlns:assignments="http://novell.com/zenworks/datamodel/objects/assignments" xmlns:objects="http://novell.com/zenworks/datamodel/objects" xmlns:folders="http://novell.com/zenworks/datamodel/objects/folders" xmlns:actions="http://novell.com/zenworks/datamodel/objects/actions" xmlns:assignablecontent="http://novell.com/zenworks/datamodel/objects/assignablecontent" xmlns:exceptions="http://novell.com/zenworks/datamodel/exceptions" name="BundleAdminServiceService" targetNamespace="http://novell.com/zenworks/datamodel/services/bundles/soap" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema xmlns="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://novell.com/zenworks/datamodel/services/bundles/soap">
+      <xsd:import schemaLocation="core-addons-assignablecontent.xsd" namespace="http://novell.com/zenworks/datamodel/objects/assignablecontent" />
+      <xsd:import schemaLocation="core-folders.xsd" namespace="http://novell.com/zenworks/datamodel/objects/folders" />
+      <xsd:import schemaLocation="exceptions.xsd" namespace="http://novell.com/zenworks/datamodel/exceptions" />
+      <xsd:import schemaLocation="managed-devices-quicktasks.xsd" namespace="http://novell.com/zenworks/datamodel/objects/quicktasks" />
+      <xsd:import schemaLocation="bundles-bundles.xsd" namespace="http://novell.com/zenworks/datamodel/objects/bundles" />
+      <xsd:import schemaLocation="core-objects.xsd" namespace="http://novell.com/zenworks/datamodel/objects" />
+      <xsd:import schemaLocation="core-assignments.xsd" namespace="http://novell.com/zenworks/datamodel/objects/assignments" />
+      <xsd:import schemaLocation="managed-devices-actions.xsd" namespace="http://novell.com/zenworks/datamodel/objects/actions" />
+      <xsd:element name="applyInheritanceFromParentForMovedObjectRequest" type="tns:applyInheritanceFromParentForMovedObjectRequest" />
+      <xsd:complexType name="applyInheritanceFromParentForMovedObjectRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="objectUID" type="xsd:string" />
+          <xsd:element minOccurs="0" name="parentUID" type="xsd:string" />
+          <xsd:element name="inheritance" type="xsd:int" />
+          <xsd:element name="isForce" type="xsd:boolean" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="applyInheritanceFromParentForMovedObjectResponse" type="tns:applyInheritanceFromParentForMovedObjectResponse" />
+      <xsd:complexType name="applyInheritanceFromParentForMovedObjectResponse">
+        <xsd:sequence>
+          <xsd:element name="return" type="xsd:boolean" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="applyInheritanceFromParentSyncRequest" type="tns:applyInheritanceFromParentSyncRequest" />
+      <xsd:complexType name="applyInheritanceFromParentSyncRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="parentUID" type="xsd:string" />
+          <xsd:element name="inheritance" type="xsd:int" />
+          <xsd:element name="isForce" type="xsd:boolean" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="applyInheritanceFromParentSyncResponse" type="tns:applyInheritanceFromParentSyncResponse" />
+      <xsd:complexType name="applyInheritanceFromParentSyncResponse">
+        <xsd:sequence>
+          <xsd:element name="return" type="xsd:boolean" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="checkLicenseForBundleTypeRequest" type="tns:checkLicenseForBundleTypeRequest" />
+      <xsd:complexType name="checkLicenseForBundleTypeRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="obj" type="objects:ZENObject" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="checkLicenseForBundleTypeResponse" type="tns:checkLicenseForBundleTypeResponse" />
+      <xsd:complexType name="checkLicenseForBundleTypeResponse">
+        <xsd:sequence>
+          <xsd:element name="return" type="xsd:boolean" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="cloneRequest" type="tns:cloneRequest" />
+      <xsd:complexType name="cloneRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="obj" type="objects:ZENObject" />
+          <xsd:element minOccurs="0" name="newName" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="cloneResponse" type="tns:cloneResponse" />
+      <xsd:complexType name="cloneResponse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="return" type="objects:ZENObject" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="commitSandboxRequest" type="tns:commitSandboxRequest" />
+      <xsd:complexType name="commitSandboxRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="assignableContentUID" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="commitSandboxResponse" type="tns:commitSandboxResponse" />
+      <xsd:complexType name="commitSandboxResponse">
+        <xsd:sequence>
+          <xsd:element name="return" type="xsd:boolean" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="commitSandboxToNewObjectRequest" type="tns:commitSandboxToNewObjectRequest" />
+      <xsd:complexType name="commitSandboxToNewObjectRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="objectUID" type="xsd:string" />
+          <xsd:element minOccurs="0" name="parentUID" type="xsd:string" />
+          <xsd:element minOccurs="0" name="newName" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="assignments" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="groups" type="xsd:string" />
+          <xsd:element name="createAsSandbox" type="xsd:boolean" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="commitSandboxToNewObjectResponse" type="tns:commitSandboxToNewObjectResponse" />
+      <xsd:complexType name="commitSandboxToNewObjectResponse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="return" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="commitSandboxToNewWithDependentsRequest" type="tns:commitSandboxToNewWithDependentsRequest" />
+      <xsd:complexType name="commitSandboxToNewWithDependentsRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="assignableContentUID" type="xsd:string" />
+          <xsd:element minOccurs="0" name="parentUID" type="xsd:string" />
+          <xsd:element minOccurs="0" name="newName" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="assignments" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="groups" type="xsd:string" />
+          <xsd:element name="publishAllChild" type="xsd:boolean" />
+          <xsd:element name="forcePublishSandboxOnlyChild" type="xsd:boolean" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="commitSandboxToNewWithDependentsResponse" type="tns:commitSandboxToNewWithDependentsResponse" />
+      <xsd:complexType name="commitSandboxToNewWithDependentsResponse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="return" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="commitSandboxToNewWithNewDependentsRequest" type="tns:commitSandboxToNewWithNewDependentsRequest" />
+      <xsd:complexType name="commitSandboxToNewWithNewDependentsRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="assignableContentUID" type="xsd:string" />
+          <xsd:element minOccurs="0" name="parentUID" type="xsd:string" />
+          <xsd:element minOccurs="0" name="newName" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="assignments" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="groups" type="xsd:string" />
+          <xsd:element minOccurs="0" name="depsDestinationFolderGUID" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="commitSandboxToNewWithNewDependentsResponse" type="tns:commitSandboxToNewWithNewDependentsResponse" />
+      <xsd:complexType name="commitSandboxToNewWithNewDependentsResponse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="return" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="commitSandboxWithDependentsRequest" type="tns:commitSandboxWithDependentsRequest" />
+      <xsd:complexType name="commitSandboxWithDependentsRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="assignableContentUID" type="xsd:string" />
+          <xsd:element name="publishAllChild" type="xsd:boolean" />
+          <xsd:element name="forcePublishSandboxOnlyChild" type="xsd:boolean" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="commitSandboxWithDependentsResponse" type="tns:commitSandboxWithDependentsResponse" />
+      <xsd:complexType name="commitSandboxWithDependentsResponse">
+        <xsd:sequence>
+          <xsd:element name="return" type="xsd:boolean" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="createRequest" type="tns:createRequest" />
+      <xsd:complexType name="createRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="object" type="objects:ZENObject" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="createResponse" type="tns:createResponse" />
+      <xsd:complexType name="createResponse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="return" type="objects:ZENObject" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="createAsSandboxRequest" type="tns:createAsSandboxRequest" />
+      <xsd:complexType name="createAsSandboxRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="aco" type="assignablecontent:AssignableContentObject" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="createAsSandboxResponse" type="tns:createAsSandboxResponse" />
+      <xsd:complexType name="createAsSandboxResponse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="return" type="assignablecontent:AssignableContentObject" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="createBundleDefinitionRequest" type="tns:createBundleDefinitionRequest" />
+      <xsd:complexType name="createBundleDefinitionRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="definition" type="bundles:BundleDefinition" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="createBundleDefinitionResponse" type="tns:createBundleDefinitionResponse" />
+      <xsd:complexType name="createBundleDefinitionResponse">
+        <xsd:sequence>
+          <xsd:element name="return" type="xsd:boolean" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="createSandboxRequest" type="tns:createSandboxRequest" />
+      <xsd:complexType name="createSandboxRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="assignableContentUID" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="createSandboxResponse" type="tns:createSandboxResponse" />
+      <xsd:complexType name="createSandboxResponse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="return" type="assignablecontent:AssignableContentObject" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="createSystemBundleRequest" type="tns:createSystemBundleRequest" />
+      <xsd:complexType name="createSystemBundleRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="bundle" type="bundles:Bundle" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="createSystemBundleResponse" type="tns:createSystemBundleResponse" />
+      <xsd:complexType name="createSystemBundleResponse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="return" type="bundles:Bundle" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="deleteRequest" type="tns:deleteRequest" />
+      <xsd:complexType name="deleteRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="uid" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="deleteResponse" type="tns:deleteResponse" />
+      <xsd:complexType name="deleteResponse">
+        <xsd:sequence>
+          <xsd:element name="return" type="xsd:boolean" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="deleteRecursiveRequest" type="tns:deleteRecursiveRequest" />
+      <xsd:complexType name="deleteRecursiveRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="uid" type="xsd:string" />
+          <xsd:element name="recursive" type="xsd:boolean" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="deleteRecursiveResponse" type="tns:deleteRecursiveResponse" />
+      <xsd:complexType name="deleteRecursiveResponse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="return" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="deleteVersionRequest" type="tns:deleteVersionRequest" />
+      <xsd:complexType name="deleteVersionRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="releaseUID" type="xsd:string" />
+          <xsd:element name="version" type="xsd:int" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="deleteVersionResponse" type="tns:deleteVersionResponse" />
+      <xsd:complexType name="deleteVersionResponse">
+        <xsd:sequence>
+          <xsd:element name="return" type="xsd:int" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="existsByParentAndNameRequest" type="tns:existsByParentAndNameRequest" />
+      <xsd:complexType name="existsByParentAndNameRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="parentUID" type="xsd:string" />
+          <xsd:element minOccurs="0" name="name" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="existsByParentAndNameResponse" type="tns:existsByParentAndNameResponse" />
+      <xsd:complexType name="existsByParentAndNameResponse">
+        <xsd:sequence>
+          <xsd:element name="return" type="xsd:boolean" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="existsButToBeDeletedRequest" type="tns:existsButToBeDeletedRequest" />
+      <xsd:complexType name="existsButToBeDeletedRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="uid" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="existsButToBeDeletedResponse" type="tns:existsButToBeDeletedResponse" />
+      <xsd:complexType name="existsButToBeDeletedResponse">
+        <xsd:sequence>
+          <xsd:element name="return" type="xsd:boolean" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="existsByUIDRequest" type="tns:existsByUIDRequest" />
+      <xsd:complexType name="existsByUIDRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="uid" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="existsByUIDResponse" type="tns:existsByUIDResponse" />
+      <xsd:complexType name="existsByUIDResponse">
+        <xsd:sequence>
+          <xsd:element name="return" type="xsd:boolean" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getRequest" type="tns:getRequest" />
+      <xsd:complexType name="getRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="uid" type="xsd:string" />
+          <xsd:element name="ignoreCache" type="xsd:boolean" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getResponse" type="tns:getResponse" />
+      <xsd:complexType name="getResponse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="return" type="objects:ZENObject" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getAllBundleDefinitionsByPlatformRequest" type="tns:getAllBundleDefinitionsByPlatformRequest" />
+      <xsd:complexType name="getAllBundleDefinitionsByPlatformRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="platform" type="xsd:string" />
+          <xsd:element minOccurs="0" name="actionSet" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getAllBundleDefinitionsByPlatformResponse" type="tns:getAllBundleDefinitionsByPlatformResponse" />
+      <xsd:complexType name="getAllBundleDefinitionsByPlatformResponse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="return" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getAllBundleTypesRequest" type="tns:getAllBundleTypesRequest" />
+      <xsd:complexType name="getAllBundleTypesRequest">
+        <xsd:sequence />
+      </xsd:complexType>
+      <xsd:element name="getAllBundleTypesResponse" type="tns:getAllBundleTypesResponse" />
+      <xsd:complexType name="getAllBundleTypesResponse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="return" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getAllEffectiveDependentUIDsRequest" type="tns:getAllEffectiveDependentUIDsRequest" />
+      <xsd:complexType name="getAllEffectiveDependentUIDsRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="bundleUID" type="xsd:string" />
+          <xsd:element name="avoidDuplicate" type="xsd:boolean" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getAllEffectiveDependentUIDsResponse" type="tns:getAllEffectiveDependentUIDsResponse" />
+      <xsd:complexType name="getAllEffectiveDependentUIDsResponse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="return" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getAllSearchResultsRequest" type="tns:getAllSearchResultsRequest" />
+      <xsd:complexType name="getAllSearchResultsRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="folderUID" type="xsd:string" />
+          <xsd:element minOccurs="0" name="options" type="objects:SearchOptions" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getAllSearchResultsResponse" type="tns:getAllSearchResultsResponse" />
+      <xsd:complexType name="getAllSearchResultsResponse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="return" type="objects:SearchResult" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getAllSearchResultsWIthTokenRequest" type="tns:getAllSearchResultsWIthTokenRequest" />
+      <xsd:complexType name="getAllSearchResultsWIthTokenRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="searchToken" type="objects:SearchToken" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getAllSearchResultsWIthTokenResponse" type="tns:getAllSearchResultsWIthTokenResponse" />
+      <xsd:complexType name="getAllSearchResultsWIthTokenResponse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="return" type="objects:SearchResult" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getAllVersionsRequest" type="tns:getAllVersionsRequest" />
+      <xsd:complexType name="getAllVersionsRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="assignableContentUID" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getAllVersionsResponse" type="tns:getAllVersionsResponse" />
+      <xsd:complexType name="getAllVersionsResponse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="return" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getAttributesRequest" type="tns:getAttributesRequest" />
+      <xsd:complexType name="getAttributesRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="uid" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="attributes" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getAttributesResponse" type="tns:getAttributesResponse" />
+      <xsd:complexType name="getAttributesResponse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="return" type="xsd:anyType" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getBasicObjectRequest" type="tns:getBasicObjectRequest" />
+      <xsd:complexType name="getBasicObjectRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="uid" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getBasicObjectResponse" type="tns:getBasicObjectResponse" />
+      <xsd:complexType name="getBasicObjectResponse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="return" type="objects:BasicObject" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getBundleDefinitionRequest" type="tns:getBundleDefinitionRequest" />
+      <xsd:complexType name="getBundleDefinitionRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="bundleType" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getBundleDefinitionResponse" type="tns:getBundleDefinitionResponse" />
+      <xsd:complexType name="getBundleDefinitionResponse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="return" type="bundles:BundleDefinition" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getBundleIconRequest" type="tns:getBundleIconRequest" />
+      <xsd:complexType name="getBundleIconRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="bundleUID" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getBundleIconResponse" type="tns:getBundleIconResponse" />
+      <xsd:complexType name="getBundleIconResponse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="return" type="xsd:base64Binary" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getBundleTypesRequest" type="tns:getBundleTypesRequest" />
+      <xsd:complexType name="getBundleTypesRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="assocTypes" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getBundleTypesResponse" type="tns:getBundleTypesResponse" />
+      <xsd:complexType name="getBundleTypesResponse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="return" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getByParentAndNameRequest" type="tns:getByParentAndNameRequest" />
+      <xsd:complexType name="getByParentAndNameRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="parent" type="objects:ZENObject" />
+          <xsd:element minOccurs="0" name="name" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getByParentAndNameResponse" type="tns:getByParentAndNameResponse" />
+      <xsd:complexType name="getByParentAndNameResponse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="return" type="objects:ZENObject" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getByParentUIDAndNameRequest" type="tns:getByParentUIDAndNameRequest" />
+      <xsd:complexType name="getByParentUIDAndNameRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="parentUID" type="xsd:string" />
+          <xsd:element minOccurs="0" name="name" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getByParentUIDAndNameResponse" type="tns:getByParentUIDAndNameResponse" />
+      <xsd:complexType name="getByParentUIDAndNameResponse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="return" type="objects:ZENObject" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getByUIDRequest" type="tns:getByUIDRequest" />
+      <xsd:complexType name="getByUIDRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="uid" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getByUIDResponse" type="tns:getByUIDResponse" />
+      <xsd:complexType name="getByUIDResponse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="return" type="objects:ZENObject" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getDependentUIDsRequest" type="tns:getDependentUIDsRequest" />
+      <xsd:complexType name="getDependentUIDsRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="bundleUID" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getDependentUIDsResponse" type="tns:getDependentUIDsResponse" />
+      <xsd:complexType name="getDependentUIDsResponse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="return" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getEffectiveDependentUIDsRequest" type="tns:getEffectiveDependentUIDsRequest" />
+      <xsd:complexType name="getEffectiveDependentUIDsRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="objectUID" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getEffectiveDependentUIDsResponse" type="tns:getEffectiveDependentUIDsResponse" />
+      <xsd:complexType name="getEffectiveDependentUIDsResponse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="return" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getEffectiveReplicationSettingFromParentRequest" type="tns:getEffectiveReplicationSettingFromParentRequest" />
+      <xsd:complexType name="getEffectiveReplicationSettingFromParentRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="parentUID" type="xsd:string" />
+          <xsd:element minOccurs="0" name="settingName" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getEffectiveReplicationSettingFromParentResponse" type="tns:getEffectiveReplicationSettingFromParentResponse" />
+      <xsd:complexType name="getEffectiveReplicationSettingFromParentResponse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="return" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getLicensingComponentsRequest" type="tns:getLicensingComponentsRequest" />
+      <xsd:complexType name="getLicensingComponentsRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="bundleType" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getLicensingComponentsResponse" type="tns:getLicensingComponentsResponse" />
+      <xsd:complexType name="getLicensingComponentsResponse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="return" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getObjectHierachyRequest" type="tns:getObjectHierachyRequest" />
+      <xsd:complexType name="getObjectHierachyRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="uid" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getObjectHierachyResponse" type="tns:getObjectHierachyResponse" />
+      <xsd:complexType name="getObjectHierachyResponse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="return" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getRootRequest" type="tns:getRootRequest" />
+      <xsd:complexType name="getRootRequest">
+        <xsd:sequence />
+      </xsd:complexType>
+      <xsd:element name="getRootResponse" type="tns:getRootResponse" />
+      <xsd:complexType name="getRootResponse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="return" type="folders:Folder" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getRootPathRequest" type="tns:getRootPathRequest" />
+      <xsd:complexType name="getRootPathRequest">
+        <xsd:sequence />
+      </xsd:complexType>
+      <xsd:element name="getRootPathResponse" type="tns:getRootPathResponse" />
+      <xsd:complexType name="getRootPathResponse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="return" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getRootUIDRequest" type="tns:getRootUIDRequest" />
+      <xsd:complexType name="getRootUIDRequest">
+        <xsd:sequence />
+      </xsd:complexType>
+      <xsd:element name="getRootUIDResponse" type="tns:getRootUIDResponse" />
+      <xsd:complexType name="getRootUIDResponse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="return" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getSandBoxObjInfoRequest" type="tns:getSandBoxObjInfoRequest" />
+      <xsd:complexType name="getSandBoxObjInfoRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="publishGUID" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getSandBoxObjInfoResponse" type="tns:getSandBoxObjInfoResponse" />
+      <xsd:complexType name="getSandBoxObjInfoResponse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="return" type="assignablecontent:SandBoxObjectInfo" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getSandboxRequest" type="tns:getSandboxRequest" />
+      <xsd:complexType name="getSandboxRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="assignableContentUID" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getSandboxResponse" type="tns:getSandboxResponse" />
+      <xsd:complexType name="getSandboxResponse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="return" type="assignablecontent:AssignableContentObject" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getSandboxOnlyDependentBundlesRequest" type="tns:getSandboxOnlyDependentBundlesRequest" />
+      <xsd:complexType name="getSandboxOnlyDependentBundlesRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="bundleUID" type="xsd:string" />
+          <xsd:element name="recursive" type="xsd:boolean" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getSandboxOnlyDependentBundlesResponse" type="tns:getSandboxOnlyDependentBundlesResponse" />
+      <xsd:complexType name="getSandboxOnlyDependentBundlesResponse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="return" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getSandboxUIDRequest" type="tns:getSandboxUIDRequest" />
+      <xsd:complexType name="getSandboxUIDRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="assignableContentUID" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getSandboxUIDResponse" type="tns:getSandboxUIDResponse" />
+      <xsd:complexType name="getSandboxUIDResponse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="return" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getSearchResultsRequest" type="tns:getSearchResultsRequest" />
+      <xsd:complexType name="getSearchResultsRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="searchToken" type="objects:SearchToken" />
+          <xsd:element name="index" type="xsd:int" />
+          <xsd:element name="count" type="xsd:int" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getSearchResultsResponse" type="tns:getSearchResultsResponse" />
+      <xsd:complexType name="getSearchResultsResponse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="return" type="objects:SearchResult" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getSystemBundleFolderRequest" type="tns:getSystemBundleFolderRequest" />
+      <xsd:complexType name="getSystemBundleFolderRequest">
+        <xsd:sequence />
+      </xsd:complexType>
+      <xsd:element name="getSystemBundleFolderResponse" type="tns:getSystemBundleFolderResponse" />
+      <xsd:complexType name="getSystemBundleFolderResponse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="return" type="folders:Folder" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getVersionRequest" type="tns:getVersionRequest" />
+      <xsd:complexType name="getVersionRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="releaseUID" type="xsd:string" />
+          <xsd:element name="version" type="xsd:int" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getVersionResponse" type="tns:getVersionResponse" />
+      <xsd:complexType name="getVersionResponse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="return" type="assignablecontent:AssignableContentObject" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="hasDependentUIDsRequest" type="tns:hasDependentUIDsRequest" />
+      <xsd:complexType name="hasDependentUIDsRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="objectUID" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="hasDependentUIDsResponse" type="tns:hasDependentUIDsResponse" />
+      <xsd:complexType name="hasDependentUIDsResponse">
+        <xsd:sequence>
+          <xsd:element name="return" type="xsd:boolean" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="incrementVersionRequest" type="tns:incrementVersionRequest" />
+      <xsd:complexType name="incrementVersionRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="assignableContentUID" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="incrementVersionResponse" type="tns:incrementVersionResponse" />
+      <xsd:complexType name="incrementVersionResponse">
+        <xsd:sequence>
+          <xsd:element name="return" type="xsd:boolean" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="isSandboxPresentRequest" type="tns:isSandboxPresentRequest" />
+      <xsd:complexType name="isSandboxPresentRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="uid" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="isSandboxPresentResponse" type="tns:isSandboxPresentResponse" />
+      <xsd:complexType name="isSandboxPresentResponse">
+        <xsd:sequence>
+          <xsd:element name="return" type="xsd:boolean" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="moveRequest" type="tns:moveRequest" />
+      <xsd:complexType name="moveRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="obj" type="objects:ZENObject" />
+          <xsd:element minOccurs="0" name="newParent" type="objects:ZENObject" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="moveResponse" type="tns:moveResponse" />
+      <xsd:complexType name="moveResponse">
+        <xsd:sequence>
+          <xsd:element name="return" type="xsd:boolean" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="performBundleQuickTaskRequest" type="tns:performBundleQuickTaskRequest" />
+      <xsd:complexType name="performBundleQuickTaskRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="deviceUIDs" type="xsd:string" />
+          <xsd:element minOccurs="0" name="quickTaskType" type="xsd:string" />
+          <xsd:element minOccurs="0" name="objectGUID" type="xsd:string" />
+          <xsd:element name="ignoreBlackout" type="xsd:boolean" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="performBundleQuickTaskResponse" type="tns:performBundleQuickTaskResponse" />
+      <xsd:complexType name="performBundleQuickTaskResponse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="return" type="quicktasks:QuickTask" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="refreshSearchTokenRequest" type="tns:refreshSearchTokenRequest" />
+      <xsd:complexType name="refreshSearchTokenRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="searchToken" type="objects:SearchToken" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="refreshSearchTokenResponse" type="tns:refreshSearchTokenResponse" />
+      <xsd:complexType name="refreshSearchTokenResponse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="return" type="objects:SearchToken" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="releaseSearchTokenRequest" type="tns:releaseSearchTokenRequest" />
+      <xsd:complexType name="releaseSearchTokenRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="searchToken" type="objects:SearchToken" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="releaseSearchTokenResponse" type="tns:releaseSearchTokenResponse" />
+      <xsd:complexType name="releaseSearchTokenResponse">
+        <xsd:sequence>
+          <xsd:element name="return" type="xsd:boolean" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="renameRequest" type="tns:renameRequest" />
+      <xsd:complexType name="renameRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="obj" type="objects:ZENObject" />
+          <xsd:element minOccurs="0" name="newName" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="renameResponse" type="tns:renameResponse" />
+      <xsd:complexType name="renameResponse">
+        <xsd:sequence>
+          <xsd:element name="return" type="xsd:boolean" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="renameWithPublishOptionRequest" type="tns:renameWithPublishOptionRequest" />
+      <xsd:complexType name="renameWithPublishOptionRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="obj" type="bundles:Bundle" />
+          <xsd:element minOccurs="0" name="newName" type="xsd:string" />
+          <xsd:element name="changeImmediately" type="xsd:boolean" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="renameWithPublishOptionResponse" type="tns:renameWithPublishOptionResponse" />
+      <xsd:complexType name="renameWithPublishOptionResponse">
+        <xsd:sequence>
+          <xsd:element name="return" type="xsd:boolean" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="revertSandboxRequest" type="tns:revertSandboxRequest" />
+      <xsd:complexType name="revertSandboxRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="assignableContentUID" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="revertSandboxResponse" type="tns:revertSandboxResponse" />
+      <xsd:complexType name="revertSandboxResponse">
+        <xsd:sequence>
+          <xsd:element name="return" type="xsd:boolean" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="searchRequest" type="tns:searchRequest" />
+      <xsd:complexType name="searchRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="folderUID" type="xsd:string" />
+          <xsd:element minOccurs="0" name="options" type="objects:SearchOptions" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="searchResponse" type="tns:searchResponse" />
+      <xsd:complexType name="searchResponse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="return" type="objects:SearchToken" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="setBundleIconRequest" type="tns:setBundleIconRequest" />
+      <xsd:complexType name="setBundleIconRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="bundleUID" type="xsd:string" />
+          <xsd:element minOccurs="0" name="icon" type="xsd:base64Binary" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="setBundleIconResponse" type="tns:setBundleIconResponse" />
+      <xsd:complexType name="setBundleIconResponse">
+        <xsd:sequence>
+          <xsd:element name="return" type="xsd:boolean" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="setEnableOrDisableObjectRequest" type="tns:setEnableOrDisableObjectRequest" />
+      <xsd:complexType name="setEnableOrDisableObjectRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="releaseObjects" type="xsd:string" />
+          <xsd:element name="isEnable" type="xsd:boolean" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="setEnableOrDisableObjectResponse" type="tns:setEnableOrDisableObjectResponse" />
+      <xsd:complexType name="setEnableOrDisableObjectResponse">
+        <xsd:sequence>
+          <xsd:element name="return" type="xsd:boolean" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="updateRequest" type="tns:updateRequest" />
+      <xsd:complexType name="updateRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="object" type="objects:ZENObject" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="updateResponse" type="tns:updateResponse" />
+      <xsd:complexType name="updateResponse">
+        <xsd:sequence>
+          <xsd:element name="return" type="xsd:boolean" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="updateToSandboxRequest" type="tns:updateToSandboxRequest" />
+      <xsd:complexType name="updateToSandboxRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="object" type="objects:ZENObject" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="updateToSandboxResponse" type="tns:updateToSandboxResponse" />
+      <xsd:complexType name="updateToSandboxResponse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="return" type="assignablecontent:AssignableContentObject" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="updateToSandboxGUIDRequest" type="tns:updateToSandboxGUIDRequest" />
+      <xsd:complexType name="updateToSandboxGUIDRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="object" type="objects:ZENObject" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="updateToSandboxGUIDResponse" type="tns:updateToSandboxGUIDResponse" />
+      <xsd:complexType name="updateToSandboxGUIDResponse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="return" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="copyBundleInventoryProductMappingRequest" type="tns:copyBundleInventoryProductMappingRequest" />
+      <xsd:complexType name="copyBundleInventoryProductMappingRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="bundle" type="bundles:Bundle" />
+          <xsd:element minOccurs="0" name="newBundle" type="bundles:Bundle" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="copyBundleInventoryProductMappingResponse" type="tns:copyBundleInventoryProductMappingResponse" />
+      <xsd:complexType name="copyBundleInventoryProductMappingResponse">
+        <xsd:sequence>
+          <xsd:element name="return" type="xsd:boolean" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="checkNonExistingSatelliteServersRequest" type="tns:checkNonExistingSatelliteServersRequest" />
+      <xsd:complexType name="checkNonExistingSatelliteServersRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="aco" type="assignablecontent:AssignableContentObject" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="checkNonExistingSatelliteServersResponse" type="tns:checkNonExistingSatelliteServersResponse" />
+      <xsd:complexType name="checkNonExistingSatelliteServersResponse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="return" type="assignablecontent:AssignableContentObject" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="checkNonExistingContentServersRequest" type="tns:checkNonExistingContentServersRequest" />
+      <xsd:complexType name="checkNonExistingContentServersRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="aco" type="assignablecontent:AssignableContentObject" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="checkNonExistingContentServersResponse" type="tns:checkNonExistingContentServersResponse" />
+      <xsd:complexType name="checkNonExistingContentServersResponse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="return" type="assignablecontent:AssignableContentObject" />
+        </xsd:sequence>
+      </xsd:complexType>
+    </xsd:schema>
+  </types>
+  <message name="RemoteDataModelException">
+    <part name="fault" element="exceptions:RemoteDataModelException" />
+  </message>
+  <message name="applyInheritanceFromParentForMovedObjectInput">
+    <part name="parameters" element="tns:applyInheritanceFromParentForMovedObjectRequest" />
+  </message>
+  <message name="applyInheritanceFromParentForMovedObjectOutput">
+    <part name="parameters" element="tns:applyInheritanceFromParentForMovedObjectResponse" />
+  </message>
+  <message name="applyInheritanceFromParentSyncInput">
+    <part name="parameters" element="tns:applyInheritanceFromParentSyncRequest" />
+  </message>
+  <message name="applyInheritanceFromParentSyncOutput">
+    <part name="parameters" element="tns:applyInheritanceFromParentSyncResponse" />
+  </message>
+  <message name="checkLicenseForBundleTypeInput">
+    <part name="parameters" element="tns:checkLicenseForBundleTypeRequest" />
+  </message>
+  <message name="checkLicenseForBundleTypeOutput">
+    <part name="parameters" element="tns:checkLicenseForBundleTypeResponse" />
+  </message>
+  <message name="cloneInput">
+    <part name="parameters" element="tns:cloneRequest" />
+  </message>
+  <message name="cloneOutput">
+    <part name="parameters" element="tns:cloneResponse" />
+  </message>
+  <message name="commitSandboxInput">
+    <part name="parameters" element="tns:commitSandboxRequest" />
+  </message>
+  <message name="commitSandboxOutput">
+    <part name="parameters" element="tns:commitSandboxResponse" />
+  </message>
+  <message name="commitSandboxToNewObjectInput">
+    <part name="parameters" element="tns:commitSandboxToNewObjectRequest" />
+  </message>
+  <message name="commitSandboxToNewObjectOutput">
+    <part name="parameters" element="tns:commitSandboxToNewObjectResponse" />
+  </message>
+  <message name="commitSandboxToNewWithDependentsInput">
+    <part name="parameters" element="tns:commitSandboxToNewWithDependentsRequest" />
+  </message>
+  <message name="commitSandboxToNewWithDependentsOutput">
+    <part name="parameters" element="tns:commitSandboxToNewWithDependentsResponse" />
+  </message>
+  <message name="commitSandboxToNewWithNewDependentsInput">
+    <part name="parameters" element="tns:commitSandboxToNewWithNewDependentsRequest" />
+  </message>
+  <message name="commitSandboxToNewWithNewDependentsOutput">
+    <part name="parameters" element="tns:commitSandboxToNewWithNewDependentsResponse" />
+  </message>
+  <message name="commitSandboxWithDependentsInput">
+    <part name="parameters" element="tns:commitSandboxWithDependentsRequest" />
+  </message>
+  <message name="commitSandboxWithDependentsOutput">
+    <part name="parameters" element="tns:commitSandboxWithDependentsResponse" />
+  </message>
+  <message name="createInput">
+    <part name="parameters" element="tns:createRequest" />
+  </message>
+  <message name="createOutput">
+    <part name="parameters" element="tns:createResponse" />
+  </message>
+  <message name="createAsSandboxInput">
+    <part name="parameters" element="tns:createAsSandboxRequest" />
+  </message>
+  <message name="createAsSandboxOutput">
+    <part name="parameters" element="tns:createAsSandboxResponse" />
+  </message>
+  <message name="createBundleDefinitionInput">
+    <part name="parameters" element="tns:createBundleDefinitionRequest" />
+  </message>
+  <message name="createBundleDefinitionOutput">
+    <part name="parameters" element="tns:createBundleDefinitionResponse" />
+  </message>
+  <message name="createSandboxInput">
+    <part name="parameters" element="tns:createSandboxRequest" />
+  </message>
+  <message name="createSandboxOutput">
+    <part name="parameters" element="tns:createSandboxResponse" />
+  </message>
+  <message name="createSystemBundleInput">
+    <part name="parameters" element="tns:createSystemBundleRequest" />
+  </message>
+  <message name="createSystemBundleOutput">
+    <part name="parameters" element="tns:createSystemBundleResponse" />
+  </message>
+  <message name="deleteInput">
+    <part name="parameters" element="tns:deleteRequest" />
+  </message>
+  <message name="deleteOutput">
+    <part name="parameters" element="tns:deleteResponse" />
+  </message>
+  <message name="deleteRecursiveInput">
+    <part name="parameters" element="tns:deleteRecursiveRequest" />
+  </message>
+  <message name="deleteRecursiveOutput">
+    <part name="parameters" element="tns:deleteRecursiveResponse" />
+  </message>
+  <message name="deleteVersionInput">
+    <part name="parameters" element="tns:deleteVersionRequest" />
+  </message>
+  <message name="deleteVersionOutput">
+    <part name="parameters" element="tns:deleteVersionResponse" />
+  </message>
+  <message name="existsByParentAndNameInput">
+    <part name="parameters" element="tns:existsByParentAndNameRequest" />
+  </message>
+  <message name="existsByParentAndNameOutput">
+    <part name="parameters" element="tns:existsByParentAndNameResponse" />
+  </message>
+  <message name="existsByUIDInput">
+    <part name="parameters" element="tns:existsByUIDRequest" />
+  </message>
+  <message name="existsByUIDOutput">
+    <part name="parameters" element="tns:existsByUIDResponse" />
+  </message>
+  <message name="getInput">
+    <part name="parameters" element="tns:getRequest" />
+  </message>
+  <message name="getOutput">
+    <part name="parameters" element="tns:getResponse" />
+  </message>
+  <message name="getAllBundleDefinitionsByPlatformInput">
+    <part name="parameters" element="tns:getAllBundleDefinitionsByPlatformRequest" />
+  </message>
+  <message name="getAllBundleDefinitionsByPlatformOutput">
+    <part name="parameters" element="tns:getAllBundleDefinitionsByPlatformResponse" />
+  </message>
+  <message name="getAllBundleTypesInput">
+    <part name="parameters" element="tns:getAllBundleTypesRequest" />
+  </message>
+  <message name="getAllBundleTypesOutput">
+    <part name="parameters" element="tns:getAllBundleTypesResponse" />
+  </message>
+  <message name="getAllEffectiveDependentUIDsInput">
+    <part name="parameters" element="tns:getAllEffectiveDependentUIDsRequest" />
+  </message>
+  <message name="getAllEffectiveDependentUIDsOutput">
+    <part name="parameters" element="tns:getAllEffectiveDependentUIDsResponse" />
+  </message>
+  <message name="getAllSearchResultsInput">
+    <part name="parameters" element="tns:getAllSearchResultsRequest" />
+  </message>
+  <message name="getAllSearchResultsOutput">
+    <part name="parameters" element="tns:getAllSearchResultsResponse" />
+  </message>
+  <message name="getAllSearchResultsWIthTokenInput">
+    <part name="parameters" element="tns:getAllSearchResultsWIthTokenRequest" />
+  </message>
+  <message name="getAllSearchResultsWIthTokenOutput">
+    <part name="parameters" element="tns:getAllSearchResultsWIthTokenResponse" />
+  </message>
+  <message name="getAllVersionsInput">
+    <part name="parameters" element="tns:getAllVersionsRequest" />
+  </message>
+  <message name="getAllVersionsOutput">
+    <part name="parameters" element="tns:getAllVersionsResponse" />
+  </message>
+  <message name="getAttributesInput">
+    <part name="parameters" element="tns:getAttributesRequest" />
+  </message>
+  <message name="getAttributesOutput">
+    <part name="parameters" element="tns:getAttributesResponse" />
+  </message>
+  <message name="getBasicObjectInput">
+    <part name="parameters" element="tns:getBasicObjectRequest" />
+  </message>
+  <message name="getBasicObjectOutput">
+    <part name="parameters" element="tns:getBasicObjectResponse" />
+  </message>
+  <message name="getBundleDefinitionInput">
+    <part name="parameters" element="tns:getBundleDefinitionRequest" />
+  </message>
+  <message name="getBundleDefinitionOutput">
+    <part name="parameters" element="tns:getBundleDefinitionResponse" />
+  </message>
+  <message name="getBundleIconInput">
+    <part name="parameters" element="tns:getBundleIconRequest" />
+  </message>
+  <message name="getBundleIconOutput">
+    <part name="parameters" element="tns:getBundleIconResponse" />
+  </message>
+  <message name="getBundleTypesInput">
+    <part name="parameters" element="tns:getBundleTypesRequest" />
+  </message>
+  <message name="getBundleTypesOutput">
+    <part name="parameters" element="tns:getBundleTypesResponse" />
+  </message>
+  <message name="getByParentAndNameInput">
+    <part name="parameters" element="tns:getByParentAndNameRequest" />
+  </message>
+  <message name="getByParentAndNameOutput">
+    <part name="parameters" element="tns:getByParentAndNameResponse" />
+  </message>
+  <message name="getByParentUIDAndNameInput">
+    <part name="parameters" element="tns:getByParentUIDAndNameRequest" />
+  </message>
+  <message name="getByParentUIDAndNameOutput">
+    <part name="parameters" element="tns:getByParentUIDAndNameResponse" />
+  </message>
+  <message name="getByUIDInput">
+    <part name="parameters" element="tns:getByUIDRequest" />
+  </message>
+  <message name="getByUIDOutput">
+    <part name="parameters" element="tns:getByUIDResponse" />
+  </message>
+  <message name="getDependentUIDsInput">
+    <part name="parameters" element="tns:getDependentUIDsRequest" />
+  </message>
+  <message name="getDependentUIDsOutput">
+    <part name="parameters" element="tns:getDependentUIDsResponse" />
+  </message>
+  <message name="getEffectiveDependentUIDsInput">
+    <part name="parameters" element="tns:getEffectiveDependentUIDsRequest" />
+  </message>
+  <message name="getEffectiveDependentUIDsOutput">
+    <part name="parameters" element="tns:getEffectiveDependentUIDsResponse" />
+  </message>
+  <message name="getEffectiveReplicationSettingFromParentInput">
+    <part name="parameters" element="tns:getEffectiveReplicationSettingFromParentRequest" />
+  </message>
+  <message name="getEffectiveReplicationSettingFromParentOutput">
+    <part name="parameters" element="tns:getEffectiveReplicationSettingFromParentResponse" />
+  </message>
+  <message name="getLicensingComponentsInput">
+    <part name="parameters" element="tns:getLicensingComponentsRequest" />
+  </message>
+  <message name="getLicensingComponentsOutput">
+    <part name="parameters" element="tns:getLicensingComponentsResponse" />
+  </message>
+  <message name="getObjectHierachyInput">
+    <part name="parameters" element="tns:getObjectHierachyRequest" />
+  </message>
+  <message name="getObjectHierachyOutput">
+    <part name="parameters" element="tns:getObjectHierachyResponse" />
+  </message>
+  <message name="getRootInput">
+    <part name="parameters" element="tns:getRootRequest" />
+  </message>
+  <message name="getRootOutput">
+    <part name="parameters" element="tns:getRootResponse" />
+  </message>
+  <message name="getRootPathInput">
+    <part name="parameters" element="tns:getRootPathRequest" />
+  </message>
+  <message name="getRootPathOutput">
+    <part name="parameters" element="tns:getRootPathResponse" />
+  </message>
+  <message name="getRootUIDInput">
+    <part name="parameters" element="tns:getRootUIDRequest" />
+  </message>
+  <message name="getRootUIDOutput">
+    <part name="parameters" element="tns:getRootUIDResponse" />
+  </message>
+  <message name="getSandBoxObjInfoInput">
+    <part name="parameters" element="tns:getSandBoxObjInfoRequest" />
+  </message>
+  <message name="getSandBoxObjInfoOutput">
+    <part name="parameters" element="tns:getSandBoxObjInfoResponse" />
+  </message>
+  <message name="getSandboxInput">
+    <part name="parameters" element="tns:getSandboxRequest" />
+  </message>
+  <message name="getSandboxOutput">
+    <part name="parameters" element="tns:getSandboxResponse" />
+  </message>
+  <message name="getSandboxOnlyDependentBundlesInput">
+    <part name="parameters" element="tns:getSandboxOnlyDependentBundlesRequest" />
+  </message>
+  <message name="getSandboxOnlyDependentBundlesOutput">
+    <part name="parameters" element="tns:getSandboxOnlyDependentBundlesResponse" />
+  </message>
+  <message name="getSandboxUIDInput">
+    <part name="parameters" element="tns:getSandboxUIDRequest" />
+  </message>
+  <message name="getSandboxUIDOutput">
+    <part name="parameters" element="tns:getSandboxUIDResponse" />
+  </message>
+  <message name="getSearchResultsInput">
+    <part name="parameters" element="tns:getSearchResultsRequest" />
+  </message>
+  <message name="getSearchResultsOutput">
+    <part name="parameters" element="tns:getSearchResultsResponse" />
+  </message>
+  <message name="getSystemBundleFolderInput">
+    <part name="parameters" element="tns:getSystemBundleFolderRequest" />
+  </message>
+  <message name="getSystemBundleFolderOutput">
+    <part name="parameters" element="tns:getSystemBundleFolderResponse" />
+  </message>
+  <message name="getVersionInput">
+    <part name="parameters" element="tns:getVersionRequest" />
+  </message>
+  <message name="getVersionOutput">
+    <part name="parameters" element="tns:getVersionResponse" />
+  </message>
+  <message name="hasDependentUIDsInput">
+    <part name="parameters" element="tns:hasDependentUIDsRequest" />
+  </message>
+  <message name="hasDependentUIDsOutput">
+    <part name="parameters" element="tns:hasDependentUIDsResponse" />
+  </message>
+  <message name="incrementVersionInput">
+    <part name="parameters" element="tns:incrementVersionRequest" />
+  </message>
+  <message name="incrementVersionOutput">
+    <part name="parameters" element="tns:incrementVersionResponse" />
+  </message>
+  <message name="isSandboxPresentInput">
+    <part name="parameters" element="tns:isSandboxPresentRequest" />
+  </message>
+  <message name="isSandboxPresentOutput">
+    <part name="parameters" element="tns:isSandboxPresentResponse" />
+  </message>
+  <message name="moveInput">
+    <part name="parameters" element="tns:moveRequest" />
+  </message>
+  <message name="moveOutput">
+    <part name="parameters" element="tns:moveResponse" />
+  </message>
+  <message name="performBundleQuickTaskInput">
+    <part name="parameters" element="tns:performBundleQuickTaskRequest" />
+  </message>
+  <message name="performBundleQuickTaskOutput">
+    <part name="parameters" element="tns:performBundleQuickTaskResponse" />
+  </message>
+  <message name="refreshSearchTokenInput">
+    <part name="parameters" element="tns:refreshSearchTokenRequest" />
+  </message>
+  <message name="refreshSearchTokenOutput">
+    <part name="parameters" element="tns:refreshSearchTokenResponse" />
+  </message>
+  <message name="releaseSearchTokenInput">
+    <part name="parameters" element="tns:releaseSearchTokenRequest" />
+  </message>
+  <message name="releaseSearchTokenOutput">
+    <part name="parameters" element="tns:releaseSearchTokenResponse" />
+  </message>
+  <message name="renameInput">
+    <part name="parameters" element="tns:renameRequest" />
+  </message>
+  <message name="renameOutput">
+    <part name="parameters" element="tns:renameResponse" />
+  </message>
+  <message name="renameWithPublishOptionInput">
+    <part name="parameters" element="tns:renameWithPublishOptionRequest" />
+  </message>
+  <message name="renameWithPublishOptionOutput">
+    <part name="parameters" element="tns:renameWithPublishOptionResponse" />
+  </message>
+  <message name="revertSandboxInput">
+    <part name="parameters" element="tns:revertSandboxRequest" />
+  </message>
+  <message name="revertSandboxOutput">
+    <part name="parameters" element="tns:revertSandboxResponse" />
+  </message>
+  <message name="searchInput">
+    <part name="parameters" element="tns:searchRequest" />
+  </message>
+  <message name="searchOutput">
+    <part name="parameters" element="tns:searchResponse" />
+  </message>
+  <message name="setBundleIconInput">
+    <part name="parameters" element="tns:setBundleIconRequest" />
+  </message>
+  <message name="setBundleIconOutput">
+    <part name="parameters" element="tns:setBundleIconResponse" />
+  </message>
+  <message name="setEnableOrDisableObjectInput">
+    <part name="parameters" element="tns:setEnableOrDisableObjectRequest" />
+  </message>
+  <message name="setEnableOrDisableObjectOutput">
+    <part name="parameters" element="tns:setEnableOrDisableObjectResponse" />
+  </message>
+  <message name="updateInput">
+    <part name="parameters" element="tns:updateRequest" />
+  </message>
+  <message name="updateOutput">
+    <part name="parameters" element="tns:updateResponse" />
+  </message>
+  <message name="updateToSandboxInput">
+    <part name="parameters" element="tns:updateToSandboxRequest" />
+  </message>
+  <message name="updateToSandboxOutput">
+    <part name="parameters" element="tns:updateToSandboxResponse" />
+  </message>
+  <message name="updateToSandboxGUIDInput">
+    <part name="parameters" element="tns:updateToSandboxGUIDRequest" />
+  </message>
+  <message name="updateToSandboxGUIDOutput">
+    <part name="parameters" element="tns:updateToSandboxGUIDResponse" />
+  </message>
+  <message name="copyBundleInventoryProductMappingInput">
+    <part name="parameters" element="tns:copyBundleInventoryProductMappingRequest" />
+  </message>
+  <message name="copyBundleInventoryProductMappingOutput">
+    <part name="parameters" element="tns:copyBundleInventoryProductMappingResponse" />
+  </message>
+  <message name="checkNonExistingSatelliteServersInput">
+    <part name="parameters" element="tns:checkNonExistingSatelliteServersRequest" />
+  </message>
+  <message name="checkNonExistingSatelliteServersOutput">
+    <part name="parameters" element="tns:checkNonExistingSatelliteServersResponse" />
+  </message>
+  <message name="checkNonExistingContentServersInput">
+    <part name="parameters" element="tns:checkNonExistingContentServersRequest" />
+  </message>
+  <message name="checkNonExistingContentServersOutput">
+    <part name="parameters" element="tns:checkNonExistingContentServersResponse" />
+  </message>
+  <message name="existsButToBeDeletedRequest">
+    <part name="parameters" element="tns:existsButToBeDeletedRequest" />
+  </message>
+  <message name="existsButToBeDeletedResponse">
+    <part name="parameters" element="tns:existsButToBeDeletedResponse" />
+  </message>
+  <portType name="BundleAdminService">
+    <operation name="applyInheritanceFromParentForMovedObject">
+      <input message="tns:applyInheritanceFromParentForMovedObjectInput" />
+      <output message="tns:applyInheritanceFromParentForMovedObjectOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="applyInheritanceFromParentSync">
+      <input message="tns:applyInheritanceFromParentSyncInput" />
+      <output message="tns:applyInheritanceFromParentSyncOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="checkLicenseForBundleType">
+      <input message="tns:checkLicenseForBundleTypeInput" />
+      <output message="tns:checkLicenseForBundleTypeOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="clone">
+      <input message="tns:cloneInput" />
+      <output message="tns:cloneOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="commitSandbox">
+      <input message="tns:commitSandboxInput" />
+      <output message="tns:commitSandboxOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="commitSandboxToNewObject">
+      <input message="tns:commitSandboxToNewObjectInput" />
+      <output message="tns:commitSandboxToNewObjectOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="commitSandboxToNewWithDependents">
+      <input message="tns:commitSandboxToNewWithDependentsInput" />
+      <output message="tns:commitSandboxToNewWithDependentsOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="commitSandboxToNewWithNewDependents">
+      <input message="tns:commitSandboxToNewWithNewDependentsInput" />
+      <output message="tns:commitSandboxToNewWithNewDependentsOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="commitSandboxWithDependents">
+      <input message="tns:commitSandboxWithDependentsInput" />
+      <output message="tns:commitSandboxWithDependentsOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="create">
+      <input message="tns:createInput" />
+      <output message="tns:createOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="createAsSandbox">
+      <input message="tns:createAsSandboxInput" />
+      <output message="tns:createAsSandboxOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="createBundleDefinition">
+      <input message="tns:createBundleDefinitionInput" />
+      <output message="tns:createBundleDefinitionOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="createSandbox">
+      <input message="tns:createSandboxInput" />
+      <output message="tns:createSandboxOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="createSystemBundle">
+      <input message="tns:createSystemBundleInput" />
+      <output message="tns:createSystemBundleOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="delete">
+      <input message="tns:deleteInput" />
+      <output message="tns:deleteOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="deleteRecursive">
+      <input message="tns:deleteRecursiveInput" />
+      <output message="tns:deleteRecursiveOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="deleteVersion">
+      <input message="tns:deleteVersionInput" />
+      <output message="tns:deleteVersionOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="existsByParentAndName">
+      <input message="tns:existsByParentAndNameInput" />
+      <output message="tns:existsByParentAndNameOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="existsByUID">
+      <input message="tns:existsByUIDInput" />
+      <output message="tns:existsByUIDOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="get">
+      <input message="tns:getInput" />
+      <output message="tns:getOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="getAllBundleDefinitionsByPlatform">
+      <input message="tns:getAllBundleDefinitionsByPlatformInput" />
+      <output message="tns:getAllBundleDefinitionsByPlatformOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="getAllBundleTypes">
+      <input message="tns:getAllBundleTypesInput" />
+      <output message="tns:getAllBundleTypesOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="getAllEffectiveDependentUIDs">
+      <input message="tns:getAllEffectiveDependentUIDsInput" />
+      <output message="tns:getAllEffectiveDependentUIDsOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="getAllSearchResults">
+      <input message="tns:getAllSearchResultsInput" />
+      <output message="tns:getAllSearchResultsOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="getAllSearchResultsWIthToken">
+      <input message="tns:getAllSearchResultsWIthTokenInput" />
+      <output message="tns:getAllSearchResultsWIthTokenOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="getAllVersions">
+      <input message="tns:getAllVersionsInput" />
+      <output message="tns:getAllVersionsOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="getAttributes">
+      <input message="tns:getAttributesInput" />
+      <output message="tns:getAttributesOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="getBasicObject">
+      <input message="tns:getBasicObjectInput" />
+      <output message="tns:getBasicObjectOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="getBundleDefinition">
+      <input message="tns:getBundleDefinitionInput" />
+      <output message="tns:getBundleDefinitionOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="getBundleIcon">
+      <input message="tns:getBundleIconInput" />
+      <output message="tns:getBundleIconOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="getBundleTypes">
+      <input message="tns:getBundleTypesInput" />
+      <output message="tns:getBundleTypesOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="getByParentAndName">
+      <input message="tns:getByParentAndNameInput" />
+      <output message="tns:getByParentAndNameOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="getByParentUIDAndName">
+      <input message="tns:getByParentUIDAndNameInput" />
+      <output message="tns:getByParentUIDAndNameOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="getByUID">
+      <input message="tns:getByUIDInput" />
+      <output message="tns:getByUIDOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="getDependentUIDs">
+      <input message="tns:getDependentUIDsInput" />
+      <output message="tns:getDependentUIDsOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="getEffectiveDependentUIDs">
+      <input message="tns:getEffectiveDependentUIDsInput" />
+      <output message="tns:getEffectiveDependentUIDsOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="getEffectiveReplicationSettingFromParent">
+      <input message="tns:getEffectiveReplicationSettingFromParentInput" />
+      <output message="tns:getEffectiveReplicationSettingFromParentOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="getLicensingComponents">
+      <input message="tns:getLicensingComponentsInput" />
+      <output message="tns:getLicensingComponentsOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="getObjectHierachy">
+      <input message="tns:getObjectHierachyInput" />
+      <output message="tns:getObjectHierachyOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="getRoot">
+      <input message="tns:getRootInput" />
+      <output message="tns:getRootOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="getRootPath">
+      <input message="tns:getRootPathInput" />
+      <output message="tns:getRootPathOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="getRootUID">
+      <input message="tns:getRootUIDInput" />
+      <output message="tns:getRootUIDOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="getSandBoxObjInfo">
+      <input message="tns:getSandBoxObjInfoInput" />
+      <output message="tns:getSandBoxObjInfoOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="getSandbox">
+      <input message="tns:getSandboxInput" />
+      <output message="tns:getSandboxOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="getSandboxOnlyDependentBundles">
+      <input message="tns:getSandboxOnlyDependentBundlesInput" />
+      <output message="tns:getSandboxOnlyDependentBundlesOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="getSandboxUID">
+      <input message="tns:getSandboxUIDInput" />
+      <output message="tns:getSandboxUIDOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="getSearchResults">
+      <input message="tns:getSearchResultsInput" />
+      <output message="tns:getSearchResultsOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="getSystemBundleFolder">
+      <input message="tns:getSystemBundleFolderInput" />
+      <output message="tns:getSystemBundleFolderOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="getVersion">
+      <input message="tns:getVersionInput" />
+      <output message="tns:getVersionOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="hasDependentUIDs">
+      <input message="tns:hasDependentUIDsInput" />
+      <output message="tns:hasDependentUIDsOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="incrementVersion">
+      <input message="tns:incrementVersionInput" />
+      <output message="tns:incrementVersionOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="isSandboxPresent">
+      <input message="tns:isSandboxPresentInput" />
+      <output message="tns:isSandboxPresentOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="move">
+      <input message="tns:moveInput" />
+      <output message="tns:moveOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="performBundleQuickTask">
+      <input message="tns:performBundleQuickTaskInput" />
+      <output message="tns:performBundleQuickTaskOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="refreshSearchToken">
+      <input message="tns:refreshSearchTokenInput" />
+      <output message="tns:refreshSearchTokenOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="releaseSearchToken">
+      <input message="tns:releaseSearchTokenInput" />
+      <output message="tns:releaseSearchTokenOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="rename">
+      <input message="tns:renameInput" />
+      <output message="tns:renameOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="renameWithPublishOption">
+      <input message="tns:renameWithPublishOptionInput" />
+      <output message="tns:renameWithPublishOptionOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="revertSandbox">
+      <input message="tns:revertSandboxInput" />
+      <output message="tns:revertSandboxOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="search">
+      <input message="tns:searchInput" />
+      <output message="tns:searchOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="setBundleIcon">
+      <input message="tns:setBundleIconInput" />
+      <output message="tns:setBundleIconOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="setEnableOrDisableObject">
+      <input message="tns:setEnableOrDisableObjectInput" />
+      <output message="tns:setEnableOrDisableObjectOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="update">
+      <input message="tns:updateInput" />
+      <output message="tns:updateOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="updateToSandbox">
+      <input message="tns:updateToSandboxInput" />
+      <output message="tns:updateToSandboxOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="updateToSandboxGUID">
+      <input message="tns:updateToSandboxGUIDInput" />
+      <output message="tns:updateToSandboxGUIDOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="copyBundleInventoryProductMapping">
+      <input message="tns:copyBundleInventoryProductMappingInput" />
+      <output message="tns:copyBundleInventoryProductMappingOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="checkNonExistingSatelliteServers">
+      <input message="tns:checkNonExistingSatelliteServersInput" />
+      <output message="tns:checkNonExistingSatelliteServersOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="checkNonExistingContentServers">
+      <input message="tns:checkNonExistingContentServersInput" />
+      <output message="tns:checkNonExistingContentServersOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="existsButToBeDeleted">
+      <input message="tns:existsButToBeDeletedRequest" />
+      <output message="tns:existsButToBeDeletedResponse" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+  </portType>
+  <binding name="BundleAdminServiceBinding" type="tns:BundleAdminService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="applyInheritanceFromParentForMovedObject">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/bundles/soap/applyInheritanceFromParentForMovedObject" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="RemoteDataModelException">
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="applyInheritanceFromParentSync">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/bundles/soap/applyInheritanceFromParentSync" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="RemoteDataModelException">
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="checkLicenseForBundleType">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/bundles/soap/checkLicenseForBundleType" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="RemoteDataModelException">
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="clone">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/bundles/soap/clone" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="RemoteDataModelException">
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="commitSandbox">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/bundles/soap/commitSandbox" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="RemoteDataModelException">
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="commitSandboxToNewObject">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/bundles/soap/commitSandboxToNewObject" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="RemoteDataModelException">
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="commitSandboxToNewWithDependents">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/bundles/soap/commitSandboxToNewWithDependents" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="RemoteDataModelException">
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="commitSandboxToNewWithNewDependents">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/bundles/soap/commitSandboxToNewWithNewDependents" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="RemoteDataModelException">
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="commitSandboxWithDependents">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/bundles/soap/commitSandboxWithDependents" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="RemoteDataModelException">
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="create">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/bundles/soap/create" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="RemoteDataModelException">
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="createAsSandbox">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/bundles/soap/createAsSandbox" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="RemoteDataModelException">
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="createBundleDefinition">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/bundles/soap/createBundleDefinition" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="RemoteDataModelException">
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="createSandbox">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/bundles/soap/createSandbox" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="RemoteDataModelException">
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="createSystemBundle">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/bundles/soap/createSystemBundle" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="RemoteDataModelException">
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="delete">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/bundles/soap/delete" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="RemoteDataModelException">
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="deleteRecursive">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/bundles/soap/deleteRecursive" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="RemoteDataModelException">
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="deleteVersion">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/bundles/soap/deleteVersion" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="RemoteDataModelException">
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="existsByParentAndName">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/bundles/soap/existsByParentAndName" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="RemoteDataModelException">
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="existsByUID">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/bundles/soap/existsByUID" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="RemoteDataModelException">
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="get">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/bundles/soap/get" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="RemoteDataModelException">
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="getAllBundleDefinitionsByPlatform">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/bundles/soap/getAllBundleDefinitionsByPlatform" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="RemoteDataModelException">
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="getAllBundleTypes">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/bundles/soap/getAllBundleTypes" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="RemoteDataModelException">
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="getAllEffectiveDependentUIDs">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/bundles/soap/getAllEffectiveDependentUIDs" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="RemoteDataModelException">
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="getAllSearchResults">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/bundles/soap/getAllSearchResults" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="RemoteDataModelException">
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="getAllSearchResultsWIthToken">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/bundles/soap/getAllSearchResultsWIthToken" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="RemoteDataModelException">
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="getAllVersions">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/bundles/soap/getAllVersions" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="RemoteDataModelException">
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="getAttributes">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/bundles/soap/getAttributes" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="RemoteDataModelException">
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="getBasicObject">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/bundles/soap/getBasicObject" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="RemoteDataModelException">
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="getBundleDefinition">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/bundles/soap/getBundleDefinition" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="RemoteDataModelException">
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="getBundleIcon">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/bundles/soap/getBundleIcon" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="RemoteDataModelException">
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="getBundleTypes">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/bundles/soap/getBundleTypes" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="RemoteDataModelException">
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="getByParentAndName">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/bundles/soap/getByParentAndName" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="RemoteDataModelException">
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="getByParentUIDAndName">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/bundles/soap/getByParentUIDAndName" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="RemoteDataModelException">
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="getByUID">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/bundles/soap/getByUID" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="RemoteDataModelException">
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="getDependentUIDs">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/bundles/soap/getDependentUIDs" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="RemoteDataModelException">
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="getEffectiveDependentUIDs">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/bundles/soap/getEffectiveDependentUIDs" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="RemoteDataModelException">
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="getEffectiveReplicationSettingFromParent">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/bundles/soap/getEffectiveReplicationSettingFromParent" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="RemoteDataModelException">
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="getLicensingComponents">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/bundles/soap/getLicensingComponents" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="RemoteDataModelException">
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="getObjectHierachy">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/bundles/soap/getObjectHierachy" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="RemoteDataModelException">
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="getRoot">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/bundles/soap/getRoot" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="RemoteDataModelException">
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="getRootPath">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/bundles/soap/getRootPath" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="RemoteDataModelException">
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="getRootUID">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/bundles/soap/getRootUID" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="RemoteDataModelException">
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="getSandBoxObjInfo">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/bundles/soap/getSandBoxObjInfo" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="RemoteDataModelException">
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="getSandbox">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/bundles/soap/getSandbox" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="RemoteDataModelException">
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="getSandboxOnlyDependentBundles">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/bundles/soap/getSandboxOnlyDependentBundles" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="RemoteDataModelException">
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="getSandboxUID">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/bundles/soap/getSandboxUID" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="RemoteDataModelException">
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="getSearchResults">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/bundles/soap/getSearchResults" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="RemoteDataModelException">
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="getSystemBundleFolder">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/bundles/soap/getSystemBundleFolder" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="RemoteDataModelException">
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="getVersion">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/bundles/soap/getVersion" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="RemoteDataModelException">
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="hasDependentUIDs">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/bundles/soap/hasDependentUIDs" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="RemoteDataModelException">
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="incrementVersion">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/bundles/soap/incrementVersion" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="RemoteDataModelException">
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="isSandboxPresent">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/bundles/soap/isSandboxPresent" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="RemoteDataModelException">
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="move">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/bundles/soap/move" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="RemoteDataModelException">
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="performBundleQuickTask">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/bundles/soap/performBundleQuickTask" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="RemoteDataModelException">
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="refreshSearchToken">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/bundles/soap/refreshSearchToken" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="RemoteDataModelException">
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="releaseSearchToken">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/bundles/soap/releaseSearchToken" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="RemoteDataModelException">
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="rename">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/bundles/soap/rename" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="RemoteDataModelException">
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="renameWithPublishOption">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/bundles/soap/renameWithPublishOption" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="RemoteDataModelException">
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="revertSandbox">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/bundles/soap/revertSandbox" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="RemoteDataModelException">
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="search">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/bundles/soap/search" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="RemoteDataModelException">
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="setBundleIcon">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/bundles/soap/setBundleIcon" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="RemoteDataModelException">
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="setEnableOrDisableObject">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/bundles/soap/setEnableOrDisableObject" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="RemoteDataModelException">
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="update">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/bundles/soap/update" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="RemoteDataModelException">
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="updateToSandbox">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/bundles/soap/updateToSandbox" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="RemoteDataModelException">
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="updateToSandboxGUID">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/bundles/soap/updateToSandboxGUID" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="RemoteDataModelException">
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="copyBundleInventoryProductMapping">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/bundles/soap/copyBundleInventoryProductMapping" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="RemoteDataModelException">
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="checkNonExistingSatelliteServers">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/bundles/soap/checkNonExistingSatelliteServers" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="RemoteDataModelException">
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="checkNonExistingContentServers">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/bundles/soap/checkNonExistingContentServers" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="RemoteDataModelException">
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="existsButToBeDeleted">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/bundles/soap/existsButToBeDeleted" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="RemoteDataModelException">
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+  </binding>
+  <service name="BundleAdminServiceService">
+    <port name="BundleAdminServicePort" binding="tns:BundleAdminServiceBinding">
+      <soap:address location="https://dev-thk-zcm-01.dvz.fh-koeln.de/zenworks-bundleadmin" />
+    </port>
+  </service>
+</definitions>
