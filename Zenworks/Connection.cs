@@ -28,6 +28,8 @@ namespace Zenworks
         public User.UserAdminServiceClient UserAdmin;
         /// <summary> <c>AdministratorAdmin</c> property exposing a pre-connected instance of the <c>AdministratorAdminServiceClient</c> class</summary>
         public Administrator.AdministratorAdminServiceClient AdministratorAdmin;
+        /// <summary> <c>RegistrationAdmin</c> property exposing a pre-connected instance of the <c>RegistrationAdminServiceClient</c> class</summary>
+        public Registration.RegistrationAdminServiceClient RegistrationAdmin;
         /// <summary>The SOAP binding object instance of the Zenworks server connection</summary>
         private readonly System.ServiceModel.BasicHttpBinding ZenworksSOAPBinding;
 
@@ -108,6 +110,12 @@ namespace Zenworks
             this.AdministratorAdmin = new Administrator.AdministratorAdminServiceClient(this.ZenworksSOAPBinding, ZenworksSOAPAddress);
             this.AdministratorAdmin.ClientCredentials.UserName.UserName = UserName;
             this.AdministratorAdmin.ClientCredentials.UserName.Password = Password;
+
+            // Initialize the RegistrationAdmin SOAP object for use with Powershell
+            ZenworksSOAPAddress = new System.ServiceModel.EndpointAddress(AddressingScheme + ZenworksServer + "/zenworks-registrationadmin");
+            this.RegistrationAdmin = new Registration.RegistrationAdminServiceClient(this.ZenworksSOAPBinding, ZenworksSOAPAddress);
+            this.RegistrationAdmin.ClientCredentials.UserName.UserName = UserName;
+            this.RegistrationAdmin.ClientCredentials.UserName.Password = Password;
         } // Connection() constructor
     } // class Connection 
 } // namespace Zenworks

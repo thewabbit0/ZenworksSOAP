@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema xmlns:registrations="http://novell.com/zenworks/datamodel/objects/registrations" xmlns:objects="http://novell.com/zenworks/datamodel/objects" xmlns="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://novell.com/zenworks/datamodel/objects/registrations" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:import schemaLocation="core-objects.xsd" namespace="http://novell.com/zenworks/datamodel/objects" />
+  <xsd:element name="DeviceCreationInfo" type="registrations:DeviceCreationInfo" />
+  <xsd:complexType name="DeviceCreationInfo">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="Id" type="xsd:string" />
+      <xsd:element name="SyncName" type="xsd:boolean" />
+      <xsd:element minOccurs="0" name="Site" type="xsd:string" />
+      <xsd:element minOccurs="0" name="Location" type="xsd:string" />
+      <xsd:element minOccurs="0" name="Department" type="xsd:string" />
+      <xsd:element minOccurs="0" name="Folder" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="unbounded" name="Groups" type="xsd:string" />
+      <xsd:element name="UseSerialNumberForReconcile" type="xsd:boolean" />
+      <xsd:element name="UseMachineNameForReconcile" type="xsd:boolean" />
+      <xsd:element name="UseMacAddressForReconcile" type="xsd:boolean" />
+      <xsd:element name="UseDifferentiationForReconcile" type="xsd:boolean" />
+      <xsd:any minOccurs="0" maxOccurs="unbounded" namespace="##targetNamespace" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="RegistrationKey" type="registrations:RegistrationKey" />
+  <xsd:complexType name="RegistrationKey">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="objects:ZENObject">
+        <xsd:sequence>
+          <xsd:element name="Limit" type="xsd:int" />
+          <xsd:element name="Uses" type="xsd:int" />
+          <xsd:element minOccurs="0" name="DeviceCreationInfo" type="registrations:DeviceCreationInfo" />
+          <xsd:any minOccurs="0" maxOccurs="unbounded" namespace="##targetNamespace" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="RuleSet" type="registrations:RuleSet" />
+  <xsd:complexType name="RuleSet">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="UID" type="xsd:string" />
+      <xsd:element minOccurs="0" name="Name" type="xsd:string" />
+      <xsd:element minOccurs="0" name="Description" type="xsd:string" />
+      <xsd:element name="SystemRule" type="xsd:boolean" />
+      <xsd:element name="Order" type="xsd:int" />
+      <xsd:element minOccurs="0" name="RulesString" type="xsd:string" />
+      <xsd:element minOccurs="0" name="DeviceCreationInfo" type="registrations:DeviceCreationInfo" />
+      <xsd:any minOccurs="0" maxOccurs="unbounded" namespace="##targetNamespace" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="DeviceInfo" type="registrations:DeviceInfo" />
+  <xsd:complexType name="DeviceInfo">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="SerialNumber" type="xsd:string" />
+      <xsd:element minOccurs="0" name="MachineGuid" type="xsd:string" />
+      <xsd:element minOccurs="0" name="Owner" type="xsd:string" />
+      <xsd:element minOccurs="0" name="MacAddress" type="xsd:string" />
+      <xsd:element minOccurs="0" name="Handheldtype" type="xsd:string" />
+      <xsd:element minOccurs="0" name="RegKey" type="xsd:string" />
+      <xsd:element minOccurs="0" name="Computer" type="xsd:string" />
+      <xsd:element minOccurs="0" name="DeviceFolder" type="xsd:string" />
+      <xsd:element minOccurs="0" name="HostName" type="xsd:string" />
+      <xsd:element minOccurs="0" name="MobileIMEI" type="xsd:string" />
+      <xsd:element minOccurs="0" name="DeviceModel" type="xsd:string" />
+      <xsd:element name="DeviceOwnership" type="xsd:int" />
+      <xsd:element minOccurs="0" name="ActiveSyncDeviceId" type="xsd:string" />
+      <xsd:element minOccurs="0" name="DeviceManufacturer" type="xsd:string" />
+      <xsd:element minOccurs="0" name="PhoneNumber" type="xsd:string" />
+      <xsd:element minOccurs="0" name="OperatingSystem" type="xsd:string" />
+      <xsd:element minOccurs="0" name="OperatingSystemLanguage" type="xsd:string" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="RegisterResponseInfo" type="registrations:RegisterResponseInfo" />
+  <xsd:complexType name="RegisterResponseInfo">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="ChangeDeviceGUID" type="xsd:string" />
+      <xsd:element name="State" type="xsd:int" />
+      <xsd:element minOccurs="0" name="Message" type="xsd:string" />
+      <xsd:element name="Code" type="xsd:int" />
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>

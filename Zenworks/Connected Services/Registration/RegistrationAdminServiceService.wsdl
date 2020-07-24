@@ -1,0 +1,1238 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:registrations="http://novell.com/zenworks/datamodel/objects/registrations" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://novell.com/zenworks/datamodel/services/registrations/soap" xmlns:objects="http://novell.com/zenworks/datamodel/objects" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:exceptions="http://novell.com/zenworks/datamodel/exceptions" xmlns:folders="http://novell.com/zenworks/datamodel/objects/folders" name="RegistrationAdminServiceService" targetNamespace="http://novell.com/zenworks/datamodel/services/registrations/soap" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema xmlns="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://novell.com/zenworks/datamodel/services/registrations/soap">
+      <xsd:import schemaLocation="exceptions.xsd" namespace="http://novell.com/zenworks/datamodel/exceptions" />
+      <xsd:import schemaLocation="core-folders.xsd" namespace="http://novell.com/zenworks/datamodel/objects/folders" />
+      <xsd:import schemaLocation="managed-devices-registrations.xsd" namespace="http://novell.com/zenworks/datamodel/objects/registrations" />
+      <xsd:import schemaLocation="core-objects.xsd" namespace="http://novell.com/zenworks/datamodel/objects" />
+      <xsd:element name="cloneRequest" type="tns:cloneRequest" />
+      <xsd:complexType name="cloneRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="obj" type="objects:ZENObject" />
+          <xsd:element minOccurs="0" name="newName" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="cloneResponse" type="tns:cloneResponse" />
+      <xsd:complexType name="cloneResponse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="return" type="objects:ZENObject" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="createRequest" type="tns:createRequest" />
+      <xsd:complexType name="createRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="object" type="objects:ZENObject" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="createResponse" type="tns:createResponse" />
+      <xsd:complexType name="createResponse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="return" type="objects:ZENObject" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="deleteRequest" type="tns:deleteRequest" />
+      <xsd:complexType name="deleteRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="uid" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="deleteResponse" type="tns:deleteResponse" />
+      <xsd:complexType name="deleteResponse">
+        <xsd:sequence>
+          <xsd:element name="return" type="xsd:boolean" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="deleteRecursiveRequest" type="tns:deleteRecursiveRequest" />
+      <xsd:complexType name="deleteRecursiveRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="uid" type="xsd:string" />
+          <xsd:element name="recursive" type="xsd:boolean" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="deleteRecursiveResponse" type="tns:deleteRecursiveResponse" />
+      <xsd:complexType name="deleteRecursiveResponse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="return" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="existsByParentAndNameRequest" type="tns:existsByParentAndNameRequest" />
+      <xsd:complexType name="existsByParentAndNameRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="parentUID" type="xsd:string" />
+          <xsd:element minOccurs="0" name="name" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="existsByParentAndNameResponse" type="tns:existsByParentAndNameResponse" />
+      <xsd:complexType name="existsByParentAndNameResponse">
+        <xsd:sequence>
+          <xsd:element name="return" type="xsd:boolean" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="existsByUIDRequest" type="tns:existsByUIDRequest" />
+      <xsd:complexType name="existsByUIDRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="uid" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="existsByUIDResponse" type="tns:existsByUIDResponse" />
+      <xsd:complexType name="existsByUIDResponse">
+        <xsd:sequence>
+          <xsd:element name="return" type="xsd:boolean" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="generateRegistrationKeyRequest" type="tns:generateRegistrationKeyRequest" />
+      <xsd:complexType name="generateRegistrationKeyRequest">
+        <xsd:sequence />
+      </xsd:complexType>
+      <xsd:element name="generateRegistrationKeyResponse" type="tns:generateRegistrationKeyResponse" />
+      <xsd:complexType name="generateRegistrationKeyResponse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="return" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getAllSearchResultsRequest" type="tns:getAllSearchResultsRequest" />
+      <xsd:complexType name="getAllSearchResultsRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="folderUID" type="xsd:string" />
+          <xsd:element minOccurs="0" name="options" type="objects:SearchOptions" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getAllSearchResultsResponse" type="tns:getAllSearchResultsResponse" />
+      <xsd:complexType name="getAllSearchResultsResponse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="return" type="objects:SearchResult" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getAllSearchResultsWIthTokenRequest" type="tns:getAllSearchResultsWIthTokenRequest" />
+      <xsd:complexType name="getAllSearchResultsWIthTokenRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="searchToken" type="objects:SearchToken" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getAllSearchResultsWIthTokenResponse" type="tns:getAllSearchResultsWIthTokenResponse" />
+      <xsd:complexType name="getAllSearchResultsWIthTokenResponse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="return" type="objects:SearchResult" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getAttributesRequest" type="tns:getAttributesRequest" />
+      <xsd:complexType name="getAttributesRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="uid" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="attributes" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getAttributesResponse" type="tns:getAttributesResponse" />
+      <xsd:complexType name="getAttributesResponse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="return" type="xsd:anyType" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getBasicObjectRequest" type="tns:getBasicObjectRequest" />
+      <xsd:complexType name="getBasicObjectRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="uid" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getBasicObjectResponse" type="tns:getBasicObjectResponse" />
+      <xsd:complexType name="getBasicObjectResponse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="return" type="objects:BasicObject" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getByParentAndNameRequest" type="tns:getByParentAndNameRequest" />
+      <xsd:complexType name="getByParentAndNameRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="parent" type="objects:ZENObject" />
+          <xsd:element minOccurs="0" name="name" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getByParentAndNameResponse" type="tns:getByParentAndNameResponse" />
+      <xsd:complexType name="getByParentAndNameResponse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="return" type="objects:ZENObject" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getByUIDRequest" type="tns:getByUIDRequest" />
+      <xsd:complexType name="getByUIDRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="uid" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getByUIDResponse" type="tns:getByUIDResponse" />
+      <xsd:complexType name="getByUIDResponse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="return" type="objects:ZENObject" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getHandheldNamingFieldsRequest" type="tns:getHandheldNamingFieldsRequest" />
+      <xsd:complexType name="getHandheldNamingFieldsRequest">
+        <xsd:sequence />
+      </xsd:complexType>
+      <xsd:element name="getHandheldNamingFieldsResponse" type="tns:getHandheldNamingFieldsResponse" />
+      <xsd:complexType name="getHandheldNamingFieldsResponse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="return" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getHandheldRuleFieldsRequest" type="tns:getHandheldRuleFieldsRequest" />
+      <xsd:complexType name="getHandheldRuleFieldsRequest">
+        <xsd:sequence />
+      </xsd:complexType>
+      <xsd:element name="getHandheldRuleFieldsResponse" type="tns:getHandheldRuleFieldsResponse" />
+      <xsd:complexType name="getHandheldRuleFieldsResponse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="return" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getHandheldRuleSetsRequest" type="tns:getHandheldRuleSetsRequest" />
+      <xsd:complexType name="getHandheldRuleSetsRequest">
+        <xsd:sequence />
+      </xsd:complexType>
+      <xsd:element name="getHandheldRuleSetsResponse" type="tns:getHandheldRuleSetsResponse" />
+      <xsd:complexType name="getHandheldRuleSetsResponse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="return" type="registrations:RuleSet" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getNamingFieldsRequest" type="tns:getNamingFieldsRequest" />
+      <xsd:complexType name="getNamingFieldsRequest">
+        <xsd:sequence />
+      </xsd:complexType>
+      <xsd:element name="getNamingFieldsResponse" type="tns:getNamingFieldsResponse" />
+      <xsd:complexType name="getNamingFieldsResponse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="return" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getObjectHierachyRequest" type="tns:getObjectHierachyRequest" />
+      <xsd:complexType name="getObjectHierachyRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="uid" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getObjectHierachyResponse" type="tns:getObjectHierachyResponse" />
+      <xsd:complexType name="getObjectHierachyResponse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="return" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getRegistrationKeyRequest" type="tns:getRegistrationKeyRequest" />
+      <xsd:complexType name="getRegistrationKeyRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="name" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getRegistrationKeyResponse" type="tns:getRegistrationKeyResponse" />
+      <xsd:complexType name="getRegistrationKeyResponse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="return" type="registrations:RegistrationKey" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getRegistrationKeyRootRequest" type="tns:getRegistrationKeyRootRequest" />
+      <xsd:complexType name="getRegistrationKeyRootRequest">
+        <xsd:sequence />
+      </xsd:complexType>
+      <xsd:element name="getRegistrationKeyRootResponse" type="tns:getRegistrationKeyRootResponse" />
+      <xsd:complexType name="getRegistrationKeyRootResponse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="return" type="folders:Folder" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getRootRequest" type="tns:getRootRequest" />
+      <xsd:complexType name="getRootRequest">
+        <xsd:sequence />
+      </xsd:complexType>
+      <xsd:element name="getRootResponse" type="tns:getRootResponse" />
+      <xsd:complexType name="getRootResponse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="return" type="folders:Folder" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getRootPathRequest" type="tns:getRootPathRequest" />
+      <xsd:complexType name="getRootPathRequest">
+        <xsd:sequence />
+      </xsd:complexType>
+      <xsd:element name="getRootPathResponse" type="tns:getRootPathResponse" />
+      <xsd:complexType name="getRootPathResponse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="return" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getRuleFieldsRequest" type="tns:getRuleFieldsRequest" />
+      <xsd:complexType name="getRuleFieldsRequest">
+        <xsd:sequence />
+      </xsd:complexType>
+      <xsd:element name="getRuleFieldsResponse" type="tns:getRuleFieldsResponse" />
+      <xsd:complexType name="getRuleFieldsResponse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="return" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getRuleSetRootRequest" type="tns:getRuleSetRootRequest" />
+      <xsd:complexType name="getRuleSetRootRequest">
+        <xsd:sequence />
+      </xsd:complexType>
+      <xsd:element name="getRuleSetRootResponse" type="tns:getRuleSetRootResponse" />
+      <xsd:complexType name="getRuleSetRootResponse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="return" type="folders:Folder" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getRuleSetsRequest" type="tns:getRuleSetsRequest" />
+      <xsd:complexType name="getRuleSetsRequest">
+        <xsd:sequence />
+      </xsd:complexType>
+      <xsd:element name="getRuleSetsResponse" type="tns:getRuleSetsResponse" />
+      <xsd:complexType name="getRuleSetsResponse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="return" type="registrations:RuleSet" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getSearchResultsRequest" type="tns:getSearchResultsRequest" />
+      <xsd:complexType name="getSearchResultsRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="searchToken" type="objects:SearchToken" />
+          <xsd:element name="index" type="xsd:int" />
+          <xsd:element name="count" type="xsd:int" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getSearchResultsResponse" type="tns:getSearchResultsResponse" />
+      <xsd:complexType name="getSearchResultsResponse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="return" type="objects:SearchResult" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="moveRequest" type="tns:moveRequest" />
+      <xsd:complexType name="moveRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="obj" type="objects:ZENObject" />
+          <xsd:element minOccurs="0" name="newParent" type="objects:ZENObject" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="moveResponse" type="tns:moveResponse" />
+      <xsd:complexType name="moveResponse">
+        <xsd:sequence>
+          <xsd:element name="return" type="xsd:boolean" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="refreshSearchTokenRequest" type="tns:refreshSearchTokenRequest" />
+      <xsd:complexType name="refreshSearchTokenRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="searchToken" type="objects:SearchToken" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="refreshSearchTokenResponse" type="tns:refreshSearchTokenResponse" />
+      <xsd:complexType name="refreshSearchTokenResponse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="return" type="objects:SearchToken" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="registerDeviceRequest" type="tns:registerDeviceRequest" />
+      <xsd:complexType name="registerDeviceRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="deviceInfo" type="registrations:DeviceInfo" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="registerDeviceResponse" type="tns:registerDeviceResponse" />
+      <xsd:complexType name="registerDeviceResponse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="return" type="registrations:RegisterResponseInfo" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="releaseSearchTokenRequest" type="tns:releaseSearchTokenRequest" />
+      <xsd:complexType name="releaseSearchTokenRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="searchToken" type="objects:SearchToken" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="releaseSearchTokenResponse" type="tns:releaseSearchTokenResponse" />
+      <xsd:complexType name="releaseSearchTokenResponse">
+        <xsd:sequence>
+          <xsd:element name="return" type="xsd:boolean" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="renameRequest" type="tns:renameRequest" />
+      <xsd:complexType name="renameRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="obj" type="objects:ZENObject" />
+          <xsd:element minOccurs="0" name="newName" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="renameResponse" type="tns:renameResponse" />
+      <xsd:complexType name="renameResponse">
+        <xsd:sequence>
+          <xsd:element name="return" type="xsd:boolean" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="searchRequest" type="tns:searchRequest" />
+      <xsd:complexType name="searchRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="folderUID" type="xsd:string" />
+          <xsd:element minOccurs="0" name="options" type="objects:SearchOptions" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="searchResponse" type="tns:searchResponse" />
+      <xsd:complexType name="searchResponse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="return" type="objects:SearchToken" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="setHandheldRuleSetsRequest" type="tns:setHandheldRuleSetsRequest" />
+      <xsd:complexType name="setHandheldRuleSetsRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="ruleSets" type="registrations:RuleSet" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="setHandheldRuleSetsResponse" type="tns:setHandheldRuleSetsResponse" />
+      <xsd:complexType name="setHandheldRuleSetsResponse">
+        <xsd:sequence>
+          <xsd:element name="return" type="xsd:boolean" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="setRuleSetsRequest" type="tns:setRuleSetsRequest" />
+      <xsd:complexType name="setRuleSetsRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="ruleSets" type="registrations:RuleSet" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="setRuleSetsResponse" type="tns:setRuleSetsResponse" />
+      <xsd:complexType name="setRuleSetsResponse">
+        <xsd:sequence>
+          <xsd:element name="return" type="xsd:boolean" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="updateRequest" type="tns:updateRequest" />
+      <xsd:complexType name="updateRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="object" type="objects:ZENObject" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="updateResponse" type="tns:updateResponse" />
+      <xsd:complexType name="updateResponse">
+        <xsd:sequence>
+          <xsd:element name="return" type="xsd:boolean" />
+        </xsd:sequence>
+      </xsd:complexType>
+    </xsd:schema>
+  </types>
+  <message name="RemoteDataModelException">
+    <part name="fault" element="exceptions:RemoteDataModelException" />
+  </message>
+  <message name="cloneInput">
+    <part name="parameters" element="tns:cloneRequest" />
+  </message>
+  <message name="cloneOutput">
+    <part name="parameters" element="tns:cloneResponse" />
+  </message>
+  <message name="createInput">
+    <part name="parameters" element="tns:createRequest" />
+  </message>
+  <message name="createOutput">
+    <part name="parameters" element="tns:createResponse" />
+  </message>
+  <message name="deleteInput">
+    <part name="parameters" element="tns:deleteRequest" />
+  </message>
+  <message name="deleteOutput">
+    <part name="parameters" element="tns:deleteResponse" />
+  </message>
+  <message name="deleteRecursiveInput">
+    <part name="parameters" element="tns:deleteRecursiveRequest" />
+  </message>
+  <message name="deleteRecursiveOutput">
+    <part name="parameters" element="tns:deleteRecursiveResponse" />
+  </message>
+  <message name="existsByParentAndNameInput">
+    <part name="parameters" element="tns:existsByParentAndNameRequest" />
+  </message>
+  <message name="existsByParentAndNameOutput">
+    <part name="parameters" element="tns:existsByParentAndNameResponse" />
+  </message>
+  <message name="existsByUIDInput">
+    <part name="parameters" element="tns:existsByUIDRequest" />
+  </message>
+  <message name="existsByUIDOutput">
+    <part name="parameters" element="tns:existsByUIDResponse" />
+  </message>
+  <message name="generateRegistrationKeyInput">
+    <part name="parameters" element="tns:generateRegistrationKeyRequest" />
+  </message>
+  <message name="generateRegistrationKeyOutput">
+    <part name="parameters" element="tns:generateRegistrationKeyResponse" />
+  </message>
+  <message name="getAllSearchResultsInput">
+    <part name="parameters" element="tns:getAllSearchResultsRequest" />
+  </message>
+  <message name="getAllSearchResultsOutput">
+    <part name="parameters" element="tns:getAllSearchResultsResponse" />
+  </message>
+  <message name="getAllSearchResultsWIthTokenInput">
+    <part name="parameters" element="tns:getAllSearchResultsWIthTokenRequest" />
+  </message>
+  <message name="getAllSearchResultsWIthTokenOutput">
+    <part name="parameters" element="tns:getAllSearchResultsWIthTokenResponse" />
+  </message>
+  <message name="getAttributesInput">
+    <part name="parameters" element="tns:getAttributesRequest" />
+  </message>
+  <message name="getAttributesOutput">
+    <part name="parameters" element="tns:getAttributesResponse" />
+  </message>
+  <message name="getBasicObjectInput">
+    <part name="parameters" element="tns:getBasicObjectRequest" />
+  </message>
+  <message name="getBasicObjectOutput">
+    <part name="parameters" element="tns:getBasicObjectResponse" />
+  </message>
+  <message name="getByParentAndNameInput">
+    <part name="parameters" element="tns:getByParentAndNameRequest" />
+  </message>
+  <message name="getByParentAndNameOutput">
+    <part name="parameters" element="tns:getByParentAndNameResponse" />
+  </message>
+  <message name="getByUIDInput">
+    <part name="parameters" element="tns:getByUIDRequest" />
+  </message>
+  <message name="getByUIDOutput">
+    <part name="parameters" element="tns:getByUIDResponse" />
+  </message>
+  <message name="getHandheldNamingFieldsInput">
+    <part name="parameters" element="tns:getHandheldNamingFieldsRequest" />
+  </message>
+  <message name="getHandheldNamingFieldsOutput">
+    <part name="parameters" element="tns:getHandheldNamingFieldsResponse" />
+  </message>
+  <message name="getHandheldRuleFieldsInput">
+    <part name="parameters" element="tns:getHandheldRuleFieldsRequest" />
+  </message>
+  <message name="getHandheldRuleFieldsOutput">
+    <part name="parameters" element="tns:getHandheldRuleFieldsResponse" />
+  </message>
+  <message name="getHandheldRuleSetsInput">
+    <part name="parameters" element="tns:getHandheldRuleSetsRequest" />
+  </message>
+  <message name="getHandheldRuleSetsOutput">
+    <part name="parameters" element="tns:getHandheldRuleSetsResponse" />
+  </message>
+  <message name="getNamingFieldsInput">
+    <part name="parameters" element="tns:getNamingFieldsRequest" />
+  </message>
+  <message name="getNamingFieldsOutput">
+    <part name="parameters" element="tns:getNamingFieldsResponse" />
+  </message>
+  <message name="getObjectHierachyInput">
+    <part name="parameters" element="tns:getObjectHierachyRequest" />
+  </message>
+  <message name="getObjectHierachyOutput">
+    <part name="parameters" element="tns:getObjectHierachyResponse" />
+  </message>
+  <message name="getRegistrationKeyInput">
+    <part name="parameters" element="tns:getRegistrationKeyRequest" />
+  </message>
+  <message name="getRegistrationKeyOutput">
+    <part name="parameters" element="tns:getRegistrationKeyResponse" />
+  </message>
+  <message name="getRegistrationKeyRootInput">
+    <part name="parameters" element="tns:getRegistrationKeyRootRequest" />
+  </message>
+  <message name="getRegistrationKeyRootOutput">
+    <part name="parameters" element="tns:getRegistrationKeyRootResponse" />
+  </message>
+  <message name="getRootInput">
+    <part name="parameters" element="tns:getRootRequest" />
+  </message>
+  <message name="getRootOutput">
+    <part name="parameters" element="tns:getRootResponse" />
+  </message>
+  <message name="getRootPathInput">
+    <part name="parameters" element="tns:getRootPathRequest" />
+  </message>
+  <message name="getRootPathOutput">
+    <part name="parameters" element="tns:getRootPathResponse" />
+  </message>
+  <message name="getRuleFieldsInput">
+    <part name="parameters" element="tns:getRuleFieldsRequest" />
+  </message>
+  <message name="getRuleFieldsOutput">
+    <part name="parameters" element="tns:getRuleFieldsResponse" />
+  </message>
+  <message name="getRuleSetRootInput">
+    <part name="parameters" element="tns:getRuleSetRootRequest" />
+  </message>
+  <message name="getRuleSetRootOutput">
+    <part name="parameters" element="tns:getRuleSetRootResponse" />
+  </message>
+  <message name="getRuleSetsInput">
+    <part name="parameters" element="tns:getRuleSetsRequest" />
+  </message>
+  <message name="getRuleSetsOutput">
+    <part name="parameters" element="tns:getRuleSetsResponse" />
+  </message>
+  <message name="getSearchResultsInput">
+    <part name="parameters" element="tns:getSearchResultsRequest" />
+  </message>
+  <message name="getSearchResultsOutput">
+    <part name="parameters" element="tns:getSearchResultsResponse" />
+  </message>
+  <message name="moveInput">
+    <part name="parameters" element="tns:moveRequest" />
+  </message>
+  <message name="moveOutput">
+    <part name="parameters" element="tns:moveResponse" />
+  </message>
+  <message name="refreshSearchTokenInput">
+    <part name="parameters" element="tns:refreshSearchTokenRequest" />
+  </message>
+  <message name="refreshSearchTokenOutput">
+    <part name="parameters" element="tns:refreshSearchTokenResponse" />
+  </message>
+  <message name="registerDeviceInput">
+    <part name="parameters" element="tns:registerDeviceRequest" />
+  </message>
+  <message name="registerDeviceOutput">
+    <part name="parameters" element="tns:registerDeviceResponse" />
+  </message>
+  <message name="releaseSearchTokenInput">
+    <part name="parameters" element="tns:releaseSearchTokenRequest" />
+  </message>
+  <message name="releaseSearchTokenOutput">
+    <part name="parameters" element="tns:releaseSearchTokenResponse" />
+  </message>
+  <message name="renameInput">
+    <part name="parameters" element="tns:renameRequest" />
+  </message>
+  <message name="renameOutput">
+    <part name="parameters" element="tns:renameResponse" />
+  </message>
+  <message name="searchInput">
+    <part name="parameters" element="tns:searchRequest" />
+  </message>
+  <message name="searchOutput">
+    <part name="parameters" element="tns:searchResponse" />
+  </message>
+  <message name="setHandheldRuleSetsInput">
+    <part name="parameters" element="tns:setHandheldRuleSetsRequest" />
+  </message>
+  <message name="setHandheldRuleSetsOutput">
+    <part name="parameters" element="tns:setHandheldRuleSetsResponse" />
+  </message>
+  <message name="setRuleSetsInput">
+    <part name="parameters" element="tns:setRuleSetsRequest" />
+  </message>
+  <message name="setRuleSetsOutput">
+    <part name="parameters" element="tns:setRuleSetsResponse" />
+  </message>
+  <message name="updateInput">
+    <part name="parameters" element="tns:updateRequest" />
+  </message>
+  <message name="updateOutput">
+    <part name="parameters" element="tns:updateResponse" />
+  </message>
+  <portType name="RegistrationAdminService">
+    <operation name="clone">
+      <input message="tns:cloneInput" />
+      <output message="tns:cloneOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="create">
+      <input message="tns:createInput" />
+      <output message="tns:createOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="delete">
+      <input message="tns:deleteInput" />
+      <output message="tns:deleteOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="deleteRecursive">
+      <input message="tns:deleteRecursiveInput" />
+      <output message="tns:deleteRecursiveOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="existsByParentAndName">
+      <input message="tns:existsByParentAndNameInput" />
+      <output message="tns:existsByParentAndNameOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="existsByUID">
+      <input message="tns:existsByUIDInput" />
+      <output message="tns:existsByUIDOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="generateRegistrationKey">
+      <input message="tns:generateRegistrationKeyInput" />
+      <output message="tns:generateRegistrationKeyOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="getAllSearchResults">
+      <input message="tns:getAllSearchResultsInput" />
+      <output message="tns:getAllSearchResultsOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="getAllSearchResultsWIthToken">
+      <input message="tns:getAllSearchResultsWIthTokenInput" />
+      <output message="tns:getAllSearchResultsWIthTokenOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="getAttributes">
+      <input message="tns:getAttributesInput" />
+      <output message="tns:getAttributesOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="getBasicObject">
+      <input message="tns:getBasicObjectInput" />
+      <output message="tns:getBasicObjectOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="getByParentAndName">
+      <input message="tns:getByParentAndNameInput" />
+      <output message="tns:getByParentAndNameOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="getByUID">
+      <input message="tns:getByUIDInput" />
+      <output message="tns:getByUIDOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="getHandheldNamingFields">
+      <input message="tns:getHandheldNamingFieldsInput" />
+      <output message="tns:getHandheldNamingFieldsOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="getHandheldRuleFields">
+      <input message="tns:getHandheldRuleFieldsInput" />
+      <output message="tns:getHandheldRuleFieldsOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="getHandheldRuleSets">
+      <input message="tns:getHandheldRuleSetsInput" />
+      <output message="tns:getHandheldRuleSetsOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="getNamingFields">
+      <input message="tns:getNamingFieldsInput" />
+      <output message="tns:getNamingFieldsOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="getObjectHierachy">
+      <input message="tns:getObjectHierachyInput" />
+      <output message="tns:getObjectHierachyOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="getRegistrationKey">
+      <input message="tns:getRegistrationKeyInput" />
+      <output message="tns:getRegistrationKeyOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="getRegistrationKeyRoot">
+      <input message="tns:getRegistrationKeyRootInput" />
+      <output message="tns:getRegistrationKeyRootOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="getRoot">
+      <input message="tns:getRootInput" />
+      <output message="tns:getRootOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="getRootPath">
+      <input message="tns:getRootPathInput" />
+      <output message="tns:getRootPathOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="getRuleFields">
+      <input message="tns:getRuleFieldsInput" />
+      <output message="tns:getRuleFieldsOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="getRuleSetRoot">
+      <input message="tns:getRuleSetRootInput" />
+      <output message="tns:getRuleSetRootOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="getRuleSets">
+      <input message="tns:getRuleSetsInput" />
+      <output message="tns:getRuleSetsOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="getSearchResults">
+      <input message="tns:getSearchResultsInput" />
+      <output message="tns:getSearchResultsOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="move">
+      <input message="tns:moveInput" />
+      <output message="tns:moveOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="refreshSearchToken">
+      <input message="tns:refreshSearchTokenInput" />
+      <output message="tns:refreshSearchTokenOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="registerDevice">
+      <input message="tns:registerDeviceInput" />
+      <output message="tns:registerDeviceOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="releaseSearchToken">
+      <input message="tns:releaseSearchTokenInput" />
+      <output message="tns:releaseSearchTokenOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="rename">
+      <input message="tns:renameInput" />
+      <output message="tns:renameOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="search">
+      <input message="tns:searchInput" />
+      <output message="tns:searchOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="setHandheldRuleSets">
+      <input message="tns:setHandheldRuleSetsInput" />
+      <output message="tns:setHandheldRuleSetsOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="setRuleSets">
+      <input message="tns:setRuleSetsInput" />
+      <output message="tns:setRuleSetsOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="update">
+      <input message="tns:updateInput" />
+      <output message="tns:updateOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+  </portType>
+  <binding name="RegistrationAdminServiceBinding" type="tns:RegistrationAdminService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="clone">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/registrations/soap/clone" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault>
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="create">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/registrations/soap/create" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault>
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="delete">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/registrations/soap/delete" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault>
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="deleteRecursive">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/registrations/soap/deleteRecursive" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault>
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="existsByParentAndName">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/registrations/soap/existsByParentAndName" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault>
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="existsByUID">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/registrations/soap/existsByUID" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault>
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="generateRegistrationKey">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/registrations/soap/generateRegistrationKey" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault>
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="getAllSearchResults">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/registrations/soap/getAllSearchResults" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault>
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="getAllSearchResultsWIthToken">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/registrations/soap/getAllSearchResultsWIthToken" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault>
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="getAttributes">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/registrations/soap/getAttributes" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault>
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="getBasicObject">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/registrations/soap/getBasicObject" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault>
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="getByParentAndName">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/registrations/soap/getByParentAndName" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault>
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="getByUID">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/registrations/soap/getByUID" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault>
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="getHandheldNamingFields">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/registrations/soap/getHandheldNamingFields" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault>
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="getHandheldRuleFields">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/registrations/soap/getHandheldRuleFields" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault>
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="getHandheldRuleSets">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/registrations/soap/getHandheldNamingFields" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault>
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="getNamingFields">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/registrations/soap/getNamingFields" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault>
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="getObjectHierachy">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/registrations/soap/getObjectHierachy" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault>
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="getRegistrationKey">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/registrations/soap/getRegistrationKey" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault>
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="getRegistrationKeyRoot">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/registrations/soap/getRegistrationKeyRoot" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault>
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="getRoot">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/registrations/soap/getRoot" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault>
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="getRootPath">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/registrations/soap/getRootPath" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault>
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="getRuleFields">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/registrations/soap/getRuleFields" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault>
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="getRuleSetRoot">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/registrations/soap/getRuleSetRoot" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault>
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="getRuleSets">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/registrations/soap/getRuleSets" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault>
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="getSearchResults">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/registrations/soap/getSearchResults" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault>
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="move">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/registrations/soap/move" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault>
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="refreshSearchToken">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/registrations/soap/refreshSearchToken" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault>
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="registerDevice">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/registrations/soap/registerDevice" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault>
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="releaseSearchToken">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/registrations/soap/releaseSearchToken" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault>
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="rename">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/registrations/soap/rename" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault>
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="search">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/registrations/soap/search" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault>
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="setHandheldRuleSets">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/registrations/soap/setHandheldRuleSets" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault>
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="setRuleSets">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/registrations/soap/setRuleSets" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault>
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="update">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/registrations/soap/update" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault>
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+  </binding>
+  <service name="RegistrationAdminServiceService">
+    <port name="RegistrationAdminServicePort" binding="tns:RegistrationAdminServiceBinding">
+      <soap:address location="http://localhost:8080/zenworks-datamodel/" />
+    </port>
+  </service>
+</definitions>
