@@ -19,13 +19,13 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="https://cit-zcm-01.cit-is.fh-koeln.de/zenworks-assignmentadmin?wsdl" Protocol="http" SourceId="1" />
+    <MetadataSource Address="https://cit-zcm-01.cit-is.fh-koeln.de/zenworks-assignmentadmin/?wsdl" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="AssignmentServiceService.wsdl" MetadataType="Wsdl" ID="18f7389c-b417-48a9-ade1-f515d3c87284" SourceId="1" SourceUrl="https://cit-zcm-01.cit-is.fh-koeln.de/zenworks-assignmentadmin?wsdl" />
-    <MetadataFile FileName="core-objects.xsd" MetadataType="Schema" ID="534cb176-b375-47c8-a741-61283932fa28" SourceId="1" SourceUrl="https://cit-zcm-01.cit-is.fh-koeln.de/core-objects.xsd" />
-    <MetadataFile FileName="core-assignments.xsd" MetadataType="Schema" ID="285a9f70-f4fe-4527-8e87-8e5f5e3ffb83" SourceId="1" SourceUrl="https://cit-zcm-01.cit-is.fh-koeln.de/core-assignments.xsd" />
-    <MetadataFile FileName="exceptions.xsd" MetadataType="Schema" ID="6ca2d48a-7190-437d-8075-b38eaccf360b" SourceId="1" SourceUrl="https://cit-zcm-01.cit-is.fh-koeln.de/exceptions.xsd" />
+    <MetadataFile FileName="AssignmentServiceService1.wsdl" MetadataType="Wsdl" ID="e0044dbe-36f6-4612-9e0f-6e79c2332ba7" SourceId="1" SourceUrl="https://cit-zcm-01.cit-is.fh-koeln.de/zenworks-assignmentadmin/?wsdl" />
+    <MetadataFile FileName="exceptions.xsd" MetadataType="Schema" ID="1fd179f8-4e1c-4cf2-828f-c9293ca2bc9a" SourceId="1" SourceUrl="https://cit-zcm-01.cit-is.fh-koeln.de/zenworks-assignmentadmin/exceptions.xsd" />
+    <MetadataFile FileName="core-objects.xsd" MetadataType="Schema" ID="83519904-cd3f-43f2-a17e-08fc53956956" SourceId="1" SourceUrl="https://cit-zcm-01.cit-is.fh-koeln.de/zenworks-assignmentadmin/core-objects.xsd" />
+    <MetadataFile FileName="core-assignments.xsd" MetadataType="Schema" ID="c8e1db1f-7aa6-4c44-adae-c5ad475797ae" SourceId="1" SourceUrl="https://cit-zcm-01.cit-is.fh-koeln.de/zenworks-assignmentadmin/core-assignments.xsd" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

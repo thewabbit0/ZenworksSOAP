@@ -19,15 +19,15 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="https://dev-thk-zcm-01.dvz.fh-koeln.de/zenworks-deviceadmin?wsdl" Protocol="http" SourceId="1" />
+    <MetadataSource Address="http://dev-thk-zcm-01.dvz.fh-koeln.de/zenworks-wsdls/DeviceAdminService.wsdl" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="DeviceAdminServiceService1.wsdl" MetadataType="Wsdl" ID="7fd8f5b1-6e4c-4f0d-b354-276098c94fbd" SourceId="1" SourceUrl="https://dev-thk-zcm-01.dvz.fh-koeln.de/zenworks-deviceadmin?wsdl" />
-    <MetadataFile FileName="core-addons-devices.xsd" MetadataType="Schema" ID="c6c37110-c4f5-4544-993b-85d08fb34bf4" SourceId="1" SourceUrl="https://dev-thk-zcm-01.dvz.fh-koeln.de/core-addons-devices.xsd" />
-    <MetadataFile FileName="exceptions.xsd" MetadataType="Schema" ID="4ec4b2d6-4aa0-43ec-94d8-7e9fd108732b" SourceId="1" SourceUrl="https://dev-thk-zcm-01.dvz.fh-koeln.de/exceptions.xsd" />
-    <MetadataFile FileName="core-addons-mobile.xsd" MetadataType="Schema" ID="c392ac0f-527e-4f42-8ab9-8ec4a6cdb42b" SourceId="1" SourceUrl="https://dev-thk-zcm-01.dvz.fh-koeln.de/core-addons-mobile.xsd" />
-    <MetadataFile FileName="core-folders.xsd" MetadataType="Schema" ID="dbc4b756-a3dc-4f9e-a01a-af37c8bf1cc7" SourceId="1" SourceUrl="https://dev-thk-zcm-01.dvz.fh-koeln.de/core-folders.xsd" />
-    <MetadataFile FileName="core-objects.xsd" MetadataType="Schema" ID="5401538a-3296-4362-934b-9dfc194c58c1" SourceId="1" SourceUrl="https://dev-thk-zcm-01.dvz.fh-koeln.de/core-objects.xsd" />
+    <MetadataFile FileName="core-folders1.xsd" MetadataType="Schema" ID="e1153536-7ae9-436e-8017-750176edada2" SourceId="1" SourceUrl="http://dev-thk-zcm-01.dvz.fh-koeln.de/zenworks-wsdls/core-folders.xsd" />
+    <MetadataFile FileName="core-addons-devices1.xsd" MetadataType="Schema" ID="fa96953e-1469-4344-b151-35a4755e5f41" SourceId="1" SourceUrl="http://dev-thk-zcm-01.dvz.fh-koeln.de/zenworks-wsdls/core-addons-devices.xsd" />
+    <MetadataFile FileName="core-addons-mobile1.xsd" MetadataType="Schema" ID="5442de46-0e93-4c2f-b5c3-e7b348c30854" SourceId="1" SourceUrl="http://dev-thk-zcm-01.dvz.fh-koeln.de/zenworks-wsdls/core-addons-mobile.xsd" />
+    <MetadataFile FileName="DeviceAdminServiceService.wsdl" MetadataType="Wsdl" ID="200fb438-f9fa-48d5-aef0-0bb9d2f908ca" SourceId="1" SourceUrl="http://dev-thk-zcm-01.dvz.fh-koeln.de/zenworks-wsdls/DeviceAdminService.wsdl" />
+    <MetadataFile FileName="exceptions1.xsd" MetadataType="Schema" ID="909f1bd6-d73b-40ca-8385-ae8c866281ed" SourceId="1" SourceUrl="http://dev-thk-zcm-01.dvz.fh-koeln.de/zenworks-wsdls/exceptions.xsd" />
+    <MetadataFile FileName="core-objects1.xsd" MetadataType="Schema" ID="0510da59-7202-4117-8d0f-14dd696dde38" SourceId="1" SourceUrl="http://dev-thk-zcm-01.dvz.fh-koeln.de/zenworks-wsdls/core-objects.xsd" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

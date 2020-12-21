@@ -19,19 +19,19 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="https://dev-thk-zcm-01.dvz.fh-koeln.de/zenworks-bundleadmin?wsdl" Protocol="http" SourceId="1" />
+    <MetadataSource Address="http://dev-thk-zcm-01.dvz.fh-koeln.de/zenworks-wsdls/BundleAdminService.wsdl" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="core-assignments.xsd" MetadataType="Schema" ID="6c12a24f-14a4-4f52-92ef-b9694c020428" SourceId="1" SourceUrl="https://dev-thk-zcm-01.dvz.fh-koeln.de/core-assignments.xsd" />
-    <MetadataFile FileName="bundles-bundles.xsd" MetadataType="Schema" ID="f26d4ba6-1276-41af-9ec9-5dd7b10e647f" SourceId="1" SourceUrl="https://dev-thk-zcm-01.dvz.fh-koeln.de/bundles-bundles.xsd" />
-    <MetadataFile FileName="core-addons-settings.xsd" MetadataType="Schema" ID="d13de7cf-42e6-46dc-824d-ca278a339940" SourceId="1" SourceUrl="https://dev-thk-zcm-01.dvz.fh-koeln.de/core-addons-settings.xsd" />
-    <MetadataFile FileName="BundleAdminServiceService1.wsdl" MetadataType="Wsdl" ID="6fe1b8b0-3f01-4fba-ae9a-91e29cee4c71" SourceId="1" SourceUrl="https://dev-thk-zcm-01.dvz.fh-koeln.de/zenworks-bundleadmin?wsdl" />
-    <MetadataFile FileName="core-addons-assignablecontent.xsd" MetadataType="Schema" ID="db73b003-29e6-49a4-b9f2-5499782d1c4e" SourceId="1" SourceUrl="https://dev-thk-zcm-01.dvz.fh-koeln.de/core-addons-assignablecontent.xsd" />
-    <MetadataFile FileName="managed-devices-quicktasks.xsd" MetadataType="Schema" ID="63fdff03-25c5-486b-9c25-b5fe2c6651e0" SourceId="1" SourceUrl="https://dev-thk-zcm-01.dvz.fh-koeln.de/managed-devices-quicktasks.xsd" />
-    <MetadataFile FileName="managed-devices-actions.xsd" MetadataType="Schema" ID="2753b746-23c6-4191-8a8b-017027ed5d07" SourceId="1" SourceUrl="https://dev-thk-zcm-01.dvz.fh-koeln.de/managed-devices-actions.xsd" />
-    <MetadataFile FileName="exceptions.xsd" MetadataType="Schema" ID="ce51ef7f-35d4-4947-a0e3-97b5fcc65405" SourceId="1" SourceUrl="https://dev-thk-zcm-01.dvz.fh-koeln.de/exceptions.xsd" />
-    <MetadataFile FileName="core-folders.xsd" MetadataType="Schema" ID="22172119-4dff-49d0-9d99-0c427ea68519" SourceId="1" SourceUrl="https://dev-thk-zcm-01.dvz.fh-koeln.de/core-folders.xsd" />
-    <MetadataFile FileName="core-objects.xsd" MetadataType="Schema" ID="be5c1ba1-1ee2-43f5-a920-2133d1272e4a" SourceId="1" SourceUrl="https://dev-thk-zcm-01.dvz.fh-koeln.de/core-objects.xsd" />
+    <MetadataFile FileName="core-folders1.xsd" MetadataType="Schema" ID="5b7db764-c819-4541-bfa4-3bd69d7a2cfa" SourceId="1" SourceUrl="http://dev-thk-zcm-01.dvz.fh-koeln.de/zenworks-wsdls/core-folders.xsd" />
+    <MetadataFile FileName="core-addons-assignablecontent1.xsd" MetadataType="Schema" ID="12c7c40a-ad93-477e-a0ee-b8154fdee1a6" SourceId="1" SourceUrl="http://dev-thk-zcm-01.dvz.fh-koeln.de/zenworks-wsdls/core-addons-assignablecontent.xsd" />
+    <MetadataFile FileName="core-assignments1.xsd" MetadataType="Schema" ID="8e1aab08-2a72-47a2-a8ab-256316d3c4c4" SourceId="1" SourceUrl="http://dev-thk-zcm-01.dvz.fh-koeln.de/zenworks-wsdls/core-assignments.xsd" />
+    <MetadataFile FileName="managed-devices-actions1.xsd" MetadataType="Schema" ID="ed39ada3-4913-4e39-849c-51f587bb3272" SourceId="1" SourceUrl="http://dev-thk-zcm-01.dvz.fh-koeln.de/zenworks-wsdls/managed-devices-actions.xsd" />
+    <MetadataFile FileName="exceptions1.xsd" MetadataType="Schema" ID="a120e515-acd0-48d8-bb98-73299bcff87c" SourceId="1" SourceUrl="http://dev-thk-zcm-01.dvz.fh-koeln.de/zenworks-wsdls/exceptions.xsd" />
+    <MetadataFile FileName="core-addons-settings1.xsd" MetadataType="Schema" ID="0607eb29-f636-48ae-84ff-f93deb1a3b26" SourceId="1" SourceUrl="http://dev-thk-zcm-01.dvz.fh-koeln.de/zenworks-wsdls/core-addons-settings.xsd" />
+    <MetadataFile FileName="BundleAdminServiceService.wsdl" MetadataType="Wsdl" ID="cd9d5e4b-4df2-47f3-abe2-5f8864615aba" SourceId="1" SourceUrl="http://dev-thk-zcm-01.dvz.fh-koeln.de/zenworks-wsdls/BundleAdminService.wsdl" />
+    <MetadataFile FileName="core-objects1.xsd" MetadataType="Schema" ID="b4a7f2b0-bd91-4ec8-9cf8-fe8128dd7719" SourceId="1" SourceUrl="http://dev-thk-zcm-01.dvz.fh-koeln.de/zenworks-wsdls/core-objects.xsd" />
+    <MetadataFile FileName="managed-devices-quicktasks1.xsd" MetadataType="Schema" ID="43047f1f-6a3d-43c7-828c-648ce6635b50" SourceId="1" SourceUrl="http://dev-thk-zcm-01.dvz.fh-koeln.de/zenworks-wsdls/managed-devices-quicktasks.xsd" />
+    <MetadataFile FileName="bundles-bundles1.xsd" MetadataType="Schema" ID="e7e4a2f7-f8e0-4e74-96ee-2e4e4b300f3c" SourceId="1" SourceUrl="http://dev-thk-zcm-01.dvz.fh-koeln.de/zenworks-wsdls/bundles-bundles.xsd" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

@@ -30,6 +30,12 @@ namespace Zenworks
         public Administrator.AdministratorAdminServiceClient AdministratorAdmin;
         /// <summary> <c>RegistrationAdmin</c> property exposing a pre-connected instance of the <c>RegistrationAdminServiceClient</c> class</summary>
         public Registration.RegistrationAdminServiceClient RegistrationAdmin;
+        /// <summary> <c>GroupingAdmin</c> property exposing a pre-connected instance of the <c>GroupingServiceClient</c> class</summary>
+        public Grouping.GroupingServiceClient GroupingAdmin;
+
+        public Credentials.CredentialsAdminServiceClient CredentialsAdmin;
+
+
         /// <summary>The SOAP binding object instance of the Zenworks server connection</summary>
         private readonly System.ServiceModel.BasicHttpBinding ZenworksSOAPBinding;
 
@@ -70,10 +76,10 @@ namespace Zenworks
             // Credential type is always "Basic" for HTTP basic authentication.
             this.ZenworksSOAPBinding.Security.Transport.ClientCredentialType = System.ServiceModel.HttpClientCredentialType.Basic;
 
-            // increase the buffer and message sizes to 1 MB each as the defaults are too small for 
+            // increase the buffer and message sizes to 10 MB each as the defaults are too small for 
             // the larger response messages returned by the Zenworks web services
-            this.ZenworksSOAPBinding.MaxReceivedMessageSize = 1048576;
-            this.ZenworksSOAPBinding.MaxBufferSize = 1048576;
+            this.ZenworksSOAPBinding.MaxReceivedMessageSize = 10485760;
+            this.ZenworksSOAPBinding.MaxBufferSize = 10485760;
 
             // Initialize the BundleAdmin SOAP object for use with Powershell
             ZenworksSOAPAddress = new System.ServiceModel.EndpointAddress(AddressingScheme + ZenworksServer + "/zenworks-bundleadmin");
@@ -116,6 +122,18 @@ namespace Zenworks
             this.RegistrationAdmin = new Registration.RegistrationAdminServiceClient(this.ZenworksSOAPBinding, ZenworksSOAPAddress);
             this.RegistrationAdmin.ClientCredentials.UserName.UserName = UserName;
             this.RegistrationAdmin.ClientCredentials.UserName.Password = Password;
+
+            // Initialize the GroupingAdmin SOAP object for use with Powershell
+            ZenworksSOAPAddress = new System.ServiceModel.EndpointAddress(AddressingScheme + ZenworksServer + "/zenworks-groupingadmin");
+            this.GroupingAdmin = new Grouping.GroupingServiceClient(this.ZenworksSOAPBinding, ZenworksSOAPAddress);
+            this.GroupingAdmin.ClientCredentials.UserName.UserName = UserName;
+            this.GroupingAdmin.ClientCredentials.UserName.Password = Password;
+
+            ZenworksSOAPAddress = new System.ServiceModel.EndpointAddress(AddressingScheme + ZenworksServer + "/zenworks-credentialsadmin");
+            this.CredentialsAdmin = new Credentials.CredentialsAdminServiceClient(this.ZenworksSOAPBinding, ZenworksSOAPAddress);
+            this.CredentialsAdmin.ClientCredentials.UserName.UserName = UserName;
+            this.CredentialsAdmin.ClientCredentials.UserName.Password = Password;
+
         } // Connection() constructor
     } // class Connection 
 } // namespace Zenworks

@@ -2477,7 +2477,7 @@
   </binding>
   <service name="BundleAdminServiceService">
     <port name="BundleAdminServicePort" binding="tns:BundleAdminServiceBinding">
-      <soap:address location="https://dev-thk-zcm-01.dvz.fh-koeln.de/zenworks-bundleadmin" />
+      <soap:address location="http://localhost:8080/zenworks-datamodel/" />
     </port>
   </service>
 </definitions>

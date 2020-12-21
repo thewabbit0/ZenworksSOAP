@@ -53,7 +53,17 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Connected Services\Credentials\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Connected Services\Device\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\Grouping\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -315,7 +325,7 @@
     <None Include="Connected Services\Administrator\Zenworks.Administrator.ZENObject.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\Assignment\AssignmentServiceService.wsdl" />
+    <None Include="Connected Services\Assignment\AssignmentServiceService1.wsdl" />
     <None Include="Connected Services\Assignment\core-assignments.xsd">
       <SubType>Designer</SubType>
     </None>
@@ -433,32 +443,32 @@
     <None Include="Connected Services\Assignment\Zenworks.Assignment.updateAssignmentResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\Bundle\BundleAdminServiceService1.wsdl" />
-    <None Include="Connected Services\Bundle\bundles-bundles.xsd">
+    <None Include="Connected Services\Bundle\BundleAdminServiceService.wsdl" />
+    <None Include="Connected Services\Bundle\bundles-bundles1.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\Bundle\core-addons-assignablecontent.xsd">
+    <None Include="Connected Services\Bundle\core-addons-assignablecontent1.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\Bundle\core-addons-settings.xsd">
+    <None Include="Connected Services\Bundle\core-addons-settings1.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\Bundle\core-assignments.xsd">
+    <None Include="Connected Services\Bundle\core-assignments1.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\Bundle\core-folders.xsd">
+    <None Include="Connected Services\Bundle\core-folders1.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\Bundle\core-objects.xsd">
+    <None Include="Connected Services\Bundle\core-objects1.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\Bundle\exceptions.xsd">
+    <None Include="Connected Services\Bundle\exceptions1.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\Bundle\managed-devices-actions.xsd">
+    <None Include="Connected Services\Bundle\managed-devices-actions1.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\Bundle\managed-devices-quicktasks.xsd">
+    <None Include="Connected Services\Bundle\managed-devices-quicktasks1.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Connected Services\Bundle\Zenworks.Bundle.applyInheritanceFromParentForMovedObjectResponse.datasource">
@@ -698,20 +708,120 @@
     <None Include="Connected Services\Bundle\Zenworks.Bundle.ZENObject.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\Device\core-addons-devices.xsd">
+    <None Include="Connected Services\Credentials\core-addons-credentials.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\Device\core-addons-mobile.xsd">
+    <None Include="Connected Services\Credentials\core-folders.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\Device\core-folders.xsd">
+    <None Include="Connected Services\Credentials\core-objects.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\Device\core-objects.xsd">
+    <None Include="Connected Services\Credentials\CredentialsAdminServiceService.wsdl" />
+    <None Include="Connected Services\Credentials\exceptions.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\Device\DeviceAdminServiceService1.wsdl" />
-    <None Include="Connected Services\Device\exceptions.xsd">
+    <None Include="Connected Services\Credentials\Zenworks.Credentials.BasicObject.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Credentials\Zenworks.Credentials.cloneResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Credentials\Zenworks.Credentials.createResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Credentials\Zenworks.Credentials.deleteRecursiveResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Credentials\Zenworks.Credentials.deleteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Credentials\Zenworks.Credentials.existsByParentAndNameResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Credentials\Zenworks.Credentials.existsByUIDResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Credentials\Zenworks.Credentials.Folder.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Credentials\Zenworks.Credentials.getAllSearchResultsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Credentials\Zenworks.Credentials.getAllSearchResultsWIthTokenResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Credentials\Zenworks.Credentials.getAttributesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Credentials\Zenworks.Credentials.getBasicObjectResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Credentials\Zenworks.Credentials.getByParentAndNameResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Credentials\Zenworks.Credentials.getByParentUIDAndNameResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Credentials\Zenworks.Credentials.getByUIDResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Credentials\Zenworks.Credentials.getObjectHierachyResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Credentials\Zenworks.Credentials.getRootPathResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Credentials\Zenworks.Credentials.getRootResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Credentials\Zenworks.Credentials.getRootUIDResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Credentials\Zenworks.Credentials.getSearchResultsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Credentials\Zenworks.Credentials.moveResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Credentials\Zenworks.Credentials.refreshSearchTokenResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Credentials\Zenworks.Credentials.releaseSearchTokenResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Credentials\Zenworks.Credentials.renameResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Credentials\Zenworks.Credentials.searchResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Credentials\Zenworks.Credentials.SearchResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Credentials\Zenworks.Credentials.SearchToken.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Credentials\Zenworks.Credentials.updateResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Credentials\Zenworks.Credentials.ZENObject.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Device\core-addons-devices1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\Device\core-addons-mobile1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\Device\core-folders1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\Device\core-objects1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\Device\DeviceAdminServiceService.wsdl" />
+    <None Include="Connected Services\Device\exceptions1.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Connected Services\Device\Zenworks.Device.BasicObject.datasource">
@@ -919,6 +1029,94 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\Device\Zenworks.Device.ZENObject.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Grouping\core-groupings.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\Grouping\core-objects.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\Grouping\exceptions.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\Grouping\GroupingServiceService.wsdl" />
+    <None Include="Connected Services\Grouping\Zenworks.Grouping.addGroupsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Grouping\Zenworks.Grouping.addGroupsWithTokenResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Grouping\Zenworks.Grouping.addMembersResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Grouping\Zenworks.Grouping.addMembersWithTokenResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Grouping\Zenworks.Grouping.getAllGroupsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Grouping\Zenworks.Grouping.getAllGroupsWithTokenResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Grouping\Zenworks.Grouping.getAllMembersResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Grouping\Zenworks.Grouping.getAllMembersWithTokenResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Grouping\Zenworks.Grouping.getGroupMemberTokenResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Grouping\Zenworks.Grouping.getGroupsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Grouping\Zenworks.Grouping.getGroupTokenResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Grouping\Zenworks.Grouping.getMembersResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Grouping\Zenworks.Grouping.getValidGroupTypesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Grouping\Zenworks.Grouping.getValidMemberTypesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Grouping\Zenworks.Grouping.GroupMemberToken.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Grouping\Zenworks.Grouping.GroupToken.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Grouping\Zenworks.Grouping.moveGroupsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Grouping\Zenworks.Grouping.moveMembersResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Grouping\Zenworks.Grouping.refreshGroupMemberTokenResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Grouping\Zenworks.Grouping.refreshGroupTokenResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Grouping\Zenworks.Grouping.releaseGroupMemberTokenResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Grouping\Zenworks.Grouping.releaseGroupTokenResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Grouping\Zenworks.Grouping.removeGroupsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Grouping\Zenworks.Grouping.removeGroupsWithTokenResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Grouping\Zenworks.Grouping.removeMembersResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Grouping\Zenworks.Grouping.removeMembersWithTokenResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\Registration\core-folders.xsd">
@@ -1379,7 +1577,9 @@
     <WCFMetadataStorage Include="Connected Services\Administrator\" />
     <WCFMetadataStorage Include="Connected Services\Assignment\" />
     <WCFMetadataStorage Include="Connected Services\Bundle\" />
+    <WCFMetadataStorage Include="Connected Services\Credentials\" />
     <WCFMetadataStorage Include="Connected Services\Device\" />
+    <WCFMetadataStorage Include="Connected Services\Grouping\" />
     <WCFMetadataStorage Include="Connected Services\Registration\" />
     <WCFMetadataStorage Include="Connected Services\SystemSettings\" />
     <WCFMetadataStorage Include="Connected Services\User\" />
@@ -1464,6 +1664,30 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Connected Services\Registration\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\Grouping\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\Grouping\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\Grouping\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\Credentials\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\Credentials\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\Credentials\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>

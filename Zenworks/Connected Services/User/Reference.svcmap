@@ -19,17 +19,17 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="https://dev-thk-zcm-01.dvz.fh-koeln.de/UserAdminService.wsdl" Protocol="http" SourceId="1" />
+    <MetadataSource Address="http://dev-thk-zcm-01.dvz.fh-koeln.de/zenworks-wsdls/UserAdminService.wsdl" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="core-administrators.xsd" MetadataType="Schema" ID="016803c3-61e7-4a72-bbd4-ca3de0027c45" SourceId="1" SourceUrl="https://dev-thk-zcm-01.dvz.fh-koeln.de/core-administrators.xsd" />
-    <MetadataFile FileName="core-addons-users.xsd" MetadataType="Schema" ID="29b6818a-2a62-4daa-a637-70cb72cd30b0" SourceId="1" SourceUrl="https://dev-thk-zcm-01.dvz.fh-koeln.de/core-addons-users.xsd" />
-    <MetadataFile FileName="core-authsources.xsd" MetadataType="Schema" ID="1be00d83-7036-4897-b1a6-a27c7f0c6415" SourceId="1" SourceUrl="https://dev-thk-zcm-01.dvz.fh-koeln.de/core-authsources.xsd" />
-    <MetadataFile FileName="exceptions.xsd" MetadataType="Schema" ID="c8f1b303-f05e-4e86-967e-2694efc62dfc" SourceId="1" SourceUrl="https://dev-thk-zcm-01.dvz.fh-koeln.de/exceptions.xsd" />
-    <MetadataFile FileName="core-ldapauthsources.xsd" MetadataType="Schema" ID="4d15e5d1-eab8-41a9-943b-4d868d883db8" SourceId="1" SourceUrl="https://dev-thk-zcm-01.dvz.fh-koeln.de/core-ldapauthsources.xsd" />
-    <MetadataFile FileName="UserAdminServiceService.wsdl" MetadataType="Wsdl" ID="56b60655-7f2b-4e05-8306-9c2e924263a9" SourceId="1" SourceUrl="https://dev-thk-zcm-01.dvz.fh-koeln.de/UserAdminService.wsdl" />
-    <MetadataFile FileName="core-folders.xsd" MetadataType="Schema" ID="058ca00b-d15d-4174-ae7a-cbe328819619" SourceId="1" SourceUrl="https://dev-thk-zcm-01.dvz.fh-koeln.de/core-folders.xsd" />
-    <MetadataFile FileName="core-objects.xsd" MetadataType="Schema" ID="28dee07e-653c-428d-a8e2-3f5f30a65e74" SourceId="1" SourceUrl="https://dev-thk-zcm-01.dvz.fh-koeln.de/core-objects.xsd" />
+    <MetadataFile FileName="core-ldapauthsources.xsd" MetadataType="Schema" ID="573dc2f3-8367-4f03-8612-ef6010ef4dc9" SourceId="1" SourceUrl="http://dev-thk-zcm-01.dvz.fh-koeln.de/zenworks-wsdls/core-ldapauthsources.xsd" />
+    <MetadataFile FileName="core-folders.xsd" MetadataType="Schema" ID="7695cac6-fd96-4b08-9116-072989b36c51" SourceId="1" SourceUrl="http://dev-thk-zcm-01.dvz.fh-koeln.de/zenworks-wsdls/core-folders.xsd" />
+    <MetadataFile FileName="core-addons-users.xsd" MetadataType="Schema" ID="43757854-9106-4c55-bed2-30890df51f08" SourceId="1" SourceUrl="http://dev-thk-zcm-01.dvz.fh-koeln.de/zenworks-wsdls/core-addons-users.xsd" />
+    <MetadataFile FileName="core-administrators.xsd" MetadataType="Schema" ID="694aec39-461e-433d-8dfe-4182a5c83c3c" SourceId="1" SourceUrl="http://dev-thk-zcm-01.dvz.fh-koeln.de/zenworks-wsdls/core-administrators.xsd" />
+    <MetadataFile FileName="exceptions.xsd" MetadataType="Schema" ID="abd2d2ea-020b-4584-ab66-ae48646f36a8" SourceId="1" SourceUrl="http://dev-thk-zcm-01.dvz.fh-koeln.de/zenworks-wsdls/exceptions.xsd" />
+    <MetadataFile FileName="core-objects.xsd" MetadataType="Schema" ID="e8c9f1a8-9705-4d01-b36e-cea74441ebc2" SourceId="1" SourceUrl="http://dev-thk-zcm-01.dvz.fh-koeln.de/zenworks-wsdls/core-objects.xsd" />
+    <MetadataFile FileName="core-authsources.xsd" MetadataType="Schema" ID="2265d888-8145-4924-94a5-bd2f3fd06617" SourceId="1" SourceUrl="http://dev-thk-zcm-01.dvz.fh-koeln.de/zenworks-wsdls/core-authsources.xsd" />
+    <MetadataFile FileName="UserAdminServiceService.wsdl" MetadataType="Wsdl" ID="63b3ab2c-3507-4bbf-8c95-f8943997ac47" SourceId="1" SourceUrl="http://dev-thk-zcm-01.dvz.fh-koeln.de/zenworks-wsdls/UserAdminService.wsdl" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

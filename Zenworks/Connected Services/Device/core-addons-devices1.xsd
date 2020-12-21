@@ -16,6 +16,7 @@
           <xsd:element minOccurs="0" name="LastFullRefresh" type="xsd:dateTime" />
           <xsd:element minOccurs="0" maxOccurs="unbounded" name="RegistrationKeys" type="xsd:string" />
           <xsd:element minOccurs="0" name="OSName" type="xsd:string" />
+          <xsd:element minOccurs="0" name="OSId" type="xsd:string" />
           <xsd:element minOccurs="0" name="PrimaryUser" type="xsd:string" />
           <xsd:element minOccurs="0" maxOccurs="unbounded" name="LoggedOnUsers" type="xsd:string" />
           <xsd:element minOccurs="0" name="Owner" type="xsd:string" />

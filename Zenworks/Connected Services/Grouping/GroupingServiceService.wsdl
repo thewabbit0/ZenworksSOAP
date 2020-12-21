@@ -1,0 +1,887 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:groupings="http://novell.com/zenworks/datamodel/objects/groupings" xmlns:tns="http://novell.com/zenworks/datamodel/services/groupings/soap" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:objects="http://novell.com/zenworks/datamodel/objects" xmlns:exceptions="http://novell.com/zenworks/datamodel/exceptions" name="GroupingServiceService" targetNamespace="http://novell.com/zenworks/datamodel/services/groupings/soap" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema xmlns="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://novell.com/zenworks/datamodel/services/groupings/soap">
+      <xsd:import schemaLocation="exceptions.xsd" namespace="http://novell.com/zenworks/datamodel/exceptions" />
+      <xsd:import schemaLocation="core-objects.xsd" namespace="http://novell.com/zenworks/datamodel/objects" />
+      <xsd:import schemaLocation="core-groupings.xsd" namespace="http://novell.com/zenworks/datamodel/objects/groupings" />
+      <xsd:element name="addGroupsRequest" type="tns:addGroupsRequest" />
+      <xsd:complexType name="addGroupsRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="memberUID" type="xsd:string" />
+          <xsd:element minOccurs="0" name="groupType" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="groupUIDs" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="addGroupsResponse" type="tns:addGroupsResponse" />
+      <xsd:complexType name="addGroupsResponse">
+        <xsd:sequence>
+          <xsd:element name="return" type="xsd:boolean" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="addGroupsWithTokenRequest" type="tns:addGroupsWithTokenRequest" />
+      <xsd:complexType name="addGroupsWithTokenRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="token" type="groupings:GroupToken" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="groupUIDs" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="addGroupsWithTokenResponse" type="tns:addGroupsWithTokenResponse" />
+      <xsd:complexType name="addGroupsWithTokenResponse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="return" type="groupings:GroupToken" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="addMembersRequest" type="tns:addMembersRequest" />
+      <xsd:complexType name="addMembersRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="groupUID" type="xsd:string" />
+          <xsd:element minOccurs="0" name="groupType" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="memberUIDs" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="addMembersResponse" type="tns:addMembersResponse" />
+      <xsd:complexType name="addMembersResponse">
+        <xsd:sequence>
+          <xsd:element name="return" type="xsd:boolean" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="addMembersWithTokenRequest" type="tns:addMembersWithTokenRequest" />
+      <xsd:complexType name="addMembersWithTokenRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="token" type="groupings:GroupMemberToken" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="memberUIDs" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="addMembersWithTokenResponse" type="tns:addMembersWithTokenResponse" />
+      <xsd:complexType name="addMembersWithTokenResponse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="return" type="groupings:GroupMemberToken" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getAllGroupsRequest" type="tns:getAllGroupsRequest" />
+      <xsd:complexType name="getAllGroupsRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="memberUID" type="xsd:string" />
+          <xsd:element minOccurs="0" name="groupType" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getAllGroupsResponse" type="tns:getAllGroupsResponse" />
+      <xsd:complexType name="getAllGroupsResponse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="return" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getAllGroupsWithTokenRequest" type="tns:getAllGroupsWithTokenRequest" />
+      <xsd:complexType name="getAllGroupsWithTokenRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="token" type="groupings:GroupToken" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getAllGroupsWithTokenResponse" type="tns:getAllGroupsWithTokenResponse" />
+      <xsd:complexType name="getAllGroupsWithTokenResponse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="return" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getAllMembersRequest" type="tns:getAllMembersRequest" />
+      <xsd:complexType name="getAllMembersRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="groupUID" type="xsd:string" />
+          <xsd:element minOccurs="0" name="groupType" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getAllMembersResponse" type="tns:getAllMembersResponse" />
+      <xsd:complexType name="getAllMembersResponse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="return" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getAllMembersWithTokenRequest" type="tns:getAllMembersWithTokenRequest" />
+      <xsd:complexType name="getAllMembersWithTokenRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="token" type="groupings:GroupMemberToken" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getAllMembersWithTokenResponse" type="tns:getAllMembersWithTokenResponse" />
+      <xsd:complexType name="getAllMembersWithTokenResponse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="return" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getGroupMemberTokenRequest" type="tns:getGroupMemberTokenRequest" />
+      <xsd:complexType name="getGroupMemberTokenRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="groupUID" type="xsd:string" />
+          <xsd:element minOccurs="0" name="groupType" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getGroupMemberTokenResponse" type="tns:getGroupMemberTokenResponse" />
+      <xsd:complexType name="getGroupMemberTokenResponse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="return" type="groupings:GroupMemberToken" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getGroupTokenRequest" type="tns:getGroupTokenRequest" />
+      <xsd:complexType name="getGroupTokenRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="memberUID" type="xsd:string" />
+          <xsd:element minOccurs="0" name="groupType" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getGroupTokenResponse" type="tns:getGroupTokenResponse" />
+      <xsd:complexType name="getGroupTokenResponse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="return" type="groupings:GroupToken" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getGroupsRequest" type="tns:getGroupsRequest" />
+      <xsd:complexType name="getGroupsRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="token" type="groupings:GroupToken" />
+          <xsd:element name="index" type="xsd:int" />
+          <xsd:element name="count" type="xsd:int" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getGroupsResponse" type="tns:getGroupsResponse" />
+      <xsd:complexType name="getGroupsResponse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="return" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getMembersRequest" type="tns:getMembersRequest" />
+      <xsd:complexType name="getMembersRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="token" type="groupings:GroupMemberToken" />
+          <xsd:element name="index" type="xsd:int" />
+          <xsd:element name="count" type="xsd:int" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getMembersResponse" type="tns:getMembersResponse" />
+      <xsd:complexType name="getMembersResponse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="return" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getValidGroupTypesRequest" type="tns:getValidGroupTypesRequest" />
+      <xsd:complexType name="getValidGroupTypesRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="originalConsumerObj" type="objects:BasicObject" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getValidGroupTypesResponse" type="tns:getValidGroupTypesResponse" />
+      <xsd:complexType name="getValidGroupTypesResponse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="return" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getValidMemberTypesRequest" type="tns:getValidMemberTypesRequest" />
+      <xsd:complexType name="getValidMemberTypesRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="groupType" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getValidMemberTypesResponse" type="tns:getValidMemberTypesResponse" />
+      <xsd:complexType name="getValidMemberTypesResponse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="return" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="moveGroupsRequest" type="tns:moveGroupsRequest" />
+      <xsd:complexType name="moveGroupsRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="token" type="groupings:GroupToken" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="currentPositions" type="xsd:int" />
+          <xsd:element name="offset" type="xsd:int" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="moveGroupsResponse" type="tns:moveGroupsResponse" />
+      <xsd:complexType name="moveGroupsResponse">
+        <xsd:sequence>
+          <xsd:element name="return" type="xsd:boolean" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="moveMembersRequest" type="tns:moveMembersRequest" />
+      <xsd:complexType name="moveMembersRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="token" type="groupings:GroupMemberToken" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="currentPositions" type="xsd:int" />
+          <xsd:element name="offset" type="xsd:int" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="moveMembersResponse" type="tns:moveMembersResponse" />
+      <xsd:complexType name="moveMembersResponse">
+        <xsd:sequence>
+          <xsd:element name="return" type="xsd:boolean" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="refreshGroupMemberTokenRequest" type="tns:refreshGroupMemberTokenRequest" />
+      <xsd:complexType name="refreshGroupMemberTokenRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="token" type="groupings:GroupMemberToken" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="refreshGroupMemberTokenResponse" type="tns:refreshGroupMemberTokenResponse" />
+      <xsd:complexType name="refreshGroupMemberTokenResponse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="return" type="groupings:GroupMemberToken" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="refreshGroupTokenRequest" type="tns:refreshGroupTokenRequest" />
+      <xsd:complexType name="refreshGroupTokenRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="token" type="groupings:GroupToken" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="refreshGroupTokenResponse" type="tns:refreshGroupTokenResponse" />
+      <xsd:complexType name="refreshGroupTokenResponse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="return" type="groupings:GroupToken" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="releaseGroupMemberTokenRequest" type="tns:releaseGroupMemberTokenRequest" />
+      <xsd:complexType name="releaseGroupMemberTokenRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="token" type="groupings:GroupMemberToken" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="releaseGroupMemberTokenResponse" type="tns:releaseGroupMemberTokenResponse" />
+      <xsd:complexType name="releaseGroupMemberTokenResponse">
+        <xsd:sequence>
+          <xsd:element name="return" type="xsd:boolean" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="releaseGroupTokenRequest" type="tns:releaseGroupTokenRequest" />
+      <xsd:complexType name="releaseGroupTokenRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="token" type="groupings:GroupToken" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="releaseGroupTokenResponse" type="tns:releaseGroupTokenResponse" />
+      <xsd:complexType name="releaseGroupTokenResponse">
+        <xsd:sequence>
+          <xsd:element name="return" type="xsd:boolean" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="removeGroupsRequest" type="tns:removeGroupsRequest" />
+      <xsd:complexType name="removeGroupsRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="memberUID" type="xsd:string" />
+          <xsd:element minOccurs="0" name="groupType" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="groupUIDs" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="removeGroupsResponse" type="tns:removeGroupsResponse" />
+      <xsd:complexType name="removeGroupsResponse">
+        <xsd:sequence>
+          <xsd:element name="return" type="xsd:boolean" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="removeGroupsWithTokenRequest" type="tns:removeGroupsWithTokenRequest" />
+      <xsd:complexType name="removeGroupsWithTokenRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="token" type="groupings:GroupToken" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="groupUIDs" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="removeGroupsWithTokenResponse" type="tns:removeGroupsWithTokenResponse" />
+      <xsd:complexType name="removeGroupsWithTokenResponse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="return" type="groupings:GroupToken" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="removeMembersRequest" type="tns:removeMembersRequest" />
+      <xsd:complexType name="removeMembersRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="groupUID" type="xsd:string" />
+          <xsd:element minOccurs="0" name="groupType" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="memberUIDs" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="removeMembersResponse" type="tns:removeMembersResponse" />
+      <xsd:complexType name="removeMembersResponse">
+        <xsd:sequence>
+          <xsd:element name="return" type="xsd:boolean" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="removeMembersWithTokenRequest" type="tns:removeMembersWithTokenRequest" />
+      <xsd:complexType name="removeMembersWithTokenRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="token" type="groupings:GroupMemberToken" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="memberUIDs" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="removeMembersWithTokenResponse" type="tns:removeMembersWithTokenResponse" />
+      <xsd:complexType name="removeMembersWithTokenResponse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="return" type="groupings:GroupMemberToken" />
+        </xsd:sequence>
+      </xsd:complexType>
+    </xsd:schema>
+  </types>
+  <message name="RemoteDataModelException">
+    <part name="fault" element="exceptions:RemoteDataModelException" />
+  </message>
+  <message name="addGroupsInput">
+    <part name="parameters" element="tns:addGroupsRequest" />
+  </message>
+  <message name="addGroupsOutput">
+    <part name="parameters" element="tns:addGroupsResponse" />
+  </message>
+  <message name="addGroupsWithTokenInput">
+    <part name="parameters" element="tns:addGroupsWithTokenRequest" />
+  </message>
+  <message name="addGroupsWithTokenOutput">
+    <part name="parameters" element="tns:addGroupsWithTokenResponse" />
+  </message>
+  <message name="addMembersInput">
+    <part name="parameters" element="tns:addMembersRequest" />
+  </message>
+  <message name="addMembersOutput">
+    <part name="parameters" element="tns:addMembersResponse" />
+  </message>
+  <message name="addMembersWithTokenInput">
+    <part name="parameters" element="tns:addMembersWithTokenRequest" />
+  </message>
+  <message name="addMembersWithTokenOutput">
+    <part name="parameters" element="tns:addMembersWithTokenResponse" />
+  </message>
+  <message name="getAllGroupsInput">
+    <part name="parameters" element="tns:getAllGroupsRequest" />
+  </message>
+  <message name="getAllGroupsOutput">
+    <part name="parameters" element="tns:getAllGroupsResponse" />
+  </message>
+  <message name="getAllGroupsWithTokenInput">
+    <part name="parameters" element="tns:getAllGroupsWithTokenRequest" />
+  </message>
+  <message name="getAllGroupsWithTokenOutput">
+    <part name="parameters" element="tns:getAllGroupsWithTokenResponse" />
+  </message>
+  <message name="getAllMembersInput">
+    <part name="parameters" element="tns:getAllMembersRequest" />
+  </message>
+  <message name="getAllMembersOutput">
+    <part name="parameters" element="tns:getAllMembersResponse" />
+  </message>
+  <message name="getAllMembersWithTokenInput">
+    <part name="parameters" element="tns:getAllMembersWithTokenRequest" />
+  </message>
+  <message name="getAllMembersWithTokenOutput">
+    <part name="parameters" element="tns:getAllMembersWithTokenResponse" />
+  </message>
+  <message name="getGroupMemberTokenInput">
+    <part name="parameters" element="tns:getGroupMemberTokenRequest" />
+  </message>
+  <message name="getGroupMemberTokenOutput">
+    <part name="parameters" element="tns:getGroupMemberTokenResponse" />
+  </message>
+  <message name="getGroupTokenInput">
+    <part name="parameters" element="tns:getGroupTokenRequest" />
+  </message>
+  <message name="getGroupTokenOutput">
+    <part name="parameters" element="tns:getGroupTokenResponse" />
+  </message>
+  <message name="getGroupsInput">
+    <part name="parameters" element="tns:getGroupsRequest" />
+  </message>
+  <message name="getGroupsOutput">
+    <part name="parameters" element="tns:getGroupsResponse" />
+  </message>
+  <message name="getMembersInput">
+    <part name="parameters" element="tns:getMembersRequest" />
+  </message>
+  <message name="getMembersOutput">
+    <part name="parameters" element="tns:getMembersResponse" />
+  </message>
+  <message name="getValidGroupTypesInput">
+    <part name="parameters" element="tns:getValidGroupTypesRequest" />
+  </message>
+  <message name="getValidGroupTypesOutput">
+    <part name="parameters" element="tns:getValidGroupTypesResponse" />
+  </message>
+  <message name="getValidMemberTypesInput">
+    <part name="parameters" element="tns:getValidMemberTypesRequest" />
+  </message>
+  <message name="getValidMemberTypesOutput">
+    <part name="parameters" element="tns:getValidMemberTypesResponse" />
+  </message>
+  <message name="moveGroupsInput">
+    <part name="parameters" element="tns:moveGroupsRequest" />
+  </message>
+  <message name="moveGroupsOutput">
+    <part name="parameters" element="tns:moveGroupsResponse" />
+  </message>
+  <message name="moveMembersInput">
+    <part name="parameters" element="tns:moveMembersRequest" />
+  </message>
+  <message name="moveMembersOutput">
+    <part name="parameters" element="tns:moveMembersResponse" />
+  </message>
+  <message name="refreshGroupMemberTokenInput">
+    <part name="parameters" element="tns:refreshGroupMemberTokenRequest" />
+  </message>
+  <message name="refreshGroupMemberTokenOutput">
+    <part name="parameters" element="tns:refreshGroupMemberTokenResponse" />
+  </message>
+  <message name="refreshGroupTokenInput">
+    <part name="parameters" element="tns:refreshGroupTokenRequest" />
+  </message>
+  <message name="refreshGroupTokenOutput">
+    <part name="parameters" element="tns:refreshGroupTokenResponse" />
+  </message>
+  <message name="releaseGroupMemberTokenInput">
+    <part name="parameters" element="tns:releaseGroupMemberTokenRequest" />
+  </message>
+  <message name="releaseGroupMemberTokenOutput">
+    <part name="parameters" element="tns:releaseGroupMemberTokenResponse" />
+  </message>
+  <message name="releaseGroupTokenInput">
+    <part name="parameters" element="tns:releaseGroupTokenRequest" />
+  </message>
+  <message name="releaseGroupTokenOutput">
+    <part name="parameters" element="tns:releaseGroupTokenResponse" />
+  </message>
+  <message name="removeGroupsInput">
+    <part name="parameters" element="tns:removeGroupsRequest" />
+  </message>
+  <message name="removeGroupsOutput">
+    <part name="parameters" element="tns:removeGroupsResponse" />
+  </message>
+  <message name="removeGroupsWithTokenInput">
+    <part name="parameters" element="tns:removeGroupsWithTokenRequest" />
+  </message>
+  <message name="removeGroupsWithTokenOutput">
+    <part name="parameters" element="tns:removeGroupsWithTokenResponse" />
+  </message>
+  <message name="removeMembersInput">
+    <part name="parameters" element="tns:removeMembersRequest" />
+  </message>
+  <message name="removeMembersOutput">
+    <part name="parameters" element="tns:removeMembersResponse" />
+  </message>
+  <message name="removeMembersWithTokenInput">
+    <part name="parameters" element="tns:removeMembersWithTokenRequest" />
+  </message>
+  <message name="removeMembersWithTokenOutput">
+    <part name="parameters" element="tns:removeMembersWithTokenResponse" />
+  </message>
+  <portType name="GroupingService">
+    <operation name="addGroups">
+      <input message="tns:addGroupsInput" />
+      <output message="tns:addGroupsOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="addGroupsWithToken">
+      <input message="tns:addGroupsWithTokenInput" />
+      <output message="tns:addGroupsWithTokenOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="addMembers">
+      <input message="tns:addMembersInput" />
+      <output message="tns:addMembersOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="addMembersWithToken">
+      <input message="tns:addMembersWithTokenInput" />
+      <output message="tns:addMembersWithTokenOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="getAllGroups">
+      <input message="tns:getAllGroupsInput" />
+      <output message="tns:getAllGroupsOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="getAllGroupsWithToken">
+      <input message="tns:getAllGroupsWithTokenInput" />
+      <output message="tns:getAllGroupsWithTokenOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="getAllMembers">
+      <input message="tns:getAllMembersInput" />
+      <output message="tns:getAllMembersOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="getAllMembersWithToken">
+      <input message="tns:getAllMembersWithTokenInput" />
+      <output message="tns:getAllMembersWithTokenOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="getGroupMemberToken">
+      <input message="tns:getGroupMemberTokenInput" />
+      <output message="tns:getGroupMemberTokenOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="getGroupToken">
+      <input message="tns:getGroupTokenInput" />
+      <output message="tns:getGroupTokenOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="getGroups">
+      <input message="tns:getGroupsInput" />
+      <output message="tns:getGroupsOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="getMembers">
+      <input message="tns:getMembersInput" />
+      <output message="tns:getMembersOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="getValidGroupTypes">
+      <input message="tns:getValidGroupTypesInput" />
+      <output message="tns:getValidGroupTypesOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="getValidMemberTypes">
+      <input message="tns:getValidMemberTypesInput" />
+      <output message="tns:getValidMemberTypesOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="moveGroups">
+      <input message="tns:moveGroupsInput" />
+      <output message="tns:moveGroupsOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="moveMembers">
+      <input message="tns:moveMembersInput" />
+      <output message="tns:moveMembersOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="refreshGroupMemberToken">
+      <input message="tns:refreshGroupMemberTokenInput" />
+      <output message="tns:refreshGroupMemberTokenOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="refreshGroupToken">
+      <input message="tns:refreshGroupTokenInput" />
+      <output message="tns:refreshGroupTokenOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="releaseGroupMemberToken">
+      <input message="tns:releaseGroupMemberTokenInput" />
+      <output message="tns:releaseGroupMemberTokenOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="releaseGroupToken">
+      <input message="tns:releaseGroupTokenInput" />
+      <output message="tns:releaseGroupTokenOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="removeGroups">
+      <input message="tns:removeGroupsInput" />
+      <output message="tns:removeGroupsOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="removeGroupsWithToken">
+      <input message="tns:removeGroupsWithTokenInput" />
+      <output message="tns:removeGroupsWithTokenOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="removeMembers">
+      <input message="tns:removeMembersInput" />
+      <output message="tns:removeMembersOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+    <operation name="removeMembersWithToken">
+      <input message="tns:removeMembersWithTokenInput" />
+      <output message="tns:removeMembersWithTokenOutput" />
+      <fault name="RemoteDataModelException" message="tns:RemoteDataModelException" />
+    </operation>
+  </portType>
+  <binding name="GroupingServiceBinding" type="tns:GroupingService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="addGroups">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/groupings/soap/addGroups" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault>
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="addGroupsWithToken">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/groupings/soap/addGroupsWithToken" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault>
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="addMembers">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/groupings/soap/addMembers" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault>
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="addMembersWithToken">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/groupings/soap/addMembersWithToken" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault>
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="getAllGroups">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/groupings/soap/getAllGroups" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault>
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="getAllGroupsWithToken">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/groupings/soap/getAllGroupsWithToken" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault>
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="getAllMembers">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/groupings/soap/getAllMembers" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault>
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="getAllMembersWithToken">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/groupings/soap/getAllMembersWithToken" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault>
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="getGroupMemberToken">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/groupings/soap/getGroupMemberToken" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault>
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="getGroupToken">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/groupings/soap/getGroupToken" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault>
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="getGroups">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/groupings/soap/getGroups" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault>
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="getMembers">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/groupings/soap/getMembers" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault>
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="getValidGroupTypes">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/groupings/soap/getValidGroupTypes" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault>
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="getValidMemberTypes">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/groupings/soap/getValidMemberTypes" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault>
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="moveGroups">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/groupings/soap/moveGroups" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault>
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="moveMembers">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/groupings/soap/moveMembers" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault>
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="refreshGroupMemberToken">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/groupings/soap/refreshGroupMemberToken" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault>
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="refreshGroupToken">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/groupings/soap/refreshGroupToken" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault>
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="releaseGroupMemberToken">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/groupings/soap/releaseGroupMemberToken" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault>
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="releaseGroupToken">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/groupings/soap/releaseGroupToken" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault>
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="removeGroups">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/groupings/soap/removeGroups" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault>
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="removeGroupsWithToken">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/groupings/soap/removeGroupsWithToken" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault>
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="removeMembers">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/groupings/soap/removeMembers" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault>
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+    <operation name="removeMembersWithToken">
+      <soap:operation soapAction="http://novell.com/zenworks/datamodel/services/groupings/soap/removeMembersWithToken" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault>
+        <soap:body name="RemoteDataModelException" use="literal" />
+      </fault>
+    </operation>
+  </binding>
+  <service name="GroupingServiceService">
+    <port name="GroupingServicePort" binding="tns:GroupingServiceBinding">
+      <soap:address location="http://localhost:8080/zenworks-datamodel/" />
+    </port>
+  </service>
+</definitions>

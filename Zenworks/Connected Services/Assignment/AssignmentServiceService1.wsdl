@@ -1130,7 +1130,7 @@
   </binding>
   <service name="AssignmentServiceService">
     <port name="AssignmentServicePort" binding="tns:AssignmentServiceBinding">
-      <soap:address location="https://cit-zcm-01.cit-is.fh-koeln.de/zenworks-assignmentadmin" />
+      <soap:address location="https://cit-zcm-01.cit-is.fh-koeln.de/zenworks-assignmentadmin/" />
     </port>
   </service>
 </definitions>

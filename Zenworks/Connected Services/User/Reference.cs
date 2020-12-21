@@ -12,7 +12,7 @@ namespace Zenworks.User {
     
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3761.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -594,19 +594,19 @@ namespace Zenworks.User {
     }
     
     /// <remarks/>
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(ExternalReference))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(AuthoritativeSource))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(LDAPAuthoritativeSource))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(Folder))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(AuthoritativeSourceFolder))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(Role))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(AdministratorUserGroup))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(AdministratorGroup))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(Administrator))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(Folder))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(AuthoritativeSourceFolder))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(ExternalReference))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(AuthoritativeSource))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(LDAPAuthoritativeSource))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(ZENUserGroup))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(UserGroup))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(User))]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3761.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -862,20 +862,260 @@ namespace Zenworks.User {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3761.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://novell.com/zenworks/datamodel/objects/administrators")]
+    public partial class Role : ZENObject {
+        
+        private System.Xml.XmlElement[] any1Field;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAnyElementAttribute(Namespace="http://novell.com/zenworks/datamodel/objects/administrators", Order=0)]
+        public System.Xml.XmlElement[] Any1 {
+            get {
+                return this.any1Field;
+            }
+            set {
+                this.any1Field = value;
+                this.RaisePropertyChanged("Any1");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://novell.com/zenworks/datamodel/objects/administrators")]
+    public partial class AdministratorUserGroup : ZENObject {
+        
+        private string referenceUIDField;
+        
+        private string authoritativeSourceNameField;
+        
+        private System.Xml.XmlElement[] any1Field;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string ReferenceUID {
+            get {
+                return this.referenceUIDField;
+            }
+            set {
+                this.referenceUIDField = value;
+                this.RaisePropertyChanged("ReferenceUID");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public string AuthoritativeSourceName {
+            get {
+                return this.authoritativeSourceNameField;
+            }
+            set {
+                this.authoritativeSourceNameField = value;
+                this.RaisePropertyChanged("AuthoritativeSourceName");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAnyElementAttribute(Namespace="http://novell.com/zenworks/datamodel/objects/administrators", Order=2)]
+        public System.Xml.XmlElement[] Any1 {
+            get {
+                return this.any1Field;
+            }
+            set {
+                this.any1Field = value;
+                this.RaisePropertyChanged("Any1");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://novell.com/zenworks/datamodel/objects/administrators")]
+    public partial class AdministratorGroup : ZENObject {
+        
+        private System.Xml.XmlElement[] any1Field;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAnyElementAttribute(Namespace="http://novell.com/zenworks/datamodel/objects/administrators", Order=0)]
+        public System.Xml.XmlElement[] Any1 {
+            get {
+                return this.any1Field;
+            }
+            set {
+                this.any1Field = value;
+                this.RaisePropertyChanged("Any1");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://novell.com/zenworks/datamodel/objects/administrators")]
+    public partial class Administrator : ZENObject {
+        
+        private string fullNameField;
+        
+        private string referenceUIDField;
+        
+        private System.DateTime lastNagTimeField;
+        
+        private bool lastNagTimeFieldSpecified;
+        
+        private string loginNameField;
+        
+        private string authoritativeSourceNameField;
+        
+        private bool superAdministratorField;
+        
+        private System.Xml.XmlElement[] any1Field;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string FullName {
+            get {
+                return this.fullNameField;
+            }
+            set {
+                this.fullNameField = value;
+                this.RaisePropertyChanged("FullName");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public string ReferenceUID {
+            get {
+                return this.referenceUIDField;
+            }
+            set {
+                this.referenceUIDField = value;
+                this.RaisePropertyChanged("ReferenceUID");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public System.DateTime lastNagTime {
+            get {
+                return this.lastNagTimeField;
+            }
+            set {
+                this.lastNagTimeField = value;
+                this.RaisePropertyChanged("lastNagTime");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool lastNagTimeSpecified {
+            get {
+                return this.lastNagTimeFieldSpecified;
+            }
+            set {
+                this.lastNagTimeFieldSpecified = value;
+                this.RaisePropertyChanged("lastNagTimeSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public string LoginName {
+            get {
+                return this.loginNameField;
+            }
+            set {
+                this.loginNameField = value;
+                this.RaisePropertyChanged("LoginName");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
+        public string AuthoritativeSourceName {
+            get {
+                return this.authoritativeSourceNameField;
+            }
+            set {
+                this.authoritativeSourceNameField = value;
+                this.RaisePropertyChanged("AuthoritativeSourceName");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=5)]
+        public bool SuperAdministrator {
+            get {
+                return this.superAdministratorField;
+            }
+            set {
+                this.superAdministratorField = value;
+                this.RaisePropertyChanged("SuperAdministrator");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAnyElementAttribute(Namespace="http://novell.com/zenworks/datamodel/objects/administrators", Order=6)]
+        public System.Xml.XmlElement[] Any1 {
+            get {
+                return this.any1Field;
+            }
+            set {
+                this.any1Field = value;
+                this.RaisePropertyChanged("Any1");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(AuthoritativeSourceFolder))]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://novell.com/zenworks/datamodel/objects/folders")]
+    public partial class Folder : ZENObject {
+        
+        private System.Xml.XmlElement[] any1Field;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAnyElementAttribute(Namespace="http://novell.com/zenworks/datamodel/objects/folders", Order=0)]
+        public System.Xml.XmlElement[] Any1 {
+            get {
+                return this.any1Field;
+            }
+            set {
+                this.any1Field = value;
+                this.RaisePropertyChanged("Any1");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://novell.com/zenworks/datamodel/objects/authsources")]
-    public partial class ExternalReference : ZENObject {
+    public partial class AuthoritativeSourceFolder : Folder {
         
         private string sourceUIDField;
         
-        private string sourceObjectUIDField;
+        private AuthoritativeSource authoritativeSourceField;
         
-        private bool isTestField;
-        
-        private System.Xml.XmlElement[] any1Field;
+        private System.Xml.XmlElement[] any2Field;
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=0)]
@@ -891,44 +1131,32 @@ namespace Zenworks.User {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=1)]
-        public string SourceObjectUID {
+        public AuthoritativeSource AuthoritativeSource {
             get {
-                return this.sourceObjectUIDField;
+                return this.authoritativeSourceField;
             }
             set {
-                this.sourceObjectUIDField = value;
-                this.RaisePropertyChanged("SourceObjectUID");
+                this.authoritativeSourceField = value;
+                this.RaisePropertyChanged("AuthoritativeSource");
             }
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
-        public bool IsTest {
+        [System.Xml.Serialization.XmlAnyElementAttribute(Namespace="http://novell.com/zenworks/datamodel/objects/authsources", Order=2)]
+        public System.Xml.XmlElement[] Any2 {
             get {
-                return this.isTestField;
+                return this.any2Field;
             }
             set {
-                this.isTestField = value;
-                this.RaisePropertyChanged("IsTest");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAnyElementAttribute(Namespace="http://novell.com/zenworks/datamodel/objects/authsources", Order=3)]
-        public System.Xml.XmlElement[] Any1 {
-            get {
-                return this.any1Field;
-            }
-            set {
-                this.any1Field = value;
-                this.RaisePropertyChanged("Any1");
+                this.any2Field = value;
+                this.RaisePropertyChanged("Any2");
             }
         }
     }
     
     /// <remarks/>
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(LDAPAuthoritativeSource))]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3761.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -979,7 +1207,7 @@ namespace Zenworks.User {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3761.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -1086,7 +1314,7 @@ namespace Zenworks.User {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3761.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -1258,7 +1486,7 @@ namespace Zenworks.User {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3761.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -1332,42 +1560,20 @@ namespace Zenworks.User {
     }
     
     /// <remarks/>
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(AuthoritativeSourceFolder))]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3761.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://novell.com/zenworks/datamodel/objects/folders")]
-    public partial class Folder : ZENObject {
-        
-        private System.Xml.XmlElement[] any1Field;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAnyElementAttribute(Namespace="http://novell.com/zenworks/datamodel/objects/folders", Order=0)]
-        public System.Xml.XmlElement[] Any1 {
-            get {
-                return this.any1Field;
-            }
-            set {
-                this.any1Field = value;
-                this.RaisePropertyChanged("Any1");
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3761.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://novell.com/zenworks/datamodel/objects/authsources")]
-    public partial class AuthoritativeSourceFolder : Folder {
+    public partial class ExternalReference : ZENObject {
         
         private string sourceUIDField;
         
-        private AuthoritativeSource authoritativeSourceField;
+        private string sourceObjectUIDField;
         
-        private System.Xml.XmlElement[] any2Field;
+        private bool isTestField;
+        
+        private System.Xml.XmlElement[] any1Field;
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=0)]
@@ -1383,236 +1589,30 @@ namespace Zenworks.User {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=1)]
-        public AuthoritativeSource AuthoritativeSource {
+        public string SourceObjectUID {
             get {
-                return this.authoritativeSourceField;
+                return this.sourceObjectUIDField;
             }
             set {
-                this.authoritativeSourceField = value;
-                this.RaisePropertyChanged("AuthoritativeSource");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAnyElementAttribute(Namespace="http://novell.com/zenworks/datamodel/objects/authsources", Order=2)]
-        public System.Xml.XmlElement[] Any2 {
-            get {
-                return this.any2Field;
-            }
-            set {
-                this.any2Field = value;
-                this.RaisePropertyChanged("Any2");
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3761.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://novell.com/zenworks/datamodel/objects/administrators")]
-    public partial class Role : ZENObject {
-        
-        private System.Xml.XmlElement[] any1Field;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAnyElementAttribute(Namespace="http://novell.com/zenworks/datamodel/objects/administrators", Order=0)]
-        public System.Xml.XmlElement[] Any1 {
-            get {
-                return this.any1Field;
-            }
-            set {
-                this.any1Field = value;
-                this.RaisePropertyChanged("Any1");
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3761.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://novell.com/zenworks/datamodel/objects/administrators")]
-    public partial class AdministratorUserGroup : ZENObject {
-        
-        private string referenceUIDField;
-        
-        private string authoritativeSourceNameField;
-        
-        private System.Xml.XmlElement[] any1Field;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public string ReferenceUID {
-            get {
-                return this.referenceUIDField;
-            }
-            set {
-                this.referenceUIDField = value;
-                this.RaisePropertyChanged("ReferenceUID");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
-        public string AuthoritativeSourceName {
-            get {
-                return this.authoritativeSourceNameField;
-            }
-            set {
-                this.authoritativeSourceNameField = value;
-                this.RaisePropertyChanged("AuthoritativeSourceName");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAnyElementAttribute(Namespace="http://novell.com/zenworks/datamodel/objects/administrators", Order=2)]
-        public System.Xml.XmlElement[] Any1 {
-            get {
-                return this.any1Field;
-            }
-            set {
-                this.any1Field = value;
-                this.RaisePropertyChanged("Any1");
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3761.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://novell.com/zenworks/datamodel/objects/administrators")]
-    public partial class AdministratorGroup : ZENObject {
-        
-        private System.Xml.XmlElement[] any1Field;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAnyElementAttribute(Namespace="http://novell.com/zenworks/datamodel/objects/administrators", Order=0)]
-        public System.Xml.XmlElement[] Any1 {
-            get {
-                return this.any1Field;
-            }
-            set {
-                this.any1Field = value;
-                this.RaisePropertyChanged("Any1");
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3761.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://novell.com/zenworks/datamodel/objects/administrators")]
-    public partial class Administrator : ZENObject {
-        
-        private string fullNameField;
-        
-        private string referenceUIDField;
-        
-        private System.DateTime lastNagTimeField;
-        
-        private bool lastNagTimeFieldSpecified;
-        
-        private string loginNameField;
-        
-        private string authoritativeSourceNameField;
-        
-        private bool superAdministratorField;
-        
-        private System.Xml.XmlElement[] any1Field;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public string FullName {
-            get {
-                return this.fullNameField;
-            }
-            set {
-                this.fullNameField = value;
-                this.RaisePropertyChanged("FullName");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
-        public string ReferenceUID {
-            get {
-                return this.referenceUIDField;
-            }
-            set {
-                this.referenceUIDField = value;
-                this.RaisePropertyChanged("ReferenceUID");
+                this.sourceObjectUIDField = value;
+                this.RaisePropertyChanged("SourceObjectUID");
             }
         }
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=2)]
-        public System.DateTime lastNagTime {
+        public bool IsTest {
             get {
-                return this.lastNagTimeField;
+                return this.isTestField;
             }
             set {
-                this.lastNagTimeField = value;
-                this.RaisePropertyChanged("lastNagTime");
+                this.isTestField = value;
+                this.RaisePropertyChanged("IsTest");
             }
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool lastNagTimeSpecified {
-            get {
-                return this.lastNagTimeFieldSpecified;
-            }
-            set {
-                this.lastNagTimeFieldSpecified = value;
-                this.RaisePropertyChanged("lastNagTimeSpecified");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
-        public string LoginName {
-            get {
-                return this.loginNameField;
-            }
-            set {
-                this.loginNameField = value;
-                this.RaisePropertyChanged("LoginName");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
-        public string AuthoritativeSourceName {
-            get {
-                return this.authoritativeSourceNameField;
-            }
-            set {
-                this.authoritativeSourceNameField = value;
-                this.RaisePropertyChanged("AuthoritativeSourceName");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=5)]
-        public bool SuperAdministrator {
-            get {
-                return this.superAdministratorField;
-            }
-            set {
-                this.superAdministratorField = value;
-                this.RaisePropertyChanged("SuperAdministrator");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAnyElementAttribute(Namespace="http://novell.com/zenworks/datamodel/objects/administrators", Order=6)]
+        [System.Xml.Serialization.XmlAnyElementAttribute(Namespace="http://novell.com/zenworks/datamodel/objects/authsources", Order=3)]
         public System.Xml.XmlElement[] Any1 {
             get {
                 return this.any1Field;
@@ -1625,7 +1625,7 @@ namespace Zenworks.User {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3761.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -1648,7 +1648,7 @@ namespace Zenworks.User {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3761.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -1671,7 +1671,7 @@ namespace Zenworks.User {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3761.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -2088,7 +2088,7 @@ namespace Zenworks.User {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3761.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -2162,7 +2162,7 @@ namespace Zenworks.User {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3761.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -2278,7 +2278,7 @@ namespace Zenworks.User {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3761.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -2352,7 +2352,7 @@ namespace Zenworks.User {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3761.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -2426,7 +2426,7 @@ namespace Zenworks.User {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3761.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -2556,7 +2556,7 @@ namespace Zenworks.User {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3761.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -2616,7 +2616,7 @@ namespace Zenworks.User {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3761.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -2760,7 +2760,7 @@ namespace Zenworks.User {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3761.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -2859,7 +2859,7 @@ namespace Zenworks.User {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3761.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -2897,7 +2897,7 @@ namespace Zenworks.User {
     
     /// <remarks/>
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(SearchToken))]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3761.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -3129,7 +3129,7 @@ namespace Zenworks.User {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3761.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -3456,7 +3456,7 @@ namespace Zenworks.User {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3761.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -3516,7 +3516,7 @@ namespace Zenworks.User {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3761.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]

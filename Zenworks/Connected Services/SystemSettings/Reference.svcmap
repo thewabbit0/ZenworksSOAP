@@ -19,12 +19,12 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="https://dev-thk-zcm-01.dvz.fh-koeln.de/SystemSettingsService.wsdl" Protocol="http" SourceId="1" />
+    <MetadataSource Address="http://dev-thk-zcm-01.dvz.fh-koeln.de/zenworks-wsdls/SystemSettingsService.wsdl" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="exceptions.xsd" MetadataType="Schema" ID="e8569811-5825-4d87-8a92-4b3a7f193084" SourceId="1" SourceUrl="https://dev-thk-zcm-01.dvz.fh-koeln.de/exceptions.xsd" />
-    <MetadataFile FileName="core-addons-settings.xsd" MetadataType="Schema" ID="0dcc49a5-52e9-4785-9ae2-ce95f1917325" SourceId="1" SourceUrl="https://dev-thk-zcm-01.dvz.fh-koeln.de/core-addons-settings.xsd" />
-    <MetadataFile FileName="SystemSettingsServiceService.wsdl" MetadataType="Wsdl" ID="810dd0e6-15f6-474f-80f0-538c4b98d986" SourceId="1" SourceUrl="https://dev-thk-zcm-01.dvz.fh-koeln.de/SystemSettingsService.wsdl" />
+    <MetadataFile FileName="core-addons-settings.xsd" MetadataType="Schema" ID="a5dd9c71-ef03-4402-a82d-5e88ec89fd6c" SourceId="1" SourceUrl="http://dev-thk-zcm-01.dvz.fh-koeln.de/zenworks-wsdls/core-addons-settings.xsd" />
+    <MetadataFile FileName="SystemSettingsServiceService.wsdl" MetadataType="Wsdl" ID="9f54ac3e-ac51-4eb5-ba35-4b185e4b62c4" SourceId="1" SourceUrl="http://dev-thk-zcm-01.dvz.fh-koeln.de/zenworks-wsdls/SystemSettingsService.wsdl" />
+    <MetadataFile FileName="exceptions.xsd" MetadataType="Schema" ID="6561458b-e328-4b86-9f54-843b0cbd6663" SourceId="1" SourceUrl="http://dev-thk-zcm-01.dvz.fh-koeln.de/zenworks-wsdls/exceptions.xsd" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

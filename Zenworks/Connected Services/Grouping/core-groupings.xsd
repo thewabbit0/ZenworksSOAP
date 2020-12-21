@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema xmlns:groupings="http://novell.com/zenworks/datamodel/objects/groupings" xmlns:objects="http://novell.com/zenworks/datamodel/objects" xmlns="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://novell.com/zenworks/datamodel/objects/groupings" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:import schemaLocation="core-objects.xsd" namespace="http://novell.com/zenworks/datamodel/objects" />
+  <xsd:element name="GroupMemberToken" type="groupings:GroupMemberToken" />
+  <xsd:complexType name="GroupMemberToken">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="objects:Token">
+        <xsd:sequence>
+          <xsd:any minOccurs="0" maxOccurs="unbounded" namespace="##targetNamespace" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="GroupToken" type="groupings:GroupToken" />
+  <xsd:complexType name="GroupToken">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="objects:Token">
+        <xsd:sequence>
+          <xsd:any minOccurs="0" maxOccurs="unbounded" namespace="##targetNamespace" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+</xsd:schema>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="564b5cf5-28cc-4caf-9971-79e960b7ceee" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://dev-thk-zcm-01.dvz.fh-koeln.de/zenworks-wsdls/GroupingService.wsdl" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="core-groupings.xsd" MetadataType="Schema" ID="ec2c00a9-bc4f-47e6-8248-d3cbeaf18ebf" SourceId="1" SourceUrl="http://dev-thk-zcm-01.dvz.fh-koeln.de/zenworks-wsdls/core-groupings.xsd" />
+    <MetadataFile FileName="core-objects.xsd" MetadataType="Schema" ID="73973dd9-5292-40b8-abde-197a784ec57d" SourceId="1" SourceUrl="http://dev-thk-zcm-01.dvz.fh-koeln.de/zenworks-wsdls/core-objects.xsd" />
+    <MetadataFile FileName="exceptions.xsd" MetadataType="Schema" ID="e8af57ec-c074-44cd-ad35-36dac136cf2a" SourceId="1" SourceUrl="http://dev-thk-zcm-01.dvz.fh-koeln.de/zenworks-wsdls/exceptions.xsd" />
+    <MetadataFile FileName="GroupingServiceService.wsdl" MetadataType="Wsdl" ID="30e4f04b-0e5e-42ad-a82c-c3a9d68b7ccb" SourceId="1" SourceUrl="http://dev-thk-zcm-01.dvz.fh-koeln.de/zenworks-wsdls/GroupingService.wsdl" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

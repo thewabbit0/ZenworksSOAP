@@ -19,14 +19,14 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="https://dev-thk-zcm-01.dvz.fh-koeln.de/AdministratorAdminService.wsdl" Protocol="http" SourceId="1" />
+    <MetadataSource Address="https://dev-thk-zcm-01.dvz.fh-koeln.de/zenworks-wsdls/AdministratorAdminService.wsdl" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="core-administrators.xsd" MetadataType="Schema" ID="d6335c60-9fe9-416a-9fa5-31b104d938cf" SourceId="1" SourceUrl="https://dev-thk-zcm-01.dvz.fh-koeln.de/core-administrators.xsd" />
-    <MetadataFile FileName="AdministratorAdminServiceService.wsdl" MetadataType="Wsdl" ID="c4866cb0-7b39-468b-8385-4affb2990d89" SourceId="1" SourceUrl="https://dev-thk-zcm-01.dvz.fh-koeln.de/AdministratorAdminService.wsdl" />
-    <MetadataFile FileName="exceptions.xsd" MetadataType="Schema" ID="fb4f41aa-7ef1-4d8a-a8bd-925d63697ec1" SourceId="1" SourceUrl="https://dev-thk-zcm-01.dvz.fh-koeln.de/exceptions.xsd" />
-    <MetadataFile FileName="core-folders.xsd" MetadataType="Schema" ID="59257ab1-6f4c-42ec-960b-ef1f2b705482" SourceId="1" SourceUrl="https://dev-thk-zcm-01.dvz.fh-koeln.de/core-folders.xsd" />
-    <MetadataFile FileName="core-objects.xsd" MetadataType="Schema" ID="3eb2a484-404c-4fb0-a93b-328dc4d1d241" SourceId="1" SourceUrl="https://dev-thk-zcm-01.dvz.fh-koeln.de/core-objects.xsd" />
+    <MetadataFile FileName="core-administrators.xsd" MetadataType="Schema" ID="d427e707-3f07-4db2-b495-d54de692cb5c" SourceId="1" SourceUrl="https://dev-thk-zcm-01.dvz.fh-koeln.de/zenworks-wsdls/core-administrators.xsd" />
+    <MetadataFile FileName="core-objects.xsd" MetadataType="Schema" ID="8e7e0922-d4c8-4cc4-a143-7fdf11668036" SourceId="1" SourceUrl="https://dev-thk-zcm-01.dvz.fh-koeln.de/zenworks-wsdls/core-objects.xsd" />
+    <MetadataFile FileName="exceptions.xsd" MetadataType="Schema" ID="ca89d2da-e9c9-4186-8f04-2b26f1eca4da" SourceId="1" SourceUrl="https://dev-thk-zcm-01.dvz.fh-koeln.de/zenworks-wsdls/exceptions.xsd" />
+    <MetadataFile FileName="core-folders.xsd" MetadataType="Schema" ID="84829151-ac9e-420f-98f4-d4d97f1b00f2" SourceId="1" SourceUrl="https://dev-thk-zcm-01.dvz.fh-koeln.de/zenworks-wsdls/core-folders.xsd" />
+    <MetadataFile FileName="AdministratorAdminServiceService.wsdl" MetadataType="Wsdl" ID="3bb409da-6071-46bf-82af-7125c7e42aff" SourceId="1" SourceUrl="https://dev-thk-zcm-01.dvz.fh-koeln.de/zenworks-wsdls/AdministratorAdminService.wsdl" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

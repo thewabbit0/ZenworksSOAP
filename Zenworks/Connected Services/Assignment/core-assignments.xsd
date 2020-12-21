@@ -84,6 +84,7 @@
       <xsd:element name="TotalSize" type="xsd:int" />
       <xsd:element name="Version" type="xsd:int" />
       <xsd:element name="ConsolidatedStatus" type="xsd:boolean" />
+      <xsd:element minOccurs="0" maxOccurs="unbounded" name="ObjectTypesString" type="xsd:string" />
     </xsd:sequence>
   </xsd:complexType>
 </xsd:schema>

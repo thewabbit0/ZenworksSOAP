@@ -19,14 +19,14 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="https://dev-thk-zcm-01.dvz.fh-koeln.de/RegistrationAdminService.wsdl" Protocol="http" SourceId="1" />
+    <MetadataSource Address="http://dev-thk-zcm-01.dvz.fh-koeln.de/zenworks-wsdls/RegistrationAdminService.wsdl" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="managed-devices-registrations.xsd" MetadataType="Schema" ID="7fba0c1f-0d24-4611-8968-35a2471efbf2" SourceId="1" SourceUrl="https://dev-thk-zcm-01.dvz.fh-koeln.de/managed-devices-registrations.xsd" />
-    <MetadataFile FileName="RegistrationAdminServiceService.wsdl" MetadataType="Wsdl" ID="5e194e67-d715-42ff-9618-80015b3616f4" SourceId="1" SourceUrl="https://dev-thk-zcm-01.dvz.fh-koeln.de/RegistrationAdminService.wsdl" />
-    <MetadataFile FileName="exceptions.xsd" MetadataType="Schema" ID="e34c69b3-bb00-4404-a6f8-41d97804ea07" SourceId="1" SourceUrl="https://dev-thk-zcm-01.dvz.fh-koeln.de/exceptions.xsd" />
-    <MetadataFile FileName="core-folders.xsd" MetadataType="Schema" ID="76480452-2901-4e85-bce2-87dbbf17dd74" SourceId="1" SourceUrl="https://dev-thk-zcm-01.dvz.fh-koeln.de/core-folders.xsd" />
-    <MetadataFile FileName="core-objects.xsd" MetadataType="Schema" ID="4b720df7-15c8-48d0-b796-4db65e791830" SourceId="1" SourceUrl="https://dev-thk-zcm-01.dvz.fh-koeln.de/core-objects.xsd" />
+    <MetadataFile FileName="exceptions.xsd" MetadataType="Schema" ID="6babfb24-565b-4651-996e-6e5d2d1b6c75" SourceId="1" SourceUrl="http://dev-thk-zcm-01.dvz.fh-koeln.de/zenworks-wsdls/exceptions.xsd" />
+    <MetadataFile FileName="core-folders.xsd" MetadataType="Schema" ID="5c58571a-d14b-4f27-acd9-04b6ed144e01" SourceId="1" SourceUrl="http://dev-thk-zcm-01.dvz.fh-koeln.de/zenworks-wsdls/core-folders.xsd" />
+    <MetadataFile FileName="RegistrationAdminServiceService.wsdl" MetadataType="Wsdl" ID="8eee765c-b900-4480-86a8-cd2d0e3074ab" SourceId="1" SourceUrl="http://dev-thk-zcm-01.dvz.fh-koeln.de/zenworks-wsdls/RegistrationAdminService.wsdl" />
+    <MetadataFile FileName="core-objects.xsd" MetadataType="Schema" ID="eda1a3df-50a3-4844-83e7-f46b821d1b3c" SourceId="1" SourceUrl="http://dev-thk-zcm-01.dvz.fh-koeln.de/zenworks-wsdls/core-objects.xsd" />
+    <MetadataFile FileName="managed-devices-registrations.xsd" MetadataType="Schema" ID="c37cb0a1-3caf-444c-a0c0-67ef44759c95" SourceId="1" SourceUrl="http://dev-thk-zcm-01.dvz.fh-koeln.de/zenworks-wsdls/managed-devices-registrations.xsd" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

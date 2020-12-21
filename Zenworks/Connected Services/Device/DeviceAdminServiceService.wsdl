@@ -2081,7 +2081,7 @@
   </binding>
   <service name="DeviceAdminServiceService">
     <port name="DeviceAdminServicePort" binding="tns:DeviceAdminServiceBinding">
-      <soap:address location="https://dev-thk-zcm-01.dvz.fh-koeln.de/zenworks-deviceadmin" />
+      <soap:address location="http://localhost:8080/zenworks-datamodel/" />
     </port>
   </service>
 </definitions>

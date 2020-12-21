@@ -12,7 +12,7 @@ namespace Zenworks.Device {
     
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3761.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -58,243 +58,7 @@ namespace Zenworks.Device {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3761.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://novell.com/zenworks/datamodel/objects/devices")]
-    public partial class ComponentDetails : object, System.ComponentModel.INotifyPropertyChanged {
-        
-        private string uIDField;
-        
-        private string deviceUIDField;
-        
-        private string componentStringField;
-        
-        private System.DateTime fetchDateField;
-        
-        private bool fetchDateFieldSpecified;
-        
-        private System.Xml.XmlElement[] anyField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public string UID {
-            get {
-                return this.uIDField;
-            }
-            set {
-                this.uIDField = value;
-                this.RaisePropertyChanged("UID");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
-        public string DeviceUID {
-            get {
-                return this.deviceUIDField;
-            }
-            set {
-                this.deviceUIDField = value;
-                this.RaisePropertyChanged("DeviceUID");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
-        public string ComponentString {
-            get {
-                return this.componentStringField;
-            }
-            set {
-                this.componentStringField = value;
-                this.RaisePropertyChanged("ComponentString");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
-        public System.DateTime FetchDate {
-            get {
-                return this.fetchDateField;
-            }
-            set {
-                this.fetchDateField = value;
-                this.RaisePropertyChanged("FetchDate");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool FetchDateSpecified {
-            get {
-                return this.fetchDateFieldSpecified;
-            }
-            set {
-                this.fetchDateFieldSpecified = value;
-                this.RaisePropertyChanged("FetchDateSpecified");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAnyElementAttribute(Namespace="http://novell.com/zenworks/datamodel/objects/devices", Order=4)]
-        public System.Xml.XmlElement[] Any {
-            get {
-                return this.anyField;
-            }
-            set {
-                this.anyField = value;
-                this.RaisePropertyChanged("Any");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3761.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://novell.com/zenworks/datamodel/objects/devices")]
-    public partial class PingToken : object, System.ComponentModel.INotifyPropertyChanged {
-        
-        private string uIDField;
-        
-        private string tokenField;
-        
-        private System.Xml.XmlElement[] anyField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public string UID {
-            get {
-                return this.uIDField;
-            }
-            set {
-                this.uIDField = value;
-                this.RaisePropertyChanged("UID");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
-        public string Token {
-            get {
-                return this.tokenField;
-            }
-            set {
-                this.tokenField = value;
-                this.RaisePropertyChanged("Token");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAnyElementAttribute(Namespace="http://novell.com/zenworks/datamodel/objects/devices", Order=2)]
-        public System.Xml.XmlElement[] Any {
-            get {
-                return this.anyField;
-            }
-            set {
-                this.anyField = value;
-                this.RaisePropertyChanged("Any");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3761.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://novell.com/zenworks/datamodel/objects/devices")]
-    public partial class DeletedDevice : object, System.ComponentModel.INotifyPropertyChanged {
-        
-        private string uIDField;
-        
-        private System.DateTime deletedField;
-        
-        private bool deletedFieldSpecified;
-        
-        private System.Xml.XmlElement[] anyField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public string UID {
-            get {
-                return this.uIDField;
-            }
-            set {
-                this.uIDField = value;
-                this.RaisePropertyChanged("UID");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
-        public System.DateTime Deleted {
-            get {
-                return this.deletedField;
-            }
-            set {
-                this.deletedField = value;
-                this.RaisePropertyChanged("Deleted");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool DeletedSpecified {
-            get {
-                return this.deletedFieldSpecified;
-            }
-            set {
-                this.deletedFieldSpecified = value;
-                this.RaisePropertyChanged("DeletedSpecified");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAnyElementAttribute(Namespace="http://novell.com/zenworks/datamodel/objects/devices", Order=2)]
-        public System.Xml.XmlElement[] Any {
-            get {
-                return this.anyField;
-            }
-            set {
-                this.anyField = value;
-                this.RaisePropertyChanged("Any");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3761.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -354,7 +118,7 @@ namespace Zenworks.Device {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3761.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -400,7 +164,7 @@ namespace Zenworks.Device {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3761.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -460,7 +224,7 @@ namespace Zenworks.Device {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3761.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -534,7 +298,7 @@ namespace Zenworks.Device {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3761.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -608,7 +372,7 @@ namespace Zenworks.Device {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3761.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -682,7 +446,7 @@ namespace Zenworks.Device {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3761.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -812,7 +576,7 @@ namespace Zenworks.Device {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3761.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -858,7 +622,7 @@ namespace Zenworks.Device {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3761.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -974,7 +738,7 @@ namespace Zenworks.Device {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3761.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -1034,7 +798,7 @@ namespace Zenworks.Device {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3761.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -1136,7 +900,7 @@ namespace Zenworks.Device {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3761.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -1252,7 +1016,7 @@ namespace Zenworks.Device {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3761.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -1354,7 +1118,7 @@ namespace Zenworks.Device {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3761.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -1428,7 +1192,243 @@ namespace Zenworks.Device {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3761.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://novell.com/zenworks/datamodel/objects/devices")]
+    public partial class ComponentDetails : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string uIDField;
+        
+        private string deviceUIDField;
+        
+        private string componentStringField;
+        
+        private System.DateTime fetchDateField;
+        
+        private bool fetchDateFieldSpecified;
+        
+        private System.Xml.XmlElement[] anyField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string UID {
+            get {
+                return this.uIDField;
+            }
+            set {
+                this.uIDField = value;
+                this.RaisePropertyChanged("UID");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public string DeviceUID {
+            get {
+                return this.deviceUIDField;
+            }
+            set {
+                this.deviceUIDField = value;
+                this.RaisePropertyChanged("DeviceUID");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public string ComponentString {
+            get {
+                return this.componentStringField;
+            }
+            set {
+                this.componentStringField = value;
+                this.RaisePropertyChanged("ComponentString");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public System.DateTime FetchDate {
+            get {
+                return this.fetchDateField;
+            }
+            set {
+                this.fetchDateField = value;
+                this.RaisePropertyChanged("FetchDate");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool FetchDateSpecified {
+            get {
+                return this.fetchDateFieldSpecified;
+            }
+            set {
+                this.fetchDateFieldSpecified = value;
+                this.RaisePropertyChanged("FetchDateSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAnyElementAttribute(Namespace="http://novell.com/zenworks/datamodel/objects/devices", Order=4)]
+        public System.Xml.XmlElement[] Any {
+            get {
+                return this.anyField;
+            }
+            set {
+                this.anyField = value;
+                this.RaisePropertyChanged("Any");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://novell.com/zenworks/datamodel/objects/devices")]
+    public partial class PingToken : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string uIDField;
+        
+        private string tokenField;
+        
+        private System.Xml.XmlElement[] anyField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string UID {
+            get {
+                return this.uIDField;
+            }
+            set {
+                this.uIDField = value;
+                this.RaisePropertyChanged("UID");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public string Token {
+            get {
+                return this.tokenField;
+            }
+            set {
+                this.tokenField = value;
+                this.RaisePropertyChanged("Token");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAnyElementAttribute(Namespace="http://novell.com/zenworks/datamodel/objects/devices", Order=2)]
+        public System.Xml.XmlElement[] Any {
+            get {
+                return this.anyField;
+            }
+            set {
+                this.anyField = value;
+                this.RaisePropertyChanged("Any");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://novell.com/zenworks/datamodel/objects/devices")]
+    public partial class DeletedDevice : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string uIDField;
+        
+        private System.DateTime deletedField;
+        
+        private bool deletedFieldSpecified;
+        
+        private System.Xml.XmlElement[] anyField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string UID {
+            get {
+                return this.uIDField;
+            }
+            set {
+                this.uIDField = value;
+                this.RaisePropertyChanged("UID");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public System.DateTime Deleted {
+            get {
+                return this.deletedField;
+            }
+            set {
+                this.deletedField = value;
+                this.RaisePropertyChanged("Deleted");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool DeletedSpecified {
+            get {
+                return this.deletedFieldSpecified;
+            }
+            set {
+                this.deletedFieldSpecified = value;
+                this.RaisePropertyChanged("DeletedSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAnyElementAttribute(Namespace="http://novell.com/zenworks/datamodel/objects/devices", Order=2)]
+        public System.Xml.XmlElement[] Any {
+            get {
+                return this.anyField;
+            }
+            set {
+                this.anyField = value;
+                this.RaisePropertyChanged("Any");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -1516,7 +1516,7 @@ namespace Zenworks.Device {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3761.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -1604,7 +1604,7 @@ namespace Zenworks.Device {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3761.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -1636,7 +1636,7 @@ namespace Zenworks.Device {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3761.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -1668,7 +1668,7 @@ namespace Zenworks.Device {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3761.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -1714,7 +1714,7 @@ namespace Zenworks.Device {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3761.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -1746,7 +1746,7 @@ namespace Zenworks.Device {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3761.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -1792,7 +1792,7 @@ namespace Zenworks.Device {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3761.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -1824,7 +1824,7 @@ namespace Zenworks.Device {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3761.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -1856,7 +1856,7 @@ namespace Zenworks.Device {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3761.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -2084,7 +2084,7 @@ namespace Zenworks.Device {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3761.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -2116,7 +2116,7 @@ namespace Zenworks.Device {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3761.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -2148,12 +2148,12 @@ namespace Zenworks.Device {
     }
     
     /// <remarks/>
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(Folder))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(QueryGroup))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(DeviceGroup))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(Device))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(MobileDevice))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(Folder))]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3761.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -2409,7 +2409,30 @@ namespace Zenworks.Device {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3761.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://novell.com/zenworks/datamodel/objects/folders")]
+    public partial class Folder : ZENObject {
+        
+        private System.Xml.XmlElement[] any1Field;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAnyElementAttribute(Namespace="http://novell.com/zenworks/datamodel/objects/folders", Order=0)]
+        public System.Xml.XmlElement[] Any1 {
+            get {
+                return this.any1Field;
+            }
+            set {
+                this.any1Field = value;
+                this.RaisePropertyChanged("Any1");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -2488,7 +2511,7 @@ namespace Zenworks.Device {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3761.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -2512,7 +2535,7 @@ namespace Zenworks.Device {
     
     /// <remarks/>
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(MobileDevice))]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3761.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -2544,6 +2567,8 @@ namespace Zenworks.Device {
         private string[] registrationKeysField;
         
         private string oSNameField;
+        
+        private string oSIdField;
         
         private string primaryUserField;
         
@@ -2765,6 +2790,18 @@ namespace Zenworks.Device {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=10)]
+        public string OSId {
+            get {
+                return this.oSIdField;
+            }
+            set {
+                this.oSIdField = value;
+                this.RaisePropertyChanged("OSId");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=11)]
         public string PrimaryUser {
             get {
                 return this.primaryUserField;
@@ -2776,7 +2813,7 @@ namespace Zenworks.Device {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("LoggedOnUsers", Order=11)]
+        [System.Xml.Serialization.XmlElementAttribute("LoggedOnUsers", Order=12)]
         public string[] LoggedOnUsers {
             get {
                 return this.loggedOnUsersField;
@@ -2788,7 +2825,7 @@ namespace Zenworks.Device {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=12)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=13)]
         public string Owner {
             get {
                 return this.ownerField;
@@ -2800,7 +2837,7 @@ namespace Zenworks.Device {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=13)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=14)]
         public string Language {
             get {
                 return this.languageField;
@@ -2812,7 +2849,7 @@ namespace Zenworks.Device {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=14)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=15)]
         public string Site {
             get {
                 return this.siteField;
@@ -2824,7 +2861,7 @@ namespace Zenworks.Device {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=15)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=16)]
         public string Department {
             get {
                 return this.departmentField;
@@ -2836,7 +2873,7 @@ namespace Zenworks.Device {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=16)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=17)]
         public string Location {
             get {
                 return this.locationField;
@@ -2848,7 +2885,7 @@ namespace Zenworks.Device {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=17)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=18)]
         public string SerialNumber {
             get {
                 return this.serialNumberField;
@@ -2860,7 +2897,7 @@ namespace Zenworks.Device {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=18)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=19)]
         public System.DateTime LastInventoryScan {
             get {
                 return this.lastInventoryScanField;
@@ -2884,7 +2921,7 @@ namespace Zenworks.Device {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=19)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=20)]
         public string ZenAgentVersion {
             get {
                 return this.zenAgentVersionField;
@@ -2896,7 +2933,7 @@ namespace Zenworks.Device {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=20)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=21)]
         public string Timezone {
             get {
                 return this.timezoneField;
@@ -2908,7 +2945,7 @@ namespace Zenworks.Device {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=21)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=22)]
         public bool PrimaryUserCalculated {
             get {
                 return this.primaryUserCalculatedField;
@@ -2920,7 +2957,7 @@ namespace Zenworks.Device {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=22)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=23)]
         public bool Lost {
             get {
                 return this.lostField;
@@ -2932,7 +2969,7 @@ namespace Zenworks.Device {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=23)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=24)]
         public string ManagedFolder {
             get {
                 return this.managedFolderField;
@@ -2944,7 +2981,7 @@ namespace Zenworks.Device {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("NetworkAddresses", Order=24)]
+        [System.Xml.Serialization.XmlElementAttribute("NetworkAddresses", Order=25)]
         public NetworkAddress[] NetworkAddresses {
             get {
                 return this.networkAddressesField;
@@ -2956,7 +2993,7 @@ namespace Zenworks.Device {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=25)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=26)]
         public bool Retired {
             get {
                 return this.retiredField;
@@ -2968,7 +3005,7 @@ namespace Zenworks.Device {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=26)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=27)]
         public System.DateTime RetiredDate {
             get {
                 return this.retiredDateField;
@@ -2992,7 +3029,7 @@ namespace Zenworks.Device {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=27)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=28)]
         public string AgentVersion {
             get {
                 return this.agentVersionField;
@@ -3004,7 +3041,7 @@ namespace Zenworks.Device {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=28)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=29)]
         public bool IsTest {
             get {
                 return this.isTestField;
@@ -3016,7 +3053,7 @@ namespace Zenworks.Device {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=29)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=30)]
         public bool Eri {
             get {
                 return this.eriField;
@@ -3028,7 +3065,7 @@ namespace Zenworks.Device {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=30)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=31)]
         public int Ownership {
             get {
                 return this.ownershipField;
@@ -3040,7 +3077,7 @@ namespace Zenworks.Device {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=31)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=32)]
         public string ZAVVersion {
             get {
                 return this.zAVVersionField;
@@ -3052,7 +3089,7 @@ namespace Zenworks.Device {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=32)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=33)]
         public bool ZAVOnlyDevice {
             get {
                 return this.zAVOnlyDeviceField;
@@ -3064,7 +3101,7 @@ namespace Zenworks.Device {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=33)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=34)]
         public bool IsEnrolled {
             get {
                 return this.isEnrolledField;
@@ -3076,7 +3113,7 @@ namespace Zenworks.Device {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=34)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=35)]
         public bool Restricted {
             get {
                 return this.restrictedField;
@@ -3088,7 +3125,7 @@ namespace Zenworks.Device {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=35)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=36)]
         public bool HasOTAIdentity {
             get {
                 return this.hasOTAIdentityField;
@@ -3100,7 +3137,7 @@ namespace Zenworks.Device {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=36)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=37)]
         public bool HasMDMIdentity {
             get {
                 return this.hasMDMIdentityField;
@@ -3112,7 +3149,7 @@ namespace Zenworks.Device {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=37)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=38)]
         public string DeviceStatus {
             get {
                 return this.deviceStatusField;
@@ -3124,7 +3161,7 @@ namespace Zenworks.Device {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlAnyElementAttribute(Namespace="http://novell.com/zenworks/datamodel/objects/devices", Order=38)]
+        [System.Xml.Serialization.XmlAnyElementAttribute(Namespace="http://novell.com/zenworks/datamodel/objects/devices", Order=39)]
         public System.Xml.XmlElement[] Any1 {
             get {
                 return this.any1Field;
@@ -3137,7 +3174,7 @@ namespace Zenworks.Device {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3761.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -3253,7 +3290,7 @@ namespace Zenworks.Device {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3761.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -4508,30 +4545,7 @@ namespace Zenworks.Device {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3761.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://novell.com/zenworks/datamodel/objects/folders")]
-    public partial class Folder : ZENObject {
-        
-        private System.Xml.XmlElement[] any1Field;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlAnyElementAttribute(Namespace="http://novell.com/zenworks/datamodel/objects/folders", Order=0)]
-        public System.Xml.XmlElement[] Any1 {
-            get {
-                return this.any1Field;
-            }
-            set {
-                this.any1Field = value;
-                this.RaisePropertyChanged("Any1");
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3761.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -4563,7 +4577,7 @@ namespace Zenworks.Device {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3761.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -4595,7 +4609,7 @@ namespace Zenworks.Device {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3761.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -4627,7 +4641,7 @@ namespace Zenworks.Device {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3761.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -4659,7 +4673,7 @@ namespace Zenworks.Device {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3761.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -4691,7 +4705,7 @@ namespace Zenworks.Device {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3761.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -4729,7 +4743,7 @@ namespace Zenworks.Device {
     
     /// <remarks/>
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(SearchToken))]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3761.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -4803,7 +4817,7 @@ namespace Zenworks.Device {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3761.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -4849,7 +4863,7 @@ namespace Zenworks.Device {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3761.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -4965,7 +4979,7 @@ namespace Zenworks.Device {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3761.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -5025,7 +5039,7 @@ namespace Zenworks.Device {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3761.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -5057,7 +5071,7 @@ namespace Zenworks.Device {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3761.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -5089,7 +5103,7 @@ namespace Zenworks.Device {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3761.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -5121,7 +5135,7 @@ namespace Zenworks.Device {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3761.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -5167,7 +5181,7 @@ namespace Zenworks.Device {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3761.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -5199,7 +5213,7 @@ namespace Zenworks.Device {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3761.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -5231,7 +5245,7 @@ namespace Zenworks.Device {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3761.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -5263,7 +5277,7 @@ namespace Zenworks.Device {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3761.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -5295,7 +5309,7 @@ namespace Zenworks.Device {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3761.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -5327,7 +5341,7 @@ namespace Zenworks.Device {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3761.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -5359,7 +5373,7 @@ namespace Zenworks.Device {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3761.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -5391,7 +5405,7 @@ namespace Zenworks.Device {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3761.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -5409,7 +5423,7 @@ namespace Zenworks.Device {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3761.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -5441,7 +5455,7 @@ namespace Zenworks.Device {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3761.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -5501,7 +5515,7 @@ namespace Zenworks.Device {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3761.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -5533,7 +5547,7 @@ namespace Zenworks.Device {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3761.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -5579,7 +5593,7 @@ namespace Zenworks.Device {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3761.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -5611,7 +5625,7 @@ namespace Zenworks.Device {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3761.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -5657,7 +5671,7 @@ namespace Zenworks.Device {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3761.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -5689,7 +5703,7 @@ namespace Zenworks.Device {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3761.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -5721,7 +5735,7 @@ namespace Zenworks.Device {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3761.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -5753,7 +5767,7 @@ namespace Zenworks.Device {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3761.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -5785,7 +5799,7 @@ namespace Zenworks.Device {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3761.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -5817,7 +5831,7 @@ namespace Zenworks.Device {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3761.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -5835,7 +5849,7 @@ namespace Zenworks.Device {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3761.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -5867,7 +5881,7 @@ namespace Zenworks.Device {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3761.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -5885,7 +5899,7 @@ namespace Zenworks.Device {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3761.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -5945,7 +5959,7 @@ namespace Zenworks.Device {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3761.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -5977,7 +5991,7 @@ namespace Zenworks.Device {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3761.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -5995,7 +6009,7 @@ namespace Zenworks.Device {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3761.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -6027,7 +6041,7 @@ namespace Zenworks.Device {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3761.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -6045,7 +6059,7 @@ namespace Zenworks.Device {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3761.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -6077,7 +6091,7 @@ namespace Zenworks.Device {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3761.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -6095,7 +6109,7 @@ namespace Zenworks.Device {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3761.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -6127,7 +6141,7 @@ namespace Zenworks.Device {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3761.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -6145,7 +6159,7 @@ namespace Zenworks.Device {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3761.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -6177,7 +6191,7 @@ namespace Zenworks.Device {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3761.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -6195,7 +6209,7 @@ namespace Zenworks.Device {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3761.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -6227,7 +6241,7 @@ namespace Zenworks.Device {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3761.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -6245,7 +6259,7 @@ namespace Zenworks.Device {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3761.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -6277,7 +6291,7 @@ namespace Zenworks.Device {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3761.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -6323,7 +6337,7 @@ namespace Zenworks.Device {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3761.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -6355,7 +6369,7 @@ namespace Zenworks.Device {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3761.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -6387,7 +6401,7 @@ namespace Zenworks.Device {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3761.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -6419,7 +6433,7 @@ namespace Zenworks.Device {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3761.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -6451,7 +6465,7 @@ namespace Zenworks.Device {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3761.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -6483,7 +6497,7 @@ namespace Zenworks.Device {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3761.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -6501,7 +6515,7 @@ namespace Zenworks.Device {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3761.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -6533,7 +6547,7 @@ namespace Zenworks.Device {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3761.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -6551,7 +6565,7 @@ namespace Zenworks.Device {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3761.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -6583,7 +6597,7 @@ namespace Zenworks.Device {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3761.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -6671,7 +6685,7 @@ namespace Zenworks.Device {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3761.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -6801,7 +6815,7 @@ namespace Zenworks.Device {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3761.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -6875,7 +6889,7 @@ namespace Zenworks.Device {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3761.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -6907,7 +6921,7 @@ namespace Zenworks.Device {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3761.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -6939,7 +6953,7 @@ namespace Zenworks.Device {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3761.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -6971,7 +6985,7 @@ namespace Zenworks.Device {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3761.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -7003,7 +7017,7 @@ namespace Zenworks.Device {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3761.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -7035,7 +7049,7 @@ namespace Zenworks.Device {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3761.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -7067,7 +7081,7 @@ namespace Zenworks.Device {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3761.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -7099,7 +7113,7 @@ namespace Zenworks.Device {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3761.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -7131,7 +7145,7 @@ namespace Zenworks.Device {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3761.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -7163,7 +7177,7 @@ namespace Zenworks.Device {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3761.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -7195,7 +7209,7 @@ namespace Zenworks.Device {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3761.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -7241,7 +7255,7 @@ namespace Zenworks.Device {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3761.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -7273,7 +7287,7 @@ namespace Zenworks.Device {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3761.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -7305,7 +7319,7 @@ namespace Zenworks.Device {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3761.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -7337,7 +7351,7 @@ namespace Zenworks.Device {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3761.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -7383,7 +7397,7 @@ namespace Zenworks.Device {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3761.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -7415,7 +7429,7 @@ namespace Zenworks.Device {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3761.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -7461,7 +7475,7 @@ namespace Zenworks.Device {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3761.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -7605,7 +7619,7 @@ namespace Zenworks.Device {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3761.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -7637,7 +7651,7 @@ namespace Zenworks.Device {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3761.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -7669,7 +7683,7 @@ namespace Zenworks.Device {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3761.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -7715,7 +7729,7 @@ namespace Zenworks.Device {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3761.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -7747,7 +7761,7 @@ namespace Zenworks.Device {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3761.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -7807,7 +7821,7 @@ namespace Zenworks.Device {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3761.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -7951,7 +7965,7 @@ namespace Zenworks.Device {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3761.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -7997,7 +8011,7 @@ namespace Zenworks.Device {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3761.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -8029,7 +8043,7 @@ namespace Zenworks.Device {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3761.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -8061,7 +8075,7 @@ namespace Zenworks.Device {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3761.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -8093,7 +8107,7 @@ namespace Zenworks.Device {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3761.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -8139,7 +8153,7 @@ namespace Zenworks.Device {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3761.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -8185,7 +8199,7 @@ namespace Zenworks.Device {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3761.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -8217,7 +8231,7 @@ namespace Zenworks.Device {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3761.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -8249,7 +8263,7 @@ namespace Zenworks.Device {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3761.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -8281,7 +8295,7 @@ namespace Zenworks.Device {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3761.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -8313,7 +8327,7 @@ namespace Zenworks.Device {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3761.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -8345,7 +8359,7 @@ namespace Zenworks.Device {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3761.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -8377,7 +8391,7 @@ namespace Zenworks.Device {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3761.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -8409,7 +8423,7 @@ namespace Zenworks.Device {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3761.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -8441,7 +8455,7 @@ namespace Zenworks.Device {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3761.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -8473,7 +8487,7 @@ namespace Zenworks.Device {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3761.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -8526,9 +8540,6 @@ namespace Zenworks.Device {
         [System.ServiceModel.OperationContractAttribute(Action="http://novell.com/zenworks/datamodel/services/devices/soap/clone", ReplyAction="*")]
         [System.ServiceModel.FaultContractAttribute(typeof(Zenworks.Device.RemoteDataModelException), Action="http://novell.com/zenworks/datamodel/services/devices/soap/clone", Name="RemoteDataModelException", Namespace="http://novell.com/zenworks/datamodel/exceptions")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ComponentDetails))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PingToken))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DeletedDevice))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ExcludedDMVersion))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DataModelCacheClean))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Subquery))]
@@ -8536,6 +8547,9 @@ namespace Zenworks.Device {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(RightsCategory))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Rights))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DatabaseAddressInformation))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ComponentDetails))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PingToken))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DeletedDevice))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getAllDevicesForUserResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getAllDevicesForUserRequest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getDevicesInFolderRequest))]
@@ -8648,9 +8662,6 @@ namespace Zenworks.Device {
         [System.ServiceModel.OperationContractAttribute(Action="http://novell.com/zenworks/datamodel/services/devices/soap/create", ReplyAction="*")]
         [System.ServiceModel.FaultContractAttribute(typeof(Zenworks.Device.RemoteDataModelException), Action="http://novell.com/zenworks/datamodel/services/devices/soap/create", Name="RemoteDataModelException", Namespace="http://novell.com/zenworks/datamodel/exceptions")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ComponentDetails))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PingToken))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DeletedDevice))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ExcludedDMVersion))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DataModelCacheClean))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Subquery))]
@@ -8658,6 +8669,9 @@ namespace Zenworks.Device {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(RightsCategory))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Rights))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DatabaseAddressInformation))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ComponentDetails))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PingToken))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DeletedDevice))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getAllDevicesForUserResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getAllDevicesForUserRequest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getDevicesInFolderRequest))]
@@ -8770,9 +8784,6 @@ namespace Zenworks.Device {
         [System.ServiceModel.OperationContractAttribute(Action="http://novell.com/zenworks/datamodel/services/devices/soap/createOSTarget", ReplyAction="*")]
         [System.ServiceModel.FaultContractAttribute(typeof(Zenworks.Device.RemoteDataModelException), Action="http://novell.com/zenworks/datamodel/services/devices/soap/createOSTarget", Name="RemoteDataModelException", Namespace="http://novell.com/zenworks/datamodel/exceptions")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ComponentDetails))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PingToken))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DeletedDevice))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ExcludedDMVersion))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DataModelCacheClean))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Subquery))]
@@ -8780,6 +8791,9 @@ namespace Zenworks.Device {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(RightsCategory))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Rights))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DatabaseAddressInformation))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ComponentDetails))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PingToken))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DeletedDevice))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getAllDevicesForUserResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getAllDevicesForUserRequest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getDevicesInFolderRequest))]
@@ -8892,9 +8906,6 @@ namespace Zenworks.Device {
         [System.ServiceModel.OperationContractAttribute(Action="http://novell.com/zenworks/datamodel/services/devices/soap/delete", ReplyAction="*")]
         [System.ServiceModel.FaultContractAttribute(typeof(Zenworks.Device.RemoteDataModelException), Action="http://novell.com/zenworks/datamodel/services/devices/soap/delete", Name="RemoteDataModelException", Namespace="http://novell.com/zenworks/datamodel/exceptions")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ComponentDetails))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PingToken))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DeletedDevice))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ExcludedDMVersion))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DataModelCacheClean))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Subquery))]
@@ -8902,6 +8913,9 @@ namespace Zenworks.Device {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(RightsCategory))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Rights))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DatabaseAddressInformation))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ComponentDetails))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PingToken))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DeletedDevice))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getAllDevicesForUserResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getAllDevicesForUserRequest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getDevicesInFolderRequest))]
@@ -9014,9 +9028,6 @@ namespace Zenworks.Device {
         [System.ServiceModel.OperationContractAttribute(Action="http://novell.com/zenworks/datamodel/services/devices/soap/deleteOSTarget", ReplyAction="*")]
         [System.ServiceModel.FaultContractAttribute(typeof(Zenworks.Device.RemoteDataModelException), Action="http://novell.com/zenworks/datamodel/services/devices/soap/deleteOSTarget", Name="RemoteDataModelException", Namespace="http://novell.com/zenworks/datamodel/exceptions")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ComponentDetails))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PingToken))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DeletedDevice))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ExcludedDMVersion))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DataModelCacheClean))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Subquery))]
@@ -9024,6 +9035,9 @@ namespace Zenworks.Device {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(RightsCategory))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Rights))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DatabaseAddressInformation))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ComponentDetails))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PingToken))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DeletedDevice))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getAllDevicesForUserResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getAllDevicesForUserRequest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getDevicesInFolderRequest))]
@@ -9136,9 +9150,6 @@ namespace Zenworks.Device {
         [System.ServiceModel.OperationContractAttribute(Action="http://novell.com/zenworks/datamodel/services/devices/soap/deleteRecursive", ReplyAction="*")]
         [System.ServiceModel.FaultContractAttribute(typeof(Zenworks.Device.RemoteDataModelException), Action="http://novell.com/zenworks/datamodel/services/devices/soap/deleteRecursive", Name="RemoteDataModelException", Namespace="http://novell.com/zenworks/datamodel/exceptions")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ComponentDetails))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PingToken))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DeletedDevice))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ExcludedDMVersion))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DataModelCacheClean))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Subquery))]
@@ -9146,6 +9157,9 @@ namespace Zenworks.Device {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(RightsCategory))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Rights))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DatabaseAddressInformation))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ComponentDetails))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PingToken))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DeletedDevice))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getAllDevicesForUserResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getAllDevicesForUserRequest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getDevicesInFolderRequest))]
@@ -9258,9 +9272,6 @@ namespace Zenworks.Device {
         [System.ServiceModel.OperationContractAttribute(Action="http://novell.com/zenworks/datamodel/services/devices/soap/existsByParentAndName", ReplyAction="*")]
         [System.ServiceModel.FaultContractAttribute(typeof(Zenworks.Device.RemoteDataModelException), Action="http://novell.com/zenworks/datamodel/services/devices/soap/existsByParentAndName", Name="RemoteDataModelException", Namespace="http://novell.com/zenworks/datamodel/exceptions")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ComponentDetails))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PingToken))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DeletedDevice))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ExcludedDMVersion))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DataModelCacheClean))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Subquery))]
@@ -9268,6 +9279,9 @@ namespace Zenworks.Device {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(RightsCategory))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Rights))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DatabaseAddressInformation))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ComponentDetails))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PingToken))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DeletedDevice))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getAllDevicesForUserResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getAllDevicesForUserRequest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getDevicesInFolderRequest))]
@@ -9380,9 +9394,6 @@ namespace Zenworks.Device {
         [System.ServiceModel.OperationContractAttribute(Action="http://novell.com/zenworks/datamodel/services/devices/soap/existsByUID", ReplyAction="*")]
         [System.ServiceModel.FaultContractAttribute(typeof(Zenworks.Device.RemoteDataModelException), Action="http://novell.com/zenworks/datamodel/services/devices/soap/existsByUID", Name="RemoteDataModelException", Namespace="http://novell.com/zenworks/datamodel/exceptions")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ComponentDetails))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PingToken))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DeletedDevice))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ExcludedDMVersion))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DataModelCacheClean))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Subquery))]
@@ -9390,6 +9401,9 @@ namespace Zenworks.Device {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(RightsCategory))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Rights))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DatabaseAddressInformation))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ComponentDetails))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PingToken))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DeletedDevice))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getAllDevicesForUserResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getAllDevicesForUserRequest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getDevicesInFolderRequest))]
@@ -9502,9 +9516,6 @@ namespace Zenworks.Device {
         [System.ServiceModel.OperationContractAttribute(Action="http://novell.com/zenworks/datamodel/services/devices/soap/getAllSearchResults", ReplyAction="*")]
         [System.ServiceModel.FaultContractAttribute(typeof(Zenworks.Device.RemoteDataModelException), Action="http://novell.com/zenworks/datamodel/services/devices/soap/getAllSearchResults", Name="RemoteDataModelException", Namespace="http://novell.com/zenworks/datamodel/exceptions")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ComponentDetails))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PingToken))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DeletedDevice))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ExcludedDMVersion))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DataModelCacheClean))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Subquery))]
@@ -9512,6 +9523,9 @@ namespace Zenworks.Device {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(RightsCategory))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Rights))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DatabaseAddressInformation))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ComponentDetails))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PingToken))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DeletedDevice))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getAllDevicesForUserResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getAllDevicesForUserRequest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getDevicesInFolderRequest))]
@@ -9626,9 +9640,6 @@ namespace Zenworks.Device {
         [System.ServiceModel.FaultContractAttribute(typeof(Zenworks.Device.RemoteDataModelException), Action="http://novell.com/zenworks/datamodel/services/devices/soap/getAllSearchResultsWIt" +
             "hToken", Name="RemoteDataModelException", Namespace="http://novell.com/zenworks/datamodel/exceptions")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ComponentDetails))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PingToken))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DeletedDevice))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ExcludedDMVersion))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DataModelCacheClean))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Subquery))]
@@ -9636,6 +9647,9 @@ namespace Zenworks.Device {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(RightsCategory))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Rights))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DatabaseAddressInformation))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ComponentDetails))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PingToken))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DeletedDevice))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getAllDevicesForUserResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getAllDevicesForUserRequest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getDevicesInFolderRequest))]
@@ -9749,9 +9763,6 @@ namespace Zenworks.Device {
         [System.ServiceModel.OperationContractAttribute(Action="http://novell.com/zenworks/datamodel/services/devices/soap/getAttributes", ReplyAction="*")]
         [System.ServiceModel.FaultContractAttribute(typeof(Zenworks.Device.RemoteDataModelException), Action="http://novell.com/zenworks/datamodel/services/devices/soap/getAttributes", Name="RemoteDataModelException", Namespace="http://novell.com/zenworks/datamodel/exceptions")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ComponentDetails))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PingToken))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DeletedDevice))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ExcludedDMVersion))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DataModelCacheClean))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Subquery))]
@@ -9759,6 +9770,9 @@ namespace Zenworks.Device {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(RightsCategory))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Rights))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DatabaseAddressInformation))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ComponentDetails))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PingToken))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DeletedDevice))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getAllDevicesForUserResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getAllDevicesForUserRequest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getDevicesInFolderRequest))]
@@ -9871,9 +9885,6 @@ namespace Zenworks.Device {
         [System.ServiceModel.OperationContractAttribute(Action="http://novell.com/zenworks/datamodel/services/devices/soap/getBasicObject", ReplyAction="*")]
         [System.ServiceModel.FaultContractAttribute(typeof(Zenworks.Device.RemoteDataModelException), Action="http://novell.com/zenworks/datamodel/services/devices/soap/getBasicObject", Name="RemoteDataModelException", Namespace="http://novell.com/zenworks/datamodel/exceptions")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ComponentDetails))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PingToken))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DeletedDevice))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ExcludedDMVersion))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DataModelCacheClean))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Subquery))]
@@ -9881,6 +9892,9 @@ namespace Zenworks.Device {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(RightsCategory))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Rights))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DatabaseAddressInformation))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ComponentDetails))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PingToken))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DeletedDevice))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getAllDevicesForUserResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getAllDevicesForUserRequest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getDevicesInFolderRequest))]
@@ -9993,9 +10007,6 @@ namespace Zenworks.Device {
         [System.ServiceModel.OperationContractAttribute(Action="http://novell.com/zenworks/datamodel/services/devices/soap/getByParentAndName", ReplyAction="*")]
         [System.ServiceModel.FaultContractAttribute(typeof(Zenworks.Device.RemoteDataModelException), Action="http://novell.com/zenworks/datamodel/services/devices/soap/getByParentAndName", Name="RemoteDataModelException", Namespace="http://novell.com/zenworks/datamodel/exceptions")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ComponentDetails))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PingToken))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DeletedDevice))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ExcludedDMVersion))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DataModelCacheClean))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Subquery))]
@@ -10003,6 +10014,9 @@ namespace Zenworks.Device {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(RightsCategory))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Rights))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DatabaseAddressInformation))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ComponentDetails))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PingToken))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DeletedDevice))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getAllDevicesForUserResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getAllDevicesForUserRequest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getDevicesInFolderRequest))]
@@ -10115,9 +10129,6 @@ namespace Zenworks.Device {
         [System.ServiceModel.OperationContractAttribute(Action="http://novell.com/zenworks/datamodel/services/devices/soap/getByParentUIDAndName", ReplyAction="*")]
         [System.ServiceModel.FaultContractAttribute(typeof(Zenworks.Device.RemoteDataModelException), Action="http://novell.com/zenworks/datamodel/services/devices/soap/getByParentUIDAndName", Name="RemoteDataModelException", Namespace="http://novell.com/zenworks/datamodel/exceptions")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ComponentDetails))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PingToken))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DeletedDevice))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ExcludedDMVersion))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DataModelCacheClean))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Subquery))]
@@ -10125,6 +10136,9 @@ namespace Zenworks.Device {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(RightsCategory))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Rights))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DatabaseAddressInformation))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ComponentDetails))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PingToken))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DeletedDevice))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getAllDevicesForUserResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getAllDevicesForUserRequest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getDevicesInFolderRequest))]
@@ -10237,9 +10251,6 @@ namespace Zenworks.Device {
         [System.ServiceModel.OperationContractAttribute(Action="http://novell.com/zenworks/datamodel/services/devices/soap/getByUID", ReplyAction="*")]
         [System.ServiceModel.FaultContractAttribute(typeof(Zenworks.Device.RemoteDataModelException), Action="http://novell.com/zenworks/datamodel/services/devices/soap/getByUID", Name="RemoteDataModelException", Namespace="http://novell.com/zenworks/datamodel/exceptions")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ComponentDetails))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PingToken))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DeletedDevice))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ExcludedDMVersion))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DataModelCacheClean))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Subquery))]
@@ -10247,6 +10258,9 @@ namespace Zenworks.Device {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(RightsCategory))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Rights))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DatabaseAddressInformation))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ComponentDetails))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PingToken))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DeletedDevice))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getAllDevicesForUserResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getAllDevicesForUserRequest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getDevicesInFolderRequest))]
@@ -10359,9 +10373,6 @@ namespace Zenworks.Device {
         [System.ServiceModel.OperationContractAttribute(Action="http://novell.com/zenworks/datamodel/services/devices/soap/getDefaultFolder", ReplyAction="*")]
         [System.ServiceModel.FaultContractAttribute(typeof(Zenworks.Device.RemoteDataModelException), Action="http://novell.com/zenworks/datamodel/services/devices/soap/getDefaultFolder", Name="RemoteDataModelException", Namespace="http://novell.com/zenworks/datamodel/exceptions")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ComponentDetails))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PingToken))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DeletedDevice))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ExcludedDMVersion))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DataModelCacheClean))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Subquery))]
@@ -10369,6 +10380,9 @@ namespace Zenworks.Device {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(RightsCategory))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Rights))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DatabaseAddressInformation))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ComponentDetails))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PingToken))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DeletedDevice))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getAllDevicesForUserResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getAllDevicesForUserRequest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getDevicesInFolderRequest))]
@@ -10481,9 +10495,6 @@ namespace Zenworks.Device {
         [System.ServiceModel.OperationContractAttribute(Action="http://novell.com/zenworks/datamodel/services/devices/soap/getDeviceAgentVersion", ReplyAction="*")]
         [System.ServiceModel.FaultContractAttribute(typeof(Zenworks.Device.RemoteDataModelException), Action="http://novell.com/zenworks/datamodel/services/devices/soap/getDeviceAgentVersion", Name="RemoteDataModelException", Namespace="http://novell.com/zenworks/datamodel/exceptions")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ComponentDetails))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PingToken))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DeletedDevice))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ExcludedDMVersion))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DataModelCacheClean))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Subquery))]
@@ -10491,6 +10502,9 @@ namespace Zenworks.Device {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(RightsCategory))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Rights))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DatabaseAddressInformation))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ComponentDetails))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PingToken))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DeletedDevice))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getAllDevicesForUserResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getAllDevicesForUserRequest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getDevicesInFolderRequest))]
@@ -10603,9 +10617,6 @@ namespace Zenworks.Device {
         [System.ServiceModel.OperationContractAttribute(Action="http://novell.com/zenworks/datamodel/services/devices/soap/getDeviceByHostName", ReplyAction="*")]
         [System.ServiceModel.FaultContractAttribute(typeof(Zenworks.Device.RemoteDataModelException), Action="http://novell.com/zenworks/datamodel/services/devices/soap/getDeviceByHostName", Name="RemoteDataModelException", Namespace="http://novell.com/zenworks/datamodel/exceptions")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ComponentDetails))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PingToken))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DeletedDevice))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ExcludedDMVersion))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DataModelCacheClean))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Subquery))]
@@ -10613,6 +10624,9 @@ namespace Zenworks.Device {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(RightsCategory))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Rights))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DatabaseAddressInformation))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ComponentDetails))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PingToken))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DeletedDevice))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getAllDevicesForUserResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getAllDevicesForUserRequest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getDevicesInFolderRequest))]
@@ -10725,9 +10739,6 @@ namespace Zenworks.Device {
         [System.ServiceModel.OperationContractAttribute(Action="http://novell.com/zenworks/datamodel/services/devices/soap/getDevicePlatform", ReplyAction="*")]
         [System.ServiceModel.FaultContractAttribute(typeof(Zenworks.Device.RemoteDataModelException), Action="http://novell.com/zenworks/datamodel/services/devices/soap/getDevicePlatform", Name="RemoteDataModelException", Namespace="http://novell.com/zenworks/datamodel/exceptions")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ComponentDetails))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PingToken))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DeletedDevice))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ExcludedDMVersion))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DataModelCacheClean))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Subquery))]
@@ -10735,6 +10746,9 @@ namespace Zenworks.Device {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(RightsCategory))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Rights))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DatabaseAddressInformation))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ComponentDetails))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PingToken))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DeletedDevice))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getAllDevicesForUserResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getAllDevicesForUserRequest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getDevicesInFolderRequest))]
@@ -10849,9 +10863,6 @@ namespace Zenworks.Device {
         [System.ServiceModel.FaultContractAttribute(typeof(Zenworks.Device.RemoteDataModelException), Action="http://novell.com/zenworks/datamodel/services/devices/soap/getDeviceUIDsWhereLogg" +
             "edIn", Name="RemoteDataModelException", Namespace="http://novell.com/zenworks/datamodel/exceptions")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ComponentDetails))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PingToken))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DeletedDevice))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ExcludedDMVersion))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DataModelCacheClean))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Subquery))]
@@ -10859,6 +10870,9 @@ namespace Zenworks.Device {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(RightsCategory))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Rights))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DatabaseAddressInformation))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ComponentDetails))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PingToken))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DeletedDevice))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getAllDevicesForUserResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getAllDevicesForUserRequest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getDevicesInFolderRequest))]
@@ -10972,9 +10986,6 @@ namespace Zenworks.Device {
         [System.ServiceModel.OperationContractAttribute(Action="http://novell.com/zenworks/datamodel/services/devices/soap/getFullQueryGroupLog", ReplyAction="*")]
         [System.ServiceModel.FaultContractAttribute(typeof(Zenworks.Device.RemoteDataModelException), Action="http://novell.com/zenworks/datamodel/services/devices/soap/getFullQueryGroupLog", Name="RemoteDataModelException", Namespace="http://novell.com/zenworks/datamodel/exceptions")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ComponentDetails))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PingToken))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DeletedDevice))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ExcludedDMVersion))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DataModelCacheClean))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Subquery))]
@@ -10982,6 +10993,9 @@ namespace Zenworks.Device {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(RightsCategory))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Rights))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DatabaseAddressInformation))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ComponentDetails))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PingToken))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DeletedDevice))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getAllDevicesForUserResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getAllDevicesForUserRequest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getDevicesInFolderRequest))]
@@ -11096,9 +11110,6 @@ namespace Zenworks.Device {
         [System.ServiceModel.FaultContractAttribute(typeof(Zenworks.Device.RemoteDataModelException), Action="http://novell.com/zenworks/datamodel/services/devices/soap/getIPAddressesWhereLog" +
             "gedIn", Name="RemoteDataModelException", Namespace="http://novell.com/zenworks/datamodel/exceptions")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ComponentDetails))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PingToken))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DeletedDevice))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ExcludedDMVersion))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DataModelCacheClean))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Subquery))]
@@ -11106,6 +11117,9 @@ namespace Zenworks.Device {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(RightsCategory))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Rights))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DatabaseAddressInformation))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ComponentDetails))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PingToken))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DeletedDevice))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getAllDevicesForUserResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getAllDevicesForUserRequest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getDevicesInFolderRequest))]
@@ -11219,9 +11233,6 @@ namespace Zenworks.Device {
         [System.ServiceModel.OperationContractAttribute(Action="http://novell.com/zenworks/datamodel/services/devices/soap/getLocalServerUID", ReplyAction="*")]
         [System.ServiceModel.FaultContractAttribute(typeof(Zenworks.Device.RemoteDataModelException), Action="http://novell.com/zenworks/datamodel/services/devices/soap/getLocalServerUID", Name="RemoteDataModelException", Namespace="http://novell.com/zenworks/datamodel/exceptions")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ComponentDetails))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PingToken))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DeletedDevice))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ExcludedDMVersion))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DataModelCacheClean))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Subquery))]
@@ -11229,6 +11240,9 @@ namespace Zenworks.Device {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(RightsCategory))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Rights))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DatabaseAddressInformation))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ComponentDetails))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PingToken))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DeletedDevice))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getAllDevicesForUserResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getAllDevicesForUserRequest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getDevicesInFolderRequest))]
@@ -11341,9 +11355,6 @@ namespace Zenworks.Device {
         [System.ServiceModel.OperationContractAttribute(Action="http://novell.com/zenworks/datamodel/services/devices/soap/getMobileFolder", ReplyAction="*")]
         [System.ServiceModel.FaultContractAttribute(typeof(Zenworks.Device.RemoteDataModelException), Action="http://novell.com/zenworks/datamodel/services/devices/soap/getMobileFolder", Name="RemoteDataModelException", Namespace="http://novell.com/zenworks/datamodel/exceptions")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ComponentDetails))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PingToken))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DeletedDevice))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ExcludedDMVersion))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DataModelCacheClean))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Subquery))]
@@ -11351,6 +11362,9 @@ namespace Zenworks.Device {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(RightsCategory))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Rights))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DatabaseAddressInformation))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ComponentDetails))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PingToken))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DeletedDevice))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getAllDevicesForUserResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getAllDevicesForUserRequest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getDevicesInFolderRequest))]
@@ -11463,9 +11477,6 @@ namespace Zenworks.Device {
         [System.ServiceModel.OperationContractAttribute(Action="http://novell.com/zenworks/datamodel/services/devices/soap/getOSTarget", ReplyAction="*")]
         [System.ServiceModel.FaultContractAttribute(typeof(Zenworks.Device.RemoteDataModelException), Action="http://novell.com/zenworks/datamodel/services/devices/soap/getOSTarget", Name="RemoteDataModelException", Namespace="http://novell.com/zenworks/datamodel/exceptions")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ComponentDetails))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PingToken))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DeletedDevice))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ExcludedDMVersion))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DataModelCacheClean))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Subquery))]
@@ -11473,6 +11484,9 @@ namespace Zenworks.Device {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(RightsCategory))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Rights))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DatabaseAddressInformation))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ComponentDetails))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PingToken))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DeletedDevice))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getAllDevicesForUserResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getAllDevicesForUserRequest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getDevicesInFolderRequest))]
@@ -11585,9 +11599,6 @@ namespace Zenworks.Device {
         [System.ServiceModel.OperationContractAttribute(Action="http://novell.com/zenworks/datamodel/services/devices/soap/getOSTargetById", ReplyAction="*")]
         [System.ServiceModel.FaultContractAttribute(typeof(Zenworks.Device.RemoteDataModelException), Action="http://novell.com/zenworks/datamodel/services/devices/soap/getOSTargetById", Name="RemoteDataModelException", Namespace="http://novell.com/zenworks/datamodel/exceptions")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ComponentDetails))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PingToken))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DeletedDevice))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ExcludedDMVersion))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DataModelCacheClean))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Subquery))]
@@ -11595,6 +11606,9 @@ namespace Zenworks.Device {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(RightsCategory))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Rights))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DatabaseAddressInformation))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ComponentDetails))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PingToken))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DeletedDevice))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getAllDevicesForUserResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getAllDevicesForUserRequest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getDevicesInFolderRequest))]
@@ -11707,9 +11721,6 @@ namespace Zenworks.Device {
         [System.ServiceModel.OperationContractAttribute(Action="http://novell.com/zenworks/datamodel/services/devices/soap/getOSTargetByNameSP", ReplyAction="*")]
         [System.ServiceModel.FaultContractAttribute(typeof(Zenworks.Device.RemoteDataModelException), Action="http://novell.com/zenworks/datamodel/services/devices/soap/getOSTargetByNameSP", Name="RemoteDataModelException", Namespace="http://novell.com/zenworks/datamodel/exceptions")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ComponentDetails))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PingToken))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DeletedDevice))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ExcludedDMVersion))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DataModelCacheClean))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Subquery))]
@@ -11717,6 +11728,9 @@ namespace Zenworks.Device {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(RightsCategory))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Rights))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DatabaseAddressInformation))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ComponentDetails))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PingToken))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DeletedDevice))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getAllDevicesForUserResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getAllDevicesForUserRequest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getDevicesInFolderRequest))]
@@ -11829,9 +11843,6 @@ namespace Zenworks.Device {
         [System.ServiceModel.OperationContractAttribute(Action="http://novell.com/zenworks/datamodel/services/devices/soap/getOSTargetNames", ReplyAction="*")]
         [System.ServiceModel.FaultContractAttribute(typeof(Zenworks.Device.RemoteDataModelException), Action="http://novell.com/zenworks/datamodel/services/devices/soap/getOSTargetNames", Name="RemoteDataModelException", Namespace="http://novell.com/zenworks/datamodel/exceptions")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ComponentDetails))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PingToken))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DeletedDevice))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ExcludedDMVersion))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DataModelCacheClean))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Subquery))]
@@ -11839,6 +11850,9 @@ namespace Zenworks.Device {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(RightsCategory))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Rights))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DatabaseAddressInformation))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ComponentDetails))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PingToken))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DeletedDevice))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getAllDevicesForUserResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getAllDevicesForUserRequest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getDevicesInFolderRequest))]
@@ -11953,9 +11967,6 @@ namespace Zenworks.Device {
         [System.ServiceModel.FaultContractAttribute(typeof(Zenworks.Device.RemoteDataModelException), Action="http://novell.com/zenworks/datamodel/services/devices/soap/getOSTargetNamesForPla" +
             "tform", Name="RemoteDataModelException", Namespace="http://novell.com/zenworks/datamodel/exceptions")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ComponentDetails))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PingToken))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DeletedDevice))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ExcludedDMVersion))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DataModelCacheClean))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Subquery))]
@@ -11963,6 +11974,9 @@ namespace Zenworks.Device {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(RightsCategory))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Rights))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DatabaseAddressInformation))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ComponentDetails))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PingToken))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DeletedDevice))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getAllDevicesForUserResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getAllDevicesForUserRequest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getDevicesInFolderRequest))]
@@ -12076,9 +12090,6 @@ namespace Zenworks.Device {
         [System.ServiceModel.OperationContractAttribute(Action="http://novell.com/zenworks/datamodel/services/devices/soap/getOSTargets", ReplyAction="*")]
         [System.ServiceModel.FaultContractAttribute(typeof(Zenworks.Device.RemoteDataModelException), Action="http://novell.com/zenworks/datamodel/services/devices/soap/getOSTargets", Name="RemoteDataModelException", Namespace="http://novell.com/zenworks/datamodel/exceptions")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ComponentDetails))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PingToken))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DeletedDevice))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ExcludedDMVersion))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DataModelCacheClean))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Subquery))]
@@ -12086,6 +12097,9 @@ namespace Zenworks.Device {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(RightsCategory))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Rights))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DatabaseAddressInformation))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ComponentDetails))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PingToken))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DeletedDevice))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getAllDevicesForUserResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getAllDevicesForUserRequest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getDevicesInFolderRequest))]
@@ -12198,9 +12212,6 @@ namespace Zenworks.Device {
         [System.ServiceModel.OperationContractAttribute(Action="http://novell.com/zenworks/datamodel/services/devices/soap/getObjectHierachy", ReplyAction="*")]
         [System.ServiceModel.FaultContractAttribute(typeof(Zenworks.Device.RemoteDataModelException), Action="http://novell.com/zenworks/datamodel/services/devices/soap/getObjectHierachy", Name="RemoteDataModelException", Namespace="http://novell.com/zenworks/datamodel/exceptions")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ComponentDetails))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PingToken))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DeletedDevice))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ExcludedDMVersion))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DataModelCacheClean))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Subquery))]
@@ -12208,6 +12219,9 @@ namespace Zenworks.Device {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(RightsCategory))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Rights))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DatabaseAddressInformation))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ComponentDetails))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PingToken))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DeletedDevice))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getAllDevicesForUserResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getAllDevicesForUserRequest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getDevicesInFolderRequest))]
@@ -12320,9 +12334,6 @@ namespace Zenworks.Device {
         [System.ServiceModel.OperationContractAttribute(Action="http://novell.com/zenworks/datamodel/services/devices/soap/getPlatforms", ReplyAction="*")]
         [System.ServiceModel.FaultContractAttribute(typeof(Zenworks.Device.RemoteDataModelException), Action="http://novell.com/zenworks/datamodel/services/devices/soap/getPlatforms", Name="RemoteDataModelException", Namespace="http://novell.com/zenworks/datamodel/exceptions")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ComponentDetails))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PingToken))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DeletedDevice))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ExcludedDMVersion))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DataModelCacheClean))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Subquery))]
@@ -12330,6 +12341,9 @@ namespace Zenworks.Device {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(RightsCategory))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Rights))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DatabaseAddressInformation))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ComponentDetails))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PingToken))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DeletedDevice))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getAllDevicesForUserResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getAllDevicesForUserRequest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getDevicesInFolderRequest))]
@@ -12442,9 +12456,6 @@ namespace Zenworks.Device {
         [System.ServiceModel.OperationContractAttribute(Action="http://novell.com/zenworks/datamodel/services/devices/soap/getQueryGroupLogs", ReplyAction="*")]
         [System.ServiceModel.FaultContractAttribute(typeof(Zenworks.Device.RemoteDataModelException), Action="http://novell.com/zenworks/datamodel/services/devices/soap/getQueryGroupLogs", Name="RemoteDataModelException", Namespace="http://novell.com/zenworks/datamodel/exceptions")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ComponentDetails))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PingToken))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DeletedDevice))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ExcludedDMVersion))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DataModelCacheClean))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Subquery))]
@@ -12452,6 +12463,9 @@ namespace Zenworks.Device {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(RightsCategory))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Rights))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DatabaseAddressInformation))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ComponentDetails))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PingToken))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DeletedDevice))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getAllDevicesForUserResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getAllDevicesForUserRequest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getDevicesInFolderRequest))]
@@ -12564,9 +12578,6 @@ namespace Zenworks.Device {
         [System.ServiceModel.OperationContractAttribute(Action="http://novell.com/zenworks/datamodel/services/devices/soap/getRoot", ReplyAction="*")]
         [System.ServiceModel.FaultContractAttribute(typeof(Zenworks.Device.RemoteDataModelException), Action="http://novell.com/zenworks/datamodel/services/devices/soap/getRoot", Name="RemoteDataModelException", Namespace="http://novell.com/zenworks/datamodel/exceptions")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ComponentDetails))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PingToken))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DeletedDevice))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ExcludedDMVersion))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DataModelCacheClean))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Subquery))]
@@ -12574,6 +12585,9 @@ namespace Zenworks.Device {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(RightsCategory))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Rights))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DatabaseAddressInformation))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ComponentDetails))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PingToken))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DeletedDevice))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getAllDevicesForUserResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getAllDevicesForUserRequest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getDevicesInFolderRequest))]
@@ -12686,9 +12700,6 @@ namespace Zenworks.Device {
         [System.ServiceModel.OperationContractAttribute(Action="http://novell.com/zenworks/datamodel/services/devices/soap/getRootPath", ReplyAction="*")]
         [System.ServiceModel.FaultContractAttribute(typeof(Zenworks.Device.RemoteDataModelException), Action="http://novell.com/zenworks/datamodel/services/devices/soap/getRootPath", Name="RemoteDataModelException", Namespace="http://novell.com/zenworks/datamodel/exceptions")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ComponentDetails))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PingToken))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DeletedDevice))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ExcludedDMVersion))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DataModelCacheClean))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Subquery))]
@@ -12696,6 +12707,9 @@ namespace Zenworks.Device {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(RightsCategory))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Rights))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DatabaseAddressInformation))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ComponentDetails))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PingToken))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DeletedDevice))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getAllDevicesForUserResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getAllDevicesForUserRequest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getDevicesInFolderRequest))]
@@ -12808,9 +12822,6 @@ namespace Zenworks.Device {
         [System.ServiceModel.OperationContractAttribute(Action="http://novell.com/zenworks/datamodel/services/devices/soap/getRootUID", ReplyAction="*")]
         [System.ServiceModel.FaultContractAttribute(typeof(Zenworks.Device.RemoteDataModelException), Action="http://novell.com/zenworks/datamodel/services/devices/soap/getRootUID", Name="RemoteDataModelException", Namespace="http://novell.com/zenworks/datamodel/exceptions")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ComponentDetails))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PingToken))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DeletedDevice))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ExcludedDMVersion))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DataModelCacheClean))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Subquery))]
@@ -12818,6 +12829,9 @@ namespace Zenworks.Device {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(RightsCategory))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Rights))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DatabaseAddressInformation))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ComponentDetails))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PingToken))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DeletedDevice))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getAllDevicesForUserResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getAllDevicesForUserRequest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getDevicesInFolderRequest))]
@@ -12930,9 +12944,6 @@ namespace Zenworks.Device {
         [System.ServiceModel.OperationContractAttribute(Action="http://novell.com/zenworks/datamodel/services/devices/soap/getSearchResults", ReplyAction="*")]
         [System.ServiceModel.FaultContractAttribute(typeof(Zenworks.Device.RemoteDataModelException), Action="http://novell.com/zenworks/datamodel/services/devices/soap/getSearchResults", Name="RemoteDataModelException", Namespace="http://novell.com/zenworks/datamodel/exceptions")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ComponentDetails))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PingToken))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DeletedDevice))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ExcludedDMVersion))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DataModelCacheClean))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Subquery))]
@@ -12940,6 +12951,9 @@ namespace Zenworks.Device {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(RightsCategory))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Rights))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DatabaseAddressInformation))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ComponentDetails))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PingToken))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DeletedDevice))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getAllDevicesForUserResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getAllDevicesForUserRequest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getDevicesInFolderRequest))]
@@ -13052,9 +13066,6 @@ namespace Zenworks.Device {
         [System.ServiceModel.OperationContractAttribute(Action="http://novell.com/zenworks/datamodel/services/devices/soap/getServerFolder", ReplyAction="*")]
         [System.ServiceModel.FaultContractAttribute(typeof(Zenworks.Device.RemoteDataModelException), Action="http://novell.com/zenworks/datamodel/services/devices/soap/getServerFolder", Name="RemoteDataModelException", Namespace="http://novell.com/zenworks/datamodel/exceptions")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ComponentDetails))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PingToken))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DeletedDevice))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ExcludedDMVersion))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DataModelCacheClean))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Subquery))]
@@ -13062,6 +13073,9 @@ namespace Zenworks.Device {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(RightsCategory))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Rights))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DatabaseAddressInformation))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ComponentDetails))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PingToken))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DeletedDevice))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getAllDevicesForUserResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getAllDevicesForUserRequest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getDevicesInFolderRequest))]
@@ -13174,9 +13188,6 @@ namespace Zenworks.Device {
         [System.ServiceModel.OperationContractAttribute(Action="http://novell.com/zenworks/datamodel/services/devices/soap/getWorkstationFolder", ReplyAction="*")]
         [System.ServiceModel.FaultContractAttribute(typeof(Zenworks.Device.RemoteDataModelException), Action="http://novell.com/zenworks/datamodel/services/devices/soap/getWorkstationFolder", Name="RemoteDataModelException", Namespace="http://novell.com/zenworks/datamodel/exceptions")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ComponentDetails))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PingToken))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DeletedDevice))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ExcludedDMVersion))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DataModelCacheClean))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Subquery))]
@@ -13184,6 +13195,9 @@ namespace Zenworks.Device {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(RightsCategory))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Rights))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DatabaseAddressInformation))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ComponentDetails))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PingToken))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DeletedDevice))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getAllDevicesForUserResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getAllDevicesForUserRequest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getDevicesInFolderRequest))]
@@ -13296,9 +13310,6 @@ namespace Zenworks.Device {
         [System.ServiceModel.OperationContractAttribute(Action="http://novell.com/zenworks/datamodel/services/devices/soap/isTestDevice", ReplyAction="*")]
         [System.ServiceModel.FaultContractAttribute(typeof(Zenworks.Device.RemoteDataModelException), Action="http://novell.com/zenworks/datamodel/services/devices/soap/isTestDevice", Name="RemoteDataModelException", Namespace="http://novell.com/zenworks/datamodel/exceptions")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ComponentDetails))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PingToken))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DeletedDevice))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ExcludedDMVersion))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DataModelCacheClean))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Subquery))]
@@ -13306,6 +13317,9 @@ namespace Zenworks.Device {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(RightsCategory))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Rights))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DatabaseAddressInformation))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ComponentDetails))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PingToken))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DeletedDevice))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getAllDevicesForUserResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getAllDevicesForUserRequest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getDevicesInFolderRequest))]
@@ -13418,9 +13432,6 @@ namespace Zenworks.Device {
         [System.ServiceModel.OperationContractAttribute(Action="http://novell.com/zenworks/datamodel/services/devices/soap/lookUpDevice", ReplyAction="*")]
         [System.ServiceModel.FaultContractAttribute(typeof(Zenworks.Device.RemoteDataModelException), Action="http://novell.com/zenworks/datamodel/services/devices/soap/lookUpDevice", Name="RemoteDataModelException", Namespace="http://novell.com/zenworks/datamodel/exceptions")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ComponentDetails))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PingToken))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DeletedDevice))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ExcludedDMVersion))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DataModelCacheClean))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Subquery))]
@@ -13428,6 +13439,9 @@ namespace Zenworks.Device {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(RightsCategory))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Rights))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DatabaseAddressInformation))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ComponentDetails))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PingToken))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DeletedDevice))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getAllDevicesForUserResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getAllDevicesForUserRequest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getDevicesInFolderRequest))]
@@ -13540,9 +13554,6 @@ namespace Zenworks.Device {
         [System.ServiceModel.OperationContractAttribute(Action="http://novell.com/zenworks/datamodel/services/devices/soap/move", ReplyAction="*")]
         [System.ServiceModel.FaultContractAttribute(typeof(Zenworks.Device.RemoteDataModelException), Action="http://novell.com/zenworks/datamodel/services/devices/soap/move", Name="RemoteDataModelException", Namespace="http://novell.com/zenworks/datamodel/exceptions")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ComponentDetails))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PingToken))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DeletedDevice))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ExcludedDMVersion))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DataModelCacheClean))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Subquery))]
@@ -13550,6 +13561,9 @@ namespace Zenworks.Device {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(RightsCategory))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Rights))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DatabaseAddressInformation))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ComponentDetails))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PingToken))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DeletedDevice))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getAllDevicesForUserResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getAllDevicesForUserRequest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getDevicesInFolderRequest))]
@@ -13664,9 +13678,6 @@ namespace Zenworks.Device {
         [System.ServiceModel.FaultContractAttribute(typeof(Zenworks.Device.RemoteDataModelException), Action="http://novell.com/zenworks/datamodel/services/devices/soap/previewQueryGroupMembe" +
             "rs", Name="RemoteDataModelException", Namespace="http://novell.com/zenworks/datamodel/exceptions")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ComponentDetails))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PingToken))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DeletedDevice))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ExcludedDMVersion))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DataModelCacheClean))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Subquery))]
@@ -13674,6 +13685,9 @@ namespace Zenworks.Device {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(RightsCategory))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Rights))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DatabaseAddressInformation))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ComponentDetails))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PingToken))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DeletedDevice))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getAllDevicesForUserResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getAllDevicesForUserRequest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getDevicesInFolderRequest))]
@@ -13789,9 +13803,6 @@ namespace Zenworks.Device {
         [System.ServiceModel.FaultContractAttribute(typeof(Zenworks.Device.RemoteDataModelException), Action="http://novell.com/zenworks/datamodel/services/devices/soap/previewQueryGroupMembe" +
             "rsWithContexts", Name="RemoteDataModelException", Namespace="http://novell.com/zenworks/datamodel/exceptions")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ComponentDetails))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PingToken))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DeletedDevice))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ExcludedDMVersion))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DataModelCacheClean))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Subquery))]
@@ -13799,6 +13810,9 @@ namespace Zenworks.Device {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(RightsCategory))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Rights))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DatabaseAddressInformation))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ComponentDetails))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PingToken))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DeletedDevice))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getAllDevicesForUserResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getAllDevicesForUserRequest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getDevicesInFolderRequest))]
@@ -13914,9 +13928,6 @@ namespace Zenworks.Device {
         [System.ServiceModel.FaultContractAttribute(typeof(Zenworks.Device.RemoteDataModelException), Action="http://novell.com/zenworks/datamodel/services/devices/soap/purgeAndUpdateOSTarget" +
             "s", Name="RemoteDataModelException", Namespace="http://novell.com/zenworks/datamodel/exceptions")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ComponentDetails))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PingToken))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DeletedDevice))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ExcludedDMVersion))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DataModelCacheClean))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Subquery))]
@@ -13924,6 +13935,9 @@ namespace Zenworks.Device {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(RightsCategory))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Rights))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DatabaseAddressInformation))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ComponentDetails))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PingToken))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DeletedDevice))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getAllDevicesForUserResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getAllDevicesForUserRequest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getDevicesInFolderRequest))]
@@ -14037,9 +14051,6 @@ namespace Zenworks.Device {
         [System.ServiceModel.OperationContractAttribute(Action="http://novell.com/zenworks/datamodel/services/devices/soap/refreshQueryGroup", ReplyAction="*")]
         [System.ServiceModel.FaultContractAttribute(typeof(Zenworks.Device.RemoteDataModelException), Action="http://novell.com/zenworks/datamodel/services/devices/soap/refreshQueryGroup", Name="RemoteDataModelException", Namespace="http://novell.com/zenworks/datamodel/exceptions")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ComponentDetails))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PingToken))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DeletedDevice))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ExcludedDMVersion))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DataModelCacheClean))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Subquery))]
@@ -14047,6 +14058,9 @@ namespace Zenworks.Device {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(RightsCategory))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Rights))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DatabaseAddressInformation))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ComponentDetails))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PingToken))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DeletedDevice))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getAllDevicesForUserResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getAllDevicesForUserRequest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getDevicesInFolderRequest))]
@@ -14159,9 +14173,6 @@ namespace Zenworks.Device {
         [System.ServiceModel.OperationContractAttribute(Action="http://novell.com/zenworks/datamodel/services/devices/soap/refreshSearchToken", ReplyAction="*")]
         [System.ServiceModel.FaultContractAttribute(typeof(Zenworks.Device.RemoteDataModelException), Action="http://novell.com/zenworks/datamodel/services/devices/soap/refreshSearchToken", Name="RemoteDataModelException", Namespace="http://novell.com/zenworks/datamodel/exceptions")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ComponentDetails))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PingToken))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DeletedDevice))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ExcludedDMVersion))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DataModelCacheClean))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Subquery))]
@@ -14169,6 +14180,9 @@ namespace Zenworks.Device {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(RightsCategory))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Rights))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DatabaseAddressInformation))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ComponentDetails))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PingToken))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DeletedDevice))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getAllDevicesForUserResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getAllDevicesForUserRequest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getDevicesInFolderRequest))]
@@ -14281,9 +14295,6 @@ namespace Zenworks.Device {
         [System.ServiceModel.OperationContractAttribute(Action="http://novell.com/zenworks/datamodel/services/devices/soap/releaseSearchToken", ReplyAction="*")]
         [System.ServiceModel.FaultContractAttribute(typeof(Zenworks.Device.RemoteDataModelException), Action="http://novell.com/zenworks/datamodel/services/devices/soap/releaseSearchToken", Name="RemoteDataModelException", Namespace="http://novell.com/zenworks/datamodel/exceptions")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ComponentDetails))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PingToken))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DeletedDevice))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ExcludedDMVersion))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DataModelCacheClean))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Subquery))]
@@ -14291,6 +14302,9 @@ namespace Zenworks.Device {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(RightsCategory))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Rights))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DatabaseAddressInformation))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ComponentDetails))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PingToken))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DeletedDevice))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getAllDevicesForUserResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getAllDevicesForUserRequest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getDevicesInFolderRequest))]
@@ -14403,9 +14417,6 @@ namespace Zenworks.Device {
         [System.ServiceModel.OperationContractAttribute(Action="http://novell.com/zenworks/datamodel/services/devices/soap/rename", ReplyAction="*")]
         [System.ServiceModel.FaultContractAttribute(typeof(Zenworks.Device.RemoteDataModelException), Action="http://novell.com/zenworks/datamodel/services/devices/soap/rename", Name="RemoteDataModelException", Namespace="http://novell.com/zenworks/datamodel/exceptions")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ComponentDetails))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PingToken))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DeletedDevice))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ExcludedDMVersion))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DataModelCacheClean))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Subquery))]
@@ -14413,6 +14424,9 @@ namespace Zenworks.Device {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(RightsCategory))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Rights))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DatabaseAddressInformation))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ComponentDetails))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PingToken))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DeletedDevice))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getAllDevicesForUserResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getAllDevicesForUserRequest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getDevicesInFolderRequest))]
@@ -14525,9 +14539,6 @@ namespace Zenworks.Device {
         [System.ServiceModel.OperationContractAttribute(Action="http://novell.com/zenworks/datamodel/services/devices/soap/retireDevice", ReplyAction="*")]
         [System.ServiceModel.FaultContractAttribute(typeof(Zenworks.Device.RemoteDataModelException), Action="http://novell.com/zenworks/datamodel/services/devices/soap/retireDevice", Name="RemoteDataModelException", Namespace="http://novell.com/zenworks/datamodel/exceptions")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ComponentDetails))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PingToken))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DeletedDevice))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ExcludedDMVersion))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DataModelCacheClean))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Subquery))]
@@ -14535,6 +14546,9 @@ namespace Zenworks.Device {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(RightsCategory))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Rights))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DatabaseAddressInformation))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ComponentDetails))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PingToken))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DeletedDevice))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getAllDevicesForUserResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getAllDevicesForUserRequest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getDevicesInFolderRequest))]
@@ -14647,9 +14661,6 @@ namespace Zenworks.Device {
         [System.ServiceModel.OperationContractAttribute(Action="http://novell.com/zenworks/datamodel/services/devices/soap/search", ReplyAction="*")]
         [System.ServiceModel.FaultContractAttribute(typeof(Zenworks.Device.RemoteDataModelException), Action="http://novell.com/zenworks/datamodel/services/devices/soap/search", Name="RemoteDataModelException", Namespace="http://novell.com/zenworks/datamodel/exceptions")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ComponentDetails))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PingToken))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DeletedDevice))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ExcludedDMVersion))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DataModelCacheClean))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Subquery))]
@@ -14657,6 +14668,9 @@ namespace Zenworks.Device {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(RightsCategory))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Rights))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DatabaseAddressInformation))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ComponentDetails))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PingToken))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DeletedDevice))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getAllDevicesForUserResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getAllDevicesForUserRequest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getDevicesInFolderRequest))]
@@ -14771,9 +14785,6 @@ namespace Zenworks.Device {
         [System.ServiceModel.FaultContractAttribute(typeof(Zenworks.Device.RemoteDataModelException), Action="http://novell.com/zenworks/datamodel/services/devices/soap/setDevicesAsNonTestDev" +
             "ices", Name="RemoteDataModelException", Namespace="http://novell.com/zenworks/datamodel/exceptions")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ComponentDetails))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PingToken))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DeletedDevice))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ExcludedDMVersion))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DataModelCacheClean))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Subquery))]
@@ -14781,6 +14792,9 @@ namespace Zenworks.Device {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(RightsCategory))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Rights))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DatabaseAddressInformation))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ComponentDetails))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PingToken))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DeletedDevice))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getAllDevicesForUserResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getAllDevicesForUserRequest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getDevicesInFolderRequest))]
@@ -14896,9 +14910,6 @@ namespace Zenworks.Device {
         [System.ServiceModel.FaultContractAttribute(typeof(Zenworks.Device.RemoteDataModelException), Action="http://novell.com/zenworks/datamodel/services/devices/soap/setDevicesAsTestDevice" +
             "s", Name="RemoteDataModelException", Namespace="http://novell.com/zenworks/datamodel/exceptions")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ComponentDetails))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PingToken))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DeletedDevice))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ExcludedDMVersion))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DataModelCacheClean))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Subquery))]
@@ -14906,6 +14917,9 @@ namespace Zenworks.Device {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(RightsCategory))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Rights))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DatabaseAddressInformation))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ComponentDetails))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PingToken))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DeletedDevice))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getAllDevicesForUserResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getAllDevicesForUserRequest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getDevicesInFolderRequest))]
@@ -15019,9 +15033,6 @@ namespace Zenworks.Device {
         [System.ServiceModel.OperationContractAttribute(Action="http://novell.com/zenworks/datamodel/services/devices/soap/unretireDevice", ReplyAction="*")]
         [System.ServiceModel.FaultContractAttribute(typeof(Zenworks.Device.RemoteDataModelException), Action="http://novell.com/zenworks/datamodel/services/devices/soap/unretireDevice", Name="RemoteDataModelException", Namespace="http://novell.com/zenworks/datamodel/exceptions")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ComponentDetails))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PingToken))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DeletedDevice))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ExcludedDMVersion))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DataModelCacheClean))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Subquery))]
@@ -15029,6 +15040,9 @@ namespace Zenworks.Device {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(RightsCategory))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Rights))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DatabaseAddressInformation))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ComponentDetails))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PingToken))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DeletedDevice))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getAllDevicesForUserResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getAllDevicesForUserRequest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getDevicesInFolderRequest))]
@@ -15141,9 +15155,6 @@ namespace Zenworks.Device {
         [System.ServiceModel.OperationContractAttribute(Action="http://novell.com/zenworks/datamodel/services/devices/soap/update", ReplyAction="*")]
         [System.ServiceModel.FaultContractAttribute(typeof(Zenworks.Device.RemoteDataModelException), Action="http://novell.com/zenworks/datamodel/services/devices/soap/update", Name="RemoteDataModelException", Namespace="http://novell.com/zenworks/datamodel/exceptions")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ComponentDetails))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PingToken))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DeletedDevice))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ExcludedDMVersion))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DataModelCacheClean))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Subquery))]
@@ -15151,6 +15162,9 @@ namespace Zenworks.Device {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(RightsCategory))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Rights))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DatabaseAddressInformation))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ComponentDetails))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PingToken))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DeletedDevice))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getAllDevicesForUserResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getAllDevicesForUserRequest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getDevicesInFolderRequest))]
@@ -15263,9 +15277,6 @@ namespace Zenworks.Device {
         [System.ServiceModel.OperationContractAttribute(Action="http://novell.com/zenworks/datamodel/services/devices/soap/updateOSTarget", ReplyAction="*")]
         [System.ServiceModel.FaultContractAttribute(typeof(Zenworks.Device.RemoteDataModelException), Action="http://novell.com/zenworks/datamodel/services/devices/soap/updateOSTarget", Name="RemoteDataModelException", Namespace="http://novell.com/zenworks/datamodel/exceptions")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ComponentDetails))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PingToken))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DeletedDevice))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ExcludedDMVersion))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DataModelCacheClean))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Subquery))]
@@ -15273,6 +15284,9 @@ namespace Zenworks.Device {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(RightsCategory))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Rights))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DatabaseAddressInformation))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ComponentDetails))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PingToken))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DeletedDevice))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getAllDevicesForUserResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getAllDevicesForUserRequest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getDevicesInFolderRequest))]
@@ -15387,9 +15401,6 @@ namespace Zenworks.Device {
         [System.ServiceModel.FaultContractAttribute(typeof(Zenworks.Device.RemoteDataModelException), Action="http://novell.com/zenworks/datamodel/services/devices/soap/validateDeviceCredenti" +
             "als", Name="RemoteDataModelException", Namespace="http://novell.com/zenworks/datamodel/exceptions")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ComponentDetails))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PingToken))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DeletedDevice))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ExcludedDMVersion))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DataModelCacheClean))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Subquery))]
@@ -15397,6 +15408,9 @@ namespace Zenworks.Device {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(RightsCategory))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Rights))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DatabaseAddressInformation))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ComponentDetails))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PingToken))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DeletedDevice))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getAllDevicesForUserResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getAllDevicesForUserRequest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getDevicesInFolderRequest))]
@@ -15510,9 +15524,6 @@ namespace Zenworks.Device {
         [System.ServiceModel.OperationContractAttribute(Action="http://novell.com/zenworks/datamodel/services/devices/soap/getDevicesInFolder", ReplyAction="*")]
         [System.ServiceModel.FaultContractAttribute(typeof(Zenworks.Device.RemoteDataModelException), Action="http://novell.com/zenworks/datamodel/services/devices/soap/getDevicesInFolder", Name="RemoteDataModelException", Namespace="http://novell.com/zenworks/datamodel/exceptions")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ComponentDetails))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PingToken))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DeletedDevice))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ExcludedDMVersion))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DataModelCacheClean))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Subquery))]
@@ -15520,6 +15531,9 @@ namespace Zenworks.Device {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(RightsCategory))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Rights))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DatabaseAddressInformation))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ComponentDetails))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PingToken))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DeletedDevice))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getAllDevicesForUserResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getAllDevicesForUserRequest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getDevicesInFolderRequest))]
@@ -15632,9 +15646,6 @@ namespace Zenworks.Device {
         [System.ServiceModel.OperationContractAttribute(Action="http://novell.com/zenworks/datamodel/services/devices/soap/getAllDevicesForUser", ReplyAction="*")]
         [System.ServiceModel.FaultContractAttribute(typeof(Zenworks.Device.RemoteDataModelException), Action="http://novell.com/zenworks/datamodel/services/devices/soap/getAllDevicesForUser", Name="RemoteDataModelException", Namespace="http://novell.com/zenworks/datamodel/exceptions")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ComponentDetails))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PingToken))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DeletedDevice))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ExcludedDMVersion))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DataModelCacheClean))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Subquery))]
@@ -15642,6 +15653,9 @@ namespace Zenworks.Device {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(RightsCategory))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Rights))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DatabaseAddressInformation))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ComponentDetails))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(PingToken))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(DeletedDevice))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getAllDevicesForUserResponse))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getAllDevicesForUserRequest))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(getDevicesInFolderRequest))]
